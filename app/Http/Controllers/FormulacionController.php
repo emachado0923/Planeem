@@ -1,0 +1,79 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Model\estrategia;
+use App\Model\respuesta_verbo;
+use App\Model\Proyectos;
+use App\Model\formulacionestrategias;
+use DB;
+
+class FormulacionController extends Controller
+{
+    public function index(Request $request){
+            $id = $request->input('id_planecion');
+            $proyecto = Proyectos::find($id);
+            $estrategia = estrategia::all();
+            $Objetivos = respuesta_verbo::select('id_respustaverbos','Objetivos','id_Planeacion','posiciones')
+            ->where('id_Planeacion',$id)
+            ->get();
+            $cantidad = count($Objetivos); 
+            return view('Modulo3.FormulacionAsociar')->with(compact('proyecto','Objetivos','cantidad','estrategia'));
+    }
+
+    public function storeage(Request $request){
+
+            $id_estrategia = $request->input('id_estrategia');
+            $pocision = $request->input('pocision');
+            $id_respustaverbos = $request->input('id_respustaverbos');
+            $id_planecion = $request->input('id_planecion');
+
+            $id_planecion = $request->input('id_planecion');
+            // dd($id_planecion);
+
+            
+                for ($i=0; $i < count($id_respustaverbos) ; $i++) { 
+
+
+                    formulacionestrategias::updateorCreate(
+                        [
+                            'id_Planeacion'=>$id_planecion,
+                            'id_respustaverbos'=>$id_respustaverbos[$i],
+                            'id_estrategia' => $id_estrategia[$i],
+                        ],
+                        [
+                            'id_Planeacion'=>$id_planecion,
+                            'id_respustaverbos'=>$id_respustaverbos[$i],
+                            'id_estrategia' => $id_estrategia[$i],
+                            'pocision' => $pocision[$i]
+                        ]
+                    );
+                  
+                
+            }
+
+            
+            $proyecto = Proyectos::find($id_planecion);
+            $estrategia = estrategia::all();
+            $Objetivos = DB::table('formulacionestrategias')
+            ->join('planeacion','formulacionestrategias.id_Planeacion','=','planeacion.id_Planeacion')
+            ->join('respustaverbos','formulacionestrategias.id_respustaverbos' ,'=', 'respustaverbos.id_respustaverbos')
+            ->join('estrategia', 'formulacionestrategias.id_estrategia','=','estrategia.id_estrategia')
+            ->select('formulacionestrategias.pocision', 'respustaverbos.Objetivos', 'estrategia.Name_estrategia')
+            ->where('planeacion.id_Planeacion',$id_planecion)
+            ->get();
+
+
+
+
+            return view('Modulo3.FormulacionResumen')->with('Objetivos',$Objetivos)->with('proyecto',$proyecto);
+            
+    }
+
+        public function  ObjetivosResumen($id){
+            $proyecto = Proyectos::find($id);
+            return view('Modulo3.ObjetivosResumen')->with('Objetivos',$Objetivos);
+        }
+}
