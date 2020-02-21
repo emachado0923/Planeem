@@ -234,9 +234,9 @@
 <script>
     
     function obtTotalMat(index){
-        if($("#material"+index+" .cantidad_req").val() > 100 || $("#material"+index+" .cantidad_req").val() < 0 ){
-            toastr.error('error el numero no pudede ser mayor a 100', '!')
-        }else if($("#material"+index+" .valor_unitreq").val() > 4 || $("#material"+index+" .valor_unitreq").val() > 4){
+        if($("#material"+index+" .cantidad_req").val() > 1 || $("#material"+index+" .cantidad_req").val() < 0 ){
+            toastr.error('error el numero no pudede ser mayor a 1', '!')
+        }else if($("#material"+index+" .valor_unitreq").val() > 4 || $("#material"+index+" .valor_unitreq").val() < 0){
             toastr.error('error el numero no pudede ser mayor a 4', '!')
         }else{
          
@@ -244,7 +244,7 @@
            
             var Calificacion = $("#material"+index+" .valor_unitreq").val();
       
-            var tot = ($("#material"+index+" .cantidad_req").val())/100 * $("#material"+index+" .valor_unitreq").val();
+            var tot = ($("#material"+index+" .cantidad_req").val()) * $("#material"+index+" .valor_unitreq").val();
            $("#material"+index+" .valor_totreq").val(tot);
 
         }
@@ -307,4 +307,5 @@
 					})
 
 		});
-	</script>	@endpush
+	</script>	
+	@endpush

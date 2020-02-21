@@ -43,6 +43,30 @@
 
 	<!-- Modal -->
 </section>	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+<script>
 
+  $(document).ready(function () {
+    $('.items li:first-child').addClass("acti");
+    $('.items li').click(function () {
+      $('.items li').removeClass("acti");
+      $(this).addClass("acti");
+
+
+    })
+
+    $('.valores').mouseenter(function(){
+      let mensaje = $(this).attr('mensaje');
+
+      $('.hover').html(`<p>${mensaje}</p>`)
+      $('.hover').show()
+
+    })
+    $('.valores').mouseleave(function(){
+
+      $('.hover').hide()
+    })
+  })
+</script>
 
 @endsection

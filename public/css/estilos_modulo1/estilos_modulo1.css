@@ -5943,6 +5943,26 @@ table {
     border: #0AB5A0 2px solid !important;
     border-radius: 12px !important;
 }
+.modal-agregar_valor{
+    border: #0AB5A0 2px solid !important;
+    border-radius: 12px !important;
+    width: 190% !important;
+    height: 372px !important;
+    margin-left: -38%;
+}
+.form-control2 {
+    border: 2px solid #0AB5A0;
+    border-radius: 10px;
+    height: 86px !important;
+    overflow-y: scroll;
+}
+.form-control2::-webkit-scrollbar{
+    width: 7px;
+}
+.form-control2::-webkit-scrollbar-thumb{
+    background: grey;
+    border-radius: 5px;
+}
 .modal-modificado1{
     border: #0AB5A0 2px solid !important;
     border-radius: 12px !important;
@@ -6278,12 +6298,13 @@ table {
     margin: 10px;
 }
 /*estilos de la grafica*/
-#containerGrafica{
-    overflow: hidden;
-    width: 88%;
-    margin: 10px 116px;
-    margin-top: 120px;
+#containerGrafica {
+    width: 900px;
+    height: 550px;
+    margin: 0 auto;
+    margin-top: 5%;
 }
+
 #TituloGrafica{
     position: absolute;
     width: 20%;

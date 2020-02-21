@@ -52,6 +52,8 @@
 	</div>
 	
 </section>
+
+
 @yield('script')
 
 @endsection

@@ -32,15 +32,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
-
-
-
-
-
-
-
-
-
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -57,7 +48,7 @@
                                   
                                         var data = google.visualization.arrayToDataTable([
                                         ['ID', 'X', 'Y', 'Burbuja'],  
-                                        ['i.totalPuntuacion', 2.8,  3.4, 3.1],
+                                        ['su puta madre', 2.4,  3.4, 3.1],
                                         ]);
                                 }       
                             }
@@ -68,14 +59,6 @@
       }
     </script>
   </head>
-
-
-
-
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-
-
-
 	<button  href="{{ route('analisisDOFA') }} "  type="submit" style="color:white;" name="nuevo" class="Ahora btn btn-planeem waves-effect waves-light">Iniciar Ahora</button>
 <span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">

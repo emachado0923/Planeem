@@ -18,6 +18,7 @@
 	<div  class="container" id="alert">
 		
 	</div>
+	</div>
 	<div id="regiration_form">
 		<fieldset id="paso1">
 			<div>

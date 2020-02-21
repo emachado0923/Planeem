@@ -58,7 +58,7 @@
                     class="pl-1 d-flex align-items-center verde tituloQueEs fuenteTitulo"
                     style="margin-top: 1.5px;">Plane<span class="naranja planeem">E</span>m</span>?
                 </a>
-                <a class="nav-item nav-link" data-scroll href="#equipoTrabajo">Alianzas
+                <a class="nav-item nav-link" data-scroll href="#equipoTrabajo">Aliados
                 </a>
                 <a class="nav-item nav-link" data-scroll href="#contactos">Contáctanos
                 </a>
@@ -381,7 +381,7 @@
       Aceptar los términos y condiciones</p>
   </label>
   <div class="invalid-feedback" style="font-size: 16px !important; color: orange;">
-    Favor seleccionar
+    Por favor seleccionar Términos y Condiciones
 </div>
 </div>
 <style type="text/css">
@@ -578,7 +578,7 @@
   Aceptar los términos y condiciones</p>
 </label>
 <div class="invalid-feedback" style="font-size: 16px !important; color: orange;">
-    Favor seleccionar
+Por favor seleccionar Términos y Condiciones
 </div>
 </div>
 {{-- BOTON REFISTRO --}}

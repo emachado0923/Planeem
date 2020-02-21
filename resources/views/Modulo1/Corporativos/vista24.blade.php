@@ -102,7 +102,7 @@
 
         <div class="modal fade" id="exampleModal0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content modal-modificado2">
+                    <div class="modal-content modal-agregar_valor">
                         <div class="modal-body">
                                 <h3 style="text-align: center; color: #0AB5A0;">Añadir valor</h3>
                                 <h4 style="text-align: center;">Título</h4>
@@ -113,9 +113,10 @@
 
                                 <h4 style="text-align: center;">Descripcion</h4>
 
-                            <div class="añadircapacidad">
+                            <div>
                                 <h5 id="alert" ></h5>
-                                <textarea maxlength="504"  id="Descripcion" style="color:black;" class="campo4"></textarea>
+								<textarea class="form-control form-control2" maxlength="504"  id="Descripcion" style="color:black;"></textarea>
+								
                             </div>
 
                             <div><a style="color:white;" data-dismiss="modal" aria-label="Close"  onclick="guardar()" class="aceptarcapacidad btn btn-planeem waves-effect waves-light">Añadir</a>

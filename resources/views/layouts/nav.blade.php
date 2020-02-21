@@ -19,7 +19,6 @@
 
 	<!-- Scripts -->
 	<script src="{{ asset('js/app.js') }}" defer></script>
-
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -118,7 +117,7 @@
 		<br><br>
 		<ul class="items">
 
-			<li ><a    ><h6>Propuesta de valor</h6><span class="rounded-circle">01</span></a></li>
+			<li ><a><h6>Propuesta de valor</h6><span class="rounded-circle">01</span></a></li>
 
 			<li ><a   id="linkid"><h6>Misión Organizacional</h6><span class="rounded-circle">02</span></a></li>
 
@@ -143,10 +142,6 @@
 				</button>
 			</div>
 			<div class="modal-body" style="margin: 0 auto;">
-				<a type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong1pdf">
-					<img class="pdf" src="img/pdf.png">
-				</a>
-
 				<a type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong1word">
 					<img class="word" src="img/word.png">
 				</a>

@@ -58,7 +58,7 @@
 </div>
 </section>
 
-<!-- ALIANZAS -->
+<!-- Aliados -->
 
 <section class="container-fluid p-0" id="equipoTrabajo">
 	<!--Carousel Wrapper-->
@@ -75,7 +75,7 @@
 				<!-- Comienzo CARD -->
 				<div class="col-lg-4 col-md-6 d-block mx-auto w-100" alt="First slide" style="padding: 120px 50px;">
 
-					<h2 class="py-lg-4 h1-responsive text text-center py-4">Alianzas</h2>
+					<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
 
 					<!--Card-->
 					<div class="card card-cascade">
@@ -103,7 +103,7 @@
 				<div class="col-lg-4 col-md-6 d-block mx-auto w-100" alt="Second slide"
 				style="padding: 120px 50px;">
 
-				<h2 class="py-lg-4 h1-responsive text text-center py-4">Alianzas</h2>
+				<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
 
 				<!--Card-->
 				<div class="card card-cascade">
@@ -135,7 +135,7 @@
 			<!-- Comienzo CARD -->
 			<div class="col-lg-4 col-md-6 d-block w-100 m-auto" alt="Third slide" style="padding: 120px 50px;">
 
-				<h2 class="py-lg-4 h1-responsive text text-center py-4">Alianzas</h2>
+				<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
 
 				<!--Card-->
 				<div class="card card-cascade">
@@ -170,7 +170,7 @@
 			<div class="col-lg-4 col-md-6 d-block mx-auto w-100" alt="Second slide"
 			style="padding: 120px 50px;">
 
-			<h2 class="py-lg-4 h1-responsive text text-center py-4">Alianzas</h2>
+			<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
 
 			<!--Card-->
 			<div class="card card-cascade">
@@ -320,84 +320,84 @@ id="enlaces">
 		{{-- LOGOS imagenes --}}
 		<div class="slide-track">
 			<div class="slide">
-				<a href="http://www.esumer.edu.co/"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
+				<a href="http://www.esumer.edu.co/" target="_blank"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
 					width="150" alt="logoEsumer" /></a>
 				</div>
 				<div class="slide">
-					<a href="http://centrodeserviciosygestionempresarial.blogspot.com/"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
+					<a href="http://centrodeserviciosygestionempresarial.blogspot.com/" target="_blank"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
 						width="150" alt="blogger" /></a>
 					</div>
 					<div class="slide">
-						<a href="http://40.70.207.114/"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
+						<a href="http://40.70.207.114/" target="_blank"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
 							width="150" alt="logoSennova" /></a>
 						</div>
 						<div class="slide">
-							<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
+							<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx" target="_blank"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
 								width="150" alt="logoTecnoparque" /></a>
 							</div>
 							<div class="slide">
-								<a href="https://www.gidpi.com/#/Login"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
+								<a href="https://www.gidpi.com/#/Login" target="_blank"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
 									width="150" alt="logoGidpi" /></a>
 								</div>
 								<div class="slide">
-									<a href="http://www.esumer.edu.co/"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
+									<a href="http://www.esumer.edu.co/" target="_blank"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
 										width="150" alt="logoEsumer" /></a>
 									</div>
 									<div class="slide">
-										<a href="http://centrodeserviciosygestionempresarial.blogspot.com/"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
+										<a href="http://centrodeserviciosygestionempresarial.blogspot.com/" target="_blank"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
 											width="150" alt="blogger" /></a>
 										</div>
 										<div class="slide">
-											<a href="http://40.70.207.114/"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
+											<a href="http://40.70.207.114/" target="_blank"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
 												width="150" alt="logoSennova" /></a>
 											</div>
 											<div class="slide">
-												<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
+												<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx" target="_blank"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
 													width="150" alt="logoTecnoparque" /></a>
 												</div>
 											</div>
 											<div class="slide">
-												<a href="https://www.gidpi.com/#/Login"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
+												<a href="https://www.gidpi.com/#/Login" target="_blank"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
 													width="150" alt="logoGidpi" /></a>
 												</div>
 												<div class="slide">
-													<a href="http://www.esumer.edu.co/"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
+													<a href="http://www.esumer.edu.co/" target="_blank"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
 														width="150" alt="logoEsumer" /></a>
 													</div>
 													<div class="slide">
-														<a href="http://centrodeserviciosygestionempresarial.blogspot.com/"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
+														<a href="http://centrodeserviciosygestionempresarial.blogspot.com/" target="_blank"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
 															width="150" alt="blogger" /></a>
 														</div>
 														<div class="slide">
-															<a href="http://40.70.207.114/"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
+															<a href="http://40.70.207.114/" target="_blank"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
 																width="150" alt="logoSennova" /></a>
 															</div>
 															<div class="slide">
-																<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
+																<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx" target="_blank"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
 																	width="150" alt="logoTecnoparque" /></a>
 																</div>
 																<div class="slide">
-																	<a href="https://www.gidpi.com/#/Login"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
+																	<a href="https://www.gidpi.com/#/Login" target="_blank"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
 																		width="150" alt="logoGidpi" /></a>
 																	</div>
 																	<div class="slide">
-																		<a href="http://www.esumer.edu.co/"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
+																		<a href="http://www.esumer.edu.co/" target="_blank"><img src="{{asset('img/logoEsumerBN.png')}}" class="imagenSlide" height="60"
 																			width="150" alt="logoEsumer" /></a>
 																		</div>
 																		<div class="slide">
-																			<a href="http://centrodeserviciosygestionempresarial.blogspot.com/"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
+																			<a href="http://centrodeserviciosygestionempresarial.blogspot.com/" target="_blank"><img src="{{asset('img/bloggerBN.png ')}}" class="imagenSlide" height="60"
 																				width="150" alt="blogger" /></a>
 																			</div>
 																			<div class="slide">
-																				<a href="http://40.70.207.114/"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
+																				<a href="http://40.70.207.114/" target="_blank"><img src="{{asset('img/logoSennovaBN.png')}}" class="imagenSlide" height="60"
 																					width="150" alt="logoSennova" /></a>
 																				</div>
 																				<div class="slide">
-																					<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
+																					<a href="http://tecnoparque.sena.edu.co/Paginas/default.aspx" target="_blank"><img src="{{asset('img/logoTecnoparque.png')}}" class="imagenSlide" height="60"
 																						width="150" alt="logoTecnoparque" /></a>
 																					</div>
 																					<div class="slide">
-																						<a href="https://www.gidpi.com/#/Login"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
+																						<a href="https://www.gidpi.com/#/Login" target="_blank"><img src="{{asset('img/logoGidpiBN.png')}}" class="imagenSlide" height="60"
 																							width="150" alt="logoGidpi" /></a>
 																						</div>
 																					</div>

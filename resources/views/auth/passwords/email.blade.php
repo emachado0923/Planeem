@@ -41,7 +41,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="text-center mt-2" style="margin-left: 16rem;">
-                                <button id="enviarreset" class="btn btn-planeem"> {{ __('Enviar') }}</button>
+                                <button id="enviarreset" class="btn btn-planeem waves-effect waves-light" style="color:black;"> {{ __('Enviar') }}</button>
                             </div>
                         </div>
 

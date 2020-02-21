@@ -22,7 +22,26 @@
 	<link rel="stylesheet" href="{{asset('css/toastr/toastr.min.css')}}">
 	<script src="{{asset('js/toastr/toastr.min.js')}}"></script>
 	<script src="{{ asset('js/app.js') }}" defer></script>
+	<!-- Scripts de la grafica -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['ID', 'X', 'Y', 'Burbuja'],  
+          ['',   2.8,  3.4, 3.1],
+        ]);
 
+       /* var options = {
+          colorAxis: {colors: ['yellow', 'red']},
+          sizeAxis:  {minValue: 1.0,  maxSize: 4},
+        };*/
+
+        var chart = new google.visualization.BubbleChart(document.getElementById('containerGrafica'));
+        chart.draw(data,);
+      }
+    </script>
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -125,7 +144,7 @@
 		<h4 class="Diagnostico">Diagnóstico Estratégico</h4>
 		<h5 style=" color: #238276;" >Análisis Interno</h5><hr style=" background: #238276; width: 53%; margin-top: -12px; ">
 		<ul class="items">
-			<li><a href="{{route('capacidadInterna')}}" id="linkid"><h6 style="font-size: 17px;">Perfil Capacidad Interna</h6><span class="rounded-circle">01</span></a></li>
+			<li><a href="{{route('capacidadInterna')}}" id="linkid6"><h6 style="font-size: 17px;">Perfil Capacidad Interna</h6><span class="rounded-circle">01</span></a></li>
 
 			
 			<li><a  href="{{route('perfilCompeInfo')}}" id="linkid2"><h6 style="font-size: 17px;"> Perfil Competitivo</h6><span class="rounded-circle">02</span></a></li> 
@@ -161,10 +180,6 @@
 				</button>
 			</div>
 			<div class="modal-body" style="margin: 0 auto;">
-				<a type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong1pdf">
-					<img class="pdf" src="img/pdf.png">
-				</a>
-
 				<a type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong1word">
 					<img class="word" src="img/word.png">
 				</a>
