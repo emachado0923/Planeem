@@ -53,7 +53,6 @@
 	
 </section>
 
-
-@yield('script')
+@yield('script');
 
 @endsection

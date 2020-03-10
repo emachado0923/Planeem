@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\View;
 use App\Model\ansorft;
 use App\Model\TipoPreguntaansorft;
 use App\Model\tipo_mercado;
+use App\Model\tipo_Penetracion;
 class AnalisisPorterController extends Controller
 {
     /**
@@ -138,93 +139,141 @@ class AnalisisPorterController extends Controller
         ->get();
 
 
-        $tipo_mercado=tipo_mercado::all();
+        $tipo_Penetracion=tipo_Penetracion::all();
+
+
+        
+        $DesaMerca2 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
+        ->where('idTipo',1)
+        ->get();
+
+
+        $tipo_Penetracion2=tipo_Penetracion::all();
+
+
+        
+        $DesaMerca3 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
+        ->where('idTipo',1)
+        ->get();
+
+
+        $tipo_Penetracion3=tipo_Penetracion::all();
+
+
+
+        
+        $DesaMerca4 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
+        ->where('idTipo',1)
+        ->get();
+
+
+        $tipo_Penetracion4=tipo_Penetracion::all();
+
+        $DesaMerca5 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
+        ->where('idTipo',1)
+        ->get();
+        $tipo_Penetracion5 =tipo_Penetracion::all(); 
+
+        
+        $DesaMerca6 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
+        ->where('idTipo',1)
+        ->get();
+
+
+        $tipo_Penetracion6 =tipo_Penetracion::all(); 
+
+
         $id_planeacion =  $plane;
 
-        $ansorft = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('idPlaneacion',$plane)
-        ->get();
+
+         return view('Modulo2.ansorftMercado')->with(compact('DesaMerca','tipo_Penetracion','DesaMerca2','tipo_Penetracion2','DesaMerca3',
+         'tipo_Penetracion3','DesaMerca4','tipo_Penetracion4','DesaMerca5','tipo_Penetracion5','DesaMerca6','tipo_Penetracion6','id_planeacion'))->with($message);
+
+        //  ansorftDesarrollo
+        // $ansorft = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('idPlaneacion',$plane)
+        // ->get();
 
 
   
-        $cantidadMercado= count($ansorft);
+        // $cantidadMercado= count($ansorft);
 
-        ///Sustitutos
-        $Sustitutos = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.Nametipo_mercado',"Sustitutos")
-        ->where('idPlaneacion',$plane)
-        ->get();
+        // ///Sustitutos
+        // $Sustitutos = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.Nametipo_mercado',"Sustitutos")
+        // ->where('idPlaneacion',$plane)
+        // ->get();
 
 
-        ///Producto
-        $Producto = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.id_tipo_mercado',"2")
-        ->where('idPlaneacion',$plane)
-        ->get();
+        // ///Producto
+        // $Producto = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.id_tipo_mercado',"2")
+        // ->where('idPlaneacion',$plane)
+        // ->get();
 
-        ///Productotitutos
-        $Productotitutos = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.Nametipo_mercado',"Forma de Uso y Aplicación del Productotitutos")
-        ->where('idPlaneacion',$plane)
-        ->get();
+        // ///Productotitutos
+        // $Productotitutos = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.Nametipo_mercado',"Forma de Uso y Aplicación del Productotitutos")
+        // ->where('idPlaneacion',$plane)
+        // ->get();
                 
         
       
-         ///  Intercambio de Tecnología
-        $Tecnología = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.Nametipo_mercado',"Intercambio de Tecnología")
-        ->where('idPlaneacion',$plane)
-        ->get();
+        //  ///  Intercambio de Tecnología
+        // $Tecnología = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.Nametipo_mercado',"Intercambio de Tecnología")
+        // ->where('idPlaneacion',$plane)
+        // ->get();
                       
         
-        /// Geográficamente
-        $Geográficamente = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.Nametipo_mercado',"Geográficamente")
-        ->where('idPlaneacion',$plane)
-        ->get(); 
+        // /// Geográficamente
+        // $Geográficamente = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.Nametipo_mercado',"Geográficamente")
+        // ->where('idPlaneacion',$plane)
+        // ->get(); 
         
-        //Segmentación
-        $Segmentación = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.Nametipo_mercado',"Segmentación")
-        ->where('idPlaneacion',$plane)
-        ->get(); 
+        // //Segmentación
+        // $Segmentación = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.Nametipo_mercado',"Segmentación")
+        // ->where('idPlaneacion',$plane)
+        // ->get(); 
 
-        //Alianzas Convenios
-        $Convenios = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.Nametipo_mercado',"Alianzas Convenios")
-        ->where('idPlaneacion',$plane)
-        ->get(); 
+        // //Alianzas Convenios
+        // $Convenios = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.Nametipo_mercado',"Alianzas Convenios")
+        // ->where('idPlaneacion',$plane)
+        // ->get(); 
 
-        //Promoción
-        $Promoción = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
-        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        ->where('tipo_mercado.Nametipo_mercado',"Promoción")
-        ->where('idPlaneacion',$plane)
-        ->get(); 
-        
-
-        $datos = count(ansorft::all());
+        // //Promoción
+        // $Promoción = ansorft::select('ansorfts.*','tipo_mercado.Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_mercado','ansorfts.id_tipo_mercado','tipo_mercado.id_tipo_mercado')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('tipo_mercado.Nametipo_mercado',"Promoción")
+        // ->where('idPlaneacion',$plane)
+        // ->get(); 
         
 
+        // $datos = count(ansorft::all());
+        
 
-        return view('Modulo2.ansorftDesarrolloMerca')->with(compact('ansorft','datos','DesaMerca','id_planeacion','tipo_mercado','Sustitutos','Producto','Productotitutos','Tecnología','Geográficamente','Segmentación','Convenios','Promoción','cantidadMercado'))->with($message);
+
+        // return view('Modulo2.ansorftDesarrolloMerca')->with(compact('ansorft','datos','DesaMerca','id_planeacion','tipo_mercado','Sustitutos','Producto','Productotitutos','Tecnología','Geográficamente','Segmentación','Convenios','Promoción','cantidadMercado'))->with($message);
     }
 
     /**

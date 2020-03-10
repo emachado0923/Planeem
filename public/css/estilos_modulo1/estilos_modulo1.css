@@ -6316,14 +6316,11 @@ table {
     text-align: center;
     border-radius: 10px;
 }
-#containerGrafica2{
-    overflow: hidden;
-    width: 88%;
+#chart_div{
     position: relative;
-    margin: 10px 67px;
+    margin: 0 auto;
+    margin-top: 4%;
     border-radius: 12px;
-    background: white;
-    height: 615px; 
 }
 .botonesGrafica{
     margin: 10px;

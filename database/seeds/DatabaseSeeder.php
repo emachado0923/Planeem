@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(tipo_mercadoSeeder  ::class);
         $this->call(penetracion_mercadoanfSedeer::class);
         $this->call(tipo_PenetracinSeeder::class);
-        // $this->call(tipo_PenetracinSeeder::class);
+        $this->call(tipo_PenetracionSeeder::class);
+        $this->call(Desarrollo_ProductoSeed::class);
     }
 }

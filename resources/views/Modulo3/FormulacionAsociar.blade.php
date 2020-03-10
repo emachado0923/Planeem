@@ -13,8 +13,7 @@
 <section class="contenedorAsociar">
 	<div class="estrategias_conten">
 		<h1 style="text-align: center;">Estrategias</h1>
-
-		@foreach ($estrategia as $estrategia)
+		@foreach ($debilidad as $debilidad)
 		<div class="input-group mb-3">
 			<div class="input-group-prepend">
 				<div class="def-number-input number-input safari_only">
@@ -23,8 +22,51 @@
 					<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
 				</div>
 			</div>
-		<input name="id_estrategia[]" value="{{$estrategia->id_estrategia}}" style="display:none" type="text">
-		<input type="text" class="form-control" id="inputObjetivo" value="{{$estrategia->Name_estrategia}}" placeholder="Estrategia" maxlength="200" aria-label="Objetivo" aria-describedby="basic-addon1">
+		<input name="id_estrategia[]" value="{{$debilidad->nombre}}" style="display:none" type="text">
+		<input type="text" class="form-control" id="inputObjetivo" value="{{$debilidad->nombre}}" placeholder="Estrategia" maxlength="200" aria-label="Objetivo" aria-describedby="basic-addon1">
+		</div> 
+		@endforeach
+
+		@foreach ($fortaleza as $fortaleza)
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="def-number-input number-input safari_only">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+						<input class="quantity" min="1" max="{{$cantidad}}" name="pocision[]" value="" type="number">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+				</div>
+			</div>
+		<input name="id_estrategia[]" value="{{$fortaleza->nombre}}" style="display:none" type="text">
+		<input type="text" class="form-control" id="inputObjetivo" value="{{$fortaleza->nombre}}" placeholder="Estrategia" maxlength="200" aria-label="Objetivo" aria-describedby="basic-addon1">
+		</div> 
+		@endforeach
+
+		@foreach ($oportunidad as $oportunidad)
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="def-number-input number-input safari_only">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+						<input class="quantity" min="1" max="{{$cantidad}}" name="pocision[]" value="" type="number">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+				</div>
+			</div>
+		<input name="id_estrategia[]" value="{{$oportunidad->nombre}}" style="display:none" type="text">
+		<input type="text" class="form-control" id="inputObjetivo" value="{{$oportunidad->nombre}}" placeholder="Estrategia" maxlength="200" aria-label="Objetivo" aria-describedby="basic-addon1">
+		</div> 
+		@endforeach
+
+		
+		@foreach ($amenaza as $amenaza)
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="def-number-input number-input safari_only">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+						<input class="quantity" min="1" max="{{$cantidad}}" name="pocision[]" value="" type="number">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+				</div>
+			</div>
+		<input name="id_estrategia[]" value="{{$amenaza->nombre}}" style="display:none" type="text">
+		<input type="text" class="form-control" id="inputObjetivo" value="{{$amenaza->nombre}}" placeholder="Estrategia" maxlength="200" aria-label="Objetivo" aria-describedby="basic-addon1">
 		</div> 
 		@endforeach
 	</div>
@@ -40,7 +82,6 @@
 				<input name="id_respustaverbos[]" value="{{$Objetivos->id_respustaverbos}}" style="display:none" type="text">
 				<input type="text" class="form-control" id="inputObjetivo"  value="{{$Objetivos->Objetivos}}" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">
 			</div> 
-
 		</div>
 		@endforeach
 

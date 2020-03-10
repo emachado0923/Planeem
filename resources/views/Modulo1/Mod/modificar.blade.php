@@ -160,45 +160,45 @@
 
 				<li ><a  id="linkid5"><h6>Valores Corporativos</h6><span class="rounded-circle">05</span></a></li>
 			</ul>
-			<a data-toggle="modal" data-target="#exampleModal" href="#" id="boton2" value="Exportar" onclick="Mostra_Oculta()" class="exportar btn btn-planeem waves-effect waves-light">Exportar</a>
+			<a data-toggle="modal" data-target="#exportar" href="#" id="boton2" value="Exportar" onclick="Mostra_Oculta()" class="exportar btn btn-planeem waves-effect waves-light">Exportar</a>
 		</nav>
 	</div>
 
 
 
 <!--modal pregunta-->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
+<div class="modal fade" id="exportar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-modificado1">
 			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLabel">pdf o word</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
+				<h2 class="modal-title" id="exampleModalLabel" style="margin: 0 auto; font-weight: bold;">Seleccione su formato de exportación</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;margin-left: 0% !important;">
+					<span class="icon-cancel-circle" style="color: #FC7323; font-size: 21px; cursor: pointer;"></span>
+				</button>
 			</div>
-			<div class="modal-body">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong1pdf">
-					pdf
-				  </button>
-
-				  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong1word">
-					Launch demo modal
-				  </button>
+			<div class="modal-body" style="margin: 0 auto;">
+				<a type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong1word">
+					<img class="word" src="img/word.png">
+				</a>
 			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			  <button type="button" class="btn btn-primary">Save changes</button>
-			</div>
-		  </div>
 		</div>
-	  </div>
+	</div>
+</div>
 
-
-<!--modal  pdf -->
-
-	<form method="post"  role="from" action="{{route('createpdf')}}" >
-		@csrf
-	<div class="modal fade" id="exampleModalLong1pdf" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<style type="text/css">
+	.modal-modificado1 {
+		border: #0AB5A0 2px solid !important;
+		border-radius: 12px !important;
+		width: 115%!important;
+		height: 225px !important;
+		margin-top: 50% !important;
+		margin-left: 0 !important;
+	}
+</style>
+<!--exportar word--->
+<form method="post"  role="from" action="{{route('createWord')}}" >
+	@csrf
+	<div class="modal fade" id="exampleModalLong1word" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-scrollable" role="document">
 			<div class="modal-content5 ">
 				<div class="modal-header">
@@ -207,13 +207,13 @@
 					margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
 
 				</div>
+						<textarea name="nombre_proyecto" id="nombre_proyecto3" style="display:none" ></textarea>
 
 				<div class="modal-body">
 					<div class="modulo1">
-						<textarea name="nombre_proyecto2" id="nombre_proyecto2" style="display:none"  ></textarea>
-							<h2>Módulo 1</h2>
+						<h2>Módulo 1</h2>
 					</div>
-					<div>
+						<div>
 						<div class="barrita" ><h4 style="font-size: 16px;">Propuesta de valor</h4></div>
 						<input class="barritache"  type="checkbox" style="cursor: pointer;" name="Propuesta_valor" value="Propuesta_valor">
 					</div>
@@ -296,121 +296,7 @@
 						<div class="barrita20"></div>
 						<input class="barritache20" type="checkbox" style="cursor: pointer;">
 					</div>
-
-					<button class="exportar24 btn btn-planeem waves-effect waves-light">Exportar</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</form>
-
-
-
-
-
-	<!--exportar word--->
-	<form method="post"  role="from" action="{{route('createWord')}}" >
-		@csrf
-	<div class="modal fade" id="exampleModalLong1word" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-scrollable" role="document">
-			<div class="modal-content5 ">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
-					<span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
-					margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
-
-				</div>
-
-				<div class="modal-body">
-					<div class="modulo1">
-						<textarea name="nombre_proyecto" id="nombre_proyecto3" style="display:none" ></textarea>
-							<h2>Módulo 1</h2>
-					</div>
-					<div>
-						<div class="barrita" ><h4 style="font-size: 16px;">Propuesta de valor</h4></div>
-						<input class="barritache"  type="checkbox" style="cursor: pointer;" name="Propuesta" value="Propuesta_valor">
-					</div>
-					<div>
-						<div class="barrita2"><h4 style="font-size: 15px;">Misión Organizacional</h4></div>
-						<input class="barritache2" type="checkbox" name="Mision" value="Mision_Organizacional" style="cursor: pointer;">
-					</div>
-					<div>
-						<div class="barrita3"><h4 style="font-size: 15px;">Visión Organizacional</h4></div>
-						<input class="barritache3" type="checkbox" style="cursor: pointer;" name="Vision" value="Vision_Organizacional">
-					</div>
-					<div>
-						<div class="barrita4"><h4 style="font-size: 15px;">Mega Empresarial</h4></div>
-						<input class="barritache4" type="checkbox" style="cursor: pointer;" name="Mega" value="Mega_Empresarial" >
-					</div>
-					<div>
-						<div class="barrita5"><h4 style="font-size: 15px;">Valores Corporativos</h4></div>
-						<input class="barritache5" type="checkbox" style="cursor: pointer;" name="valores" value="v">
-					</div>
-					<div class="modulo2">
-						<h2>Módulo 2</h2>
-					</div>
-					<div class="modulo2_scroll">
-						<div>
-							<div class="barrita6_nav"></div>
-							<input class="barritache6_nav" type="checkbox"  style="cursor: pointer;">
-						</div>
-						<div>
-							<div class="barrita7_nav"></div>
-							<input class="barritache7_nav" type="checkbox" style="cursor: pointer;">
-						</div>
-						<div>
-							<div class="barrita8_nav"></div>
-							<input class="barritache8_nav" type="checkbox" style="cursor: pointer;">
-						</div>
-						<div>
-							<div class="barrita9_nav"></div>
-							<input class="barritache9_nav" type="checkbox" style="cursor: pointer;">
-						</div>
-						<div>
-							<div class="barrita10_nav"></div>
-							<input class="barritache10_nav" type="checkbox" style="cursor: pointer;">
-						</div>
-					</div>
-					<div class="modulo3">
-						<h2>Módulo 3</h2>
-					</div>
-					<div>
-						<div class="barrita11"></div>
-						<input class="barritache11" type="checkbox" style="cursor: pointer;">
-					</div>
-					<div>
-						<div class="barrita12"></div>
-						<input class="barritache12" type="checkbox" style="cursor: pointer;">
-					</div>
-					<div>
-						<div class="barrita13"></div>
-						<input class="barritache13" type="checkbox" style="cursor: pointer;">
-					</div>
-					<div class="modulo4">
-						<h2>Módulo 4</h2>
-					</div>
-					<div>
-						<div class="barrita16"></div>
-						<input class="barritache16" type="checkbox" style="cursor: pointer;">
-					</div>
-					<div>
-						<div class="barrita17"></div>
-						<input class="barritache17" type="checkbox" style="cursor: pointer;">
-					</div>
-					<div>
-						<div class="barrita18"></div>
-						<input class="barritache18" type="checkbox" style="cursor: pointer;">
-					</div>
-					<div>
-						<div class="barrita19"></div>
-						<input class="barritache19" type="checkbox" style="cursor: pointer;">
-					</div>
-					<div>
-						<div class="barrita20"></div>
-						<input class="barritache20" type="checkbox" style="cursor: pointer;">
-					</div>
-			
-					<button class="exportar24 btn btn-planeem waves-effect waves-light">Exportar</button>
+					<button type="submit" class="exportar24 btn btn-planeem waves-effect waves-light">Exportar</button>
 				</div>
 			</div>
 		</div>

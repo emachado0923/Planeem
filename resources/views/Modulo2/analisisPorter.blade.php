@@ -326,6 +326,32 @@
 
 	</section>
 	@yield('script')
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script>
+
+  $(document).ready(function () {
+   $('.items li:nth-child(7)').addClass("acti");
+   $('.items li').click(function () {
+    $('.items li').removeClass("acti");
+    $(this).addClass("acti");
+
+
+  })
+
+   $('.valores').mouseenter(function(){
+    let mensaje = $(this).attr('mensaje');
+
+    $('.hover').html(`<p>${mensaje}</p>`)
+    $('.hover').show()
+
+  })
+   $('.valores').mouseleave(function(){
+
+    $('.hover').hide()
+  })
+ })
+</script>
 	@endsection
 	@push('script')
 	<script>

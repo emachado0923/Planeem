@@ -33,13 +33,9 @@ class Modulo3Controller extends Controller
 
         $nombre =$request->input('nombre_proyecto');
         
-        $id = DB::table('planeacion')
-        ->select('id_Planeacion')
-        ->where('nombre_proyecto', $nombre)->first();
         
-        foreach($id as $id){
-            $proyecto = Proyectos::find($id);
-        }
+        $proyecto = $nombre;
+
         
         $Verbos = Verbos::all();
         
@@ -74,6 +70,6 @@ class Modulo3Controller extends Controller
 
           
 
-
+        
     }
 }

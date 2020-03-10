@@ -23,7 +23,7 @@
 	<script src="{{asset('js/toastr/toastr.min.js')}}"></script>
 	<script src="{{ asset('js/app.js') }}" defer></script>
 	<!-- Scripts de la grafica -->
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	{{-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -41,7 +41,7 @@
         var chart = new google.visualization.BubbleChart(document.getElementById('containerGrafica'));
         chart.draw(data,);
       }
-    </script>
+    </script> --}}
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -144,24 +144,24 @@
 		<h4 class="Diagnostico">Diagnóstico Estratégico</h4>
 		<h5 style=" color: #238276;" >Análisis Interno</h5><hr style=" background: #238276; width: 53%; margin-top: -12px; ">
 		<ul class="items">
-			<li><a href="{{route('capacidadInterna')}}" id="linkid6"><h6 style="font-size: 17px;">Perfil Capacidad Interna</h6><span class="rounded-circle">01</span></a></li>
+			<li><a id="linkid"><h6 style="font-size: 17px;">Perfil Capacidad Interna</h6><span class="rounded-circle">01</span></a></li>
 
 			
-			<li><a  href="{{route('perfilCompeInfo')}}" id="linkid2"><h6 style="font-size: 17px;"> Perfil Competitivo</h6><span class="rounded-circle">02</span></a></li> 
+			<li><a id="linkid2"><h6 style="font-size: 17px;"> Perfil Competitivo</h6><span class="rounded-circle">02</span></a></li> 
 
-			<li><a href="{{route('factoresInternosI')}}"><h6 style="font-size: 17px;">Evaluación Factores Internos</h6><span class="rounded-circle">03</span></a></li>
+			<li><a id="linkid3" ><h6 style="font-size: 17px;">Evaluación Factores Internos</h6><span class="rounded-circle">03</span></a></li>
 			<h5 style=" color: #238276;" >Análisis Externo</h5><hr style=" background: #238276; width: 53%; margin-top: -12px; ">
-			<li><a href="{{route('anaPestal')}}"><h6 style="font-size: 17px;">Análisis Pestal</h6><span class="rounded-circle">04</span> </a></li>
+			<li><a id="linkid4" ><h6 style="font-size: 17px;">Análisis Pestal</h6><span class="rounded-circle">04</span> </a></li>
 
-			<li><a href="{{route('anaPorter')}}"><h6 style="font-size: 17px;"> Análisis Porter</h6><span class="rounded-circle">05</span></a></li>
+			<li><a><h6 style="font-size: 17px;"> Análisis Porter</h6><span class="rounded-circle">05</span></a></li>
 
-			<li><a href="{{route('tipo1')}}"><h6 style="font-size: 17px;">Ansorff</h6><span class="rounded-circle">06</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Ansorff</h6><span class="rounded-circle">06</span></a></li>
 
-			<li><a href="{{route('factoresExternosI')}}"><h6 style="font-size: 17px;">Evaluación Factores Externos</h6><span class="rounded-circle">07</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Evaluación Factores Externos</h6><span class="rounded-circle">07</span></a></li>
 			<h5 style=" color: #238276;" >Resultados del Diagnóstico</h5><hr style=" background: #238276; width: 93%; margin-top: -12px; ">
-			<li><a href="{{route('analisisEFInfo')}}"><h6 style="font-size: 17px;">Análisis EFI y EFE</h6><span class="rounded-circle">08</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Análisis EFI y EFE</h6><span class="rounded-circle">08</span></a></li>
 
-			<li><a href="{{route('analisisDofaInfo')}}"><h6 style="font-size: 17px;">Análisis DOFA</h6><span class="rounded-circle">09</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Análisis DOFA</h6><span class="rounded-circle">09</span></a></li>
 
 			<li><a><h6 style="font-size: 17px;">Análisis Ansorff</h6><span class="rounded-circle">10</span></a></li>
 		</ul>

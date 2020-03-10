@@ -275,7 +275,7 @@
 </div>
 @endif
 <!-- Button trigger modal -->
-<span class="icon-info"  data-toggle="modal" data-target="#staticBackdrop" style="cursor: pointer;"></span>
+<span class="icon-info"  data-toggle="modal" data-target="#exampleModalScrollable" style="cursor: pointer;"></span>
 
 
 {{-- script para mostrar el contenido  --}}
@@ -313,28 +313,18 @@
 
 <!-- Modal -->
 <div class="ajustar">
-    <div class="modal" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content" style="height: 30rem !important;margin-top: 31%;height: 58%;margin-top: 31%;width: 200%;margin-left: -50%;">
-                <div class="modal-header">
-                    <h5 class="modal-title tituloModal" id="exampleModalCenterTitle" style="margin-left: 40% !important;font-size: 2rem !important;">Bienvenid@</h5>
-                    <span class="icon-cancel-circle" style="color: #FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
+            <div class="modal-content" >
+            <div class="modal-header">
+                    <h5 class="modal-title tituloModal" id="exampleModalCenterTitle">PROPUESTA DE VALOR</h5>
+                    <span class="icon-cancel-circle" style="color:#FC7323 !important; font-size: 32px; cursor: pointer; margin-top: 4px;
                     margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
 
                 </div>
                 <div class="modal-body">
-                    <p style="text-align: justify;">La planeación estratégica es el proceso de gestión que permite a las Mipymes definir y establecer los objetivos que se pretenden lograr, así como las actividades que se llevarán a cabo para alcanzarlos, esto teniendo como premisa una mejor toma de decisiones y la intención de generar el mapa de navegación  a la unidad de negocio.<br><br>
-                        <b style="font-weight: bold;font-size: 17px;">Este mapa consiste en:</b><br>
-                        · Definir misión, visión, valores y los objetivos de largo plazo de la empresa.<br>
-                        · Realizar un análisis interno y externo de la organización<br>
-                        · Establecer las estrategias que apoyan los objetivos, su plan respectivo y los medios de medición.<br>
-                        Lo anterior se logra a través de los  4 módulos  que PlaneEm pone a su disposición: <br>
-                        <b style="font-weight: bold;">· Módulo 1:</b> Pensamiento y direccionamiento estratégico.<br>
-                        <b style="font-weight: bold;">· Módulo 2:</b> Diagnóstico estratégico.<br>
-                        <b style="font-weight: bold;">· Módulo 3:</b> Diseño y formulación de estrategias.<br>
-                        <b style="font-weight: bold;">· Módulo 4:</b> Indicadores de Gestión.<br>
-
-                    </p>
+                    <p style="text-align: justify;">INFORMACIÓN NUEVA</p>
                 </div>
 
             </div>

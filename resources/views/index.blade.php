@@ -75,7 +75,7 @@
 				<!-- Comienzo CARD -->
 				<div class="col-lg-4 col-md-6 d-block mx-auto w-100" alt="First slide" style="padding: 120px 50px;">
 
-					<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
+					<h2 class="py-lg-4 h1-responsive text-center py-4" style="color: white;">Aliados</h2>
 
 					<!--Card-->
 					<div class="card card-cascade">
@@ -102,9 +102,7 @@
 				<!-- Comienzo CARD -->
 				<div class="col-lg-4 col-md-6 d-block mx-auto w-100" alt="Second slide"
 				style="padding: 120px 50px;">
-
-				<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
-
+				<h2 class="py-lg-4 h1-responsive text-center py-4" style="color: white;">Aliados</h2>
 				<!--Card-->
 				<div class="card card-cascade">
 
@@ -135,7 +133,7 @@
 			<!-- Comienzo CARD -->
 			<div class="col-lg-4 col-md-6 d-block w-100 m-auto" alt="Third slide" style="padding: 120px 50px;">
 
-				<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
+				<h2 class="py-lg-4 h1-responsive text-center py-4" style="color: white;">Aliados</h2>
 
 				<!--Card-->
 				<div class="card card-cascade">
@@ -170,7 +168,7 @@
 			<div class="col-lg-4 col-md-6 d-block mx-auto w-100" alt="Second slide"
 			style="padding: 120px 50px;">
 
-			<h2 class="py-lg-4 h1-responsive text text-center py-4">Aliados</h2>
+			<h2 class="py-lg-4 h1-responsive text-center py-4" style="color: white;">Aliados</h2>
 
 			<!--Card-->
 			<div class="card card-cascade">
@@ -312,7 +310,7 @@
 id="enlaces">
 <!-- TITULO ENLACES -->
 <div class="">
-	<h2 class="h1-responsive text text-center py-4 tituloEnlaces">Enlaces</h2>
+	<h2 class="h1-responsive text-center py-4 tituloEnlaces">Enlaces</h2>
 </div>
 <!-- CONTENEDOR LOGOS REDES SOCIALES -->
 <article class="row mt-5 contenedorI w-100">

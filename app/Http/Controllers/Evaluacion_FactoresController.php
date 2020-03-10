@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Evaluacion_Factores;
-
+use App\Model\TipoPreguntaansorft;
+use App\Model\tipo_Penetracion;
 class Evaluacion_FactoresController extends Controller
 {
 
@@ -19,6 +20,7 @@ class Evaluacion_FactoresController extends Controller
         $pesoRelativo = $request->get('Peso_Relativo');
         $calificacion = $request->get('Calificación');
         $peso = $request->get('Peso_Ponderado');
+        
       
         foreach ($tipo as $tipo) {
 
@@ -42,13 +44,16 @@ class Evaluacion_FactoresController extends Controller
         }
 
 
-          
+
         $message = array(
             'message' => 'Empresas Guardadas con Éxito',
             'alert-type' => 'success'
         );
+    
+
+
         
-        return view('Modulo2.analisisEFInfo')->with($message)->with('id_Planeacion',$id_Planeacion);;
-      
+        return view('Modulo2.analisisEFInfo')->with($message)->with('id_Planeacion',$id_Planeacion);
+
     }
 }

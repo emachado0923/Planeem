@@ -61,5 +61,28 @@
 	
 </section>
 @yield('script')
+<script>
 
+	$(document).ready(function () {
+		$('.items li:nth-child(9)').addClass("acti");
+		$('.items li').click(function () {
+			$('.items li').removeClass("acti");
+			$(this).addClass("acti");
+
+
+		})
+
+		$('.valores').mouseenter(function(){
+			let mensaje = $(this).attr('mensaje');
+
+			$('.hover').html(`<p>${mensaje}</p>`)
+			$('.hover').show()
+
+		})
+		$('.valores').mouseleave(function(){
+
+			$('.hover').hide()
+		})
+	})
+</script>
 @endsection

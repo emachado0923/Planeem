@@ -27,7 +27,8 @@
                 1.0: Muy importante</p>
 	</div>
 </section>
-		<!-- contenedores -->
+<form id="form" style="display:none" action="{{ route('analisisEFIgrafica')}}" method="POST" role="form">
+	<!-- contenedores -->
 		<div class="row">
   			<div class="col-md-6 conte1" data-toggle="modal" data-target="#exampleModal">
   					<div class="botonopo1" value="Fortalezas_ventana" >
@@ -37,6 +38,7 @@
 						<div class="scrollfortaleza3">
 								@foreach ($fortaleza as $for)
 								<p>{{$for->nombre}}</p>
+								<input type="text" value="{{$for->id}}" name="id_respuesta_analisis[]" style="display:none">
 								 @endforeach</p>
 						</div>
 					</div>
@@ -50,6 +52,9 @@
 						
 							 @foreach ($oportunidad as $opo)
 								<p>{{$opo->nombre}}</p>
+
+						<input type="text" value="{{$opo->id}}" name="id_respuesta_analisis[]" style="display:none">
+
 								 @endforeach</p>
 						</div>
 					</div>
@@ -64,6 +69,10 @@
   						<div class="scrollfortaleza">
 								@foreach ($debilidad as $debi)
 								<p>{{$debi->nombre}}</p>
+
+
+						<input type="text" value="{{$debi->id}}" name="id_respuesta_capacidad[]" style="display:none">
+
 								 @endforeach
 						</div>
 					</div>
@@ -76,17 +85,22 @@
   						<div class="scrollfortaleza">
 							  @foreach ($amenaza as $ame)
 							 <p>{{$ame->nombre}}</p>
+
+								<input type="text" value="{{$ame->id}}" name="id_respuesta_capacidad[]" style="display:none">
+
 							  @endforeach
 					
 						</div>
 					</div>
   			</div>
-  			<a href="{{route('analisisEFIgrafica')}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
+  			<button type="submit" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</button>
 		</div>
 
 	</section>
 <div class="infon">
 	
+
+</form>
 </div>
 
 <span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
@@ -222,7 +236,32 @@
 
 </section>
 @yield('script')
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+<script>
+
+  $(document).ready(function () {
+   $('.items li:nth-child(12)').addClass("acti");
+   $('.items li').click(function () {
+    $('.items li').removeClass("acti");
+    $(this).addClass("acti");
+
+
+  })
+
+   $('.valores').mouseenter(function(){
+    let mensaje = $(this).attr('mensaje');
+
+    $('.hover').html(`<p>${mensaje}</p>`)
+    $('.hover').show()
+
+  })
+   $('.valores').mouseleave(function(){
+
+    $('.hover').hide()
+  })
+ })
+</script>
 
 
 

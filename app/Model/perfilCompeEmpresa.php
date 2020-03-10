@@ -15,6 +15,8 @@ class perfilCompeEmpresa extends Model
         'nombreEmpresa',
         'pesoRelativo',
         'totalPeso',
+        'totalCalificacion',
+        'totalPonderado',
         'calificacion',
         'cantidad',
         'pesoPonderado',

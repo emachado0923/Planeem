@@ -51,17 +51,17 @@
 								<th data-column_name="idRespuestaCapacidad" data-id="{{$d->idCapacidad}}" data-name="$d->nombre">{{$d->nombre}}</th>
 								<input type="hidden" name="preguntas[]" value="{{$d->idCapacidad}}">
                 
-                                <td><input type = 'text' id="ponde-{{$d->idCapacidad. "-" .$plane}}"  name="ponderacion[]"  required class = 'pesoRelativo cantidad_req' onkeyup='obtTotalMat({{$d->idCapacidad}})'</td>
-                                <td><input type = 'text' id="cali-{{$d->idCapacidad. "-" .$plane}}"  name="calificacion[]"  required class = 'calificacion valor_unitreq' onkeyup='obtTotalMat({{$d->idCapacidad}})'></td>
-                                 <td><input type = 'text' aria-disabled="true" id="puntuacion-{{$d->idCapacidad. "-" .$plane}}" name="puntuacionPonderada[]" class = 'pesoPonderado valor_totreq' onchange='calcTotal()'></td>
+                                <td><input type="text" id="ponde-{{$d->idCapacidad. "-" .$plane}}" onkeypress="return solonumeros(event)"  name="ponderacion[]"  required class = 'pesoRelativo cantidad_req' onkeyup='obtTotalMat({{$d->idCapacidad}})'</td>
+                                <td><input type="text" id="cali-{{$d->idCapacidad. "-" .$plane}}" onkeypress="return solonumeros(event)" name="calificacion[]"  required class = 'calificacion valor_unitreq' onkeyup='obtTotalMat({{$d->idCapacidad}})'></td>
+                                 <td><input type="text" aria-disabled="true" id="puntuacion-{{$d->idCapacidad. "-" .$plane}}" name="puntuacionPonderada[]" onkeypress="return solonumeros(event)" class = 'pesoPonderado valor_totreq' onchange='calcTotal()'></td>
 
 							</tr>
 							@endforeach
 							<tr class="totalFortaleza">
 									<th >Total</th>
-									<td class="tdclassFortaleza"><textarea name="totalCalificacion"   id="granTotal" class="tablacamFortalezas" ></textarea></td>
-									<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  id="pesorpesoPonderado" class="tablacamFortalezas  "></textarea></td>
-									<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad1"  id="totalcalificacion" class="tablacamFortalezas totales"></textarea></td>
+									<td class="tdclassFortaleza"><textarea readonly name="totalCalificacion" onkeypress="return solonumeros(event)"  id="pesorpesoPonderado" class="tablacamFortalezas" ></textarea></td>
+									<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion" onkeypress="return solonumeros(event)" id="totalcalificacion" class="tablacamFortalezas  "></textarea></td>
+									<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad1"  onkeypress="return solonumeros(event)" id="granTotal" class="tablacamFortalezas totales"></textarea></td>
 							</tr>
 
 						</tbody>
@@ -213,8 +213,34 @@
 	</div>
 	@endsection
 	@push('script')
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+	<script>
+	
+		$(document).ready(function () {
+			$('.items li:nth-child(3)').addClass("acti");
+			$('.items li').click(function () {
+				$('.items li').removeClass("acti");
+				$(this).addClass("acti");
+	
+	
+			})
+	
+			$('.valores').mouseenter(function(){
+				let mensaje = $(this).attr('mensaje');
+	
+				$('.hover').html(`<p>${mensaje}</p>`)
+				$('.hover').show()
+	
+			})
+			$('.valores').mouseleave(function(){
+	
+				$('.hover').hide()
+			})
+		})
+	</script>
 	<link href="{{ asset('css/toastr.css') }}"  rel="stylesheet"/>
+	<script src="{{asset('js/solo_numeros.js')}}"></script>
 	<script>
 		$(document).ready(function(){
 			var planeacion = localStorage.getItem('id');
@@ -235,9 +261,9 @@
     
     function obtTotalMat(index){
         if($("#material"+index+" .cantidad_req").val() > 1 || $("#material"+index+" .cantidad_req").val() < 0 ){
-            toastr.error('error el numero no pudede ser mayor a 1', '!')
+            toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
         }else if($("#material"+index+" .valor_unitreq").val() > 4 || $("#material"+index+" .valor_unitreq").val() < 0){
-            toastr.error('error el numero no pudede ser mayor a 4', '!')
+            toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
         }else{
          
             var Relativo  = $("#material"+index+" .cantidad_req").val();
@@ -247,7 +273,9 @@
             var tot = ($("#material"+index+" .cantidad_req").val()) * $("#material"+index+" .valor_unitreq").val();
            $("#material"+index+" .valor_totreq").val(tot);
 
-        }
+		}
+		
+		
         calcTotal();
     }
     
@@ -270,7 +298,31 @@
 
             $("#granTotal").val(tot);
             $("#pesorpesoPonderado").val(Relativo);
-            $("#totalcalificacion").val(Calificacion);
+			$("#totalcalificacion").val(Calificacion);
+
+
+			var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+			}
+
+
+			
+			
+			if( $("#pesorpesoPonderado").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+            }
 
             }
 

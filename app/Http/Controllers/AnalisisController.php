@@ -8,8 +8,9 @@ use App\Model\respuestaAnalisis;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
-
+use App\Model\respues_Penetracion;
+use App\Model\ansorft;
+use App\Model\Desarrollo_Producto;
 class AnalisisController extends Controller
 {
 
@@ -201,7 +202,7 @@ class AnalisisController extends Controller
         $typeO = ['oAlta', 'oMedia', 'oBaja'];
 
         $amenaza= DB::table('respuesta_analisis')
-        ->select('nombre')
+        ->select('analisis.nombre','respuesta_analisis.id')
         ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
         ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
         ->whereIn('respuesta', $typeA)
@@ -209,7 +210,7 @@ class AnalisisController extends Controller
         ->get();
 
         $oportunidad=DB::table('respuesta_analisis')
-        ->select('nombre')
+        ->select('analisis.nombre','respuesta_analisis.id')
         ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
         ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
         ->whereIn('respuesta', $typeO)
@@ -220,7 +221,7 @@ class AnalisisController extends Controller
         $typeD = ['dAlta', 'dMedia', 'dBaja'];
 
         $fortaleza= DB::table('respuesta_capacidad')
-        ->select('nombre')
+        ->select('capacidads.nombre','respuesta_capacidad.id')
         ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
         ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
         ->whereIn('respuesta', $typeF)
@@ -228,7 +229,7 @@ class AnalisisController extends Controller
         ->get();
 
         $debilidad= DB::table('respuesta_capacidad')
-        ->select('nombre')
+        ->select('capacidads.nombre','respuesta_capacidad.id')
         ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
         ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
         ->whereIn('respuesta', $typeD)
@@ -243,10 +244,10 @@ class AnalisisController extends Controller
     }
 
 
-    public function getDOFA(){
+    public function getDOFA(Request $request){
 
 
-        $id = auth()->user()->selected_planne;
+        $id = $request->get('id_planecion');
         
         $typeA = ['aAlta', 'aMedia', 'aBaja'];
         $typeO = ['oAlta', 'oMedia', 'oBaja'];
@@ -290,6 +291,71 @@ class AnalisisController extends Controller
         // dd($amenaza);
 
         return view('Modulo2.analisisDofaI')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
+
+    }
+
+
+
+    public function getDOFA1(Request $request){
+
+
+       $id = $request->input('id_planecion');
+
+        // $respuesta_penetracion= DB::table('respuesta_analisis')
+        // ->select('nombre')
+        // ->where('idPlaneacion', $id)
+        // ->get();
+
+        $ansorft = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
+        ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        ->where('idPlaneacion',$id)
+        ->where('pesoRelativo','>',0)
+        ->where('calificacion','>',0)
+        ->where('pesoPonderado','>',0)
+        ->get();
+
+        $respues_Penetracion = respues_Penetracion::select('respues_Penetracion.*','tipo_preguntaansorfts.nombre')
+        ->join('tipo_preguntaansorfts','respues_Penetracion.id_tipo_preguntaansorfts','tipo_preguntaansorfts.id')
+        ->where('id_Planeacion',$id)
+        ->where('Peso_Relativo','>',0)
+        ->where('Calificación','>',0)
+        ->where('Peso_Ponderado','>',0)
+        ->get();
+
+
+        $Desarrollo_Producto = Desarrollo_Producto::select('desarrollo_producto.*','tipo_preguntaansorfts.nombre')
+        ->join('tipo_preguntaansorfts','desarrollo_producto.id_tipo_preguntaansorfts','tipo_preguntaansorfts.id')
+        ->where('id_Planeacion',$id)
+        ->where('Peso_Relativo','>',0)
+        ->where('Calificación','>',0)
+        ->where('Peso_Ponderado','>',0)
+        ->get();
+
+
+
+
+
+        // $respues_Penetracion = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('idPlaneacion',$id)
+        // ->where('Peso_Relativo','>',0)
+        // ->where('Calificación','>',0)
+        // ->where('Peso_Ponderado','>',0)
+        // ->get();
+
+        // $respues_Penetracion = respues_Penetracion::select('respuesta_penetracion.*',' .Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('idPlaneacion',$id_planeacion)
+     
+        // ->get();
+
+    
+        // respuesta_penetracion
+
+
+        // dd($amenaza);
+
+         return view('Modulo2.analisisAnsorftB')->with(compact('ansorft','respues_Penetracion','Desarrollo_Producto'));
 
     }
 }

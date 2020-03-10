@@ -42,13 +42,14 @@
 					<div class="respuestas2">
 						<div class="wrap" style=" ">
 							<div class="radio">
-												<input type="text" name="id_planecion" value="{{$proyecto->id_Planeacion}}" style="display:none;">
+											
 												<select  id="pro_id"  style="cursor: pointer;width: 155%;text-align: center;border: #FC7323 1px solid;border-radius: 6px;"  class="form-control">
 													<option selected>Choose...</option>
 														@foreach ($Verbos as $Verbos)
 														<option  value="{{$Verbos['nombre']}}">{{$Verbos->nombre}} </option>
 														@endforeach
 												</select>
+												<input type="text" name="id_planecion" id="id_planecion"  value="{{$proyecto}}" style="display:none" >
 
 								<br>
 								<br>
@@ -141,7 +142,13 @@
 	});
 </script>
 
+<script>
+	   id_planecion = localStorage.getItem('id');
+	
+	   $('#id_planecion').val(id_planecion);
 
+	      console.log(id_planecion);
+</script>
 
 <script type="text/javascript">
 	// Refresca Producto: Refresco la Lista de Productos dentro de la Tabla

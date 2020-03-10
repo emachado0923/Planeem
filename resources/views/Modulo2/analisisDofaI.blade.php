@@ -60,7 +60,11 @@
 				</div>
 			</div>
 		</div>
-		<a href="{{route('analisisDofaInfo')}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
+
+		
+	
+	
+		<a onclick="btn12()" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
 	</div>
 </section>
 <div class="infon">
@@ -198,32 +202,46 @@
 </div>
 
 </section>
+<form method="POST" style="display:none" id="form" action="{{route('analisisDofa')}}" >
+	@csrf
+		<input type="text" id="id_planecion" name="id_planecion">	
+		<button  type="submit" id="btn12">		
+</form>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script>
+
+  $(document).ready(function () {
+   $('.items li:nth-child(13)').addClass("acti");
+   $('.items li').click(function () {
+    $('.items li').removeClass("acti");
+    $(this).addClass("acti");
+
+
+  })
+
+   $('.valores').mouseenter(function(){
+    let mensaje = $(this).attr('mensaje');
+
+    $('.hover').html(`<p>${mensaje}</p>`)
+    $('.hover').show()
+
+  })
+   $('.valores').mouseleave(function(){
+
+    $('.hover').hide()
+  })
+ })
+</script>
+<script>
+	var id = localStorage.getItem('id')
+	$('#id_planecion').val(id);
+	
+
+	function btn12(){
+		document.getElementById('btn12').click();
+	}
+
+</script>
 @yield('script')
-
-<script>
-	function guardar(){
-
-
-		if (document.getElementById('Para_paso1').value == 0) {
-
-			document.getElementById("id").innerHTML = "error";
-
-		}else{
-			var miDato = document.getElementById('Para_paso1').value;
-			localStorage.setItem('Para',miDato);
-			localStorage.setItem('Progreso','10%');
-		}
-	};
-</script>
-
-
-
-<script>
-
-	var Progreso = localStorage.getItem('Progreso')
-	document.getElementById("id").style.width=Progreso;
-	document.getElementById("id").innerHTML = Progreso;
-
-
-</script>
 @endsection

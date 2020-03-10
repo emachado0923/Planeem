@@ -16,8 +16,8 @@ class WordTestController extends Controller
         $wordTest = new \PhpOffice\PhpWord\PhpWord();
         $newSection = $wordTest->addSection();
         $nombre_proyecto = $request->input('nombre_proyecto');
-        $Propuesta = $request->input('Propuesta_valor');
-        $Mision= $request->input('Mision_Organizacional');
+        $Propuesta = $request->input('Propuesta');
+        $Mision= $request->input('Mision');
         $Vision = $request->input('Vision');
         $Mega = $request->input('Mega');
         $valores = $request->input('valores');
@@ -59,9 +59,9 @@ class WordTestController extends Controller
 
 
         if($Mega  == "Mega_Empresarial"){
-                    $Mega_Empresarial =pensamiento_pensamiento::select('Mega_Empresarial')->where('id_Planeacion',$nombre_proyecto)->first();
-                    $newSection->addText('Mega Empresarial');
-                    $newSection->addText($Mega_Empresarial->Mega_Empresarial);
+             $Mega_Empresarial =pensamiento_pensamiento::select('Mega_Empresarial')->where('id_Planeacion',$nombre_proyecto)->first();
+                         $newSection->addText('Mega Empresarial');
+            $newSection->addText($Mega_Empresarial->Mega_Empresarial);
 
         }else{
             $Mega_Empresarial = " ";

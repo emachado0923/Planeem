@@ -42,8 +42,10 @@
 
 
 <script>
-	var nombre = localStorage.getItem('nombre_proyecto');
+	var nombre = localStorage.getItem('id');
 	document.getElementById('nombre_proyecto').innerHTML =  nombre;
+
+	
 </script>
 
 @endsection

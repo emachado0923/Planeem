@@ -165,7 +165,7 @@
 								<td colspan="2" data-column_name="nombre" data-id="{{$fina->id}}" data-name="{{$fina->nombre}}" id="tdFormulario" class="thCampo1" >{{$fina->nombre}}</td>
 								<td><h5 style="color: #238276; font-weight: bold;">Es una</h5></td>
 								<td   class="radio">
-									<input type="hidden"id="gender" name="preguntas[]" value="{{ $fina->id }}">
+									<input type="hidden"	id="gender" name="preguntas[]" value="{{ $fina->id }}">
 									<input type="radio" name="{{$fina->id}}" id="debilidad-{{$fina->id. "-" .auth()->user()->selected_planne}}" value="dAlta">
 									<label for="debilidad-{{$fina->id. "-" .auth()->user()->selected_planne}}">A</label>
 
@@ -323,6 +323,7 @@
 		@yield('script')
 		@endsection
 		@push('script')
+		
 		<script>
 			$(document).ready(function(){
 				var planeacion = localStorage.getItem('id');

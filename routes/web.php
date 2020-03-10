@@ -14,7 +14,7 @@
 // })->name('index');
 Route::post('/index/plam','planeacionControlle@indexp')->name('index/plam')->middleware('disablepreventback')->middleware('verified');
 ////////update modeulo 1//////////////////////////////
-Route::post('update/pensamiento','planeacionControlle@update')->middleware('disablepreventback')->middleware('verified')->name('update/pensamiento');
+Route::post('updatepensamiento','planeacionControlle@update')->middleware('disablepreventback')->middleware('verified')->name('update/pensamiento');
 Route::post('/updatePlanecion','planeacionControlle@updatePlanecion')->middleware('disablepreventback')->middleware('verified')->name('updatePlanecion');
 Route::post('/updatePropuesta','planeacionControlle@updatePropuesta')->middleware('disablepreventback')->middleware('verified')->name('updatePropuesta');
 Route::post('update/Valor', 'planeacionControlle@updateValor' )->middleware('disablepreventback')->middleware('verified')->name('updateValor');
@@ -152,9 +152,9 @@ Route::get('/analisisDofaInfo', function () {
 Route::get('/analisisDofaI', function () {
     return view('Modulo2.analisisDofaI');
 })->name('analisisDofaI')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/analisisDofa', function () {
-    return view('Modulo2.analisisDofa');
-})->name('analisisDofa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
+
+
 // rutas del modulo3
 Route::get('/DisenoObjetivos', function () {
     return view('Modulo3.DisenoObjetivos');
@@ -236,7 +236,9 @@ Route::post('/perfilCompeStore','PerfilCompeController@storeEmpe')->middleware('
     Route::post('/analisisPestal/create','AnalisisController@store')->name('guardaAna')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     //Routes análisis EFI  Y EFi
     Route::post('/getDebiAmena','AnalisisController@getEFI')->name('analisisEFI')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-    Route::get('/getOpoFor','AnalisisController@getDOFA')->name('analisisDOFA')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::post('/getOpoFor','AnalisisController@getDOFA')->name('analisisDOFA')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::post('/getOpoForb','AnalisisController@getDOFA1')->name('analisisDOFA1')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
     //Routes de análisis porter
     Route::post('/analisisporter','AnalisisPorterController@index')->name('analisisporter')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     Route::get('/analisisporter','AnalisisPorterController@index')->name('analisisporter')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
@@ -250,9 +252,10 @@ Route::post('/perfilCompeStore','PerfilCompeController@storeEmpe')->middleware('
     // Route::get('/ansorftTipo1/create','AnsorftController@create');
     Route::get('/ansorftdatos/{id}','AnsorftController@datos');
     Route::post('/ansorftDiversificacion', 'PenetracionMercadoController@storage')->name('ansorftDiversificacion')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-    Route::get('/analisisEFIgrafica', function () {
-    return view('Modulo2.analisisEFIgrafica');
-    })->name('analisisEFIgrafica')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
+
+    ///dofa
+    Route::post('/analisisDofa', 'DofaController@dofa')->name('analisisDofa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // rutas del modulo3
@@ -280,7 +283,7 @@ Route::post('/estrategias','Modulo3Controller@estrategias')->name('estrategias')
 Route::post('/Verbos','Modulo3Controller@Verbos')->name('Verbos')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 Route::post('/Objetivos/storg','Modulo3Controller@guardar')->name('Objetivos')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 Route::post('/FormulacionResumen','FormulacionController@storeage')->name('FormulacionCon')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::post('/createWord', ['as'=>'createWord','uses'=>'WordTestController@createWordDocx'])->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+Route::post('/createWord', ['as'=>'createWord','uses'=>'WordTestController@createWordDocx'])->     middleware('verified')->middleware('auth');
 Route::post('/createpdf','pdfController@pdf')->name('createpdf')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 
 Route::post('/Evaluacion','Evaluacion_FactoresController@store')->name('Evaluacion')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
@@ -301,10 +304,24 @@ Route::get('/vista2-2', function () {
     return view('Modulo4.vista2-2');
 })->name('vista2-2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 
+
+
+Route::get('/analisisAnsorft', function () {
+    return view('Modulo2.analisisAnsorft');
+})->name('analisisAnsorft')->middleware('verified')->middleware('auth');
 //Análisis EFE y EFI graficas
 Route::get('/graficas/{id}','graficaControler@dotos');
-Route::get('/fortalesas/{id}','graficaControler@fortalesas');
-Route::get('/perfil_compes/{id}','graficaControler@perfil_compe');
+
+Route::post('penetracion_mercadoanf', 'respues_PenetracionController@storage')->name('penetracion_mercadoanf')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+Route::post('Desarrollo_ProductoController', 'Desarrollo_ProductoController@storage')->name('Desarrollo_ProductoController')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 
 
 
+Route::get('/analisisEFIgrafica', function () {
+    return view('Modulo2.analisisEFIgrafica');
+    })->name('analisisEFIgrafica')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    
+
+    
+Route::post('/estrategiasCon','estrategiasController@storage')->name('estrategiasController')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    

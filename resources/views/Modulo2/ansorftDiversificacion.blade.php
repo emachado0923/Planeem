@@ -3,9 +3,7 @@
 @section('content')
 <header>
 	@yield('js')
-	@section('f')
-	<a href="{{ route('home') }}" class="clos" aria-label="Close"><span class="icon-undo2"></span></a>
-	@endsection
+
 	@include('modal/modal')
 	<div class="progress">
 		<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -29,7 +27,7 @@
 					<tr>
 						<th  colspan="1" style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;"><span data-toggle="modal" data-target="#exampleModal4" class="icon-info" id="infoAnsorft3"></span>Penetración de Mercado</th>
 		
-
+						<th colspan="1"style="border: none;"></th>
 
 						@foreach ($Penetracion_tipo as $Penetracion_tipo)
 							@if ($Penetracion_tipo->name_tipo_Penetración === "Adquisición o Fusión de Empresas")
@@ -60,9 +58,9 @@
 							<input type="text" name="id_penetracion_mercadoanf[]" value="{{$Adquisicion->id_penetracion_mercadoanf}}" style="display:none" >
 
 							<td style="border: none;"></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado"  class = 'cantidad_req0' value="{{$Adquisicion->Peso_Relativo}}" required  onkeyup='obtTotalMat0({{$Adquisicion->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq0' value="{{$Adquisicion->Calificación}}" required  onkeyup='obtTotalMat0({{$Adquisicion->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq0' value="{{$Adquisicion->Peso_Ponderado}}" required  onchange='calcTotal0()'></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado"  class = 'cantidad_req0' value="{{$Adquisicion->Peso_Relativo}}" required  onkeyup='obtTotalMat0({{$Adquisicion->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq0' value="{{$Adquisicion->Calificación}}" required  onkeyup='obtTotalMat0({{$Adquisicion->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq0' value="{{$Adquisicion->Peso_Ponderado}}" required  onchange='calcTotal0()' onkeypress="return solonumeros(event)"></td>
 						</tr>
 						@endforeach
 						
@@ -73,9 +71,9 @@
 					<input type="text" name="id_penetracion_mercadoanf[]" value="{{$penetracion_mercadoanf1->id_penetracion_mercadoanf}}" style="display:none" >
 						<td class="thCampo1" id="tdFormulario"> {{$penetracion_mercadoanf1->name_penetracion_mercadoanf}}</td>
 						<td style="border: none;"></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req0' onkeyup='obtTotalMat0({{$penetracion_mercadoanf1->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq0' onkeyup='obtTotalMat0({{$penetracion_mercadoanf1->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq0' onchange='calcTotal1()'></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req0' onkeyup='obtTotalMat0({{$penetracion_mercadoanf1->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq0' onkeyup='obtTotalMat0({{$penetracion_mercadoanf1->id_penetracion_mercadoanf}})'onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq0' onchange='calcTotal1()' onkeypress="return solonumeros(event)"></td>
 					</tr>
 					@endforeach
 						
@@ -86,9 +84,9 @@
 					<tr class="totalFortaleza">
 						<th >Total</th>
 						<td style="border: none;"></td>
-						<td class="tdclassFortaleza"><textarea name="totalCalificación"   id="pesorpesoPonderado0"  class="tablacamFortalezas" ></textarea></td>
-						<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  	  id="totalCalificación0" class="tablacamFortalezas  "></textarea></td>
-						<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad" id="granTotal0" class="tablacamFortalezas totales"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalCalificación"   id="pesorpesoPonderado0"  class="tablacamFortalezas" onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion"  	  id="totalCalificación0" class="tablacamFortalezas  "onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad" id="granTotal0" class="tablacamFortalezas totales" onkeypress="return solonumeros(event)"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
@@ -132,9 +130,9 @@
 					<tr id = 'material2{{$penetracion_mercadoanf2->id_penetracion_mercadoanf}}' class="formulario material2">
 						<td class="thCampo1" id="tdFormulario"> {{$penetracion_mercadoanf2->name_penetracion_mercadoanf}}</td>
 						<td style="border: none;"></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req2' required  onkeyup='obtTotalMat2({{$penetracion_mercadoanf2->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq2' required  onkeyup='obtTotalMat2({{$penetracion_mercadoanf2->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq2' required   onchange='calcTotal2()'></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req2' required  onkeyup='obtTotalMat2({{$penetracion_mercadoanf2->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq2' required  onkeyup='obtTotalMat2({{$penetracion_mercadoanf2->id_penetracion_mercadoanf}})'onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq2' required   onchange='calcTotal2()'onkeypress="return solonumeros(event)"></td>
 					</tr>
 					@endforeach
 						
@@ -145,9 +143,9 @@
 							<td class="thCampo1" id="tdFormulario"> {{$Marca->name_penetracion_mercadoanf}}</td>
 							<input type="text" name="id_penetracion_mercadoanf[]" value="{{$Marca->id_penetracion_mercadoanf}}" style="display:none" >
 							<td style="border: none;"></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req2' value="{{$Marca->Peso_Relativo}}" required  onkeyup='obtTotalMat2({{$Marca->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq2'value="{{$Marca->Calificación}}" required  onkeyup='obtTotalMat2({{$Marca->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq2' value="{{$Marca->Peso_Ponderado}}" required  onchange='calcTotal2()'></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req2' value="{{$Marca->Peso_Relativo}}" required  onkeyup='obtTotalMat2({{$Marca->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq2'value="{{$Marca->Calificación}}" required  onkeyup='obtTotalMat2({{$Marca->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq2' value="{{$Marca->Peso_Ponderado}}" required  onchange='calcTotal2()' onkeypress="return solonumeros(event)"></td> 
 						</tr>
 						@endforeach
 
@@ -156,9 +154,9 @@
 					<tr class="totalFortaleza">
 						<th >Total</th>
 						<td style="border: none;"></td>
-						<td class="tdclassFortaleza"><textarea name="totalCalificación"   id="pesorpesoPonderado2" class="tablacamFortalezas" ></textarea></td>
-						<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  id="totalCalificación2" class="tablacamFortalezas  "></textarea></td>
-						<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad"  id="granTotal2" class="tablacamFortalezas totales"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalCalificación"   id="pesorpesoPonderado2" class="tablacamFortalezas" onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion"  id="totalCalificación2" class="tablacamFortalezas  " onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad"  id="granTotal2" class="tablacamFortalezas totales" onkeypress="return solonumeros(event)"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
@@ -205,9 +203,9 @@
 							<input type="text" name="id_penetracion_mercadoanf[]" value="{{$penetracion_mercadoanf3->id_penetracion_mercadoanf}}" style="display:none" >
 
 							<td style="border: none;"></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req3' required  onkeyup='obtTotalMat3({{$penetracion_mercadoanf3->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq3' required  onkeyup='obtTotalMat3({{$penetracion_mercadoanf3->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq3' required  onchange='calcTotal3()'></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req3' required  onkeyup='obtTotalMat3({{$penetracion_mercadoanf3->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq3' required  onkeyup='obtTotalMat3({{$penetracion_mercadoanf3->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq3' required  onchange='calcTotal3()' onkeypress="return solonumeros(event)"></td>
 						</tr>
 						@endforeach
 						@else
@@ -218,9 +216,9 @@
 							<input type="text" name="id_penetracion_mercadoanf[]" value="{{$Mercado->id_penetracion_mercadoanf}}" style="display:none" >
 
 							<td style="border: none;"></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" value="{{$Mercado->Peso_Relativo}}"  class = 'cantidad_req3' required  onkeyup='obtTotalMat3({{$Mercado->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" value="{{$Mercado->Calificación}}" class = 'valor_unitreq3' required  onkeyup='obtTotalMat3({{$Mercado->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" value="{{$Mercado->Peso_Ponderado}}" class = 'valor_totreq3' required  onchange='calcTotal3()'></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" value="{{$Mercado->Peso_Relativo}}"  class = 'cantidad_req3' required  onkeyup='obtTotalMat3({{$Mercado->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" value="{{$Mercado->Calificación}}" class = 'valor_unitreq3' required  onkeyup='obtTotalMat3({{$Mercado->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" value="{{$Mercado->Peso_Ponderado}}" class = 'valor_totreq3' required  onchange='calcTotal3()' onkeypress="return solonumeros(event)"></td>
 						</tr>
 						@endforeach
 
@@ -230,9 +228,9 @@
 					<tr class="totalFortaleza">
 						<th >Total</th>
 						<td style="border: none;"></td>
-						<td class="tdclassFortaleza"><textarea name="totalCalificación"   id="pesorpesoPonderado3" class="tablacamFortalezas" ></textarea></td>
-						<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  id="totalCalificación3" class="tablacamFortalezas  "></textarea></td>
-						<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad"  id="granTotal3" class="tablacamFortalezas totales"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalCalificación"   id="pesorpesoPonderado3" class="tablacamFortalezas" onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion"  id="pesorpesoPonderado3" class="tablacamFortalezas  " onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad"  id="granTotal3" class="tablacamFortalezas totales" onkeypress="return solonumeros(event)"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
@@ -274,9 +272,9 @@
 							<input type="text" name="id_penetracion_mercadoanf[]" value="{{$penetracion_mercadoanf4->id_penetracion_mercadoanf}}" style="display:none" >
 
 							<td style="border: none;"></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req4' required  onkeyup='obtTotalMat4({{$penetracion_mercadoanf4->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq4' required  onkeyup='obtTotalMat4({{$penetracion_mercadoanf4->id_penetracion_mercadoanf}})'></td>
-							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq4' required  onchange='calcTotal4()'></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req4' required  onkeyup='obtTotalMat4({{$penetracion_mercadoanf4->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq4' required  onkeyup='obtTotalMat4({{$penetracion_mercadoanf4->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+							<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq4' required  onchange='calcTotal4()' onkeypress="return solonumeros(event)"></td>
 						</tr>
 						@endforeach
 				@else
@@ -287,9 +285,9 @@
 					<input type="text" name="id_penetracion_mercadoanf[]" value="{{$Investigacion->id_penetracion_mercadoanf}}" style="display:none" >
 
 					<td style="border: none;"></td>
-					<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado"  value="{{$Investigacion->Peso_Relativo}}" required   class = 'cantidad_req4' onkeyup='obtTotalMat4({{$Investigacion->id_penetracion_mercadoanf}})'></td>
-					<td class="tablaAnsorft"><input type="text" name="Calificación[]"  id="pesoRelativo" value="{{$Investigacion->Calificación}}" required  class = 'valor_unitreq4' onkeyup='obtTotalMat4({{$Investigacion->id_penetracion_mercadoanf}})'></td>
-					<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" value="{{$Investigacion->Peso_Ponderado}}" required  class = 'valor_totreq4' onchange='calcTotal4()'></td>
+					<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado"  value="{{$Investigacion->Peso_Relativo}}" required   class = 'cantidad_req4' onkeyup='obtTotalMat4({{$Investigacion->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+					<td class="tablaAnsorft"><input type="text" name="Calificación[]"  id="pesoRelativo" value="{{$Investigacion->Calificación}}" required  class = 'valor_unitreq4' onkeyup='obtTotalMat4({{$Investigacion->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+					<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" value="{{$Investigacion->Peso_Ponderado}}" required  class = 'valor_totreq4' onchange='calcTotal4()' onkeypress="return solonumeros(event)"></td>
 				</tr>
 				@endforeach
 
@@ -298,9 +296,9 @@
 					<tr class="totalFortaleza">
 						<th >Total</th>
 						<td style="border: none;"></td>
-						<td class="tdclassFortaleza"><textarea name="totalCalificación"   id="pesorpesoPonderado4" class="tablacamFortalezas" ></textarea></td>
-						<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  id="totalCalificación4" class="tablacamFortalezas  "></textarea></td>
-						<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad"  id="granTotal4" class="tablacamFortalezas totales"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalCalificación"   id="pesorpesoPonderado4" class="tablacamFortalezas" onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion"  id="totalCalificación4" class="tablacamFortalezas  " onkeypress="return solonumeros(event)"></textarea></td>
+						<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad"  id="granTotal4" class="tablacamFortalezas totales" onkeypress="return solonumeros(event)"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
@@ -344,9 +342,9 @@
 
 						<td class="thCampo1" id="tdFormulario"> {{$penetracion_mercadoanf5->name_penetracion_mercadoanf}}</td>
 						<td style="border: none;"></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req5' required  onkeyup='obtTotalMat5({{$penetracion_mercadoanf5->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq5' required  onkeyup='obtTotalMat5({{$penetracion_mercadoanf5->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq5' required  onchange='calcTotal5()'></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req5' required  onkeyup='obtTotalMat5({{$penetracion_mercadoanf5->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq5' required  onkeyup='obtTotalMat5({{$penetracion_mercadoanf5->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq5' required  onchange='calcTotal5()' onkeypress="return solonumeros(event)"></td>
 					</tr>
 					@endforeach
 			@else
@@ -357,9 +355,9 @@
 				<input type="text" name="id_penetracion_mercadoanf[]" value="{{$Servicios->id_penetracion_mercadoanf}}" style="display:none" >
 
 				<td style="border: none;"></td>
-				<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" value="{{$Servicios->Peso_Relativo}} " required  class = 'cantidad_req5' onkeyup='obtTotalMat5({{$Servicios->id_penetracion_mercadoanf}})'></td>
-				<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoPonderado" value="{{$Servicios->Calificación}}"  required  class = 'valor_unitreq5' onkeyup='obtTotalMat5({{$Servicios->id_penetracion_mercadoanf}})'></td>
-				<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="pesoPonderado" value="{{$Servicios->Peso_Ponderado}}" required  class = 'valor_totreq5' onchange='calcTotal5()'></td>
+				<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" value="{{$Servicios->Peso_Relativo}} " required  class = 'cantidad_req5' onkeyup='obtTotalMat5({{$Servicios->id_penetracion_mercadoanf}})'onkeypress="return solonumeros(event)"></td>
+				<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoPonderado" value="{{$Servicios->Calificación}}"  required  class = 'valor_unitreq5' onkeyup='obtTotalMat5({{$Servicios->id_penetracion_mercadoanf}})'onkeypress="return solonumeros(event)"></td>
+				<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="pesoPonderado" value="{{$Servicios->Peso_Ponderado}}" required  class = 'valor_totreq5' onchange='calcTotal5()' onkeypress="return solonumeros(event)"></td>
 			</tr>
 			@endforeach
 
@@ -367,9 +365,9 @@
 			<tr class="totalFortaleza">
 				<th >Total</th>
 				<td style="border: none;"></td>
-				<td class="tdclassFortaleza"><textarea name="totalCalificación"   id="pesorpesoPonderado5" class="tablacamFortalezas" ></textarea></td>
-				<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  id="totalCalificación5" class="tablacamFortalezas  "></textarea></td>
-				<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad"  id="granTotal5" class="tablacamFortalezas totales"></textarea></td>
+				<td class="tdclassFortaleza"><textarea readonly name="totalCalificación"   id="pesorpesoPonderado5" class="tablacamFortalezas" onkeypress="return solonumeros(event)"></textarea></td>
+				<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion"  id="totalCalificación5" class="tablacamFortalezas  " onkeypress="return solonumeros(event)"></textarea></td>
+				<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad"  id="granTotal5" class="tablacamFortalezas totales" onkeypress="return solonumeros(event)"></textarea></td>
 			</tr>
 				</tbody>
 			</table>
@@ -409,9 +407,9 @@
 					<tr id = 'material6{{$penetracion_mercadoanf6->id_penetracion_mercadoanf}}' class="formulario material6">
 						<td class="thCampo1" id="tdFormulario"> {{$penetracion_mercadoanf6->name_penetracion_mercadoanf}}</td>
 						<td style="border: none;"></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado"  class = 'cantidad_req6' required  onkeyup='obtTotalMat6({{$penetracion_mercadoanf6->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo"  class = 'valor_unitreq6 'required   onkeyup='obtTotalMat6({{$penetracion_mercadoanf6->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq6' required  onchange='calcTotal6()'></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado"  class = 'cantidad_req6' required  onkeyup='obtTotalMat6({{$penetracion_mercadoanf6->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo"  class = 'valor_unitreq6 'required   onkeyup='obtTotalMat6({{$penetracion_mercadoanf6->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq6' required  onchange='calcTotal6()' onkeypress="return solonumeros(event)"></td>
 					</tr>
 					@endforeach
 			@else
@@ -422,9 +420,9 @@
 				<input type="text" name="id_penetracion_mercadoanf[]" value="{{$Detallistas->id_penetracion_mercadoanf}}" style="display:none" >
 
 				<td style="border: none;"></td>
-				<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" value="{{$Detallistas->Peso_Relativo}}"  required  class = 'cantidad_req6' onkeyup='obtTotalMat6({{$Detallistas->id_penetracion_mercadoanf}})'></td>
-				<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" value="{{$Detallistas->Calificación}}" required  class = 'valor_unitreq6' onkeyup='obtTotalMat6({{$Detallistas->id_penetracion_mercadoanf}})'></td>
-				<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" value="{{$Detallistas->Peso_Ponderado}}"  required  class = 'valor_totreq6' onchange='calcTotal6()'></td>
+				<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" value="{{$Detallistas->Peso_Relativo}}"  required  class = 'cantidad_req6' onkeyup='obtTotalMat6({{$Detallistas->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+				<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" value="{{$Detallistas->Calificación}}" required  class = 'valor_unitreq6' onkeyup='obtTotalMat6({{$Detallistas->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+				<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" value="{{$Detallistas->Peso_Ponderado}}"  required  class = 'valor_totreq6' onchange='calcTotal6()' onkeypress="return solonumeros(event)"></td> 
 			</tr>
 			@endforeach
 
@@ -432,9 +430,9 @@
 			<tr class="totalFortaleza">
 				<th >Total</th>
 				<td style="border: none;"></td>
-				<td class="tdclassFortaleza"><textarea name="totalCalificación"    id="pesorpesoPonderado6" class="tablacamFortalezas" ></textarea></td>
-				<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  id="totalCalificación6" class="tablacamFortalezas  "></textarea></td>
-				<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad"  id="granTotal6" class="tablacamFortalezas totales"></textarea></td>
+				<td class="tdclassFortaleza"><textarea readonly name="totalCalificación"    id="pesorpesoPonderado6" class="tablacamFortalezas" ></textarea></td>
+				<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion"  id="totalCalificación6" class="tablacamFortalezas  "></textarea></td>
+				<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad"  id="granTotal6" class="tablacamFortalezas totales"></textarea></td>
 			</tr>
 				</tbody>
 			</table>
@@ -470,35 +468,36 @@
 				<tbody>
 
 					@if($DetallistasCanti == 0)
+
 					@foreach ($penetracion_mercadoanf as $penetracion_mercadoanf7)
 					<tr id = 'material7{{$penetracion_mercadoanf7->id_penetracion_mercadoanf}}' class="formulario material7">
 						<td class="thCampo1" id="tdFormulario"> {{$penetracion_mercadoanf7->name_penetracion_mercadoanf}}</td>
 						<td style="border: none;"></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req7' required  onkeyup='obtTotalMat7({{$penetracion_mercadoanf7->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq7' required  onkeyup='obtTotalMat7({{$penetracion_mercadoanf7->id_penetracion_mercadoanf}})'></td>
-						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq7' required  onchange='calcTotal7()'></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req7' required  onkeyup='obtTotalMat7({{$penetracion_mercadoanf7->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq7' required  onkeyup='obtTotalMat7({{$penetracion_mercadoanf7->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq7' required  onchange='calcTotal7()' onkeypress="return solonumeros(event)"></td>
 					</tr>
 					@endforeach
+		
 			@else
 
-			@foreach ($Detallistas as $Detallistas)
-			<tr id = 'material7{{$Detallistas->id_penetracion_mercadoanf}}' class="formulario  material7">
-				<td class="thCampo1" id="tdFormulario"> {{$Detallistas->name_penetracion_mercadoanf}}</td>
-				<input type="text" name="id_penetracion_mercadoanf[]" value="{{$Detallistas->id_penetracion_mercadoanf}}" style="display:none" >
-				<td style="border: none;"></td>
-				<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" value="{{$Detallistas->Peso_Relativo}}"  class = 'cantidad_req7 '  required onkeyup='obtTotalMat7({{$Detallistas->id_penetracion_mercadoanf}})'></td>
-				<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" value="{{$Detallistas->Calificación}}" class = 'valor_unitreq7' required onkeyup='obtTotalMat7({{$Detallistas->id_penetracion_mercadoanf}})'></td>
-				<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" value="{{$Detallistas->Peso_Ponderado}}" class = 'valor_totreq7' required onchange='calcTotal7()'></td>
-			</tr>
-			@endforeach
-
+		
+			@foreach ($penetracion_mercadoanf as $penetracion_mercadoanf7)
+					<tr id = 'material7{{$penetracion_mercadoanf7->id_penetracion_mercadoanf}}' class="formulario material7">
+						<td class="thCampo1" id="tdFormulario"> {{$penetracion_mercadoanf7->name_penetracion_mercadoanf}}</td>
+						<td style="border: none;"></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoRelativo[]" id="pesoPonderado" class = 'cantidad_req7' required  onkeyup='obtTotalMat7({{$penetracion_mercadoanf7->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" class = 'valor_unitreq7' required  onkeyup='obtTotalMat7({{$penetracion_mercadoanf7->id_penetracion_mercadoanf}})' onkeypress="return solonumeros(event)"></td>
+						<td class="tablaAnsorft"><input type="text" name="pesoPonderado[]" id="calificacion" class = 'valor_totreq7' required  onchange='calcTotal7()' onkeypress="return solonumeros(event)"></td>
+					</tr>
+					@endforeach
 			@endif
 			<tr class="totalFortaleza">
 				<th >Total</th>
 				<td style="border: none;"></td>
-				<td class="tdclassFortaleza"><textarea name="totalCalificación"   id="pesorpesoPonderado7" class="tablacamFortalezas" ></textarea></td>
-				<td class="tdclassFortaleza"><textarea name="totalPuntuacion"  id="totalCalificación7" class="tablacamFortalezas  "></textarea></td>
-				<td class="tdclass1Fortaleza"><textarea name="puntuacionPonderad"  id="granTotal7" class="tablacamFortalezas totales"></textarea></td>
+				<td class="tdclassFortaleza"><textarea readonly name="totalCalificación"   id="pesorpesoPonderado7" class="tablacamFortalezas" onkeypress="return solonumeros(event)"></textarea></td>
+				<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion"  id="totalCalificación7" class="tablacamFortalezas  " onkeypress="return solonumeros(event)"></textarea></td>
+				<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad"  id="granTotal7" class="tablacamFortalezas totales" onkeypress="return solonumeros(event)"></textarea></td>
 			</tr>
 				</tbody>
 			</table>
@@ -564,27 +563,47 @@
 </div>
 </section>
 @yield('script')
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script>
+
+  $(document).ready(function () {
+   $('.items li:nth-child(8)').addClass("acti");
+   $('.items li').click(function () {
+    $('.items li').removeClass("acti");
+    $(this).addClass("acti");
+
+
+  })
+
+   $('.valores').mouseenter(function(){
+    let mensaje = $(this).attr('mensaje');
+
+    $('.hover').html(`<p>${mensaje}</p>`)
+    $('.hover').show()
+
+  })
+   $('.valores').mouseleave(function(){
+
+    $('.hover').hide()
+  })
+ })
+</script>
 @endsection
 
 
 @push('script')
 
 
-<script>    
-	$(document).ready(function()
-	{
-		$("#exampleModalScrollable").modal("show");
-	});
-</script>
 <script src=" {{asset('js/toastr.js')}}"></script>
-
+<script src="{{asset('js/solo_numeros.js')}}"></script>
 <script>
     //fieldset 1
     function obtTotalMat0(index){
         if($("#material0"+index+" .cantidad_req0").val() > 1 || $("#material0"+index+" .cantidad_req0").val() < 0 ){
-            toastr.error('error el numero no pudede ser mayor a 1', '!')
+            toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
         }else if($("#material0"+index+" .valor_unitreq0").val() > 4 || $("#material0"+index+" .valor_unitreq0").val() > 4){
-            toastr.error('error el numero no pudede ser mayor a 4', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
         }else{
          
             var Relativo  = $("#material0"+index+" .cantidad_req0").val();
@@ -619,6 +638,28 @@
             $("#pesorpesoPonderado0").val(Relativo);
             $("#totalCalificación0").val(Calificación);
 
+			if( $("#pesorpesoPonderado0").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+			}
+			
+
+			var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal0").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+			}
+
+		
             }
 
 	</script>
@@ -627,9 +668,9 @@
 		//fieldset 2
 		function obtTotalMat2(index){
 			if($("#material2"+index+" .cantidad_req2").val() > 1 || $("#material2"+index+" .cantidad_req2").val() < 0 ){
-				toastr.error('error el numero no pudede ser mayor a 1', '!')
+				toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
 			}else if($("#material2"+index+" .valor_unitreq2").val() > 4 || $("#material2"+index+" .valor_unitreq2").val() > 4){
-				toastr.error('error el numero no pudede ser mayor a 4', '!')
+				toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
 			}else{
 			 
 				var Relativo  = $("#material2"+index+" .cantidad_req2").val();
@@ -664,6 +705,28 @@
 				$("#pesorpesoPonderado2").val(Relativo);
 				$("#totalCalificación2").val(Calificación);
 	
+				if( $("#pesorpesoPonderado2").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+			}
+			
+
+			var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal2").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+			}
+
+		
 				}
 	
 		</script>
@@ -671,9 +734,9 @@
 	//fieldset 3
 	function obtTotalMat3(index){
 		if($("#material3"+index+" .cantidad_req3").val() > 1|| $("#material3"+index+" .cantidad_req3").val() < 0 ){
-			toastr.error('error el numero no pudede ser mayor a 1', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
 		}else if($("#material3"+index+" .valor_unitreq3").val() > 4 || $("#material3"+index+" .valor_unitreq3").val() > 4){
-			toastr.error('error el numero no pudede ser mayor a 4', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
 		}else{
 		 
 			var Relativo  = $("#material3"+index+" .cantidad_req3").val();
@@ -707,6 +770,28 @@
 			$("#pesorpesoPonderado3").val(Relativo);
 			$("#totalCalificación3").val(Calificación);
 
+			if( $("#pesorpesoPonderado3").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+			}
+			
+
+			var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal3").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+			}
+
+		
 			}
 	</script>
 </form>
@@ -715,9 +800,9 @@
 	//fieldset 4
 	function obtTotalMat4(index){
 		if($("#material4"+index+" .cantidad_req4 ").val() > 1 || $("#material4"+index+" .cantidad_req4 ").val() < 0 ){
-			toastr.error('error el numero no pudede ser mayor a 1', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
 		}else if($("#material4"+index+" .valor_unitreq4").val() > 4 || $("#material4"+index+" .valor_unitreq4").val() > 4){
-			toastr.error('error el numero no pudede ser mayor a 4', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
 		}else{
 		 
 			var Relativo  = $("#material4"+index+" .cantidad_req4 ").val();
@@ -726,6 +811,8 @@
 	  
 			var tot = ($("#material4"+index+" .cantidad_req4 ").val()) * $("#material4"+index+" .valor_unitreq4").val();
 		   $("#material4"+index+" .valor_totreq4").val(tot);
+
+		   
 
 		}
 		calcTotal4();
@@ -752,6 +839,27 @@
 			$("#pesorpesoPonderado4").val(Relativo);
 			$("#totalCalificación4").val(Calificación);
 
+			if( $("#pesorpesoPonderado4").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+			}
+			
+			var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal4").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+			}
+
+		
 			}
 
 	</script>
@@ -762,9 +870,9 @@
 	//fieldset 5
 	function obtTotalMat5(index){
 		if($("#material5"+index+" .cantidad_req5 ").val() > 1 || $("#material5"+index+" .cantidad_req5 ").val() < 0 ){
-			toastr.error('error el numero no pudede ser mayor a 1', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
 		}else if($("#material5"+index+" .valor_unitreq5").val() > 4 || $("#material5"+index+" .valor_unitreq5").val() > 4){
-			toastr.error('error el numero no pudede ser mayor a 4', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
 		}else{
 		 
 			var Relativo  = $("#material5"+index+" .cantidad_req5 ").val();
@@ -799,6 +907,29 @@
 			$("#pesorpesoPonderado5").val(Relativo);
 			$("#totalCalificación5").val(Calificación);
 
+
+			
+			if( $("#pesorpesoPonderado5").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+            }
+		
+			var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal5").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+			}
+
+
 			}
 
 	</script>
@@ -808,9 +939,9 @@
 	//fieldset 7
 	function obtTotalMat7(index){
 		if($("#material7"+index+" .cantidad_req7 ").val() > 1 || $("#material7"+index+" .cantidad_req7 ").val() < 0 ){
-			toastr.error('error el numero no pudede ser mayor a 1', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
 		}else if($("#material7"+index+" .valor_unitreq7").val() > 4 || $("#material7"+index+" .valor_unitreq7").val() > 4){
-			toastr.error('error el numero no pudede ser mayor a 4', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
 		}else{
 		 
 			var Relativo  = $("#material7"+index+" .cantidad_req7 ").val();
@@ -845,6 +976,30 @@
 			$("#pesorpesoPonderado7").val(Relativo);
 			$("#totalCalificación7").val(Calificación);
 
+
+			
+				if( $("#pesorpesoPonderado7").val() > 1){
+								toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+						}
+
+
+						var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal7").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+			}
+
+		
 			}
 
 	</script>
@@ -857,9 +1012,9 @@
 	//fieldset 6
 	function obtTotalMat6(index){
 		if($("#material6"+index+" .cantidad_req6 ").val() > 1|| $("#material6"+index+" .cantidad_req6 ").val() < 0 ){
-			toastr.error('error el numero no pudede ser mayor a 1', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
 		}else if($("#material6"+index+" .valor_unitreq6").val() > 4 || $("#material6"+index+" .valor_unitreq6").val() > 4){
-			toastr.error('error el numero no pudede ser mayor a 4', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
 		}else{
 		 
 			var Relativo  = $("#material6"+index+" .cantidad_req6 ").val();
@@ -894,6 +1049,33 @@
 			$("#pesorpesoPonderado6").val(Relativo);
 			$("#totalCalificación6").val(Calificación);
 
+
+			
+			if( $("#pesorpesoPonderado6").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+			}
+			
+			var PuntuaciónPonderada = parseFloat(localStorage.getItem('PuntuaciónPonderada'));
+
+			var pesorpesoPonderado = parseFloat ($("#granTotal6").val());
+
+			var suma =   PuntuaciónPonderada + pesorpesoPonderado;
+
+
+			console.log(suma);
+
+
+			if(suma >= 4 ){
+				toastr.error('La Puntuación Ponderada, esta superando el limite establecido. Limite (4.0)', '!Hola!')
+			}else{
+				localStorage.getItem('PuntuaciónPonderada',suma)
+
+			}
+
+
+			
+
+		
 			}
 
 	</script>

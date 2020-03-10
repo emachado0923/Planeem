@@ -19,9 +19,7 @@ class CreateFormulacionEstrategiasTable extends Migration
             $table->foreign("id_Planeacion","fk_formulacionEstrategias")->references("id_Planeacion")->on("Planeacion")->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedBigInteger("id_respustaverbos");
             $table->foreign("id_respustaverbos","fk_id_respustaverbos")->references("id_respustaverbos")->on("respustaverbos")->onDelete('restrict')->onUpdate('restrict');
-            $table->unsignedBigInteger("id_estrategia");
-            $table->foreign("id_estrategia","fk_id_estrategia")->references("id_estrategia")->on("estrategia")->onDelete('restrict')->onUpdate('restrict');
-            $table->string('pocision');
+            $table->string("id_estrategia",355);
             $table->timestamps();
         });
     }

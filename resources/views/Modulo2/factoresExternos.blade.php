@@ -45,17 +45,17 @@
 				<input type="text" value="{{$Oportunidades->id}}" name="id_respuesta[]"  style="display:none">
 							<td class="thCampo1">{{$Oportunidades->nombre}}</td>
 								<td style="border: none;"></td>
-								<td class="tablaAnsorft"><input type="text"  name="Peso_Relativo[]" id="pesoPonderado" required class = ' pesoPonderado cantidad_req0' onkeyup='obtTotalMat0({{$Oportunidades->id}})'></td>
-								<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo" required class = 'pesoRelativo valor_unitreq0' onkeyup='obtTotalMat0({{$Oportunidades->id}})'></td>
-								<td class="tablaAnsorft"><input type="text" name="Peso_Ponderado[]" id="calificacion" class = 'calificacion valor_totreq0' onchange='calcTotal0()'></td>
+								<td class="tablaAnsorft"><input type="text"  name="Peso_Relativo[]" id="pesoPonderado" onkeypress="return solonumeros(event)" required class = ' pesoPonderado cantidad_req0' onkeyup='obtTotalMat0({{$Oportunidades->id}})'></td>
+								<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo"  onkeypress="return solonumeros(event)" required class = 'pesoRelativo valor_unitreq0' onkeyup='obtTotalMat0({{$Oportunidades->id}})'></td>
+								<td class="tablaAnsorft"><input type="text" name="Peso_Ponderado[]" id="calificacion" onkeypress="return solonumeros(event)" class = 'calificacion valor_totreq0' onchange='calcTotal0()'></td>
 							</tr>
 				@endforeach
 				<tr class="totalFortaleza">
 					<th >Total</th>
 					<td style="border: none;"></td>
-					<td class="tdclassFortaleza"><textarea readonly name="totalCalificacion" id="pesorpesoPonderado0" class="tablacamFortalezas"></textarea></td>
-					<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion" id="totalcalificacion0" class="tablacamFortalezas"></textarea></td>
-					<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad1" id="granTotal0" class="tablacamFortalezas totales"></textarea></td>
+					<td class="tdclassFortaleza"><textarea readonly name="totalCalificacion" onkeypress="return solonumeros(event)" id="pesorpesoPonderado0" class="tablacamFortalezas"></textarea></td>
+					<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion" onkeypress="return solonumeros(event)" id="totalcalificacion0" class="tablacamFortalezas"></textarea></td>
+					<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad1" onkeypress="return solonumeros(event)" id="granTotal0" class="tablacamFortalezas totales"></textarea></td>
 				</tr>
 				</tbody>
 			</table>
@@ -90,17 +90,17 @@
 						<input type="text" value="{{$Amenazas->id}}" name="id_respuesta[]" style="display:none" >
 									<td class="thCampo1">{{$Amenazas->nombre}}</td>
 										<td style="border: none;"></td>
-										<td class="tablaAnsorft"><input type="text"  name="Peso_Relativo[]" id="pesoPonderado" required class = ' pesoPonderado cantidad_req1' onkeyup='obtTotalMat1({{$Amenazas->id}})'></td>
-										<td class="tablaAnsorft"><input type="text" name="Calificación[]" id="pesoRelativo"  required class = 'pesoRelativo valor_unitreq1' onkeyup='obtTotalMat1({{$Amenazas->id}})'></td>
-										<td class="tablaAnsorft"><input type="text" name="Peso_Ponderado[]" id="calificacion" class = 'calificacion valor_totreq1' onchange='calcTotal1()'></td>
+										<td class="tablaAnsorft"><input type="text" onkeypress="return solonumeros(event)" name="Peso_Relativo[]" id="pesoPonderado" required class = ' pesoPonderado cantidad_req1' onkeyup='obtTotalMat1({{$Amenazas->id}})'></td>
+										<td class="tablaAnsorft"><input type="text" onkeypress="return solonumeros(event)" name="Calificación[]" id="pesoRelativo"  required class = 'pesoRelativo valor_unitreq1' onkeyup='obtTotalMat1({{$Amenazas->id}})'></td>
+										<td class="tablaAnsorft"><input type="text" onkeypress="return solonumeros(event)" name="Peso_Ponderado[]" id="calificacion" class = 'calificacion valor_totreq1' onchange='calcTotal1()'></td>
 									</tr>
 						@endforeach
 						<tr class="totalFortaleza">
 							<th >Total</th>
 							<td style="border: none;"></td>
-							<td class="tdclassFortaleza"><textarea readonly name="totalCalificacion" id="pesorpesoPonderado1" class="tablacamFortalezas"></textarea></td>
-							<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion" id="totalcalificacion1" class="tablacamFortalezas"></textarea></td>
-							<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad1" id="granTotal1" class="tablacamFortalezas totales"></textarea></td>
+							<td class="tdclassFortaleza"><textarea readonly name="totalCalificacion" onkeypress="return solonumeros(event)"  id="pesorpesoPonderado1" class="tablacamFortalezas"></textarea></td>
+							<td class="tdclassFortaleza"><textarea readonly name="totalPuntuacion" onkeypress="return solonumeros(event)" id="totalcalificacion1" class="tablacamFortalezas"></textarea></td>
+							<td class="tdclass1Fortaleza"><textarea readonly name="puntuacionPonderad1" onkeypress="return solonumeros(event)" id="granTotal1" class="tablacamFortalezas totales"></textarea></td>
 						</tr>
 		
 				
@@ -167,13 +167,36 @@
 <script src=" {{asset('js/toastr.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 <script src="{{asset('js/Validaciones/valid.js')}}"></script>
+<script>
 
-<script>    
+	$(document).ready(function () {
+	 $('.items li:nth-child(9)').addClass("acti");
+	 $('.items li').click(function () {
+	  $('.items li').removeClass("acti");
+	  $(this).addClass("acti");
+  
+  
+	})
+  
+	 $('.valores').mouseenter(function(){
+	  let mensaje = $(this).attr('mensaje');
+  
+	  $('.hover').html(`<p>${mensaje}</p>`)
+	  $('.hover').show()
+  
+	})
+	 $('.valores').mouseleave(function(){
+  
+	  $('.hover').hide()
+	})
+   })
+  </script>
+{{-- <script>    
 	$(document).ready(function()
 	{
 		$("#exampleModalScrollable").modal("show");
 	});
-</script>
+</script> --}}
 
 {{-- <script>
 	function guardar(){
@@ -193,7 +216,7 @@
 
 
 
-
+<script src="{{asset('js/solo_numeros.js')}}"></script>
 
 
 
@@ -202,9 +225,9 @@
     //fieldset 1
     function obtTotalMat0(index){
         if($("#material0"+index+" .cantidad_req0").val() > 1 || $("#material0"+index+" .cantidad_req0").val() < 0 ){
-            toastr.error('error el numero no pudede ser mayor a 1', '!')
+            toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
         }else if($("#material0"+index+" .valor_unitreq0").val() > 4 || $("#material0"+index+" .valor_unitreq0").val() > 4){
-            toastr.error('error el numero no pudede ser mayor a 4', '!')
+			toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
         }else{
          
             var Relativo  = $("#material0"+index+" .cantidad_req0").val();
@@ -237,8 +260,22 @@
 
             $("#granTotal0").val(tot);
             $("#pesorpesoPonderado0").val(Relativo);
-            $("#totalcalificacion0").val(Calificación);
+			$("#totalcalificacion0").val(Calificación);
+			
 
+			if( $("#pesorpesoPonderado0").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+            }
+	
+
+			}
+
+
+			
+			
+			
+	if( $("#pesorpesoPonderado0").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
             }
 
 	</script>
@@ -247,9 +284,11 @@
 		//fieldset 2
 		function obtTotalMat1(index){
 			if($("#material1"+index+" .cantidad_req1").val() > 1 || $("#material1"+index+" .cantidad_req1").val() < 0 ){
-				toastr.error('error el numero no pudede ser mayor a 1', '!')
+				toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+
 			}else if($("#material1"+index+" .valor_unitreq1").val() > 4 || $("#material1"+index+" .valor_unitreq1").val() > 4){
-				toastr.error('error el numero no pudede ser mayor a 4', '!')
+				toastr.error('Lo sentimos, el número que estas digitando no puede ser mayor a 4 o/e inferior a 0', '!Hola!')
+
 			}else{
 			 
 				var Relativo  = $("#material1"+index+" .cantidad_req1").val();
@@ -257,7 +296,7 @@
 				var Calificación = $("#material1"+index+" .valor_unitreq1").val();
 		  
 				var tot = ($("#material1"+index+" .cantidad_req1").val()) * $("#material1"+index+" .valor_unitreq1").val();
-			   $("#material1"+index+" .valor_totreq0").val(tot);
+			   $("#material1"+index+" .valor_totreq1").val(tot);
 	
 			}
 			calcTotal1();
@@ -285,6 +324,11 @@
 				$("#totalcalificacion1").val(Calificación);
 	
 				}
+
+				
+			if( $("#pesorpesoPonderado1").val() > 1){
+                     toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
+            }
 	
 		</script>
 

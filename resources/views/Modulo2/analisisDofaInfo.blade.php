@@ -19,7 +19,8 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 		</p>
 	</div>
-	<a href="{{ route('analisisDOFA') }} " style="color:white;" name="nuevo" class="Ahora btn btn-planeem waves-effect waves-light">Iniciar Ahora</a>
+
+	<a onclick="btn12()" style="color:white;" name="nuevo" class="Ahora btn btn-planeem waves-effect waves-light">Iniciar Ahora</a>
 	<span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
 	<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -58,7 +59,49 @@
 		</div>
 	</div>
 	
+  <form method="POST" style="display:none" id="form" action="{{route('analisisDOFA')}}" >
+	@csrf
+		<input type="text" id="id_planecion" name="id_planecion">	
+		<button  type="submit" id="btn12">		
+</form>
+
+
 </section>
 @yield('script')
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+<script>
+
+  $(document).ready(function () {
+   $('.items li:nth-child(13)').addClass("acti");
+   $('.items li').click(function () {
+    $('.items li').removeClass("acti");
+    $(this).addClass("acti");
+
+
+  })
+
+   $('.valores').mouseenter(function(){
+    let mensaje = $(this).attr('mensaje');
+
+    $('.hover').html(`<p>${mensaje}</p>`)
+    $('.hover').show()
+
+  })
+   $('.valores').mouseleave(function(){
+
+    $('.hover').hide()
+  })
+ })
+</script>
+<script>
+	var id = localStorage.getItem('id')
+	$('#id_planecion').val(id);
+	
+
+	function btn12(){
+		document.getElementById('btn12').click();
+	}
+
+</script>
 @endsection

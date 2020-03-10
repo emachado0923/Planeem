@@ -68,6 +68,7 @@ class PerfilCompeController extends Controller
         $pesoRelativo = $request->get('pesoRelativo');
         $calificacion = $request->get('calificacion');
         $peso = $request->get('pesoPonderado');
+        
         $totalPeso= $request->get('totalPeso');
         $totalCali= $request->get('totalCalificacion');
         $totalPonde= $request->get('totalPonderado');
