@@ -155,49 +155,63 @@ Route::get('/analisisDofaI', function () {
 
 
 
-// rutas del modulo3
-Route::get('/DisenoObjetivos', function () {
-    return view('Modulo3.DisenoObjetivos');
-})->name('DisenoObjetivos')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/DisenoObjetivos2', function () {
-    return view('Modulo3.DisenoObjetivos2');
-})->name('DisenoObjetivos2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/DisenoObjetivos3', function () {
-    return view('Modulo3.DisenoObjetivos3');
-})->name('DisenoObjetivos3')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/FormulacionInfo', function () {
-    return view('Modulo3.FormulacionInfo');
-})->name('FormulacionInfo')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::post('/FormulacionAsociar','FormulacionController@index')->name('FormulacionAsociar')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/ObjetivosResumen', function () {
-    return view('Modulo3.ObjetivosResumen');
-})->name('ObjetivosResumen')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/FormulacionResumen', function () {
-    return view('Modulo3.FormulacionResumen');
-})->name('FormulacionResumen')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/modulo3-4', function () {
-    return view('Modulo3.modulo3-4');
-})->name('modulo3-4')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-//Routes de capacidad Interna
-Route::post('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('auth');
-Route::get('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('auth');
-Route::get('/capacidadInte/create','CapacidadController@create')->middleware('auth');
-Route::post('/capacidadInte/create','CapacidadController@store')->name('guardaCapa')->middleware('auth');
-///Routes de perfil Competitivo
-Route::get('/perfilCompeInfo','PerfilCompeController@indexInfo')->name('perfilCompeInfo')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::post('/perfilCompeInfoG/store','PerfilCompeController@store')->name('savePerfilCompe')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/perfil/show/{id}','PerfilCompeController@getAnswersMyEmpre')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/perfil/empresa/{id}','PerfilCompeController@empresa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::post('/perfilCompeempresa','PerfilCompeEmpresaController@index')->name('perfilem')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/perfilem/cantida','PerfilCompeEmpresaController@index')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/Competitivo/show/{id}','PerfilCompeEmpresaController@show')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::post('/perfilCompe','PerfilCompeEmpresaController@storeEmpe')->name('saveEmpresa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/perfilCompe/empresas/{id}','PerfilCompeEmpresaController@show')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::post('/perfilCompeStore','PerfilCompeController@storeEmpe')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-//  Route::get('/perfilCompe','PerfilCompeController@storeEmpe');
-// Route::get('/perfil','PerfilCompeController@index')->name('perfil');
-//route perfil competitivo ajax
-//Routes de capacidad interna
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // rutas del modulo3
+    Route::get('/DisenoObjetivos', function () {
+        return view('Modulo3.DisenoObjetivos');
+    })->name('DisenoObjetivos')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/DisenoObjetivos2', function () {
+        return view('Modulo3.DisenoObjetivos2');
+    })->name('DisenoObjetivos2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/DisenoObjetivos3', function () {
+        return view('Modulo3.DisenoObjetivos3');
+    })->name('DisenoObjetivos3')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/FormulacionInfo', function () {
+        return view('Modulo3.FormulacionInfo');
+    })->name('FormulacionInfo')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::post('/FormulacionAsociar','FormulacionController@index')->name('FormulacionAsociar')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/ObjetivosResumen', function () {
+        return view('Modulo3.ObjetivosResumen');
+    })->name('ObjetivosResumen')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/FormulacionResumen', function () {
+        return view('Modulo3.FormulacionResumen');
+    })->name('FormulacionResumen')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/modulo3-4', function () {
+        return view('Modulo3.modulo3-4');
+    })->name('modulo3-4')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    //Routes de capacidad Interna
+    Route::post('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('auth');
+    Route::get('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('auth');
+    Route::get('/capacidadInte/create','CapacidadController@create')->middleware('auth');
+    Route::post('/capacidadInte/create','CapacidadController@store')->name('guardaCapa')->middleware('auth');
+    ///Routes de perfil Competitivo
+    Route::get('/perfilCompeInfo','PerfilCompeController@indexInfo')->name('perfilCompeInfo')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::post('/perfilCompeInfoG/store','PerfilCompeController@store')->name('savePerfilCompe')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/perfil/show/{id}','PerfilCompeController@getAnswersMyEmpre')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/perfil/empresa/{id}','PerfilCompeController@empresa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::post('/perfilCompeempresa','PerfilCompeEmpresaController@index')->name('perfilem')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/perfilem/cantida','PerfilCompeEmpresaController@index')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/Competitivo/show/{id}','PerfilCompeEmpresaController@show')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::post('/perfilCompe','PerfilCompeEmpresaController@storeEmpe')->name('saveEmpresa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/perfilCompe/empresas/{id}','PerfilCompeEmpresaController@show')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::post('/perfilCompeStore','PerfilCompeController@storeEmpe')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    //  Route::get('/perfilCompe','PerfilCompeController@storeEmpe');
+    // Route::get('/perfil','PerfilCompeController@index')->name('perfil');
+    //route perfil competitivo ajax
+
+    //Routes de capacidad interna
     Route::post('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     Route::get('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     Route::get('/capacidadInte/create','CapacidadController@create')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
@@ -257,7 +271,7 @@ Route::post('/perfilCompeStore','PerfilCompeController@storeEmpe')->middleware('
     ///dofa
     Route::post('/analisisDofa', 'DofaController@dofa')->name('analisisDofa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     
-//////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 // rutas del modulo3
 Route::get('/tercero1-1', function () {
     return view('Modulo3.formulacion_de_estrategias.tercero1-1');
