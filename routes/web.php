@@ -314,6 +314,7 @@ Route::get('/vista1-3', function () {
 Route::get('/vista2-1', function () {
     return view('Modulo4.vista2-1');
 })->name('vista2-1')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
 Route::get('/vista2-2', function () {
     return view('Modulo4.vista2-2');
 })->name('vista2-2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');

@@ -78,7 +78,7 @@ class FormulacionController extends Controller
                 for ($i=0; $i < count($id_respustaverbos) ; $i++) { 
 
 
-                    formulacionestrategias::updateorCreate(
+                      ::updateorCreate(
                         [
                             'id_Planeacion'=>$id_planecion,
                             'id_respustaverbos'=>$id_respustaverbos[$i],
