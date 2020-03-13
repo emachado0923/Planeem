@@ -27,8 +27,7 @@
                 1.0: Muy importante</p>
 	</div>
 </section>
-<form id="form" style="display:none" action="{{ route('analisisEFIgrafica')}}" method="POST" role="form">
-	<!-- contenedores -->
+		<!-- contenedores -->
 		<div class="row">
   			<div class="col-md-6 conte1" data-toggle="modal" data-target="#exampleModal">
   					<div class="botonopo1" value="Fortalezas_ventana" >
@@ -38,7 +37,6 @@
 						<div class="scrollfortaleza3">
 								@foreach ($fortaleza as $for)
 								<p>{{$for->nombre}}</p>
-								<input type="text" value="{{$for->id}}" name="id_respuesta_analisis[]" style="display:none">
 								 @endforeach</p>
 						</div>
 					</div>
@@ -52,9 +50,6 @@
 						
 							 @foreach ($oportunidad as $opo)
 								<p>{{$opo->nombre}}</p>
-
-						<input type="text" value="{{$opo->id}}" name="id_respuesta_analisis[]" style="display:none">
-
 								 @endforeach</p>
 						</div>
 					</div>
@@ -69,10 +64,6 @@
   						<div class="scrollfortaleza">
 								@foreach ($debilidad as $debi)
 								<p>{{$debi->nombre}}</p>
-
-
-						<input type="text" value="{{$debi->id}}" name="id_respuesta_capacidad[]" style="display:none">
-
 								 @endforeach
 						</div>
 					</div>
@@ -85,22 +76,17 @@
   						<div class="scrollfortaleza">
 							  @foreach ($amenaza as $ame)
 							 <p>{{$ame->nombre}}</p>
-
-								<input type="text" value="{{$ame->id}}" name="id_respuesta_capacidad[]" style="display:none">
-
 							  @endforeach
 					
 						</div>
 					</div>
   			</div>
-  			<button type="submit" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</button>
+  			<a href="{{route('analisisEFIgrafica')}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
 		</div>
 
 	</section>
 <div class="infon">
 	
-
-</form>
 </div>
 
 <span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
