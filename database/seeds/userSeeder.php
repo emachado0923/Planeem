@@ -13,7 +13,7 @@ class userSeeder extends Seeder
     {
         User::create([
             'username'=>'root',
-            'email'=>'root@gmail.com',
+            'email'=>'root@gamil.com',
             'password'=>'123456', 
             'selected_planne'=>'1'
         ]);
