@@ -22,11 +22,6 @@
 		<input type="text" style ="display:none" value="{{$cantidad}}" class="form-control" id="cantidad" aria-describedby="emailHelp"  name="cantidad" value="{{$cantidad}}">
 		<div id="regiration_form" >
 		
-			<select name="" id="">
-			@foreach ($datos as $datos)
-				<option>{{$datos->mobre}}</option>
-			@endforeach
-		</select>
 		</div>
 	</form>
 

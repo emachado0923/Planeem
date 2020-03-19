@@ -77,11 +77,18 @@ class FactorInternoDController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
 
-        // dd($request);
-       
+        // $data = $request->all();
+        // if(empty($data)) {
+        //     $data = json_decode($request->getContent());
+        //     $data = json_decode($data);
+
+        //     if(is_null($data)) {
+        //         return response()->json("Not valid json", 400);
+        //     }
+        // }
+
         $plane = $request->get('idPlaneacion');
         $pone = $request->get('ponderacion');
         $cali = $request->get('calificacion');
@@ -89,9 +96,10 @@ class FactorInternoDController extends Controller
         $totalCalificacion = $request->input('totalCalificacion');
         $totalPuntuacion = $request->input('totalPuntuacion');
         $puntuacionPonderada = $request->input('puntuacionPonderad1');
-
+        $preguntas =$request->get('preguntas');
+           
             // dd($totalCalificacion,$totalPuntuacion,$puntuacionPonderada);
-        for ($i = 0; $i < count($request->get('preguntas')); $i++) {
+        for ($i = 0; $i < count($preguntas); $i++) {
 
             // print_r($pone);die;
 
@@ -109,7 +117,9 @@ class FactorInternoDController extends Controller
                     'puntuacionPonderada' => $puntua[$i],
                     'totalCalificacion'=>$totalCalificacion,
                     'totalPuntuacion' => $totalPuntuacion,
-                    'totalPonderacion'=>$puntuacionPonderada
+                    'totalPonderacion'=>$puntuacionPonderada,
+                    // 'preguntas'=>$preguntas
+
                 ]
             );
         }
