@@ -11,7 +11,7 @@ class CreateFormulacionEstrategiasTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::create('formulacionEstrategias', function (Blueprint $table) {
             $table->bigIncrements('id_formulacionEstrategias');
@@ -20,6 +20,7 @@ class CreateFormulacionEstrategiasTable extends Migration
             $table->unsignedBigInteger("id_respustaverbos");
             $table->foreign("id_respustaverbos","fk_id_respustaverbos")->references("id_respustaverbos")->on("respustaverbos")->onDelete('restrict')->onUpdate('restrict');
             $table->string("id_estrategia",355);
+            $table->string("pocision");
             $table->timestamps();
         });
     }
