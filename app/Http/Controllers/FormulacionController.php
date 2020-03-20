@@ -32,6 +32,7 @@ class FormulacionController extends Controller
             ->whereIn('respuesta', $typeA)
             ->where('idPlaneacion', $id)
             ->get();
+            
 
             $oportunidad=DB::table('respuesta_analisis')
             ->select('nombre')
@@ -109,12 +110,20 @@ class FormulacionController extends Controller
             ->where('planeacion.id_Planeacion',$id_planecion)
             ->get();
 
-               
+            $typeA = ['aAlta', 'aMedia', 'aBaja'];
+            $typeO = ['oAlta', 'oMedia', 'oBaja'];
 
 
+            $amenaza= DB::table('respuesta_analisis')
+            ->select('nombre')
+            ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+            ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+            ->whereIn('respuesta', $typeA)
+            ->where('idPlaneacion', $id_planecion)
+            ->get();
 
 
-            return view('Modulo3.FormulacionResumen')->with('Objetivos',$Objetivos)->with('proyecto',$proyecto)->with('amenaza',$amenaza)->whih('');
+            return view('Modulo3.FormulacionResumen')->with('Objetivos',$Objetivos)->with('proyecto',$proyecto)->with('amenaza',$amenaza);
             
     }
 
