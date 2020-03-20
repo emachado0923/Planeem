@@ -127,8 +127,8 @@ class FormulacionController extends Controller
             
     }
 
-        public function  ObjetivosResumen($id){
-            $proyecto = Proyectos::find($id);
-            return view('Modulo3.ObjetivosResumen')->with('Objetivos',$Objetivos);
-        }
+        // public function  ObjetivosResumen($id){
+        //     $proyecto = Proyectos::find($id);
+        //     return view('Modulo3.ObjetivosResumen')->with('Objetivos',$Objetivos);
+        // }
 }
