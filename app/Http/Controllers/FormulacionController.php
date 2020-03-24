@@ -79,6 +79,7 @@ class FormulacionController extends Controller
                 for ($i=0; $i < count($id_respustaverbos) ; $i++) { 
 
 
+                    
                     formulacionestrategias::updateorCreate(
                         [
                             'id_Planeacion'=>$id_planecion,
@@ -122,8 +123,20 @@ class FormulacionController extends Controller
             ->where('idPlaneacion', $id_planecion)
             ->get();
 
+           
+            
+            $formulacion = DB::table('formulacionestrategias')
+            ->select('formulacionestrategias.*','respustaverbos.*')
+            ->join('respustaverbos','formulacionestrategias.id_respustaverbos','=','respustaverbos.id_respustaverbos')
+            ->where('formulacionestrategias.id_Planeacion',$id_planecion)
+            ->get();  
+            //dd($formulacion);
 
-            return view('Modulo3.FormulacionResumen')->with('Objetivos',$Objetivos)->with('proyecto',$proyecto)->with('amenaza',$amenaza);
+            // dd($formulacion);
+            
+
+            //esto me recibe la data del controlador y la manda a la vista :p
+            return view('Modulo3.FormulacionResumen')->with('Objetivos',$Objetivos)->with('proyecto',$proyecto)->with('amenaza',$amenaza)->with('formulacion',$formulacion);
             
     }
 
