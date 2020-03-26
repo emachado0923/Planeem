@@ -175,9 +175,9 @@ Route::get('/ObjetivosResumen', function () {
 Route::get('/FormulacionResumen', function () {
     return view('Modulo3.FormulacionResumen');
 })->name('FormulacionResumen')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-Route::get('/modulo3-4', function () {
-    return view('Modulo3.modulo3-4');
-})->name('modulo3-4')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+Route::get('/modulo2-4', function () {
+    return view('Modulo3.tercero2-4');
+})->name('modulo2-4')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 //Routes de capacidad Interna
 Route::post('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('auth');
 Route::get('/capacidadInte','CapacidadController@index')->name('capacidadInte')->middleware('auth');

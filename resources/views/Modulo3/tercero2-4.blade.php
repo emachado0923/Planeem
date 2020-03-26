@@ -135,7 +135,7 @@
 			<button type="button" class="next btn Ahora4 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 		</fieldset>
 		<fieldset>
-			<div>
+			{{-- <div>
 				<h3 style="text-align: center;">FIDELIZACIÓN</h3>
 				<table  class="egt" id="tabla">
 					<thead>
@@ -248,12 +248,12 @@
 						</tr>
 					</tbody>
 				</table>
-			</div>
+			</div> --}}
 			<button type="button" class="AhoraEstra previous btn btn-default">Anterior</button>
 			<button type="button" class="next btn AhoraEstra3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 		</fieldset>
 		<fieldset>
-			<div>
+			{{-- <div>
 				<h3 style="text-align: center;">DISTRIBUCIÓN</h3>
 				<table  class="egt" id="tabla">
 
@@ -367,7 +367,7 @@
 						</tr>
 					</tbody>
 				</table>
-			</div>
+			</div> --}}
 			<button type="button" class="AhoraEstra previous btn btn-default">Anterior</button>
 			<button type="button" class="next btn AhoraEstra3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 		</fieldset>

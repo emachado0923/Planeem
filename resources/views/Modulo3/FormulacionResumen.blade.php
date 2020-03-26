@@ -33,7 +33,7 @@
 </section>
 <form>
 	<input type="text" 																																																																																																																																																																																																																																																																																																																																								>
-	<a  href="{{ route('FormulacionInfo') }}"  onclick="guardar()"   style="color:white;"   class="siguiente btn btn-planeem waves-effect waves-light">Siguiente</a>
+	<a  href="{{ route('modulo2-4') }}"  onclick="guardar()"   style="color:white;"   class="siguiente btn btn-planeem waves-effect waves-light">Siguiente</a>
 
 </form>
 <span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
