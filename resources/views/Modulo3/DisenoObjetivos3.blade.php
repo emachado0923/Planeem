@@ -167,7 +167,7 @@
 			  $('#guardar').removeAttr('disabled','disabled');
 		  }
 		  var ipt=JSON.stringify(ip); //Convierto la Lista de 			  newtr = newtr + '<input type="text" name="posiciones[]" value="'+contador1+'" >'
-Productos a un JSON para procesarlo en tu controlador
+// Productos a un JSON para procesarlo en tu controlador
 		  $('#ListaPro').val(encodeURIComponent(ipt));
 	  }
 
@@ -268,25 +268,11 @@ Productos a un JSON para procesarlo en tu controlador
 
 			let contador1 = contador += 1;
 
-			  var nombre = $('#pro_id').find(':selected').val(); //Capturo el Value del Producto
-
-			  var text = $('#pro_id').find(':selected').text();//Capturo el Nombre del Producto- Texto dentro del Select
 
 
 			  var sptext = text.split();
 			//   var newtr = '<tr class="item"  data-id="'+sel+'">';
 
-			  var newtr = '<div class="input-group mb-3">';
-			  newtr = newtr + '<div class="input-group-prepend">';
-			  newtr = newtr + '<span class="input-group-text" id="basic-addon1">'+contador1+' </span>';
-			  newtr = newtr + '</div>';
-			  newtr = newtr + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
-
-			  newtr = newtr + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
-			  newtr = newtr + '</div>';
-
-
-			  $('#campo_texto').append(newtr); //Agrego el Producto al tbody de la Tabla con el id=campo_texto
 
 			  RefrescaProducto();//Refresco Productos
 
@@ -321,6 +307,10 @@ Productos a un JSON para procesarlo en tu controlador
 			$('.hover').hide()
 		})
 	});
+</script>
+<script>
+https://www.facebook.com/Southparklatinohd/videos/1465972093583738/
+
 </script>
 
 

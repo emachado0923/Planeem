@@ -69,7 +69,20 @@ class Modulo3Controller extends Controller
         return view('Modulo3.FormulacionInfo')->with('id_planecion',$id_planecion);
 
           
+    
 
         
     }
+
+    public function datos($id){
+
+            $formulacion = DB::table('formulacionestrategias')
+            ->select('formulacionestrategias.*','respustaverbos.*')
+            ->join('respustaverbos','formulacionestrategias.id_respustaverbos','=','respustaverbos.id_respustaverbos')
+            ->where('formulacionestrategias.id_Planeacion',$id)
+            ->get();  
+
+            return response()->json($formulacion);
+    }
+    
 }

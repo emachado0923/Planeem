@@ -285,7 +285,7 @@ Route::post('/Objetivos/storg','Modulo3Controller@guardar')->name('Objetivos')->
 Route::post('/FormulacionResumen','FormulacionController@storeage')->name('FormulacionCon')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 Route::post('/createWord', ['as'=>'createWord','uses'=>'WordTestController@createWordDocx'])->     middleware('verified')->middleware('auth');
 Route::post('/createpdf','pdfController@pdf')->name('createpdf')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
-
+Route::get('/formulacion/{id}','Modulo3Controller@datos');
 Route::post('/Evaluacion','Evaluacion_FactoresController@store')->name('Evaluacion')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 //Módulo 4
 Route::get('/vista1-1', function () {
