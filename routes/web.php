@@ -325,3 +325,8 @@ Route::get('/analisisEFIgrafica', function () {
     
 Route::post('/estrategiasCon','estrategiasController@storage')->name('estrategiasController')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     
+
+//papelera 
+Route::get('papelera', 'HomeController@papelera' )->name('papelera');
+
+Route::get('Restaurar/{id}','HomeController@Restaurar')->name('Restaurar');

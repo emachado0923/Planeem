@@ -235,6 +235,7 @@
             </div>
         </div>
     </div>
+
 @foreach ($proyecto as $proyecto1)
         {{-- modal de eliminar --}}
         <div class="modal fade" id="exampleModal{{$proyecto1->id_Planeacion}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -252,13 +253,15 @@
                         <h4>Si elimina el proyecto ... , perderá toda la información sobre este.</h4>
                     </div>
                     <div class="modal-footer">
-                      <a   class="ElimarBoton btn btn-planeem waves-effect waves-light" data-dismiss="modal">Si, Eliminar</a>
-                      <a href="{{route('delecte',$proyecto1->id_Planeacion)}}" type="button" class="NoEliminar btn btn-planeem waves-effect waves-light">No, Cancelar</a>
+                      <a class="ElimarBoton btn btn-planeem waves-effect waves-light" data-dismiss="modal">No, Cancelar</a>
+                      <a href="{{route('delecte',$proyecto1->id_Planeacion)}}" type="button" class="NoEliminar btn btn-planeem waves-effect waves-light"> Si, Eliminar</a>
                   </div>
               </div>
           </div>
       </div>
 @endforeach
+
+
 
   <style type="text/css">
     .modalEliminar{
@@ -268,6 +271,9 @@
     }
 
 </style>
+
+<a type="button" href="{{route('papelera')}}" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">papelera</a>
+
 
 <div class="collapse contenedor2" id="collapseExample">
     <h4 class="titulo2">Nombre de la Planeación</h4>
@@ -331,6 +337,8 @@
         </div>
     </div>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <!--script para javascript para que carga el modal -->

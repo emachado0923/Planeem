@@ -9,6 +9,7 @@ use App\Model\pensamiento_pensamiento;
 use Illuminate\Support\Facades\Input;
 use App\Model\Proyectos;
 use DB;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -86,16 +87,35 @@ class HomeController extends Controller
         $affected = DB::table('planeacion')
               ->where('id_Planeacion', $id)
               ->update(['estado' => '1']);
-
-            //   $estado = Proyectos::all();
-            //   $proyect = Proyectos::find($id);
-            //   $user = auth()->user();
-            //   $user->selected_planne = $id;
-            //   $user->save();
-
               $proyecto = Proyectos::all();
               $carbon= Carbon::now();
-              return view('home',compact('carbon','proyecto'));
+              return redirect()->route('home');
     }
+
+    
+    public function papelera (){
+
+         $planecion=Proyectos::all();
+         return view('papelera')->with('planecion',$planecion);
+         
+    }
+
+
+
+   public function Restaurar ($id){
+ 
+    $plnecion=Proyectos::all();
+
+
+    $affected = DB::table('planeacion')
+    ->where('id_Planeacion', $id)
+    ->update(['estado' => 'Pendiente']);
+    $proyecto = Proyectos::all();
+    $carbon= Carbon::now();
+
+    return redirect()->route('home');
+
+    
+  }
 
 }
