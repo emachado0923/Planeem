@@ -286,6 +286,9 @@ Route::post('/FormulacionResumen','FormulacionController@storeage')->name('Formu
 Route::post('/createWord', ['as'=>'createWord','uses'=>'WordTestController@createWordDocx'])->     middleware('verified')->middleware('auth');
 Route::post('/createpdf','pdfController@pdf')->name('createpdf')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 Route::post('/Evaluacion','Evaluacion_FactoresController@store')->name('Evaluacion')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
+Route::get('vervoslis/{id}', 'Modulo3Controller@vervoslis');
+Route::get('posicion/{id}', 'Modulo3Controller@posicion');
 //Módulo 4
 Route::get('/vista1-1', function () {
     return view('Modulo4.vista1-1');

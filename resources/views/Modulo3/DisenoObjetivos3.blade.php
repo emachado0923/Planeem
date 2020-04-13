@@ -94,7 +94,7 @@
 			<a  id="boton1" data-toggle="modal" data-target="#exampleModal0" class="button2_agregar5" ><span class="icon-folder-plus"><div id="hover_agregar1">
 				<h5>Agregar</h5></div></span>
 			</a>
-			<a id="boton2_eliminar2" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar">
+			<a id="boton2_eliminar2" onclick="Refrescaverbo2()" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar">
 				<h5>Eliminar</h5></div>
 			</a>
 			
@@ -142,6 +142,98 @@
 	});
 </script>
 
+
+
+<script type="text/javascript">
+	
+	  function Refrescaverbo2(){
+		  var ip = [];
+		  var i = 0;
+		  $('#guardar').attr('disabled','disabled'); 
+		  $('.iProduct').each(function(index, element) {
+			  i++;
+			  ip.push({ id_pro : $(this).val() });
+		  });
+		 
+		  if (i > 0) {
+			  $('#guardar').removeAttr('disabled','disabled');
+		  }
+		  var ipt=JSON.stringify(ip); 
+		  $('#campo_texto').val(encodeURIComponent(ipt));
+
+
+		  	//   Refrescaverbo();//Refresco Productos
+
+			//   $('.remove-item').off().click(function(e) {
+			// 	  $(this).parent('td').parent('tr').remove(); 
+			// 	  if ($('#campo_texto tr.item').length == 0)
+			// 		  $('#campo_texto .no-item').slideDown(300);
+			// 	  Refrescaverbo();
+			//   });
+			//  $('.iProduct').off().change(function(e) {
+			// 	  Refrescaverbo();
+			//  });
+	  }
+
+
+var contador =0 ;
+  
+	  $( document ).ready(function() {
+			var id = localStorage.getItem('id');
+			$.ajax({
+				url:"/posicion/"+id,
+				type:'get',
+				success:function(posiciones){
+					console.log(posiciones);
+
+					for(a of posiciones){
+
+
+						if(a.posiciones > 0 ){
+							contador=  parseInt (a.posiciones)
+						}else{
+							contador= 0
+						}
+					
+
+					}
+					
+					
+				},
+				error:function(){
+					console.log("error");
+				}
+			});
+		});
+//fin ajax
+
+		 function agregarverbo() {
+
+			let contador1 = contador += 1;
+
+			  var nombre = $('#pro_id').find(':selected').val();
+
+			  var text = $('#pro_id').find(':selected').text();
+
+
+			  var sptext = text.split();
+
+			  var newtr = '<div class="input-group mb-3">';
+			  newtr = newtr + '<div class="input-group-prepend">';
+			  newtr = newtr + '<span class="input-group-text" id="basic-addon1">'+contador1+' </span>';
+			  newtr = newtr + '</div>';
+			  newtr = newtr + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
+
+			  newtr = newtr + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
+			  newtr = newtr + '</div>';
+
+
+			  $('#campo_texto').append(newtr); //Pinta el contenido en el html
+
+
+	  }
+  </script>
+
 <script>
 	   id_planecion = localStorage.getItem('id');
 	
@@ -151,23 +243,19 @@
 </script>
 
 <script type="text/javascript">
-	// Refresca Producto: Refresco la Lista de Productos dentro de la Tabla
-	// Si es vacia deshabilito el boton guardar para obligar a seleccionar al menos un producto al usuario
-	// Sino habilito el boton Guardar para que pueda Guardar
-	  function RefrescaProducto(){
+
+	  function Refrescaverbo2(){
 		  var ip = [];
 		  var i = 0;
-		  $('#guardar').attr('disabled','disabled'); //Deshabilito el Boton Guardar
+		  $('#guardar').attr('disabled','disabled'); 
 		  $('.iProduct').each(function(index, element) {
 			  i++;
 			  ip.push({ id_pro : $(this).val() });
 		  });
-		  // Si la lista de Productos no es vacia Habilito el Boton Guardar
 		  if (i > 0) {
 			  $('#guardar').removeAttr('disabled','disabled');
 		  }
-		  var ipt=JSON.stringify(ip); //Convierto la Lista de 			  newtr = newtr + '<input type="text" name="posiciones[]" value="'+contador1+'" >'
-// Productos a un JSON para procesarlo en tu controlador
+		  var ipt=JSON.stringify(ip);
 		  $('#ListaPro').val(encodeURIComponent(ipt));
 	  }
 
@@ -176,36 +264,25 @@
 
 			let contador1 = contador += 1;
 
-			  var nombre = $('#Añadrir').val(); //Capturo el Value del Producto
+			  var nombre = $('#Añadrir').val(); 
 
-			  var text = $('#Añadrir').text();//Capturo el Nombre del Producto- Texto dentro del Select
+			  var text = $('#Añadrir').text();
 
 
 			  var sptext = text.split();
-			//   var newtr = '<tr class="item"  data-id="'+sel+'">';
 
-			  var newtr = '<div class="input-group mb-3">';
-			  newtr = newtr + '<div class="input-group-prepend">';
-			  newtr = newtr + '<span class="input-group-text" id="basic-addon1">'+contador1+' </span>';
-			  newtr = newtr + '</div>';
-			  newtr = newtr + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
-			  newtr = newtr + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
-			  newtr = newtr + '</div>';
+			  var html = '<div class="input-group mb-3">';
+			  html = html + '<div class="input-group-prepend">';
+			  html = html + '<span class="input-group-text" id="basic-addon1">'+contador1+' </span>';
+			  html = html + '</div>';
+			  html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
+			  html = html + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
+			  html = html + '</div>';
 
 
-			  $('#campo_texto').append(newtr); //Agrego el Producto al tbody de la Tabla con el id=campo_texto
+			  $('#campo_texto').append(html); //Pinta el contenido en el html
 
-			  Refrescaverbo();//Refresco Productos
-
-			  $('.remove-item').off().click(function(e) {
-				  $(this).parent('td').parent('tr').remove(); //En accion elimino el Producto de la Tabla
-				  if ($('#campo_texto tr.item').length == 0)
-					  $('#campo_texto .no-item').slideDown(300);
-				  Refrescaverbo();
-			  });
-			 $('.iProduct').off().change(function(e) {
-				  Refrescaverbo();
-			 });
+		
 	  }
   </script>
 
@@ -215,24 +292,24 @@
 
 <script type="text/javascript">
 
-
+//Este método, crea un campo oculto, con el cual, obtenemos las posiciones del verbo 
 	$(document).ready(function(){
 		var Verbo  = $( ".text" ).val();
-		var maxField = 10; //Input fields increment limitation
-		var addButton = $('.pro_id'); //Add button selector
-		var campo_texto = $('.campo_texto'); //Input field campo_texto
+		var maxField = 10; 
+		var addButton = $('.pro_id'); 
+		var campo_texto = $('.campo_texto'); 
 		var fieldHTML = '<div><input type="text" name="Objetivos[] value="'+Verbo+'"'+'/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="remove-icon.png"/></a></div>'; //New input field html
-		var x = 1; //Initial field counter is 1
-		$(addButton).click(function(){ //Once add button is clicked
-			if(x < maxField){ //Check maximum number of input fields
-				x++; //Increment field counter
-				$(campo_texto).append(fieldHTML); // Add field html
+		var x = 1; 
+		$(addButton).click(function(){ 
+			if(x < maxField){ 
+				x++; 
+				$(campo_texto).append(fieldHTML); //Pinta el contenido en el html
 			}
 		});
-		$(campo_texto).on('click', '.remove_button', function(e){ //Once remove button is clicked
+		$(campo_texto).on('click', '.remove_button', function(e){ 
 			e.preventDefault();
-			$(this).parent('div').remove(); //Remove field html
-			x--; //Decrement field counter
+			$(this).parent('div').remove(); 
+			x--; 
 		});
 	});
 	</script>
@@ -240,53 +317,49 @@
 
 
 
+{{-- ajax --}}
 
+<script>
+	//Con este método listamos todos los verbos seleccionados 
 
+//inicio método
+//En este método, estamos pintado los valores en la vista HTML  
+	$( document ).ready(function() {
+			var id = localStorage.getItem('id');
+			////Inicio ajax
+			$.ajax({
+				url:"/vervoslis/"+id,
+				type:'get',
+				success:function(data){
+					console.log(data);
 
-<script type="text/javascript">
-	// Refresca Producto: Refresco la Lista de Productos dentro de la Tabla
-	// Si es vacia deshabilito el boton guardar para obligar a seleccionar al menos un producto al usuario
-	// Sino habilito el boton Guardar para que pueda Guardar
-	  function RefrescaProducto(){
-		  var ip = [];
-		  var i = 0;
-		  $('#guardar').attr('disabled','disabled'); //Deshabilito el Boton Guardar
-		  $('.iProduct').each(function(index, element) {
-			  i++;
-			  ip.push({ id_pro : $(this).val() });
-		  });
-		  // Si la lista de Productos no es vacia Habilito el Boton Guardar
-		  if (i > 0) {
-			  $('#guardar').removeAttr('disabled','disabled');
-		  }
-		  var ipt=JSON.stringify(ip); //Convierto la Lista de Productos a un JSON para procesarlo en tu controlador
-		  $('#ListaPro').val(encodeURIComponent(ipt));
-	  }
+					// Se realiza una  validación, que se encarga de verificar , si los datos  arrojados por el controlador, son diferentes a nulo 
+					if(data != null){
+					//En este Fro, se esta recorriendo, los valores arrojados del controlador, Para  pintarlos en la vistas 
+						for(i of data){
 
-	var contador=0;
-		 function agregarverbo() {
+								var html = '<div class="input-group mb-3">';
+								html = html + '<div class="input-group-prepend">';
+								html = html + '<span class="input-group-text" id="basic-addon1">'+i.posiciones+' </span>';
+								html = html + '</div>';
+								html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+i.posiciones+'" >'
+								html = html + '<input type="text" value ="'+i.Objetivos+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
+								html = html + '</div>';
 
-			let contador1 = contador += 1;
+							    $('#campo_texto').append(html); //Pinta el contenido en el html
 
+						}
+					}
+				},
+				error:function(){
+					console.log("error");
+				}
+			});
+			//////fin ajax
+		});
+//fin método
 
-
-			  var sptext = text.split();
-			//   var newtr = '<tr class="item"  data-id="'+sel+'">';
-
-
-			  RefrescaProducto();//Refresco Productos
-
-			  $('.remove-item').off().click(function(e) {
-				  $(this).parent('td').parent('tr').remove(); //En accion elimino el Producto de la Tabla
-				  if ($('#campo_texto tr.item').length == 0)
-					  $('#campo_texto .no-item').slideDown(300);
-				  RefrescaProducto();
-			  });
-			 $('.iProduct').off().change(function(e) {
-				  RefrescaProducto();
-			 });
-	  }
-  </script>
+</script>
 
 
 <script>
