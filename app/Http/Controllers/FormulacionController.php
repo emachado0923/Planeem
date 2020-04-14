@@ -73,29 +73,36 @@ class FormulacionController extends Controller
             $id_planecion = $request->input('id_planecion');
 
             $id_planecion = $request->input('id_planecion');
-            // dd($id_planecion);
-
-            
-                for ($i=0; $i < count($id_respustaverbos) ; $i++) { 
 
 
-                    
-                    formulacionestrategias::updateorCreate(
-                        [
-                            'id_Planeacion'=>$id_planecion,
-                            'id_respustaverbos'=>$id_respustaverbos[$i],
-                            'id_estrategia' => $id_estrategia[$i],
-                        ],
-                        [
-                            'id_Planeacion'=>$id_planecion,
-                            'id_respustaverbos'=>$id_respustaverbos[$i],
-                            'id_estrategia' => $id_estrategia[$i],
-                            'pocision' => $pocision[$i]
-                        ]
-                    );
-                  
+            foreach ($id_estrategia as $id_estrategia) {
+                        for ($i=0; $i < count($id_respustaverbos) ; $i++) { 
+
+
+                        
+                            formulacionestrategias::updateorCreate(
+                                [
+                                    'id_Planeacion'=>$id_planecion,
+                                    'id_respustaverbos'=>$id_respustaverbos[$i],
+                                    'id_estrategia' => $id_estrategia,
+                                ],
+                                [
+                                    'id_Planeacion'=>$id_planecion,
+                                    'id_respustaverbos'=>$id_respustaverbos[$i],
+                                    'id_estrategia' => $id_estrategia,
+                                    'pocision' => $pocision[$i]
+                                ]
+                            );
+                        
+                        
+                    }
                 
             }
+
+             
+               
+            
+      
 
             
             $proyecto = Proyectos::find($id_planecion);

@@ -53,10 +53,11 @@ class Modulo3Controller extends Controller
 
         $Objetivos = $request->input('Objetivos');
         $id_planecion = $request->input('id_planecion');
-
         $posiciones = $request->input('posiciones');
+        $Objetivos = $request->input('Objetivos');
+
         
-    for ($i=0; $i < count($posiciones) ; $i++) {
+    for ($i=0; $i < count($Objetivos) ; $i++) {
         
             respuesta_verbo::updateOrCreate([
                 'posiciones'=> $posiciones[$i],

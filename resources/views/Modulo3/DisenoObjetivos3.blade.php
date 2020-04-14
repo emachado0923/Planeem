@@ -49,6 +49,8 @@
 														<option  value="{{$Verbos['nombre']}}">{{$Verbos->nombre}} </option>
 														@endforeach
 												</select>
+
+
 												<input type="text" name="id_planecion" id="id_planecion"  value="{{$proyecto}}" style="display:none" >
 
 								<br>
@@ -222,7 +224,9 @@ var contador =0 ;
 			  newtr = newtr + '<div class="input-group-prepend">';
 			  newtr = newtr + '<span class="input-group-text" id="basic-addon1">'+contador1+' </span>';
 			  newtr = newtr + '</div>';
+
 			  newtr = newtr + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
+
 
 			  newtr = newtr + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
 			  newtr = newtr + '</div>';

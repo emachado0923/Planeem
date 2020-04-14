@@ -13,22 +13,13 @@
 
 
 		@foreach ($formulacion as $formulacion)
+				
 					<div class="resumenObjetivos">
-
-						<input type="text" class="objetivoTexto" name="" 
-						
-						value="{{$formulacion->Objetivos}}"  
-						
-						parrafo="{{$formulacion->id_estrategia}}">
-						
+						<input type="text" class="objetivoTexto" name="" value="{{$formulacion->id_estrategia}}"  parrafo="{{$formulacion->Objetivos}}">
 					</div>
+				
 		@endforeach
-		{{-- <div class="resumenObjetivos">
-			<input type="text" class="objetivoTexto" name="" parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo">
-		</div>
-		<div class="resumenObjetivos">
-			<input type="text" class="objetivoTexto" name="" parrafo="lo logre">
-		</div> --}}
+		
 	</div>
 </div>
 <div class="hover2">
