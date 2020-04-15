@@ -1,117 +1,117 @@
 @extends('layouts.nav2')
 @section('content')
 <header>
-	@yield('js')
+  @yield('js')
 
 </header>
 <!-- botones -->
 <section class="EPE">
-	<div class="analisisEfi">
-		<button class="EFI animated rotateIn"><h1>DOFA</h1></button>
+  <div class="analisisEfi">
+    <button class="EFI animated rotateIn"><h1>DOFA</h1></button>
 
-		<a class="verde" id="fo" data-toggle="modal" data-target="#exampleModalFo"><img value="mostrarfo" onclick="mostrarfo()" src="img/FO.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco"><h5>Estrategia FO</h5></div></a>
-		<a class="verde" id="da" data-toggle="modal" data-target="#exampleModalDa"><img value="mostrarda" onclick="mostrarda()" src="img/DA.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco1"><h5>Estrategia DA</h5></div></a>
-		<a class="verde" id="do" data-toggle="modal" data-target="#exampleModalDo"><img value="mostrardo" onclick="mostrardo()" src="img/DO.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco"><h5>Estrategia DO</h5></div></a>
-		<a class="verde" id="fa" data-toggle="modal" data-target="#exampleModalFa"><img value="mostrarfa" onclick="mostrarfa()"src="img/FA.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco"><h5>Estrategia FA</h5></div></a>
-	</div>
-	<!-- contenedores -->
-	<div class="row">
-		<div class="col-md-6 conte1">
-			<div class="botonopo1" value="Fortalezas_ventana" data-toggle="modal" data-target="#exampleModal55">
-				<h3 style="color: black;margin-left: 38%;"> 
-					<img src="img/icono1.png" style="width: 38px;margin-top: -16px;">
-					<img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
-					<img src="img/icono4.png" style="width: 40px;margin-top: -3px;">
-				</h3>
-				<div class="scrollfortaleza3">
-					<h2 style="color: black;font-size: 47px;font-weight: bold;">Fortalezas + Amenazas</h2>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 conte2">
-			<div class="botonopo1" value="Oportunidades_ventana" data-toggle="modal" data-target="#exampleModal5">
-				<h3 style="color: black;margin-left: 38%;"> 
-					<img src="img/icono1.png" style="width: 40px;margin-top: -16px;">
-					<img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
-					<img src="img/icono2.png" style="width: 40px;margin-top: -16px;">
-				</h3>
-				<div class="scrollfortaleza3">
-					<h2 style="color: black;font-size: 44px;font-weight: bold;">Fortalezas + Oportunidades</h2>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 conte3">
-			<div class="botonopo" value="Debilidades_ventana" data-toggle="modal" data-target="#exampleModal7">
-				<h3 style="color: black;margin-left: 33%;"> 
-					<img src="img/icono3.png" style="width: 40px;margin-top: -16px;">
-					<img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
-					<img src="img/icono2.png" style="width: 40px;margin-top: -16px;">
-				</h3>
-				<div class="scrollfortaleza3">
-					<h2 style="color: black;font-size: 42px;font-weight: bold;">Debilidades + Oportunidades</h2>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 conte4">
-			<div class="botonopo" value="Amenazas_ventana" data-toggle="modal" data-target="#exampleModal6">
-				<h3 style="color: black;margin-left: 32%;"> 
-					<img src="img/icono3.png" style="width: 40px;margin-top: -16px;">
-					<img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
-					<img src="img/icono4.png" style="width: 40px;margin-top: -3px;">
-				</h3>
-				<div class="scrollfortaleza">
-					<h2 style="color: black;font-size: 42px;font-weight: bold; text-align: center;">Debilidades + Amenazas</h2>
+    <a class="verde" id="fo" data-toggle="modal" data-target="#exampleModalFo"><img value="mostrarfo" onclick="mostrarfo()" src="img/FO.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco"><h5>Estrategia FO</h5></div></a>
+    <a class="verde" id="da" data-toggle="modal" data-target="#exampleModalDa"><img value="mostrarda" onclick="mostrarda()" src="img/DA.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco1"><h5>Estrategia DA</h5></div></a>
+    <a class="verde" id="do" data-toggle="modal" data-target="#exampleModalDo"><img value="mostrardo" onclick="mostrardo()" src="img/DO.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco"><h5>Estrategia DO</h5></div></a>
+    <a class="verde" id="fa" data-toggle="modal" data-target="#exampleModalFa"><img value="mostrarfa" onclick="mostrarfa()"src="img/FA.png" class="object plane move-ne" style="width: 100px; height: 100px;"><div id="hover_muñeco"><h5>Estrategia FA</h5></div></a>
+  </div>
+  <!-- contenedores -->
+  <div class="row">
+    <div class="col-md-6 conte1">
+      <div class="botonopo1" value="Fortalezas_ventana" data-toggle="modal" data-target="#exampleModal55">
+        <h3 style="color: black;margin-left: 38%;"> 
+          <img src="img/icono1.png" style="width: 38px;margin-top: -16px;">
+          <img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
+          <img src="img/icono4.png" style="width: 40px;margin-top: -3px;">
+        </h3>
+        <div class="scrollfortaleza3">
+          <h2 style="color: black;font-size: 47px;font-weight: bold;">Fortalezas + Amenazas</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 conte2">
+      <div class="botonopo1" value="Oportunidades_ventana" data-toggle="modal" data-target="#exampleModal5">
+        <h3 style="color: black;margin-left: 38%;"> 
+          <img src="img/icono1.png" style="width: 40px;margin-top: -16px;">
+          <img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
+          <img src="img/icono2.png" style="width: 40px;margin-top: -16px;">
+        </h3>
+        <div class="scrollfortaleza3">
+          <h2 style="color: black;font-size: 44px;font-weight: bold;">Fortalezas + Oportunidades</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 conte3">
+      <div class="botonopo" value="Debilidades_ventana" data-toggle="modal" data-target="#exampleModal7">
+        <h3 style="color: black;margin-left: 33%;"> 
+          <img src="img/icono3.png" style="width: 40px;margin-top: -16px;">
+          <img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
+          <img src="img/icono2.png" style="width: 40px;margin-top: -16px;">
+        </h3>
+        <div class="scrollfortaleza3">
+          <h2 style="color: black;font-size: 42px;font-weight: bold;">Debilidades + Oportunidades</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 conte4">
+      <div class="botonopo" value="Amenazas_ventana" data-toggle="modal" data-target="#exampleModal6">
+        <h3 style="color: black;margin-left: 32%;"> 
+          <img src="img/icono3.png" style="width: 40px;margin-top: -16px;">
+          <img src="img/icono5.png" style="width: 40px;margin-top: -16px;">
+          <img src="img/icono4.png" style="width: 40px;margin-top: -3px;">
+        </h3>
+        <div class="scrollfortaleza">
+          <h2 style="color: black;font-size: 42px;font-weight: bold; text-align: center;">Debilidades + Amenazas</h2>
 
-				</div>
-			</div>
-		</div>
-		
-		<a  href="{{route('analisisAnsorft')}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
-	</div>
+        </div>
+      </div>
+    </div>
+    
+    <a  href="{{route('analisisAnsorft')}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
+  </div>
 </section>
 <div class="infon">
 </div>
 <span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-scrollable" role="document">
-		<div class="modal-content10">{{-- se coloco estilos de este modal en estilos css --}}
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
-				<span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
-				margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content10">{{-- se coloco estilos de este modal en estilos css --}}
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
+        <span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
+        margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
 
-			</div>
-			<div class="modal-body">
-				<ol style="line-height: 17px; margin-top: -19px;">
-					<b style="color: black; font-weight: bold;">El procedimiento consiste en los siguientes pasos:</b>
-					<br>
-					<li>1. Se obtiene información de las empresas competidoras que serán incluidas en la MPC.</li><br>
-					<li>2. Se enlistan los aspectos o factores a considerar, que bien pueden ser elementos fuertes o débiles, según sea el caso,
-					de cada empresa u organización analizada</li>.<br>
-					<li>3. Se asigna un peso a cada uno de estos factores.</li><br>
-					<li>4. A cada una de las organizaciones enlistadas en la tabla se le asigna una calificación, siendo los valores de las<br>
-						calificaciones los siguientes:
-						<ol width="100%" style="text-align: center">
-							<li>1= Debilidad principal</li><br>
-							<li>2= Debilidad Menor</li><br>
-							<li>3= Fortaleza menor</li><br>
-							<li>4= Fortaleza mayor</li><br>
-						</ol>
-					</li><br>
-					
-					<b>
-						
-					</b>
-					<li>5. Se multiplica el peso de la segunda columna por cada una de las calificaciones de las organizaciones o empresas
-					competidoras, obteniéndose el peso ponderado correspondiente.</li><br>
-					<li>6. Se suman los totales de la columna del peso (debe ser de 1.00) y de las columnas de los pesos ponderados
-					(Ponce, 2007, pág. 120).</li>
-				</ol>
-			</div>
-		</div>
-	</div>
+      </div>
+      <div class="modal-body">
+        <ol style="line-height: 17px; margin-top: -19px;">
+          <b style="color: black; font-weight: bold;">El procedimiento consiste en los siguientes pasos:</b>
+          <br>
+          <li>1. Se obtiene información de las empresas competidoras que serán incluidas en la MPC.</li><br>
+          <li>2. Se enlistan los aspectos o factores a considerar, que bien pueden ser elementos fuertes o débiles, según sea el caso,
+          de cada empresa u organización analizada</li>.<br>
+          <li>3. Se asigna un peso a cada uno de estos factores.</li><br>
+          <li>4. A cada una de las organizaciones enlistadas en la tabla se le asigna una calificación, siendo los valores de las<br>
+            calificaciones los siguientes:
+            <ol width="100%" style="text-align: center">
+              <li>1= Debilidad principal</li><br>
+              <li>2= Debilidad Menor</li><br>
+              <li>3= Fortaleza menor</li><br>
+              <li>4= Fortaleza mayor</li><br>
+            </ol>
+          </li><br>
+          
+          <b>
+            
+          </b>
+          <li>5. Se multiplica el peso de la segunda columna por cada una de las calificaciones de las organizaciones o empresas
+          competidoras, obteniéndose el peso ponderado correspondiente.</li><br>
+          <li>6. Se suman los totales de la columna del peso (debe ser de 1.00) y de las columnas de los pesos ponderados
+          (Ponce, 2007, pág. 120).</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 99999999;">
   <div class="modal-dialog" role="document">
@@ -133,7 +133,7 @@
        <h3 style="color: black;margin-left: 30%;"> 
         <img src="img/icono1.png" style="width: 28px;margin-top: -16px;">
         <img src="img/icono5.png" style="width: 28px;margin-top: -16px;">
-        <img src="img/icono4.png" style="width: 28px;margin-top: -3px;">Fortaleza + Amenazas=FA
+        <img src="img/icono4.png" style="width: 28px;margin-top: -3px;">Fortalezas + Amenazas=FA
       </h3>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;margin-left: 0% !important;" >
        <span class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></span>
@@ -142,17 +142,21 @@
    <div class="modal-body">
     <div class="scrollfortaleza2">
       <main>
-		<h1 style="text-align: center;">Fortalezas</h1>
-		@foreach ($fortaleza1 as $fortaleza1)
-	  		<p>{{$fortaleza1->nombre}}</p>
-		@endforeach
+    <h1 style="text-align: center;">Fortalezas</h1>
+    @foreach ($fortaleza1 as $fortaleza1)
+        <p>{{$fortaleza1->nombre}}</p>
+    @endforeach
       </main>
       <main>
-		<h1 style="text-align: center;">Amenazas</h1>
-		@foreach ($amenaza1 as $amenaza1)
-			<p>{{$amenaza1->nombre}}</p>
- 		 @endforeach
+    <h1 style="text-align: center;">Amenazas</h1>
+    @foreach ($amenaza1 as $amenaza1)
+      <p>{{$amenaza1->nombre}}</p>
+     @endforeach
       </main>
+
+      <a type="button" style="color:white;" data-toggle="modal" data-target="#staticBackdrop" class="DiseñarEstra btn btn-planeem waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+          Diseñar Estrategias
+      </a>
     </div>
   </div>
 </div>
@@ -185,17 +189,21 @@
    <div class="modal-body">
     <div class="scrollfortaleza2">
       <main>
-		<h1 style="text-align: center;">Fortalezas</h1>
-		@foreach ($fortaleza as $fortaleza)
-       		 <p>{{$fortaleza->nombre}}</p>
-		@endforeach
+    <h1 style="text-align: center;">Fortalezas</h1>
+    @foreach ($fortaleza as $fortaleza)
+           <p>{{$fortaleza->nombre}}</p>
+    @endforeach
       </main>
       <main>
-		<h1 style="text-align: center;">Oportunidades</h1>
-		@foreach ($oportunidad2 as $oportunidad2)
-			<p>{{$oportunidad2->nombre}}</p>	
-		@endforeach
+    <h1 style="text-align: center;">Oportunidades</h1>
+    @foreach ($oportunidad2 as $oportunidad2)
+      <p>{{$oportunidad2->nombre}}</p>  
+    @endforeach
       </main>
+
+            <a type="button" style="color:white;" data-toggle="modal" data-target="#staticBackdrop2" class="DiseñarEstra btn btn-planeem waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+          Diseñar Estrategias
+      </a>
     </div>
   </div>
 </div>
@@ -218,19 +226,23 @@
    <div class="modal-body">
     <div class="scrollfortaleza2">
       <main>
-		<h1 style="text-align: center;">Debilidades</h1>
-		  @foreach ($debilidad as $debilidad)
-				<p>{{$debilidad->nombre}}</p>
-		  @endforeach
-		</main>
+    <h1 style="text-align: center;">Debilidades</h1>
+      @foreach ($debilidad as $debilidad)
+        <p>{{$debilidad->nombre}}</p>
+      @endforeach
+    </main>
 
     
       <main>
-		<h1 style="text-align: center;">Amenazas</h1>
-		@foreach ($amenaza as $amenaza)
-	  <p>{{$amenaza->nombre}}</p>
-		@endforeach
+    <h1 style="text-align: center;">Amenazas</h1>
+    @foreach ($amenaza as $amenaza)
+    <p>{{$amenaza->nombre}}</p>
+    @endforeach
       </main>
+
+            <a type="button" style="color:white;" data-toggle="modal" data-target="#staticBackdrop3" class="DiseñarEstra btn btn-planeem waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+          Diseñar Estrategias
+      </a>
     </div>
   </div>
 </div>
@@ -254,28 +266,176 @@
     <div class="scrollfortaleza2">
       <main>
         <h1 style="text-align: center;">Debilidades</h1>
-			@foreach ($debilidad1 as $debilidad1)
-				<p>{{$debilidad1->nombre}}</p>
-			@endforeach
+      @foreach ($debilidad1 as $debilidad1)
+        <p>{{$debilidad1->nombre}}</p>
+      @endforeach
       </main>
       <main>
-		<h1 style="text-align: center;">Oportunidades</h1>
-		@foreach ($oportunidad as $oportunidad)
-	  		<p>{{$oportunidad->nombre}}</p>	
-		@endforeach
+    <h1 style="text-align: center;">Oportunidades</h1>
+    @foreach ($oportunidad as $oportunidad)
+        <p>{{$oportunidad->nombre}}</p> 
+    @endforeach
       </main>
+
+            <a type="button" style="color:white;" data-toggle="modal" data-target="#staticBackdrop4" class="DiseñarEstra btn btn-planeem waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+          Diseñar Estrategias
+      </a>
     </div>
   </div>
 </div>
 </div>
 </div>
 
+<!-- -----Modales de diseñar estrategias Fa-------------->
+ 
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="modal-Estrategias">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Mis estrategias</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="icon-cancel-circle" style="color: #FC7323; cursor: pointer; outline: none;"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="scrollfEstra">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">1</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">2</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-planeem waves-effect waves-light" data-dismiss="modal" style="color: #fff;">Agregar</button>
+        <button type="button" class="btn btn-planeem waves-effect waves-light" style="color: #fff;">Eliminar</button>
+        <a type="button"class="btn btn-planeem waves-effect waves-light" style="color: #fff;" data-dismiss="modal" aria-label="Close">Guardar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -----Modales de diseñar estrategias Fo-------------->
+<div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="modal-Estrategias">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Mis estrategias</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="icon-cancel-circle" style="color: #FC7323; cursor: pointer; outline: none;"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="scrollfEstra">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">3</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">4</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-planeem waves-effect waves-light" data-dismiss="modal" style="color: #fff;">Agregar</button>
+        <button type="button" class="btn btn-planeem waves-effect waves-light" style="color: #fff;">Eliminar</button>
+        <a type="button"class="btn btn-planeem waves-effect waves-light" style="color: #fff;" data-dismiss="modal" aria-label="Close">Guardar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- -----Modales de diseñar estrategias Da-------------->
+<div class="modal fade" id="staticBackdrop3" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="modal-Estrategias">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Mis estrategias</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="icon-cancel-circle" style="color: #FC7323; cursor: pointer; outline: none;"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="scrollfEstra">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">5</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">6</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-planeem waves-effect waves-light" data-dismiss="modal" style="color: #fff;">Agregar</button>
+        <button type="button" class="btn btn-planeem waves-effect waves-light" style="color: #fff;">Eliminar</button>
+        <a type="button"class="btn btn-planeem waves-effect waves-light" style="color: #fff;" data-dismiss="modal" aria-label="Close">Guardar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- -----Modales de diseñar estrategias Do-------------->
+<div class="modal fade" id="staticBackdrop4" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" id="modal-Estrategias">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Mis estrategias</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="icon-cancel-circle" style="color: #FC7323; cursor: pointer; outline: none;"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="scrollfEstra">
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">7</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">8</span>
+            </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-planeem waves-effect waves-light" data-dismiss="modal" style="color: #fff;">Agregar</button>
+        <button type="button" class="btn btn-planeem waves-effect waves-light" style="color: #fff;">Eliminar</button>
+        <a type="button"class="btn btn-planeem waves-effect waves-light" style="color: #fff;" data-dismiss="modal" aria-label="Close">Guardar</a>
+      </div>
+    </div>
+  </div>
+</div>
 {{-- modales pequeños de fa fo etc --}}
 <div class="modal fade" id="exampleModalFo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content modal-modificado1">
       <div class="modal-body">
-        <div id="cierre_caja4"><a value="ocultarfo" onclick="ocultarfo()" data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+        <div id="cierre_caja4"><a value="ocultardo" onclick="ocultardo()" data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
           <p class="Nota">Nota: El perfil de fortalezas y debilidades, se representa gráficamente mediante la calificación de la fortaleza o debilidad con relación a su grado en la escala de Alto (A), Medio (M), y Bajo (B).</p>
         </div>
       </div>
@@ -351,28 +511,28 @@
  })
 </script>
 <script>
-	function guardar(){
+  function guardar(){
 
 
-		if (document.getElementById('Para_paso1').value == 0) {
+    if (document.getElementById('Para_paso1').value == 0) {
 
-			document.getElementById("id").innerHTML = "error";
+      document.getElementById("id").innerHTML = "error";
 
-		}else{
-			var miDato = document.getElementById('Para_paso1').value;
-			localStorage.setItem('Para',miDato);
-			localStorage.setItem('Progreso','10%');
-		}
-	};
+    }else{
+      var miDato = document.getElementById('Para_paso1').value;
+      localStorage.setItem('Para',miDato);
+      localStorage.setItem('Progreso','10%');
+    }
+  };
 </script>
 
 
 
 <script>
 
-	var Progreso = localStorage.getItem('Progreso')
-	document.getElementById("id").style.width=Progreso;
-	document.getElementById("id").innerHTML = Progreso;
+  var Progreso = localStorage.getItem('Progreso')
+  document.getElementById("id").style.width=Progreso;
+  document.getElementById("id").innerHTML = Progreso;
 
 
 </script>

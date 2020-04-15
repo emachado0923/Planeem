@@ -5597,7 +5597,8 @@ button.bg-dark:hover {
     flex-wrap: wrap!important
 }
 .flex-nowrap {
-    flex-wrap: nowrap!important
+    flex-wrap: nowrap!important;
+    padding: 8px;
 }
 .flex-wrap-reverse {
     flex-wrap: wrap-reverse!important
