@@ -154,6 +154,12 @@ Route::get('/analisisDofaI', function () {
 })->name('analisisDofaI')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 
 
+//Nueva  vista del modulo 2 
+Route::get('/analisisDofa2', function () {
+    return view('Modulo2.analisisDofa2');
+})->name('analisisDofa2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
+
 
 // rutas del modulo3
 Route::get('/DisenoObjetivos', function () {

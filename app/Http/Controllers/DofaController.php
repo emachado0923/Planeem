@@ -85,4 +85,84 @@ class DofaController extends Controller
         return view('Modulo2.analisisDofa')->with(compact('amenaza','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
 
    }
+   
+   public function dofa2(Request $request){
+      $id = $request->input('id_planecion');
+
+      $typeA = ['aAlta', 'aMedia', 'aBaja'];
+      $typeO = ['oAlta', 'oMedia', 'oBaja'];
+
+      $amenaza= DB::table('respuesta_analisis')
+      ->select('nombre')
+      ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+      ->whereIn('respuesta', $typeA)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+      $oportunidad=DB::table('respuesta_analisis')
+      ->select('nombre')
+      ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+      ->whereIn('respuesta', $typeO)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+      $typeF = ['fAlta', 'fMedia', 'fBaja'];
+      $typeD = ['dAlta', 'dMedia', 'dBaja'];
+
+      $fortaleza= DB::table('respuesta_capacidad')
+      ->select('nombre')
+      ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
+      ->whereIn('respuesta', $typeF)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+      $debilidad= DB::table('respuesta_capacidad')
+      ->select('nombre')
+      ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
+      ->whereIn('respuesta', $typeD)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+      $debilidad1 = DB::table('respuesta_capacidad')
+      ->select('nombre')
+      ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
+      ->whereIn('respuesta', $typeD)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+      $oportunidad2=DB::table('respuesta_analisis')
+      ->select('nombre')
+      ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+      ->whereIn('respuesta', $typeO)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+
+      
+      $fortaleza1= DB::table('respuesta_capacidad')
+      ->select('nombre')
+      ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
+      ->whereIn('respuesta', $typeF)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+      $amenaza1= DB::table('respuesta_analisis')
+      ->select('nombre')
+      ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+      ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+      ->whereIn('respuesta', $typeA)
+      ->where('idPlaneacion', $id)
+      ->get();
+
+
+       return view('Modulo2.analisisDofa')->with(compact('amenaza','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
+
+  }
 }

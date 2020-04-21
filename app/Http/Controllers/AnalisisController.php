@@ -293,7 +293,58 @@ class AnalisisController extends Controller
         return view('Modulo2.analisisDofaI')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
 
     }
+    //* -----------------------------------------*/
+    // public function getDOFA2(Request $request){
 
+
+    //     $id = $request->get('id_planecion');
+        
+    //     $typeA = ['aAlta', 'aMedia', 'aBaja'];
+    //     $typeO = ['oAlta', 'oMedia', 'oBaja'];
+
+    //     $amenaza= DB::table('respuesta_analisis')
+    //     ->select('nombre')
+    //     ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+    //     ->whereIn('respuesta', $typeA)
+    //     ->where('idPlaneacion', $id)
+    //     ->get();
+
+    //     $oportunidad=DB::table('respuesta_analisis')
+    //     ->select('nombre')
+    //     ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+    //     ->whereIn('respuesta', $typeO)
+    //     ->where('idPlaneacion', $id)
+    //     ->get();
+
+    //     $typeF = ['fAlta', 'fMedia', 'fBaja'];
+    //     $typeD = ['dAlta', 'dMedia', 'dBaja'];
+
+    //     $fortaleza= DB::table('respuesta_capacidad')
+    //     ->select('nombre')
+    //     ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
+    //     ->whereIn('respuesta', $typeF)
+    //     ->where('idPlaneacion', $id)
+    //     ->get();
+
+    //     $debilidad= DB::table('respuesta_capacidad')
+    //     ->select('nombre')
+    //     ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
+    //     ->whereIn('respuesta', $typeD)
+    //     ->where('idPlaneacion', $id)
+    //     ->get();
+
+
+    //     // dd($amenaza);
+
+    //     return view('Modulo2.analisisDofa2')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
+
+    // }
+
+    //* -----------Agregue esta funcion -------------------------------*/
 
 
     public function getDOFA1(Request $request){
