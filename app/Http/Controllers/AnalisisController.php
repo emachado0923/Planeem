@@ -290,7 +290,7 @@ class AnalisisController extends Controller
 
         // dd($amenaza);
 
-        return view('Modulo2.analisisDofaI')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
+        return route('Dofa2')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
 
     }
     //* -----------------------------------------*/

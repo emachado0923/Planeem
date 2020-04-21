@@ -82,12 +82,11 @@ class DofaController extends Controller
        ->get();
 
 
-        return view('Modulo2.analisisDofa')->with(compact('amenaza','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
+        return view('Modulo2.analisisDofa')->with(compact('amenaza','id','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
 
    }
    
-   public function dofa2(Request $request){
-      $id = $request->input('id_planecion');
+   public function dofa2($id){
 
       $typeA = ['aAlta', 'aMedia', 'aBaja'];
       $typeO = ['oAlta', 'oMedia', 'oBaja'];
@@ -162,7 +161,7 @@ class DofaController extends Controller
       ->get();
 
 
-       return view('Modulo2.analisisDofa')->with(compact('amenaza','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
+       return view('Modulo2.analisisDofa2')->with(compact('amenaza','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
 
   }
 }

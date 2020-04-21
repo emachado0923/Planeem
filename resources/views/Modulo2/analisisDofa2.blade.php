@@ -67,6 +67,7 @@
 </div>
 </div>
 </div>
+    {{-- <a  href="{{route('analisisAnsorft')}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a> --}}
 
 <a  href="{{route('analisisAnsorft')}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
 </div>
