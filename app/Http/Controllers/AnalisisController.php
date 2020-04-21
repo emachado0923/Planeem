@@ -290,7 +290,6 @@ class AnalisisController extends Controller
 
         // dd($amenaza);
 
-
         //Aca se esta trabajando 
         return view('Modulo2.AnalisisDofa2')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
         //Nico tenia que devolviera una ruta fff 
@@ -298,10 +297,6 @@ class AnalisisController extends Controller
 
 
 
-
-    }
-    //* -----------------------------------------*/
-    // public function getDOFA2(Request $request){
 
 
     //     $id = $request->get('id_planecion');
