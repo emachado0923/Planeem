@@ -161,7 +161,7 @@ class DofaController extends Controller
       ->get();
 
 
-       return view('Modulo2.analisisDofa2')->with(compact('amenaza','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
+       return  redirect()->route('dofaSelec')->with(compact('amenaza','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza1'));
 
   }
 }
