@@ -11,27 +11,9 @@
 	<h1 style="text-align: center;">Objetivos con estrategias seleccionadas</h1>
 	<div class="objetivos_conten1">
 
-		<!-- Es aca el f error-->
 
-			<!-- @//foreach ($usuarios as $usuario) @//foreach ($usuario->recargas as $recarga)-->
-			@foreach ($formulacion as $formulacion)
-		
-						 {{-- <div class="resumenObjetivos">
-
-						<input type="text" class="objetivoTexto" name="" 
-						
-					value="{{$formulacion->Objetivos}}" 
-					parrafo="{{		
-						@foreach($formulacion as $formulacion)
-							$formulacion->id_estrategia
-						@endforeach
-					}}">
-					
-					
-						
-					</div> --}}
-
-					{{-- <div class="resumenObjetivos">
+		@foreach ($formulacion as $formulacion)
+					<div class="resumenObjetivos">
 
 						<input type="text" class="objetivoTexto" name="" 
 						
@@ -39,9 +21,7 @@
 						
 						parrafo="{{$formulacion->id_estrategia}}">
 						
-					</div>--}}
-
-					 
+					</div>
 		@endforeach
 		{{-- <div class="resumenObjetivos">
 			<input type="text" class="objetivoTexto" name="" parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo">
