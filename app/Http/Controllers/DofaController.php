@@ -153,7 +153,16 @@ class DofaController extends Controller
        ->where('idPlaneacion', $id)
        ->get();
 
-
+      /*     
+            $tipoaptitud=DB::table('tipo_aptitud')
+            ->select('tipo_aptitud')
+            ->join('tipo_aptitud', 'tipo_aptitud.id', 'respuesta_analisis.idanalisis')
+            ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+            ->whereIn('respuesta', $typeO)
+            ->where('idPlaneacion', $id)
+            ->get();
+      
+      */
 
 
 
