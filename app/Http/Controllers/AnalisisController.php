@@ -246,7 +246,7 @@ class AnalisisController extends Controller
 
     public function getDOFA(Request $request){
 
-
+        
         $id = $request->get('id_planecion');
         
         $typeA = ['aAlta', 'aMedia', 'aBaja'];
@@ -294,7 +294,7 @@ class AnalisisController extends Controller
         return view('Modulo2.AnalisisDofa2')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
         //Nico tenia que devolviera una ruta fff 
 
-
+    }
 
 
 
