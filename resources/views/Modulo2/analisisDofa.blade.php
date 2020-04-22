@@ -157,6 +157,7 @@
       <a type="button" style="color:white;" data-toggle="modal" data-target="#staticBackdrop" class="DiseñarEstra btn btn-planeem waves-effect waves-light" data-dismiss="modal" aria-label="Close">
           Diseñar Estrategias
       </a>
+    <!-- Vamos aca-->
     </div>
   </div>
 </div>
@@ -300,8 +301,9 @@
       </div>
       <div class="modal-body">
         <div class="scrollfEstra">
-          <h1>Amenazas</h1>
-          @foreach ($amenaza2 as $amenaza2)
+          <h1>Amenazas y Fortalezas</h1>
+        
+          {{-- @foreach ($amenaza2 as $amenaza2)
           <div class="input-group flex-nowrap">
     
             <div class="input-group-prepend">
@@ -309,18 +311,23 @@
             </div>
           <input type="text" class="form-control" value="{{$amenaza2->nombre}}" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
           </div>
-          @endforeach
+          @endforeach --}}
         
 
-          <h1>fortaleza2</h1>
+{{--         
           @foreach ($fortaleza2 as $fortaleza2)
 
           <div class="input-group flex-nowrap">
               <input type="text" class="form-control" value="{{$fortaleza2->nombre}}" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
           </div>
                 
-            @endforeach
-        </div>
+            @endforeach --}}
+        
+            <div class="input-group flex-nowrap">
+              <input type="text" class="form-control" value="" placeholder="Estrategias " aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-planeem waves-effect waves-light" data-dismiss="modal" style="color: #fff;">Agregar</button>

@@ -265,8 +265,6 @@ class DofaController extends Controller
       ->where('idPlaneacion', $id)
       ->get();
 
-
-
       $debilidad3 = DB::table('respuesta_capacidad')
       ->select('nombre')
       ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
@@ -274,8 +272,6 @@ class DofaController extends Controller
       ->whereIn('respuesta', $typeD)
       ->where('idPlaneacion', $id)
       ->get();
-
-
 
       $amenaza3= DB::table('respuesta_analisis')
       ->select('nombre')
