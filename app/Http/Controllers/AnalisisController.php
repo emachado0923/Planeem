@@ -246,7 +246,7 @@ class AnalisisController extends Controller
 
     public function getDOFA(Request $request){
 
-        
+
         $id = $request->get('id_planecion');
         
         $typeA = ['aAlta', 'aMedia', 'aBaja'];
@@ -293,8 +293,8 @@ class AnalisisController extends Controller
         return view('Modulo2.analisisDofaI')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
 
     }
-
-
+    //* -----------------------------------------*/
+    // public function getDOFA2(Request $request){
 
 
     //     $id = $request->get('id_planecion');
