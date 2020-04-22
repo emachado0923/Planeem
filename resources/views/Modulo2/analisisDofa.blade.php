@@ -300,19 +300,26 @@
       </div>
       <div class="modal-body">
         <div class="scrollfEstra">
+          <h1>Amenazas</h1>
+          @foreach ($amenaza2 as $amenaza2)
           <div class="input-group flex-nowrap">
+    
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">1</span>
+              <span class="input-group-text" id="addon-wrapping"></span>
             </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          <input type="text" class="form-control" value="{{$amenaza2->nombre}}" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
           </div>
+          @endforeach
+        
+
+          <h1>fortaleza2</h1>
+          @foreach ($fortaleza2 as $fortaleza2)
 
           <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">2</span>
-            </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+              <input type="text" class="form-control" value="{{$fortaleza2->nombre}}" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
           </div>
+                
+            @endforeach
         </div>
       </div>
       <div class="modal-footer">
@@ -335,19 +342,26 @@
       </div>
       <div class="modal-body">
         <div class="scrollfEstra">
-          <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">3</span>
-            </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-          </div>
+          <h1>oportunidades </h1>
+    
+    
+            @foreach ($oportunidad3 as $oportunidad3)
+            <div class="input-group flex-nowrap">
+              <input type="text" class="form-control" value="{{$oportunidad3->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+            @endforeach
+        
+          
+        
+
+          <h1>fortalezas </h1>
+          @foreach ($fortaleza3 as $fortaleza3)
 
           <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">4</span>
-            </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          <input type="text" class="form-control" value="{{$fortaleza3->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
           </div>
+                
+            @endforeach
         </div>
       </div>
       <div class="modal-footer">
@@ -369,22 +383,26 @@
           <i class="icon-cancel-circle" style="color: #FC7323; cursor: pointer; outline: none;"></i>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="scrollfEstra">
-          <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">5</span>
-            </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-          </div>
-
-          <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">6</span>
-            </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-          </div>
+      <div class="scrollfEstra">
+        <h1>debilidades  </h1>
+  
+  
+      @foreach ($debilidad3 as $debilidad3)
+      <div class="input-group flex-nowrap">
+      <input type="text" class="form-control" value="{{$debilidad3->nombre}}"   placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
         </div>
+      @endforeach
+      
+
+        <h1>amenazas </h1>
+        @foreach ($amenaza3 as $amenaza3)
+        <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" value="{{$amenaza3->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+                
+        @endforeach
+      
+         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-planeem waves-effect waves-light" data-dismiss="modal" style="color: #fff;">Agregar</button>
@@ -405,22 +423,26 @@
           <i class="icon-cancel-circle" style="color: #FC7323; cursor: pointer; outline: none;"></i>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="scrollfEstra">
-          <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">7</span>
-            </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-          </div>
-
-          <div class="input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping">8</span>
-            </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-          </div>
+      <div class="scrollfEstra">
+        <h1>debilidades  </h1>
+  
+  
+      @foreach ($debilidad4 as $debilidad4)
+      <div class="input-group flex-nowrap">
+      <input type="text" class="form-control" value="{{$debilidad4->nombre}}"   placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
         </div>
+      @endforeach
+      
+
+        <h1>oportunidades  </h1>
+        @foreach ($oportunidad4 as $oportunidad4)
+        <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" value="{{$oportunidad4->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+                
+        @endforeach
+      
+         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-planeem waves-effect waves-light" data-dismiss="modal" style="color: #fff;">Agregar</button>

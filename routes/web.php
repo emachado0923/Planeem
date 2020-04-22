@@ -158,9 +158,17 @@
     ->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 
 
+    Route::get('/dofaSelec', function () {
+        return  view('Modulo2.analisisDofa2');
+    })->name('dofaSelec')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
     Route::get('/Dofa2', function () {
         return view('Modulo2.analisisDofa');
     })->name('Dofa2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
+
+    Route::get('/amenaza/{id}')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    
     // rutas del modulo3
     Route::get('/DisenoObjetivos', function () {
         return view('Modulo3.DisenoObjetivos');
@@ -245,7 +253,9 @@
     Route::post('/analisisPestal/create','AnalisisController@store')->name('guardaAna')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     //Routes análisis EFI  Y EFi
     Route::post('/getDebiAmena','AnalisisController@getEFI')->name('analisisEFI')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    
     Route::post('/getOpoFor','AnalisisController@getDOFA')->name('analisisDOFA')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+
     Route::post('/getOpoForb','AnalisisController@getDOFA1')->name('analisisDOFA1')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 
     //Routes de análisis porter

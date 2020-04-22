@@ -65,6 +65,34 @@ class FormulacionController extends Controller
             return view('Modulo3.FormulacionAsociar')->with(compact('proyecto','Objetivos','cantidad','estrategia','debilidad','fortaleza','amenaza','oportunidad','fortaleza','debilidad'));
     }
 
+    public function guardar(Request $request){
+
+        $Objetivos = $request->input('Objetivos');
+        $id_planecion = $request->input('id_planecion');
+        $posiciones = $request->input('posiciones');
+        
+    for ($i=0; $i < count($posiciones) ; $i++) {
+
+        respuesta_verbo::updateOrCreate(
+            [
+                'id_Planeacion'=> $id_planecion,
+                'posiciones'=> $posiciones[$i],
+            ],
+
+            [
+                'posiciones'=> $posiciones[$i],
+                'Objetivos'=> $Objetivos[$i],
+                'id_Planeacion'=> $id_planecion
+            ]
+        );
+        
+
+    }
+
+        return view('Modulo3.FormulacionInfo')->with('id_planecion',$id_planecion);
+        
+    }
+
     public function storeage(Request $request){
 
             $id_estrategia = $request->input('id_estrategia');

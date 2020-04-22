@@ -141,21 +141,28 @@ competidoras, obteniéndose el peso ponderado correspondiente.</li><br>
    <div class="modal-body">
     <div class="scrollfortaleza2">
       <div class="container">
-        <div class="row">
-          <div class="col">
+        <div class="modal-body">
+          <div class="scrollfEstra">
+            <h1>Amenazas</h1>
+            @foreach ($amenaza as $amenaza)
             <div class="input-group flex-nowrap">
+      
               <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">1</span>
+                <span class="input-group-text" id="addon-wrapping"></span>
               </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+            <input type="text" class="form-control" value="{{$amenaza->nombre}}" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
-
+            @endforeach
+          
+  
+            <h1>fortaleza2</h1>
+            @foreach ($fortaleza2 as $fortaleza2)
+  
             <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">2</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" value="{{$fortaleza2->nombre}}" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
+                  
+              @endforeach
           </div>
         </div>
       </div>
@@ -183,19 +190,28 @@ competidoras, obteniéndose el peso ponderado correspondiente.</li><br>
     <div class="scrollfortaleza2">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">1</span>
+          <div class="modal-body">
+            <div class="scrollfEstra">
+              <h1>oportunidades </h1>
+        
+        
+                @foreach ($oportunidad3 as $oportunidad3)
+                <div class="input-group flex-nowrap">
+                  <input type="text" class="form-control" value="{{$oportunidad3->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+                @endforeach
+            
+              
+            
+    
+              <h1>fortalezas </h1>
+              @foreach ($fortaleza3 as $fortaleza3)
+    
+              <div class="input-group flex-nowrap">
+              <input type="text" class="form-control" value="{{$fortaleza3->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
               </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-            </div>
-
-            <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">2</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    
+                @endforeach
             </div>
           </div>
         </div>
@@ -225,20 +241,26 @@ competidoras, obteniéndose el peso ponderado correspondiente.</li><br>
     <div class="scrollfortaleza2">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">1</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          <div class="scrollfEstra">
+            <h1>debilidades  </h1>
+      
+      
+          @foreach ($debilidad3 as $debilidad3)
+          <div class="input-group flex-nowrap">
+          <input type="text" class="form-control" value="{{$debilidad3->nombre}}"   placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
-
+          @endforeach
+          
+    
+            <h1>amenazas </h1>
+            @foreach ($amenaza3 as $amenaza3)
             <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">2</span>
+            <input type="text" class="form-control" value="{{$amenaza3->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
               </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-            </div>
+                    
+            @endforeach
+          
+             
           </div>
         </div>
       </div>
@@ -267,20 +289,26 @@ competidoras, obteniéndose el peso ponderado correspondiente.</li><br>
     <div class="scrollfortaleza2">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">1</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          <div class="scrollfEstra">
+            <h1>debilidades  </h1>
+      
+      
+          @foreach ($debilidad4 as $debilidad4)
+          <div class="input-group flex-nowrap">
+          <input type="text" class="form-control" value="{{$debilidad4->nombre}}"   placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
-
+          @endforeach
+          
+    
+            <h1>oportunidades  </h1>
+            @foreach ($oportunidad4 as $oportunidad4)
             <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping">2</span>
+            <input type="text" class="form-control" value="{{$oportunidad4->nombre}}"  placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
               </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-            </div>
+                    
+            @endforeach
+          
+             
           </div>
         </div>
       </div>
