@@ -557,8 +557,8 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'App\\Providers\\CustomValidationRulesProvider' => __DIR__ . '/../..' . '/app/Model/Providers/CustomValidationRulesProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Model/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Model/Providers/RouteServiceProvider.php',
-        'App\\aptitud' => __DIR__ . '/../..' . '/app/aptitud.php',
-        'App\\tipoAptitud' => __DIR__ . '/../..' . '/app/tipoAptitud.php',
+        'App\\aptitud' => __DIR__ . '/../..' . '/app/Model/aptitud.php',
+        'App\\tipoAptitud' => __DIR__ . '/../..' . '/app/Model/tipoAptitud.php',
         'Barryvdh\\DomPDF\\Facade' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/Facade.php',
         'Barryvdh\\DomPDF\\PDF' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/PDF.php',
         'Barryvdh\\DomPDF\\ServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/ServiceProvider.php',
@@ -4745,6 +4745,7 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'tipo_PenetracionSeeder' => __DIR__ . '/../..' . '/database/seeds/tipo_PenetracionSeeder.php',
         'tipo_mercadoSeeder' => __DIR__ . '/../..' . '/database/seeds/tipo_mercadoSeeder.php',
         'tipo_posicionamienteSeeder' => __DIR__ . '/../..' . '/database/seeds/tipo_posicionamienteSeeder.php',
+        'tipoaptitudsSeeder' => __DIR__ . '/../..' . '/database/seeds/tipoaptitudsSeeder.php',
         'userSeeder' => __DIR__ . '/../..' . '/database/seeds/userSeeder.php',
         'verbosTableSeeder' => __DIR__ . '/../..' . '/database/seeds/verbosTableSeeder.php',
     );

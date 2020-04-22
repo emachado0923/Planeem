@@ -108,8 +108,8 @@ return array(
     'App\\Providers\\CustomValidationRulesProvider' => $baseDir . '/app/Model/Providers/CustomValidationRulesProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Model/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Model/Providers/RouteServiceProvider.php',
-    'App\\aptitud' => $baseDir . '/app/aptitud.php',
-    'App\\tipoAptitud' => $baseDir . '/app/tipoAptitud.php',
+    'App\\aptitud' => $baseDir . '/app/Model/aptitud.php',
+    'App\\tipoAptitud' => $baseDir . '/app/Model/tipoAptitud.php',
     'Barryvdh\\DomPDF\\Facade' => $vendorDir . '/barryvdh/laravel-dompdf/src/Facade.php',
     'Barryvdh\\DomPDF\\PDF' => $vendorDir . '/barryvdh/laravel-dompdf/src/PDF.php',
     'Barryvdh\\DomPDF\\ServiceProvider' => $vendorDir . '/barryvdh/laravel-dompdf/src/ServiceProvider.php',
@@ -4296,6 +4296,7 @@ return array(
     'tipo_PenetracionSeeder' => $baseDir . '/database/seeds/tipo_PenetracionSeeder.php',
     'tipo_mercadoSeeder' => $baseDir . '/database/seeds/tipo_mercadoSeeder.php',
     'tipo_posicionamienteSeeder' => $baseDir . '/database/seeds/tipo_posicionamienteSeeder.php',
+    'tipoaptitudsSeeder' => $baseDir . '/database/seeds/tipoaptitudsSeeder.php',
     'userSeeder' => $baseDir . '/database/seeds/userSeeder.php',
     'verbosTableSeeder' => $baseDir . '/database/seeds/verbosTableSeeder.php',
 );
