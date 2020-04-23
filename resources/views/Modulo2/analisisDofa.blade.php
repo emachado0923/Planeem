@@ -103,8 +103,9 @@
 		</div>
 		<br>
 		<br>
-		<button type="submit" style="color:white;"   class="siguiente btn btn-planeem waves-effect waves-light">Siguiente</button>
-		<a href="{{ route('tercero1-2') }}" style="color:white;" class="retroceder btn btn-planeem waves-effect waves-light">Anterior</a>
+    <button type="submit" style="color:white;"   class="siguiente btn btn-planeem waves-effect waves-light">Siguiente</button>
+    {{-- <a  href="{{route('dofa2',$id)}}" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguientes</a> --}}
+		<a href="{{ route('dofaSelec') }}" style="color:white;" class="retroceder btn btn-planeem waves-effect waves-light">Anterior</a>
   </div>
   
   <div class="modal fade" id="exampleModal55" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 99999999;">
