@@ -153,9 +153,17 @@ class FormulacionController extends Controller
 
            
             
-            $formulacion = DB::table('formulacionestrategias')
-            ->select('formulacionestrategias.*','respustaverbos.*')
-            ->join('respustaverbos','formulacionestrategias.id_respustaverbos','=','respustaverbos.id_respustaverbos')
+            // $formulacion = DB::table('formulacionestrategias')
+            // ->select('formulacionestrategias.*','respustaverbos.*')
+            // ->join('respustaverbos','formulacionestrategias.id_respustaverbos','=','respustaverbos.id_respustaverbos')
+            // ->where('formulacionestrategias.id_Planeacion',$id_planecion)
+            // ->get();  
+
+
+            
+            $formulacion = DB::table('respustaverbos')
+            ->select('respustaverbos.*','formulacionestrategias.*')
+            ->join('formulacionestrategias','respustaverbos.id_respustaverbos','=','formulacionestrategias.id_respustaverbos')
             ->where('formulacionestrategias.id_Planeacion',$id_planecion)
             ->get();  
             //dd($formulacion);

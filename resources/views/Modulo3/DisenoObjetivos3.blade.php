@@ -62,7 +62,6 @@
 				</div>
 			</form>
 		</div>
-		<a value="cierra_factores"  style="outline: none !important;top: 94%;left: 46%;position: absolute;"><i class="icon-circle-up" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
 	</section>
 	</form>
 	<div class="modal fade" id="exampleModal0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

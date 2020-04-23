@@ -4879,6 +4879,15 @@ td{
     padding: 3px 21px;
     border-radius: 6px;
 }
+.agregarVerbo{
+    border: 1px solid #0AB5A0 !important;
+    padding: 0px 40px;
+    border-radius: 6px;
+}
+.agregarVerbo:hover{
+    background-color: #0AB5A0 ;
+    color: white !important;
+}
 #agregarVerbo:hover{
     background-color: #0AB5A0 ;
     color: white;
@@ -5538,7 +5547,7 @@ td{
 #factores{
     border: #0AB5A0 1px solid;
     width: 11%;
-    height: 415px;
+    height: 210px;
     padding: 13px;
     background: white;
     position: absolute;

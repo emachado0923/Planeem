@@ -272,7 +272,7 @@
 
 </style>
 
-<a type="button" href="{{route('papelera')}}" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">papelera</a>
+<a type="button" href="{{route('papelera')}}" style="color: #FC7323; float: right;font-size: 45px;position: absolute;bottom: 9%;left: 4%;"><span class="icon-bin"></span></a>
 
 
 <div class="collapse contenedor2" id="collapseExample">
