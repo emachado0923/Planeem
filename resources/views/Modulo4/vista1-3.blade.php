@@ -54,7 +54,7 @@
 									<a data-toggle="modal" data-target="#exampleModal4">2</a>
 									<a>3</a>
 									<a>4</a>
-									<a>5</a>s
+									<a>5</a>
 								</div>
 							</div>
 						</div>

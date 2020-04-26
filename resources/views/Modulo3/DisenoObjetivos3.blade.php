@@ -27,8 +27,14 @@
 
 	<div id="campo_texto"  class="campo_texto">
 		<h3 style="text-align: center;">Objetivos</h3>
-
-
+			<table>
+				{{-- @foreach ($formulacion as $formulacion)
+				<th>
+					<td>{{$formulacion->id_respustaverbos}}</td>
+					<td>{{$formulacion->Objetivos}}</td>
+				</th>	
+				@endforeach --}}
+			</table>	
 	</div>
 	
 	<div class="lista">
@@ -43,13 +49,13 @@
 						<div class="wrap" style=" ">
 							<div class="radio">
 											
-												<select  id="pro_id"  style="cursor: pointer;width: 155%;text-align: center;border: #FC7323 1px solid;border-radius: 6px;"  class="form-control">
-													<option selected>Choose...</option>
-														@foreach ($Verbos as $Verbos)
-														<option  value="{{$Verbos['nombre']}}">{{$Verbos->nombre}} </option>
-														@endforeach
-												</select>
-												<input type="text" name="id_planecion" id="id_planecion"  value="{{$proyecto}}" style="display:none" >
+									<select  id="pro_id"  style="cursor: pointer;width: 155%;text-align: center;border: #FC7323 1px solid;border-radius: 6px;"  class="form-control">
+										<option selected>Choose...</option>
+											@foreach ($Verbos as $Verbos)
+											<option  value="{{$Verbos['nombre']}}">{{$Verbos->nombre}} </option>
+											@endforeach
+									</select>
+									<input type="text" name="id_planecion" id="id_planecion"  value="{{$proyecto}}" style="display:none" >
 
 								<br>
 								<br>

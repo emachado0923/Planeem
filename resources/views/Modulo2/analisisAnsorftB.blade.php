@@ -3,6 +3,7 @@
 @section('content')
 
 
+
 <!-- botones -->
 <section class="EPE">
     <div class="analisisEfi">
@@ -54,11 +55,15 @@
             </div>
         </div>
 
+        <!-------------------------------------------------------------------------------------------------------------------->
+
+      <a data-toggle="modal" data-target="#exampleModal" style="color:white;" class="siguiente btn btn-planeem waves-effect waves-light">Guardar</a>
+
         
+        <!-------------------------------------------------------------------------------------------------------------------------------->
     
     
-        <a onclick="btn12()" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
-    </div>
+       </div>
 </section>
 <div class="infon">
 </div>
@@ -193,7 +198,28 @@
         </div>
     </div>
 </div>
+<!--------------------------------------------------------------------------------------------------------------->
 
+
+  <!-- Modal de seguir adelante -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="modalAvance">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
+        margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <h1>A continuación el Modulo 3</h1>
+     </div>
+     <div id="r1" class="modal-footer">
+      
+       
+        <a id="rr" class="btn btn-planeem waves-effect waves-light"  data-dismiss="modal">Cancelar</a>
+        <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('DisenoObjetivos')}}" style="color:white;" name="nuevo">Siguiente</a
+
+<!--------------------------------------------------------------------------------------------------------------->
 </section>
 <form method="POST" style="display:none" id="form" action="{{route('analisisDofa')}}" >
     @csrf

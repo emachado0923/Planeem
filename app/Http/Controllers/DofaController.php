@@ -62,11 +62,7 @@ class DofaController extends Controller
        ->whereIn('respuesta', $typeO)
        ->where('idPlaneacion', $id)
        ->get();
-
-
-       
-    
-       $amenaza1= DB::table('respuesta_analisis')
+      $amenaza1= DB::table('respuesta_analisis')
        ->select('nombre')
        ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
@@ -310,7 +306,11 @@ class DofaController extends Controller
 
       //parametros que no se utilizan en este compact
       //,'fortaleza3','oportunidad3','debilidad3','amenaza3','oportunidad4','debilidad4'
-       return  redirect()->route('dofaSelec')->with(compact('amenaza','id','oportunidad','amenaza1','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','fortaleza2'));
+      //Se silencia esta ruta por el momenti mientras se hacen pruebas de desarrollo 
+      //return  redirect()->route('dofaSelec')->with(compact('amenaza','id','oportunidad','amenaza1','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','fortaleza2'));
+
+
+      return  redirect()->route('dofaSelec')->with(compact('id','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','fortaleza2'));
 
   }
 

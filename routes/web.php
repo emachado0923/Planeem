@@ -159,7 +159,7 @@
 
 
     Route::get('/dofaSelec', function () {
-        return  view('Modulo2.analisisDofa2');
+        return  view('Modulo2.analisisAnsorftB');
     })->name('dofaSelec')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
 
     Route::get('/Dofa2', function () {
@@ -173,11 +173,32 @@
     Route::get('/DisenoObjetivos', function () {
         return view('Modulo3.DisenoObjetivos');
     })->name('DisenoObjetivos')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    
     Route::get('/DisenoObjetivos2', function () {
         return view('Modulo3.DisenoObjetivos2');
     })->name('DisenoObjetivos2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    
+    
+    
+    //modulo3 Diseño Objetivos    
     Route::get('/DisenoObjetivos3', function () {
         return view('Modulo3.DisenoObjetivos3');
+       //Este es el oficial
+    
+    // Route::get('/Modulo3./{$formulacion}','Modulo3Controller@listAll')->name('DisenoObjetivos3');
+    
+    Route::get('/DisenoObjetivos3/{$id?}', function () {
+        return view('Modulo3.DisenoObjetivos3');
+    })->name('DisenoOb3')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+        // Route::get('/DisenoObjetivos3', function () {
+        //     return view('Modulo3.DisenoObjetivos3');
+        //     Route::get('/DisenoObjetivos3', function () {
+        //         return view('Modulo3.DisenoObjetivos3');
+        //         Route::get('/DisenoObjetivos3', function () {
+        //             return view('Modulo3.DisenoObjetivos3');
+                 
+        
+    //-------------------------------------------------    
     })->name('DisenoObjetivos3')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     Route::get('/FormulacionInfo', function () {
         return view('Modulo3.FormulacionInfo');
