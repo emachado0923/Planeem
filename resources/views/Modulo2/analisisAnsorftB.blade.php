@@ -148,10 +148,12 @@
            </button>
          </div>
          <div class="modal-body">
-          <div class="scrollfortaleza2">
-               {{-- @foreach ($amenaza as $ame)
-			  <p>{{$ame->nombre}}</p>
-			   @endforeach --}}
+         <div class="scrollfortaleza2">
+                <!-- Aca es donde se incorporo las amenazas que vienen desde analisicontroller.php y que fueron traidasa de 
+                  dofaController.php -->
+                @foreach ($amenaza as $amenaza)
+                <p>{{$amenaza->nombre}}</p>
+                @endforeach 
           </div>
         </div>
       </div>
@@ -217,7 +219,7 @@
       
        
         <a id="rr" class="btn btn-planeem waves-effect waves-light"  data-dismiss="modal">Cancelar</a>
-        <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('DisenoObjetivos')}}" style="color:white;" name="nuevo">Siguiente</a
+        <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('DisenoObjetivos')}}" style="color:white;" name="nuevo">Siguiente</a>
 
 <!--------------------------------------------------------------------------------------------------------------->
 </section>

@@ -356,6 +356,19 @@ class AnalisisController extends Controller
         // ->select('nombre')
         // ->where('idPlaneacion', $id)
         // ->get();
+        
+        // $respues_Penetracion = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('idPlaneacion',$id)
+        // ->where('Peso_Relativo','>',0)
+        // ->where('Calificación','>',0)
+        // ->where('Peso_Ponderado','>',0)
+        // ->get();
+
+        // $respues_Penetracion = respues_Penetracion::select('respuesta_penetracion.*',' .Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
+        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
+        // ->where('idPlaneacion',$id_planeacion)
+     
 
         $ansorft = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
         ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
@@ -381,32 +394,19 @@ class AnalisisController extends Controller
         ->where('Calificación','>',0)
         ->where('Peso_Ponderado','>',0)
         ->get();
-
-
-
-
-
-        // $respues_Penetracion = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
-        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        // ->where('idPlaneacion',$id)
-        // ->where('Peso_Relativo','>',0)
-        // ->where('Calificación','>',0)
-        // ->where('Peso_Ponderado','>',0)
-        // ->get();
-
-        // $respues_Penetracion = respues_Penetracion::select('respuesta_penetracion.*',' .Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        // ->where('idPlaneacion',$id_planeacion)
-     
-        // ->get();
-
-    
-        // respuesta_penetracion
-
-
-        // dd($amenaza);
-
-         return view('Modulo2.analisisAnsorftB')->with(compact('ansorft','respues_Penetracion','Desarrollo_Producto'));
+//Me robe estas amenzas de dofa controller y las pase a esta vista no se si son las correctas o no 
+        $typeA = ['aAlta', 'aMedia', 'aBaja'];
+        $typeO = ['oAlta', 'oMedia', 'oBaja'];
+  
+        $amenaza= DB::table('respuesta_analisis')
+        ->select('nombre')
+        ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+        ->whereIn('respuesta', $typeA)
+        ->where('idPlaneacion', $id)
+        ->get();    
+       
+         return view('Modulo2.analisisAnsorftB')->with(compact('ansorft','respues_Penetracion','Desarrollo_Producto','amenaza'));
 
     }
 }

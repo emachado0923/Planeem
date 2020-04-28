@@ -161,7 +161,7 @@ class DofaController extends Controller
    
    public function dofa2($id){
 
-      
+    //DE aca mando estas amenazas al analisiscontroller.php  y sus tipos de calificaón  
       $typeA = ['aAlta', 'aMedia', 'aBaja'];
       $typeO = ['oAlta', 'oMedia', 'oBaja'];
 
@@ -310,7 +310,7 @@ class DofaController extends Controller
       //return  redirect()->route('dofaSelec')->with(compact('amenaza','id','oportunidad','amenaza1','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','fortaleza2'));
 
 
-      return  redirect()->route('dofaSelec')->with(compact('id','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','fortaleza2'));
+      return  redirect()->route('dofaSelec')->with(compact('id','amenaza','amenaza2','oportunidad','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','fortaleza2'));
 
   }
 
