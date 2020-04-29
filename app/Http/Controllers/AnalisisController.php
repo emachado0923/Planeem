@@ -132,10 +132,6 @@ class AnalisisController extends Controller
    }
            
 
-
-
-
-
     /**
      * Display the specified resource.
      *
@@ -237,8 +233,6 @@ class AnalisisController extends Controller
         ->get();
 
 
-        // dd($amenaza);
-
         return view('Modulo2.analisisEFI')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
 
     }
@@ -288,89 +282,16 @@ class AnalisisController extends Controller
         ->get();
 
 
-        // dd($amenaza);
-       
-        return view('Modulo2.analisisDofaI')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
+       return view('Modulo2.analisisDofaI')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
 
     }
-
-
-
-
-    //     $id = $request->get('id_planecion');
-        
-    //     $typeA = ['aAlta', 'aMedia', 'aBaja'];
-    //     $typeO = ['oAlta', 'oMedia', 'oBaja'];
-
-    //     $amenaza= DB::table('respuesta_analisis')
-    //     ->select('nombre')
-    //     ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
-    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
-    //     ->whereIn('respuesta', $typeA)
-    //     ->where('idPlaneacion', $id)
-    //     ->get();
-
-    //     $oportunidad=DB::table('respuesta_analisis')
-    //     ->select('nombre')
-    //     ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
-    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
-    //     ->whereIn('respuesta', $typeO)
-    //     ->where('idPlaneacion', $id)
-    //     ->get();
-
-    //     $typeF = ['fAlta', 'fMedia', 'fBaja'];
-    //     $typeD = ['dAlta', 'dMedia', 'dBaja'];
-
-    //     $fortaleza= DB::table('respuesta_capacidad')
-    //     ->select('nombre')
-    //     ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
-    //     ->whereIn('respuesta', $typeF)
-    //     ->where('idPlaneacion', $id)
-    //     ->get();
-
-    //     $debilidad= DB::table('respuesta_capacidad')
-    //     ->select('nombre')
-    //     ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-    //     ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
-    //     ->whereIn('respuesta', $typeD)
-    //     ->where('idPlaneacion', $id)
-    //     ->get();
-
-
-    //     // dd($amenaza);
-
-    //     return view('Modulo2.analisisDofa2')->with(compact('amenaza','oportunidad','fortaleza','debilidad'));
-
-    // }
-
-    //* -----------Agregue esta funcion -------------------------------*/
-
 
     public function getDOFA1(Request $request){
 
 
        $id = $request->input('id_planecion');
-
-        // $respuesta_penetracion= DB::table('respuesta_analisis')
-        // ->select('nombre')
-        // ->where('idPlaneacion', $id)
-        // ->get();
-        
-        // $respues_Penetracion = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
-        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        // ->where('idPlaneacion',$id)
-        // ->where('Peso_Relativo','>',0)
-        // ->where('Calificación','>',0)
-        // ->where('Peso_Ponderado','>',0)
-        // ->get();
-
-        // $respues_Penetracion = respues_Penetracion::select('respuesta_penetracion.*',' .Nametipo_mercado','tipo_preguntaansorfts.nombre','tipo_preguntaansorfts.id')
-        // ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
-        // ->where('idPlaneacion',$id_planeacion)
-     
-
-        $ansorft = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
+    
+       $ansorft = ansorft::select('ansorfts.*','tipo_preguntaansorfts.nombre')
         ->join('tipo_preguntaansorfts','ansorfts.idTipoPregunta','tipo_preguntaansorfts.id')
         ->where('idPlaneacion',$id)
         ->where('pesoRelativo','>',0)
@@ -394,7 +315,8 @@ class AnalisisController extends Controller
         ->where('Calificación','>',0)
         ->where('Peso_Ponderado','>',0)
         ->get();
-//Me robe estas amenzas de dofa controller y las pase a esta vista no se si son las correctas o no 
+
+        //Me robe estas amenzas de dofa controller y las pase a esta vista no se si son las correctas o no 
         $typeA = ['aAlta', 'aMedia', 'aBaja'];
         $typeO = ['oAlta', 'oMedia', 'oBaja'];
   
