@@ -29,6 +29,7 @@ class Modulo3Controller extends Controller
         $id_plane = Proyectos::all();
         return view('Modulo3.DisenoObjetivos3')->with('id_plane',$id_plane)->with('proyecto',$proyecto)->with('Verbos',$Verbos);
     }
+
     //Desde Aca comienza el crud
     // public function listAll(){
          
@@ -100,7 +101,21 @@ class Modulo3Controller extends Controller
         ->get();  
 
         return response()->json($formulacion);
-}
+    }
+
+    // Eliminar verbos de la vista analisis dofa
+    public function EV($id){
+        DB::table('respustaverbos')
+        ->where('id_respustaverbos ',$id)
+        ->first()
+        ->delete();
+        
+    //    if(!isset($id)){
+    //         return response()->json(['message'=>'No existe la data']); 
+    //     }else{
+    //         return response()->json(['message'=>'Si existe la data']); 
+    //     }
+    }
 
     
 }

@@ -99,9 +99,9 @@
 			<a  id="boton1" data-toggle="modal" data-target="#exampleModal0" class="button2_agregar5" ><span class="icon-folder-plus"><div id="hover_agregar1">
 				<h5>Agregar</h5></div></span>
 			</a>
-			<a id="boton2_eliminar2" onclick="Refrescaverbo2()" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar">
+			{{-- <a id="boton2_eliminar2" onclick="Refrescaverbo2()" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar">
 				<h5>Eliminar</h5></div>
-			</a>
+			</a> --}}
 			
 		</div>
 		<br>
@@ -249,20 +249,20 @@ var contador =0 ;
 
 <script type="text/javascript">
 
-	  function Refrescaverbo2(){
-		  var ip = [];
-		  var i = 0;
-		  $('#guardar').attr('disabled','disabled'); 
-		  $('.iProduct').each(function(index, element) {
-			  i++;
-			  ip.push({ id_pro : $(this).val() });
-		  });
-		  if (i > 0) {
-			  $('#guardar').removeAttr('disabled','disabled');
-		  }
-		  var ipt=JSON.stringify(ip);
-		  $('#ListaPro').val(encodeURIComponent(ipt));
-	  }
+	//   function Refrescaverbo2(){
+	// 	  var ip = [];
+	// 	  var i = 0;
+	// 	  $('#guardar').attr('disabled','disabled'); 
+	// 	  $('.iProduct').each(function(index, element) {
+	// 		  i++;
+	// 		  ip.push({ id_pro : $(this).val() });
+	// 	  });
+	// 	  if (i > 0) {
+	// 		  $('#guardar').removeAttr('disabled','disabled');
+	// 	  }
+	// 	  var ipt=JSON.stringify(ip);
+	// 	  $('#ListaPro').val(encodeURIComponent(ipt));
+	//   }
 
 	var contador=0;
 		 function agregarv() {
@@ -325,6 +325,10 @@ var contador =0 ;
 {{-- ajax --}}
 
 <script>
+
+
+
+
 	//Con este método listamos todos los verbos seleccionados 
 
 //inicio método
@@ -349,10 +353,11 @@ var contador =0 ;
 								html = html + '</div>';
 								html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+i.posiciones+'" >'
 								html = html + '<input type="text" value ="'+i.Objetivos+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
+								html = html + '<a id="boton2_eliminar2" onclick="EV(i.id_respustaverbos)" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
 								html = html + '</div>';
 
 							    $('#campo_texto').append(html); //Pinta el contenido en el html
-
+								console.log(i.id_verbos);	
 						}
 					}
 				},
@@ -363,7 +368,6 @@ var contador =0 ;
 			//////fin ajax
 		});
 //fin método
-
 </script>
 
 
@@ -385,6 +389,18 @@ var contador =0 ;
 			$('.hover').hide()
 		})
 	});
+
+
+	function EV(id) {
+	$.ajax({
+		url: '/EV/'+id,
+		type: 'DELETE',
+		success: function(result) {
+		//  alert("result"+result);
+		}
+	});
+}
+
 </script>
 {{-- <script>
 https://www.facebook.com/Southparklatinohd/videos/1465972093583738/

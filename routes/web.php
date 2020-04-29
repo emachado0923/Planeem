@@ -184,6 +184,11 @@
     Route::get('/DisenoObjetivos3', function () {
         return view('Modulo3.DisenoObjetivos3');
        //Este es el oficial
+
+       //Esta me permite eliminar
+    Route::get('EV/{id}','Modulo3Controller@EV')
+    ->name('EV')->middleware('auth')->middleware('verified');
+
     
     // Route::get('/Modulo3./{$formulacion}','Modulo3Controller@listAll')->name('DisenoObjetivos3');
     

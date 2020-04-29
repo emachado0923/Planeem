@@ -50,7 +50,7 @@
 						<div class="wrap" style=" ">
 							<div class="radio">
 								<div class="btn-group2" id="btn_planeem2">
-									<a data-toggle="modal" data-target="#exampleModal1">1</a>
+									<a data-toggle="modal" data-target="#	">1</a>
 									<a data-toggle="modal" data-target="#exampleModal4">2</a>
 									<a>3</a>
 									<a>4</a>
