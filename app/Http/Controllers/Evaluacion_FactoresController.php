@@ -50,10 +50,7 @@ class Evaluacion_FactoresController extends Controller
             'alert-type' => 'success'
         );
     
-
-
-        
-        return view('Modulo2.analisisEFInfo')->with($message)->with('id_Planeacion',$id_Planeacion);
+      return view('Modulo2.analisisEFInfo')->with($message)->with('id_Planeacion',$id_Planeacion);
 
     }
 }

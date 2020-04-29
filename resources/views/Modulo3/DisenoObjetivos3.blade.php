@@ -223,13 +223,15 @@ var contador =0 ;
 
 			  var sptext = text.split();
 
-			  var newtr = '<div class="input-group mb-3">';
+			  var newtr = '<div class="input-group mb-3" id="'+contador1+'">';
 			  newtr = newtr + '<div class="input-group-prepend">';
-			  newtr = newtr + '<span class="input-group-text" id="basic-addon1">'+contador1+' </span>';
+			  newtr = newtr + '<span class="input-group-text" id="basic-addon1">*</span>';
 			  newtr = newtr + '</div>';
 			  newtr = newtr + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
 
 			  newtr = newtr + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
+			  newtr = newtr + '<a id="boton2_eliminar2" onclick="EV('+contador1+');" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
+	
 			  newtr = newtr + '</div>';
 
 
@@ -264,24 +266,36 @@ var contador =0 ;
 	// 	  $('#ListaPro').val(encodeURIComponent(ipt));
 	//   }
 
-	var contador=0;
-		 function agregarv() {
+	function contadorMenos(contador1){
+				return contador1 -= 1;
+		 	}
 
+	var contador=0;
+		
+		 function agregarv() {
+			
+	
 			let contador1 = contador += 1;
+				
 
 			  var nombre = $('#Añadrir').val(); 
 
 			  var text = $('#Añadrir').text();
 
+			
 
 			  var sptext = text.split();
 
-			  var html = '<div class="input-group mb-3">';
+			  var html = '<div class="input-group mb-3" id="'+contador1+'">';
 			  html = html + '<div class="input-group-prepend">';
-			  html = html + '<span class="input-group-text" id="basic-addon1">'+contador1+' </span>';
+			  html = html + '<span class="input-group-text" id="basic-addon1">*</span>';
 			  html = html + '</div>';
 			  html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
 			  html = html + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
+			  html = html + '<a id="boton2_eliminar2" onclick="EV('+contador1+');" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
+	
+			 // html = html + '<span></span><div id="hover_eliminar"></div></a>';
+	
 			  html = html + '</div>';
 
 
@@ -346,16 +360,17 @@ var contador =0 ;
 					if(data != null){
 					//En este Fro, se esta recorriendo, los valores arrojados del controlador, Para  pintarlos en la vistas 
 						for(i of data){
+							
 
-								var html = '<div class="input-group mb-3">';
+								var html = '<div class="input-group mb-3" id="'+i.posiciones+'">';
 								html = html + '<div class="input-group-prepend">';
-								html = html + '<span class="input-group-text" id="basic-addon1">'+i.posiciones+' </span>';
+								html = html + '<span class="input-group-text" id="basic-addon1">*</span>';
 								html = html + '</div>';
-								html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+i.posiciones+'" >'
+								html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+i.posiciones+'" >';
 								html = html + '<input type="text" value ="'+i.Objetivos+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
-								html = html + '<a id="boton2_eliminar2" onclick="EV(i.id_respustaverbos)" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
+								html = html + '<a id="boton2_eliminar2" onclick="EV('+i.posiciones+')" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
 								html = html + '</div>';
-
+									
 							    $('#campo_texto').append(html); //Pinta el contenido en el html
 								console.log(i.id_verbos);	
 						}
@@ -392,13 +407,17 @@ var contador =0 ;
 
 
 	function EV(id) {
-	$.ajax({
-		url: '/EV/'+id,
-		type: 'DELETE',
-		success: function(result) {
-		//  alert("result"+result);
-		}
-	});
+	$('#'+id).remove();
+
+	
+	
+	// $.ajax({
+	// 	url: '/EV/'+id,
+	// 	type: 'DELETE',
+	// 	success: function(result) {
+	// 	//  alert("result"+result);
+	// 	}
+	// });
 }
 
 </script>

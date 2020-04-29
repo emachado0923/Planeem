@@ -27,9 +27,7 @@ class estrategiasController extends Controller
      
     }
           
-                
-
-        return view('Modulo2.analisisEFIgrafica');
+    return view('Modulo2.analisisEFIgrafica');
 
     }
    
