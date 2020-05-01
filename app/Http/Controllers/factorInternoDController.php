@@ -24,11 +24,11 @@ class FactorInternoDController extends Controller
 
         $id = auth()->user()->selected_planne;
 
-    
+
         // dd($id);
 
         $type = ['fAlta','fMedia','fBaja'];
- 
+
         $fortaleza=respuestaCapacidad::select('capacidads.nombre' , 'capacidads.id as idCapacidad')
         ->join('capacidads','capacidads.id','respuesta_capacidad.idCapacidad')
         ->whereIn('respuesta',$type)
@@ -49,12 +49,12 @@ class FactorInternoDController extends Controller
 
         // dd($debilidad);
 
-        
+
 
         return view('Modulo2.factoresInternosDebi')->with(compact('fortaleza','debilidad','id','id_planeacion'));
-        
+
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -79,15 +79,6 @@ class FactorInternoDController extends Controller
      */
     public function store(Request $request){
 
-        // $data = $request->all();
-        // if(empty($data)) {
-        //     $data = json_decode($request->getContent());
-        //     $data = json_decode($data);
-
-        //     if(is_null($data)) {
-        //         return response()->json("Not valid json", 400);
-        //     }
-        // }
 
         $plane = $request->get('idPlaneacion');
         $pone = $request->get('ponderacion');
@@ -97,7 +88,7 @@ class FactorInternoDController extends Controller
         $totalPuntuacion = $request->input('totalPuntuacion');
         $puntuacionPonderada = $request->input('puntuacionPonderad1');
         $preguntas =$request->get('preguntas');
-           
+
             // dd($totalCalificacion,$totalPuntuacion,$puntuacionPonderada);
         for ($i = 0; $i < count($preguntas); $i++) {
 
@@ -129,13 +120,13 @@ class FactorInternoDController extends Controller
             'message' => 'Factor interno de fortalezas Guardado con Éxito',
             'alert-type' => 'success'
         );
- 
+
      return redirect('/anaPestal')->with($message);
 }
-        
 
 
-           
+
+
 
     /**
      * Display the specified resource.
@@ -194,6 +185,6 @@ class FactorInternoDController extends Controller
 
 
         return response()->json($res);
-    
+
 }
 }

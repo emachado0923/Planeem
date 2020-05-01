@@ -20,15 +20,15 @@ class PerfilCompeController extends Controller
      */
     public function indexInfo()
     {
-        
+
 
         $factorClave=factorclave::all();
-        
+
         $factorClave=factorclave::all();
-       
+
 
         $perfilCompe=perfilCompe::all();
-        
+
         $planeacion= Proyectos::all();
 
         return view('Modulo2.perfilCompeInfo')->with(compact('factorClave','planeacion','perfilCompe'));
@@ -41,7 +41,7 @@ class PerfilCompeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {                                   
+    {
         $perfil = perfilCompe::all()->last();
         $factorClave=factorclave::all();
         return view('Modulo2.perfilCompeInfo')->with(compact('perfil','factorClave'));
@@ -56,11 +56,11 @@ class PerfilCompeController extends Controller
 
 
 
- 
+
 
     public function store(Request $request)
 
-    {   
+    {
 
         // $factorClave = $request->get('idFactorClave');
         $planeacion = $request->get('idPlaneacion');
@@ -68,7 +68,7 @@ class PerfilCompeController extends Controller
         $pesoRelativo = $request->get('pesoRelativo');
         $calificacion = $request->get('calificacion');
         $peso = $request->get('pesoPonderado');
-        
+
         $totalPeso= $request->get('totalPeso');
         $totalCali= $request->get('totalCalificacion');
         $totalPonde= $request->get('totalPonderado');
@@ -76,7 +76,7 @@ class PerfilCompeController extends Controller
 
             for ($i = 0; $i < count($request->get('idFactorClave')); $i++) {
                 perfilCompe::updateorCreate(
-    
+
                     [
                         'idFactorClave' => $request->get('idFactorClave')[$i],
                         'idPlaneacion' => $planeacion,
@@ -93,7 +93,7 @@ class PerfilCompeController extends Controller
                        ' totalCalificacion'=>$totalCali,
                         'totalPonderado'=>$totalPonde
 
-                        
+
                     ]
                 );
     }
@@ -102,88 +102,6 @@ class PerfilCompeController extends Controller
         return response()->json(["success"=> "perfil competitivo guardado con éxito"]);
     }
 
-    // public function storeEmpe(Request $request)
-
-    // {  
-
-    
-
-    //     $count = $request->input('count');
-
-        
-    //     $factorClave = $request->get('idFactorClave');
-    //     $planeacion = $request->get('idPlaneacion');
-    //     $nombre = $request->get('nombreEmpresa');
-    //     $pesoRelativo = $request->get('pesoRelativo');
-    //     $calificacion = $request->get('calificacion');
-    //     $peso = $request->get('pesoPonderado');
-
-
-    //     foreach ($nombre as $nombre) {
-
-
-    //         for ($i = 0; $i < count($request->get('idFactorClave')); $i++) {
-
-    //             // print_r($pone);die;
-    
-    //             perfilCompe::updateorCreate(
-    //                 [
-    //                     'idFactorClave' => $request->get('idFactorClave')[$i],
-    //                     'idPlaneacion' => $planeacion,
-    //                     'nombreEmpresa' => $nombre,
-    //                 ],
-    //                 [
-    //                     'idFactorClave' => $request->get('idFactorClave')[$i],
-    //                     'idPlaneacion' => $planeacion,
-    //                     'nombreEmpresa' => $nombre,
-    //                     'pesoRelativo' => $pesoRelativo[$i],
-    //                     'calificacion' => $calificacion[$i],
-    //                     'pesoPonderado' => $peso[$i]
-    //                 ]
-    //             );
-    //         }
-
-
-           
-    //     }
-    //     $message = array(
-    //         'message' => 'Empresas Guardadas con Éxito',
-    //         'alert-type' => 'success'
-    //     );
-        
-     
-
-    //    return redirect('factoresInternosI')->with($message);
-    // }
-    // {
-       
-    //     $plane = $request->get('idPlaneacion');
-    //     $pone = $request->get('pesoRelativo');
-    //     $cali = $request->get('calificacion');
-    //     $puntua = $request->get('pesoPonderado');
-
-    //     for ($i = 0; $i < count($request->get('idFactorClave')); $i++) {
-
-
-    //         perfilCompe::updateorCreate(
-
-    //             [
-    //                 'idFactorClave' => $request->get('idFactorClave')[$i],
-    //                 'idPlaneacion' => $plane,
-    //             ],
-    //             [
-    //                 'idFactorClave' => $request->get('idFactorClave')[$i],
-    //                 'idPlaneacion' => $plane,
-    //                 'pesoRelativo' => $pone[$i],
-    //                 'calificacion' => $cali[$i],
-    //                 'pesoPonderado' => $puntua[$i],
-    //             ]
-    //         );
-    //     }
-
-
-    //     return response()->json(['success' => 'Coordinador agregado con éxito.', 'data' => $data]);
-    // }
 
     /**
      * Display the specified resource.
@@ -260,7 +178,7 @@ class PerfilCompeController extends Controller
             ->get();
 
 
-   
+
 
         return response()->json($EMPRESA);
     }

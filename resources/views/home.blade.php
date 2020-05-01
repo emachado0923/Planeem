@@ -167,7 +167,7 @@
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-verdeoscuro p-4 bordered">
                 <br>
-                <div class="proyectosLista">   
+                <div class="proyectosLista">
                     <table class="table table-hover colorTable" id="tables" >
                         @foreach ($proyecto as $proyectos)
                         <tbody>
@@ -179,7 +179,7 @@
                                         {{-- <td ><a href="{{route('proyect',$proyectos->id_Planeacion)}}" style="color: white;">seguir</a></td> --}}
                                     </tr>
                                     @endif
-        
+
                             @endif
                         </tbody>
                         @endforeach

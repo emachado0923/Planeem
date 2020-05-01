@@ -19,7 +19,7 @@ class FormulacionController extends Controller
             $Objetivos = respuesta_verbo::select('id_respustaverbos','Objetivos','id_Planeacion','posiciones')
             ->where('id_Planeacion',$id)
             ->get();
-            $cantidad = count($Objetivos); 
+            $cantidad = count($Objetivos);
 
 
             $typeA = ['aAlta', 'aMedia', 'aBaja'];
@@ -32,7 +32,7 @@ class FormulacionController extends Controller
             ->whereIn('respuesta', $typeA)
             ->where('idPlaneacion', $id)
             ->get();
-            
+
 
             $oportunidad=DB::table('respuesta_analisis')
             ->select('nombre')
@@ -70,7 +70,7 @@ class FormulacionController extends Controller
         $Objetivos = $request->input('Objetivos');
         $id_planecion = $request->input('id_planecion');
         $posiciones = $request->input('posiciones');
-        
+
     for ($i=0; $i < count($posiciones) ; $i++) {
 
         respuesta_verbo::updateOrCreate(
@@ -85,12 +85,12 @@ class FormulacionController extends Controller
                 'id_Planeacion'=> $id_planecion
             ]
         );
-        
+
 
     }
 
         return view('Modulo3.FormulacionInfo')->with('id_planecion',$id_planecion);
-        
+
     }
 
     public function storeage(Request $request){
@@ -103,11 +103,11 @@ class FormulacionController extends Controller
             $id_planecion = $request->input('id_planecion');
             // dd($id_planecion);
 
-            
-                for ($i=0; $i < count($id_respustaverbos) ; $i++) { 
+
+                for ($i=0; $i < count($id_respustaverbos) ; $i++) {
 
 
-                    
+
                     formulacionestrategias::updateorCreate(
                         [
                             'id_Planeacion'=>$id_planecion,
@@ -121,11 +121,11 @@ class FormulacionController extends Controller
                             'pocision' => $pocision[$i]
                         ]
                     );
-                  
-                
+
+
             }
 
-            
+
             $proyecto = Proyectos::find($id_planecion);
 
             $estrategia = estrategia::all();
@@ -151,33 +151,18 @@ class FormulacionController extends Controller
             ->where('idPlaneacion', $id_planecion)
             ->get();
 
-           
-            
-            // $formulacion = DB::table('formulacionestrategias')
-            // ->select('formulacionestrategias.*','respustaverbos.*')
-            // ->join('respustaverbos','formulacionestrategias.id_respustaverbos','=','respustaverbos.id_respustaverbos')
-            // ->where('formulacionestrategias.id_Planeacion',$id_planecion)
-            // ->get();  
 
-
-            
             $formulacion = DB::table('respustaverbos')
             ->select('respustaverbos.*','formulacionestrategias.*')
             ->join('formulacionestrategias','respustaverbos.id_respustaverbos','=','formulacionestrategias.id_respustaverbos')
             ->where('formulacionestrategias.id_Planeacion',$id_planecion)
-            ->get();  
-            //dd($formulacion);
+            ->get();
 
-            // dd($formulacion);
-            
 
             //esto me recibe la data del controlador y la manda a la vista :p
             return view('Modulo3.FormulacionResumen')->with('Objetivos',$Objetivos)->with('proyecto',$proyecto)->with('amenaza',$amenaza)->with('formulacion',$formulacion);
-            
+
     }
 
-        // public function  ObjetivosResumen($id){
-        //     $proyecto = Proyectos::find($id);
-        //     return view('Modulo3.ObjetivosResumen')->with('Objetivos',$Objetivos);
-        // }
+
 }

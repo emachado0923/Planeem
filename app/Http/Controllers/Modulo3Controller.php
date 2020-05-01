@@ -14,7 +14,7 @@ class Modulo3Controller extends Controller
 
 
     public function estrategias(Request $request){
-        
+
         $id_plane = Proyectos::all();
         $proyecto = Proyectos::all();
         $proyecto->nombre_proyecto=$request->input('nombre_proyecto');
@@ -30,27 +30,6 @@ class Modulo3Controller extends Controller
         return view('Modulo3.DisenoObjetivos3')->with('id_plane',$id_plane)->with('proyecto',$proyecto)->with('Verbos',$Verbos);
     }
 
-    //Desde Aca comienza el crud
-    // public function listAll(){
-         
-    //     $formulacion = DB::table('respustaverbos')->select('id_respuestasverbos','Objetivos')        
-    //     ->where('id_Planeacion',$id_Planeacion)
-    //     ->get();  
-    //     //   return response()->json($formulacion);
-    //     return view('Modulo3.DisenoObjetivos3'); }
-    
-//     public function createAll(){
-//         'posiciones'=> $posiciones[$i],
-// //          'Objetivos'=> $Objetivos[$i],
-// //                 'id_Planeacion'=> $id_planecion,
-//     }
-    
-//     public function editAll(){
-//         'posiciones'=> $posiciones[$i],
-// //                 'Objetivos'=> $Objetivos[$i],
-// //                 'id_Planeacion'=> $id_planecion,
-//     }
-
 
     public function guardar(Request $request){
 
@@ -58,9 +37,9 @@ class Modulo3Controller extends Controller
         $id_planecion = $request->input('id_planecion');
 
         $posiciones = $request->input('posiciones');
-        
+
     for ($i=0; $i < count($posiciones) ; $i++) {
-        
+
             respuesta_verbo::updateOrCreate([
                 'posiciones'=> $posiciones[$i],
                 'Objetivos'=> $Objetivos[$i],
@@ -70,14 +49,14 @@ class Modulo3Controller extends Controller
                 'posiciones'=> $posiciones[$i],
                 'Objetivos'=> $Objetivos[$i],
                 'id_Planeacion'=> $id_planecion,
-            ]  
-        
+            ]
+
         );
 
     }
 
         return view('Modulo3.FormulacionInfo')->with('id_planecion',$id_planecion);
-        
+
     }
 
 
@@ -86,7 +65,7 @@ class Modulo3Controller extends Controller
 
             $formulacion = DB::table('respustaverbos')
             ->where('id_Planeacion',$id)
-            ->get();  
+            ->get();
 
             return response()->json($formulacion);
     }
@@ -98,7 +77,7 @@ class Modulo3Controller extends Controller
         $formulacion = DB::table('respustaverbos')
         ->select(DB::raw('MAX(posiciones) as posiciones'))//se le indica el datos con mayor resultado
         ->where('id_Planeacion',$id)
-        ->get();  
+        ->get();
 
         return response()->json($formulacion);
     }
@@ -109,13 +88,9 @@ class Modulo3Controller extends Controller
         ->where('id_respustaverbos ',$id)
         ->first()
         ->delete();
-        
-    //    if(!isset($id)){
-    //         return response()->json(['message'=>'No existe la data']); 
-    //     }else{
-    //         return response()->json(['message'=>'Si existe la data']); 
-    //     }
+
+
     }
 
-    
+
 }

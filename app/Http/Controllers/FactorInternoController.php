@@ -109,11 +109,11 @@ class FactorInternoController extends Controller
 
         $id_planeacion = Proyectos::all();
 
-    
+
         // dd($id);
 
         $type = ['fAlta','fMedia','fBaja'];
- 
+
         $fortaleza=respuestaCapacidad::select('capacidads.nombre' , 'capacidads.id as idCapacidad')
         ->join('capacidads','capacidads.id','respuesta_capacidad.idCapacidad')
         ->whereIn('respuesta',$type)
@@ -135,7 +135,7 @@ class FactorInternoController extends Controller
 
         return view('Modulo2.factoresInternosDebi')->with(compact('fortaleza','debilidad','id_planeacion','plane'))->with($message);
 
-    
+
     }
 
 
@@ -193,17 +193,6 @@ class FactorInternoController extends Controller
             ->join('planeacion', 'planeacion.id_Planeacion', 'factor_internos.idPlaneacion')
             ->where('factor_internos.idPlaneacion', $id)
             ->get();
-
-
-        // $res = respuestaAnalisis::select('respuesta as idRespuesta', 'idanalisis as analisis', 'idPlaneacion as planeacion')
-        // ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
-        // ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
-        // ->where('idPlaneacion', $id)
-        // ->get();
-
-
-
-        //    dd($res);
 
         return response()->json($res);
     }
