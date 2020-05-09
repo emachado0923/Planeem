@@ -54,16 +54,11 @@
                 </div>
             </div>
         </div>
-
+      
         <!-------------------------------------------------------------------------------------------------------------------->
-
-      <a data-toggle="modal" data-target="#exampleModal" style="color:white;" class="siguiente btn btn-planeem waves-effect waves-light">Guardar</a>
-
-        
+        <a data-toggle="modal" data-target="#exampleModal" style="color:white;" class="siguiente btn btn-planeem waves-effect waves-light">Guardar</a>
         <!-------------------------------------------------------------------------------------------------------------------------------->
-    
-    
-       </div>
+    </div>
 </section>
 <div class="infon">
 </div>
@@ -201,9 +196,7 @@
     </div>
 </div>
 <!--------------------------------------------------------------------------------------------------------------->
-
-
-  <!-- Modal de seguir adelante -->
+<!-- Modal de seguir adelante -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" id="modalAvance">
@@ -213,16 +206,20 @@
         margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
       </div>
       <div class="modal-body" style="text-align: center;">
-        <h1>A continuación el Modulo 3</h1>
+        <h1>A continuación sigue la vista para registrar estrategias</h1>
      </div>
      <div id="r1" class="modal-footer">
-      
-       
         <a id="rr" class="btn btn-planeem waves-effect waves-light"  data-dismiss="modal">Cancelar</a>
-        <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('DisenoObjetivos')}}" style="color:white;" name="nuevo">Siguiente</a>
-
+        <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('misEstrategias')}}" style="color:white;" name="nuevo">Siguiente E</a>
+        <!--Esta ruta es la que manda para el modulo 3-->
+        <!-- <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{/route('DisenoObjetivos')}}" style="color:white;" name="nuevo">Siguiente</a>
+       -->
 <!--------------------------------------------------------------------------------------------------------------->
 </section>
+
+{{-- <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('misEstrategias')}}" style="color:white;" name="nuevo">Siguiente E</a> --}}
+
+
 <form method="POST" style="display:none" id="form" action="{{route('analisisDofa')}}" >
     @csrf
         <input type="text" id="id_planecion" name="id_planecion">   
