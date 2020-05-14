@@ -1,17 +1,20 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class misEstrategias extends Model
-{
-    protected $primarykey="id_mis_estrategias";
+{   
     protected $table="mis_estrategias";
+    protected $primarykey="id";
     public $fillable= [
         'estrategia',
         'id_Planeacion'
     ];
-
-    public $timestamps=false;
+    public function planeacion(){
+        return $this->belongsTo('App\Models\Proyectos','id_Planeacion');
+    }
+     public $timestamps=false;
 }
+

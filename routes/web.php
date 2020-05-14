@@ -182,13 +182,17 @@
     Route::post('/analisisDofa', 'DofaController@dofa')->name('analisisDofa')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     
     //Rutas del crud de mis estrategias
-    Route::resource('misEstrategias', 'MisEstrategiasController');
-    Route::get('/misEstrategias', 'MisEstrategias@index');
-    /*
-    /Con las rutas get capturamos en el index
-    /y con las rutas post guardamos de formularios
-    */
 
+   
+    
+
+    Route::get('/analisisMisEstrategias', function () {return view('Modulo2.misEstrategiasD.misEstrategiasAnalisis');})->name('misEstrategiasAnalisis')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
+    Route::get('/misEstrategiasDI','MisEstrategiasController@index')->name('misEstrategias')->middleware('auth')->middleware('verified');
+    Route::post('/misEstrategiasDC','MisEstrategiasController@store')->name('misEstrategiasCreate')->middleware('auth')->middleware('verified');
+    Route::post('/misEstrategias/update', 'MisEstretegiasController@update');
+    Route::post('/misEstrategias/show', 'MisEstretegiasController@show');
+    //Route::post('/misEstrategias','MisEstrategiasController@create')->name('misEstrategiasCreate')->middleware('auth')->middleware('verified');
+     
     // Esta ruta me sirve para redirigirme de una otra: ->Route::redirect('/here', '/there');
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Modulo 3
@@ -210,10 +214,6 @@
     Route::get('/DisenoObjetivos2', function () {return view('Modulo3.DisenoObjetivos2');})->name('DisenoObjetivos2')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
     Route::get('/DisenoObjetivos3', function () {return view('Modulo3.DisenoObjetivos3');})->name('DisenoObjetivos3')->middleware('disablepreventback')->middleware('verified')->middleware('auth');
    
-   
-    Route::get('/misEstrategias','MisEstrategiasController@index')->name('misEstrategias')->middleware('auth')->middleware('verified');
-    Route::post('/agregar','MisEstrategiasController@store')->name('misEstrategiasCrear')->middleware('auth')->middleware('verified');
-    Route::post('/misEstrategias','MisEstrategiasController@create')->name('misEstrategiasCreate')->middleware('auth')->middleware('verified');
     
     //Esta me permite eliminar del array desde la vista de formulacion de los objetivos
     Route::get('EV/{id}','Modulo3Controller@EV')->name('EV')->middleware('auth')->middleware('verified');

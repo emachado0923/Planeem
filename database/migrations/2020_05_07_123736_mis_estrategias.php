@@ -14,7 +14,7 @@ class MisEstrategias extends Migration
     public function up()
     {
         Schema::create('mis_estrategias', function (Blueprint $table) {
-            $table->bigIncrements('id_mis_estrategias');
+            $table->bigIncrements('id');
             $table->string('estrategia');
             $table->unsignedBigInteger("id_Planeacion");
             $table->foreign("id_Planeacion","fk_mis_estrategias")->references("id_Planeacion")->on("Planeacion")->onDelete('restrict')->onUpdate('restrict');

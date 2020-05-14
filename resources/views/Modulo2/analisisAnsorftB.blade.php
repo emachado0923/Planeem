@@ -206,12 +206,15 @@
         margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
       </div>
       <div class="modal-body" style="text-align: center;">
-        <h1>A continuación sigue la vista para registrar estrategias</h1>
+        <h1>A continuación: Analisis de mis estrategias</h1>
      </div>
      <div id="r1" class="modal-footer">
         <a id="rr" class="btn btn-planeem waves-effect waves-light"  data-dismiss="modal">Cancelar</a>
-        <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('misEstrategias')}}" style="color:white;" name="nuevo">Siguiente E</a>
-        <!--Esta ruta es la que manda para el modulo 3-->
+        <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{{route('misEstrategiasD.misEstrategiasAnalisis')}}" style="color:white;" name="nuevo">Siguiente</a>
+        
+        <!--<a id="rr" class=" btn btn-planeem waves-effect waves-light" href="routamisEstrategias" style="color:white;" name="nuevo">Siguiente E</a>
+        -->
+          <!--Esta ruta es la que manda para el modulo 3-->
         <!-- <a id="rr" class=" btn btn-planeem waves-effect waves-light" href="{/route('DisenoObjetivos')}}" style="color:white;" name="nuevo">Siguiente</a>
        -->
 <!--------------------------------------------------------------------------------------------------------------->

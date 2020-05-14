@@ -164,6 +164,8 @@
 			<li><a><h6 style="font-size: 17px;">Análisis DOFA</h6><span class="rounded-circle">09</span></a></li>
 
 			<li><a><h6 style="font-size: 17px;">Análisis Ansorff</h6><span class="rounded-circle">10</span></a></li>
+			<!-- El primer cambio en el nav2-->
+			<li><a><h6 style="font-size: 17px;">Diseño Mis Estrategias</h6><span class="rounded-circle">11</span></a></li>
 		</ul>
 		<a data-toggle="modal" data-target="#exportar" href="#" id="boton2" value="Exportar" onclick="Mostra_Oculta()" class="exportar btn btn-planeem waves-effect waves-light">Exportar</a>
 	</nav>
@@ -282,6 +284,11 @@
 							<div>
 								<div class="barrita25"><h4 style="font-size: 15px;">Análisis Ansorff</h4></div>
 								<input class="barritache25" type="checkbox" style="cursor: pointer;">
+							</div>
+							<!-- El segundo cambio en el nav2-->
+							<div>
+								<div class="barrita26"><h4 style="font-size: 15px;">Diseño Mis Estrategias</h4></div>
+								<input class="barritache26" type="checkbox" style="cursor: pointer;">
 							</div>
 						</div>
 					</div>
@@ -418,6 +425,11 @@
 								<div class="barrita25"><h4 style="font-size: 15px;">Análisis Ansorff</h4></div>
 								<input class="barritache25" type="checkbox" style="cursor: pointer;">
 							</div>
+							<!-- El tercer cambio en el nav2-->
+							<div>
+								<div class="barrita26"><h4 style="font-size: 15px;">Diseño Mis Estrategias</h4></div>
+								<input class="barritache26" type="checkbox" style="cursor: pointer;">
+							</div>
 						</div>
 					</div>
 					<div class="modulo3">
@@ -526,7 +538,7 @@
 
 <script>
 	$(window).load(function(){
-		$('#page-loader').fadeOut(10);
+		$('#page-loader').fadeOut(11);
 	});
 </script>
 

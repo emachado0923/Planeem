@@ -1,35 +1,43 @@
 <?php
 
+
 namespace App\Http\Controllers;
-use App;
+
 use App\Http\Controllers\Controller;
-use App\misEstrategias;
+use App\Model\misEstrategias;
+use App\Model\Proyectos;
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 
 class MisEstrategiasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
+   
+
     public function index(Request $request)
     {   
-        $id = $request->input('id_planecion');
+       
+        $id = $request->input('id_Planeacion');
+        // $id_planeacion = Proyectos::all();
+        //   dd($id);
+        
+        
+           
+        // $res = respuestaAnalisis::select('respuesta as idRespuesta', 'idanalisis as analisis', 'idPlaneacion as planeacion')
+        // ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+        // ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+        // ->where('idPlaneacion', $id)
+        // ->get();
+
 
          $typeA = ['aAlta', 'aMedia', 'aBaja'];
          $typeO = ['oAlta', 'oMedia', 'oBaja'];
+         $typeF = ['fAlta', 'fMedia', 'fBaja'];
+         $typeD = ['dAlta', 'dMedia', 'dBaja'];
     
-        // $misEstrategias=DB::table('mis_estrategias')
-        // ->select('estrategia')
-        // ->join('planeacion', 'planeacion.id_Planeacion', 'mis_estrategias.idPlaneacion')
-        // ->where('idPlaneacion', $id)
-        // ->get();
-        
-        $typeF = ['fAlta', 'fMedia', 'fBaja'];
-        $typeD = ['dAlta', 'dMedia', 'dBaja'];
- 
         $fortaleza= DB::table('respuesta_capacidad')
         ->select('nombre')
         ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
@@ -37,7 +45,13 @@ class MisEstrategiasController extends Controller
         ->whereIn('respuesta', $typeF)
         ->where('idPlaneacion', $id)
         ->get();
- 
+        $fortaleza2= DB::table('respuesta_capacidad')
+        ->select('nombre')
+        ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
+        ->whereIn('respuesta', $typeF)
+        ->where('idPlaneacion', $id)
+        ->get();
         $debilidad= DB::table('respuesta_capacidad')
         ->select('nombre')
         ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
@@ -45,24 +59,7 @@ class MisEstrategiasController extends Controller
         ->whereIn('respuesta', $typeD)
         ->where('idPlaneacion', $id)
         ->get();
- 
-        $debilidad1 = DB::table('respuesta_capacidad')
-        ->select('nombre')
-        ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
-        ->whereIn('respuesta', $typeD)
-        ->where('idPlaneacion', $id)
-        ->get();
-        
-        $debilidad3 = DB::table('respuesta_capacidad')
-        ->select('nombre')
-        ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
-        ->whereIn('respuesta', $typeD)
-        ->where('idPlaneacion', $id)
-        ->get();
-
-        $debilidad4= DB::table('respuesta_capacidad')
+        $debilidad2 = DB::table('respuesta_capacidad')
         ->select('nombre')
         ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
         ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
@@ -83,35 +80,13 @@ class MisEstrategiasController extends Controller
         ->whereIn('respuesta', $typeO)
         ->where('idPlaneacion', $id)
         ->get();
-        $oportunidad3=DB::table('respuesta_analisis')
-        ->select('nombre')
-        ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
-        ->whereIn('respuesta', $typeO)
-        ->where('idPlaneacion', $id)
-        ->get();
-        $oportunidad4=DB::table('respuesta_analisis')
-        ->select('nombre')
-        ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
-        ->whereIn('respuesta', $typeO)
-        ->where('idPlaneacion', $id)
-        ->get();
-        $amenaza= DB::table('respuesta_analisis')
+       $amenaza= DB::table('respuesta_analisis')
         ->select('nombre')
         ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
         ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
         ->whereIn('respuesta', $typeA)
         ->where('idPlaneacion', $id)
         ->get();
-       $amenaza1= DB::table('respuesta_analisis')
-        ->select('nombre')
-        ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
-        ->whereIn('respuesta', $typeA)
-        ->where('idPlaneacion', $id)
-        ->get();
- 
        $amenaza2= DB::table('respuesta_analisis')
         ->select('nombre')
         ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
@@ -119,107 +94,104 @@ class MisEstrategiasController extends Controller
         ->whereIn('respuesta', $typeA)
         ->where('idPlaneacion', $id)
         ->get();
+
         
-       $amenaza3= DB::table('respuesta_analisis')
-       ->select('nombre')
-       ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
-       ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
-       ->whereIn('respuesta', $typeA)
-       ->where('idPlaneacion', $id)
-       ->get();
- 
-        $fortaleza3= DB::table('respuesta_capacidad')
-        ->select('nombre')
-        ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
-        ->whereIn('respuesta', $typeF)
-        ->where('idPlaneacion', $id)
-        ->get();
+        $misEstrategias1 =  misEstrategias::all();
+        
+        // $misEstrategias=DB::table('mis_estrategias')
+        // ->select('estrategia')
+        // ->join( 'planeacion', 'mis_estrategias.id_Planeacion' , 'planeacion.id_Planeacion' )
+        // ->where( 'planeacion.id_Planeacion' , $id)
+        // ->get();
+        // response()->json($misEstrategias);
 
-        $fortaleza2= DB::table('respuesta_capacidad')
-        ->select('nombre')
-        ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
-        ->whereIn('respuesta', $typeF)
-        ->where('idPlaneacion', $id)
-        ->get();
- 
-        $fortaleza1= DB::table('respuesta_capacidad')
-        ->select('nombre')
-        ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_capacidad.idPlaneacion')
-        ->whereIn('respuesta', $typeF)
-        ->where('idPlaneacion', $id)
-        ->get();
- 
-        return view('Modulo2.misEstrategias')->with(compact('oportunidad4','debilidad4','amenaza3','debilidad3','fortaleza3','oportunidad3','amenaza','id','oportunidad','amenaza1','fortaleza','debilidad','debilidad1','oportunidad2','fortaleza1','amenaza2','fortaleza2'));
+
+        return view('Modulo2.misEstrategiasD.misEstrategias')->with(compact('misEstrategias1','id','oportunidad','oportunidad2','amenaza','amenaza2','fortaleza','fortaleza2','oportunidad','oportunidad2','debilidad','debilidad2'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function create()
     {
        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $misEstrategiasAgregar = new misEstrategias;
         $misEstrategiasAgregar->estrategia = $request->estrategia;
+        $misEstrategiasAgregar->id_Planeacion = $request->id_Planeacion;
         $misEstrategiasAgregar->save();
         return back()->with('Agregar','La estrategia se ha agregado correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show(Request $request)
+    {    //Esto tiene que estar descomentado
+    //   {
+    //     try {
+    //       $id = $request->id;
+    //       $lista = misEstrategias::findOrFail($id);
+  
+    //       return response()->json([
+    //         "ok" => true,
+    //         "data" => $lista
+    //       ]);
+    //     } catch (\Throwable $th) {
+    //       return response()->json([
+    //         "ok" => false,
+    //         "message" => $th
+    //       ]);
+    //     }
+    //   }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
-    {
-        //
+    {  
+       //  $misEstrategias = misEstrategias::findOrFail($id);
+       //  return view("/Modulo2.misEstrategiasD.misEstrategias", compact("misEstrategias"));
+        
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    
+    public function update(Request $request)
     {
-        //
-    }
+        // $input = $request->all();
+        // $misEstrategias = misEstrategias::findOrFail($input["id"]);
+     
+        // misEstrategias::update([
+        // "estrategias"=>$input["estrategias"],
+        // "id_Planeacion"=>$input["id_Planeacion"],
+        // ]);
+        //     return redirect("/Modulo2.misEstrategias");
+         
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+        //Esto tiene que estar descomentado
+
+        // $input = $request->all();
+        // $id = $request->id;
+        // $validator = Validator::make($input, [
+        //   "estrategia" => "required",
+        // ]);
+        // if ($validator->fails()) {
+        //   return response()->json([
+        //     'ok' => false,
+        //     'message' => $validator->messages()
+        //   ]);
+        // }
+        // try {
+  
+        //   $list = misEstrategias::find($id);
+        //   $list->update($input);
+        //   return response()->json([
+        //     "ok" => true,
+        //     "message" => "Estrategia Actualizada con Exito."
+        //   ]);
+        // } catch (\Exception $ex) {
+        //   return response()->json([
+        //     "ok" => false,
+        //     "error" => $ex->getMessage()
+        //   ]);
+        // }
+       
+    }
+    
     public function destroy($id)
     {
         //
