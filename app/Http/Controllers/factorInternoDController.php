@@ -9,6 +9,7 @@ use App\Model\respuestaAnalisis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Validator;
+use App\Model\tipo_Matriz_crecimiento;
 
 class FactorInternoDController extends Controller
 {
@@ -17,18 +18,17 @@ class FactorInternoDController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index($id)
     {
 
         $id_planeacion = Proyectos::all();
 
-        $id = auth()->user()->selected_planne;
-
-
+        
+    
         // dd($id);
 
         $type = ['fAlta','fMedia','fBaja'];
-
+ 
         $fortaleza=respuestaCapacidad::select('capacidads.nombre' , 'capacidads.id as idCapacidad')
         ->join('capacidads','capacidads.id','respuesta_capacidad.idCapacidad')
         ->whereIn('respuesta',$type)
@@ -49,12 +49,12 @@ class FactorInternoDController extends Controller
 
         // dd($debilidad);
 
-
+        
 
         return view('Modulo2.factoresInternosDebi')->with(compact('fortaleza','debilidad','id','id_planeacion'));
-
+        
     }
-
+    
 
     /**
      * Show the form for creating a new resource.
@@ -79,6 +79,15 @@ class FactorInternoDController extends Controller
      */
     public function store(Request $request){
 
+        // $data = $request->all();
+        // if(empty($data)) {
+        //     $data = json_decode($request->getContent());
+        //     $data = json_decode($data);
+
+        //     if(is_null($data)) {
+        //         return response()->json("Not valid json", 400);
+        //     }
+        // }
 
         $plane = $request->get('idPlaneacion');
         $pone = $request->get('ponderacion');
@@ -88,7 +97,7 @@ class FactorInternoDController extends Controller
         $totalPuntuacion = $request->input('totalPuntuacion');
         $puntuacionPonderada = $request->input('puntuacionPonderad1');
         $preguntas =$request->get('preguntas');
-
+           
             // dd($totalCalificacion,$totalPuntuacion,$puntuacionPonderada);
         for ($i = 0; $i < count($preguntas); $i++) {
 
@@ -121,12 +130,15 @@ class FactorInternoDController extends Controller
             'alert-type' => 'success'
         );
 
+        
+        toastr()->success('Datos registrados correctamente');
+ 
      return redirect('/anaPestal')->with($message);
 }
+        
 
 
-
-
+           
 
     /**
      * Display the specified resource.
@@ -185,6 +197,6 @@ class FactorInternoDController extends Controller
 
 
         return response()->json($res);
-
+    
 }
 }

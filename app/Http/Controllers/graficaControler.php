@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\tipo_Matriz_crecimiento;
 
 class graficaControler extends Controller
 {

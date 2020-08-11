@@ -22,7 +22,7 @@ class CreateProyectosTable extends Migration
             $table->date('fechaculminacion')->nullable();
             $table->unsignedBigInteger("id_usuario");
 
-            $table->foreign("id_usuario","fk_proyecto_usuario")->references("id")->on("users")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_usuario","fk_proyecto_usuario")->references("id")->on("users");
         });
     }
 

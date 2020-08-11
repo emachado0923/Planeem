@@ -15,8 +15,7 @@ class CreatePerfilCompeEmpresasTable extends Migration
     {
         Schema::create('perfil_compe_empresas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('idFactorClave');
-            $table->foreign('idFactorClave')->references('id')->on('factorclaves');
+            $table->unsignedBigInteger('id_perfil_compe');
             $table->unsignedBigInteger('idPlaneacion');
             $table->string('nombreEmpresa');
             $table->decimal('pesoRelativo');

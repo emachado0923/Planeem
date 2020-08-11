@@ -8,6 +8,7 @@ use App\Model\pensamiento_pensamiento;
 use App\Model\Proyectos;
 use App\Model\Corporativos;
 use App\Http\Controllers\Controller;
+use App\Model\tipo_Matriz_crecimiento;
 
 class CplaneacionController extends Controller
 {
@@ -51,6 +52,8 @@ class CplaneacionController extends Controller
 
         $proyecto->nombre_proyecto=$request->input('nombre_proyecto');
        
+        toastr()->success('Datos registrados correctamente');
+        
         return view('Modulo1.Corporativos.vista24')->with('id_plane',$id_plane)->with('proyecto',$proyecto);
 
     }

@@ -1,0 +1,124 @@
+<fieldset>
+
+
+
+
+<table  class="egt" id="tabla">
+			
+    {{-- {{ var_dump($formulacionPosiciones) }}  --}}
+        {{-- {{ print_r($formulacionFinal) }}  --}}
+
+        {{-- {{ json_encode($formulacionFinal)}} --}}
+    <thead>
+        <tr>
+            <th class="thCampo" colspan="2" style="text-align: center;" rowspan="2">Objetivos y estrategias</th>
+            <th class="thCampo" colspan="4" style="text-align: center;">Tiempo
+            
+            </th>
+            
+        </tr>
+        <tr>
+            <th class="thCampo" style="text-align: center;">Largo plazo</th>
+            <th class="thCampo" style="text-align: center;">Mediano plazo</th>
+            <th class="thCampo" style="text-align: center;">Corto plazo</th>
+            <th class="thCampo" style="text-align: center;">No aplica</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="tabla5">
+            <th colspan="2" style="text-align: center;" class="thCampo1">Estrategia 1</th>
+            <td   class="radio">
+                <input type="radio" name="forma" id="item1">
+                <label for="item1">A</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma" id="item2">
+                <label for="item2" style="">A</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma" id="item3">
+                <label for="item3" style="">A</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma" id="item4">
+                <label for="item4" style="">A</label>
+            </td>
+        </tr>
+        <tr class="tabla5">
+            <th colspan="2" style="text-align: center;" class="thCampo1">Estrategia 2</th>
+            <td class="radio">
+                <input type="radio" name="forma1" id="item5">
+                <label for="item5" >M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma1" id="item6">
+                <label for="item6">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma1" id="item7">
+                <label for="item7">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma1" id="item8">
+                <label for="item8">M</label>
+            </td>
+        </tr>
+        <tr class="tabla5">
+            <th colspan="2" style="text-align: center;" class="thCampo1">Estrategia 3</th>
+            <td  class="radio">
+                <input type="radio" name="forma2" id="item9">
+                <label for="item9">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma2" id="item10">
+                <label for="item10">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma2" id="item11">
+                <label for="item11">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma2" id="item12">
+                <label for="item12">M</label>
+            </td>
+        </tr>
+        <tr class="tabla5">
+            <th colspan="2" style="text-align: center;" class="thCampo1">Estrategia 4</th>
+            <td class="radio" >
+                <input type="radio" name="forma3" id="item13">
+                <label for="item13">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma3" id="item14">
+                <label for="item14">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma3" id="item15">
+                <label for="item15">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma3" id="item16">
+                <label for="item16">M</label>
+            </td>
+        </tr>
+        <tr class="tabla5">
+            <th colspan="2" style="text-align: center;" class="thCampo1">Estrategia 5</th>
+            <td class="radio">
+                <input type="radio" name="forma4" id="item17">
+                <label for="item17">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma4" id="item18">
+                <label for="item18">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma4" id="item19">
+                <label for="item19">M</label>
+            </td>
+            <td class="radio">
+                <input type="radio" name="forma4" id="item20">
+                <label for="item20">M</label>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,7 +17,7 @@ class CreateAddverboTable extends Migration
             $table->bigIncrements('id');
             $table->string('addverbo');
             $table->unsignedBigInteger("id_respuestaEstrategias");
-            $table->foreign("id_respuestaEstrategias","id_respuestaEstrategias")->references("id_respuestaEstrategias")->on("respuestaEstrategias")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_respuestaEstrategias","id_respuestaEstrategias")->references("id_respuestaEstrategias")->on("respuestaEstrategias");
         });
     }
 

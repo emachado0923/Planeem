@@ -17,7 +17,7 @@ class CreateRespuestaEstrategiasTable extends Migration
             $table->bigIncrements('id_respuestaEstrategias');
             $table->string('Verbos');
             $table->unsignedBigInteger("id_verbos");
-            $table->foreign("id_verbos","fk_Verbos")->references("id_verbos")->on("Verbos")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_verbos","fk_Verbos")->references("id_verbos")->on("Verbos");
         });
     }
 

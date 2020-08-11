@@ -6,11 +6,9 @@ use App\Model\analisisPorter;
 use App\Model\respuestaAnalisisPorter;
 use App\Model\Proyectos;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
-use App\Model\ansorft;
 use App\Model\TipoPreguntaansorft;
-use App\Model\tipo_mercado;
-use App\Model\tipo_Penetracion;
+use App\Model\tipo_Matriz_crecimiento;
+
 class AnalisisPorterController extends Controller
 {
     /**
@@ -132,81 +130,36 @@ class AnalisisPorterController extends Controller
             }
         }
 
+    return view('Modulo2.info1')->with(compact('plane'))->with($message);
+    }
     
+    public function mercado(REQUEST $request)
+    {   
+        $plane = $request->get('idPlaneacion');
 
-        $DesaMerca = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
-        ->where('idTipo',1)
+        $tipo_Matriz1 = tipo_Matriz_crecimiento::select('*')
+        ->where('tipo',1)
+        ->get();
+
+        $tipo_Matriz2 = tipo_Matriz_crecimiento::select('*')
+        ->where('tipo',2)
         ->get();
 
 
-        $tipo_Penetracion=tipo_Penetracion::all();
+        $tipo_Matriz3 = tipo_Matriz_crecimiento::select('*')
+        ->where('tipo',3)
+        ->get();
 
+        $tipo_Matriz4 = tipo_Matriz_crecimiento::select('*')
+        ->where('tipo',4)
+        ->get();
 
+        return view('Modulo2.ansorftMercado')->with(compact('tipo_Matriz1','tipo_Matriz2','tipo_Matriz3','tipo_Matriz4','plane'));
         
-        $DesaMerca2 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
-        ->where('idTipo',1)
-        ->get();
 
-
-        $tipo_Penetracion2=tipo_Penetracion::all();
-
-
-        
-        $DesaMerca3 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
-        ->where('idTipo',1)
-        ->get();
-
-
-        $tipo_Penetracion3=tipo_Penetracion::all();
-
-
-
-        
-        $DesaMerca4 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
-        ->where('idTipo',1)
-        ->get();
-
-
-        $tipo_Penetracion4=tipo_Penetracion::all();
-
-        $DesaMerca5 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
-        ->where('idTipo',1)
-        ->get();
-        $tipo_Penetracion5 =tipo_Penetracion::all(); 
-
-        
-        $DesaMerca6 = TipoPreguntaansorft::select('tipo_preguntaansorfts.*')
-        ->where('idTipo',1)
-        ->get();
-
-
-        $tipo_Penetracion6 =tipo_Penetracion::all(); 
-
-
-        $id_planeacion =  $plane;
-
-
-         return view('Modulo2.ansorftMercado')->with(compact('DesaMerca','tipo_Penetracion','DesaMerca2','tipo_Penetracion2','DesaMerca3',
-         'tipo_Penetracion3','DesaMerca4','tipo_Penetracion4','DesaMerca5','tipo_Penetracion5','DesaMerca6','tipo_Penetracion6','id_planeacion'))->with($message);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Model\analisisPorter  $analisisPorter
-     * @return \Illuminate\Http\Response
-     */
-    public function show(analisisPorter $analisisPorter)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\analisisPorter  $analisisPorter
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(analisisPorter $analisisPorter)
     {
         //

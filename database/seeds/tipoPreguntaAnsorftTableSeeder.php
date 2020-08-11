@@ -51,15 +51,7 @@ class tipoPreguntaAnsorftTableSeeder extends Seeder
             'idTipo'=>'1'
             ]);
 
-            //Diversificación
-            TipoPreguntaansorft::create([
-            'nombre'=> 'La empresa realiza seguimiento y rendimiento de las ventas  entre los costos y los ingresos que genera un determinado segmento.',
-            'idTipo'=>'2'
-            ]);
-            TipoPreguntaansorft::create([
-            'nombre'=> 'La empresa realiza seguimiento y rendimiento de las ventas  entre los costos y los ingresos que genera un determinado segmento.',
-            'idTipo'=>'2'
-            ]);
+         
             TipoPreguntaansorft::create([
             'nombre'=> 'La empresa añade productos nuevos, relacionados con la actividad fundamental de la empresa.',
             'idTipo'=>'2'

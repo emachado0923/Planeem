@@ -889,7 +889,8 @@
                 "name": "Jakub Onderka",
                 "email": "jakub.onderka@gmail.com"
             }
-        ]
+        ],
+        "abandoned": "php-parallel-lint/php-console-color"
     },
     {
         "name": "jakub-onderka/php-console-highlighter",
@@ -937,7 +938,8 @@
                 "homepage": "http://www.acci.cz/"
             }
         ],
-        "description": "Highlight PHP code in terminal"
+        "description": "Highlight PHP code in terminal",
+        "abandoned": "php-parallel-lint/php-console-highlighter"
     },
     {
         "name": "laravel/framework",
@@ -5519,17 +5521,17 @@
     },
     {
         "name": "yoeunes/toastr",
-        "version": "v1.2.2",
-        "version_normalized": "1.2.2.0",
+        "version": "v1.2.3",
+        "version_normalized": "1.2.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yoeunes/toastr.git",
-            "reference": "1f16c1dd1f1d44234f1442cdd3d8f7f6bb1ed641"
+            "reference": "1a2d58aaa6add715f16ad76112f3a2b32bd89d92"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yoeunes/toastr/zipball/1f16c1dd1f1d44234f1442cdd3d8f7f6bb1ed641",
-            "reference": "1f16c1dd1f1d44234f1442cdd3d8f7f6bb1ed641",
+            "url": "https://api.github.com/repos/yoeunes/toastr/zipball/1a2d58aaa6add715f16ad76112f3a2b32bd89d92",
+            "reference": "1a2d58aaa6add715f16ad76112f3a2b32bd89d92",
             "shasum": ""
         },
         "require": {
@@ -5537,7 +5539,7 @@
             "illuminate/support": "^5.5 || ^6.0 || ^7.0",
             "php": ">=7.0"
         },
-        "time": "2020-03-06T08:43:34+00:00",
+        "time": "2020-03-13T07:27:21+00:00",
         "type": "library",
         "extra": {
             "laravel": {

@@ -67,6 +67,8 @@ class planeacionControlle extends Controller
         
          $proyecto->nombre_proyecto=$request->input('nombre_proyecto');
         
+         toastr()->success('Datos registrados correctamente');
+         
          return view('Modulo1.Corporativos.vista24')->with('id_plane',$id_plane)->with('proyecto',$proyecto)->with('proyect',$proyect);
 
 

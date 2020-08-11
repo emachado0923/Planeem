@@ -8,6 +8,7 @@ use App\Model\ansorft;
 use App\Model\Proyectos;
 use App\Model\TipoPreguntaansorft;
 use App\Model\tipo_mercado;
+use App\Model\tipo_Matriz_crecimiento;
 
 class AnsorftController extends Controller
 {
@@ -24,10 +25,7 @@ class AnsorftController extends Controller
 
         $tipo_mercado=tipo_mercado::all();
 
-        //Aca falta la amenaza que se no listaba :(
-        //Tenemos que crear un metodo donde se pueda obtener y mandar a la vista  
-
-        return view('Modulo2.ansorftDesarrolloMerca')->with(compact('ansorft','DesaMerca','tipo_mercado','amenaza'));
+        return view('Modulo2.ansorftDesarrolloMerca')->with(compact('ansorft','DesaMerca','tipo_mercado'));
     }
 
 

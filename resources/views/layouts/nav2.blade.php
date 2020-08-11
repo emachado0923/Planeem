@@ -29,7 +29,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['ID', 'X', 'Y', 'Burbuja'],  
+          ['ID', 'X', 'Y', 'Burbuja'],
           ['',   2.8,  3.4, 3.1],
         ]);
 
@@ -75,8 +75,11 @@
         <link href='{{asset('css/animations-ie-fix.css')}}' rel='stylesheet'>
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 </head>
+@jquery
+@toastr_js
+@toastr_render
 <body>
 	<div id="page-loader"><span class="preloader-interior"></span></div>
 	<div id="app">
@@ -146,8 +149,8 @@
 		<ul class="items">
 			<li><a id="linkid"><h6 style="font-size: 17px;">Perfil Capacidad Interna</h6><span class="rounded-circle">01</span></a></li>
 
-			
-			<li><a id="linkid2"><h6 style="font-size: 17px;"> Perfil Competitivo</h6><span class="rounded-circle">02</span></a></li> 
+
+			<li><a id="linkid2"><h6 style="font-size: 17px;"> Perfil Competitivo</h6><span class="rounded-circle">02</span></a></li>
 
 			<li><a id="linkid3" ><h6 style="font-size: 17px;">Evaluación Factores Internos</h6><span class="rounded-circle">03</span></a></li>
 			<h5 style=" color: #238276;" >Análisis Externo</h5><hr style=" background: #238276; width: 53%; margin-top: -12px; ">
@@ -155,15 +158,17 @@
 
 			<li><a><h6 style="font-size: 17px;"> Análisis Porter</h6><span class="rounded-circle">05</span></a></li>
 
-			<li><a><h6 style="font-size: 17px;">Ansorff</h6><span class="rounded-circle">06</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Matriz de Crecimiento</h6><span class="rounded-circle">06</span></a></li>
 
 			<li><a><h6 style="font-size: 17px;">Evaluación Factores Externos</h6><span class="rounded-circle">07</span></a></li>
 			<h5 style=" color: #238276;" >Resultados del Diagnóstico</h5><hr style=" background: #238276; width: 93%; margin-top: -12px; ">
-			<li><a><h6 style="font-size: 17px;">Análisis EFI y EFE</h6><span class="rounded-circle">08</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Resultado Análisis EFI y EFE</h6><span class="rounded-circle">08</span></a></li>
 
-			<li><a><h6 style="font-size: 17px;">Análisis DOFA</h6><span class="rounded-circle">09</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Resultado Análisis DOFA</h6><span class="rounded-circle">09</span></a></li>
 
-			<li><a><h6 style="font-size: 17px;">Análisis Ansorff</h6><span class="rounded-circle">10</span></a></li>
+			<li><a><h6 style="font-size: 17px;">Resultado Análisis Matriz de Crecimiento</h6><span class="rounded-circle">10</span></a></li>
+			<!-- El primer cambio en el nav2-->
+			<li><a><h6 style="font-size: 17px;">Selección de Estrategias</h6><span class="rounded-circle">11</span></a></li>
 		</ul>
 		<a data-toggle="modal" data-target="#exportar" href="#" id="boton2" value="Exportar" onclick="Mostra_Oculta()" class="exportar btn btn-planeem waves-effect waves-light">Exportar</a>
 	</nav>
@@ -282,6 +287,11 @@
 							<div>
 								<div class="barrita25"><h4 style="font-size: 15px;">Análisis Ansorff</h4></div>
 								<input class="barritache25" type="checkbox" style="cursor: pointer;">
+							</div>
+							<!-- El segundo cambio en el nav2-->
+							<div>
+								<div class="barrita26"><h4 style="font-size: 15px;">Diseño Mis Estrategias</h4></div>
+								<input class="barritache26" type="checkbox" style="cursor: pointer;">
 							</div>
 						</div>
 					</div>
@@ -418,6 +428,11 @@
 								<div class="barrita25"><h4 style="font-size: 15px;">Análisis Ansorff</h4></div>
 								<input class="barritache25" type="checkbox" style="cursor: pointer;">
 							</div>
+							<!-- El tercer cambio en el nav2-->
+							<div>
+								<div class="barrita26"><h4 style="font-size: 15px;">Diseño Mis Estrategias</h4></div>
+								<input class="barritache26" type="checkbox" style="cursor: pointer;">
+							</div>
 						</div>
 					</div>
 					<div class="modulo3">
@@ -458,7 +473,7 @@
 						<div class="barrita20"></div>
 						<input class="barritache20" type="checkbox" style="cursor: pointer;">
 					</div>
-			
+
 					<button class="exportar24 btn btn-planeem waves-effect waves-light">Exportar</button>
 				</div>
 			</div>
@@ -526,7 +541,7 @@
 
 <script>
 	$(window).load(function(){
-		$('#page-loader').fadeOut(10);
+		$('#page-loader').fadeOut(11);
 	});
 </script>
 

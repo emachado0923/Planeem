@@ -20,5 +20,9 @@ class Evaluacion_Factores extends Model
     ];
 
 
+    public $timestamps = false;
+
+
+
 }
 

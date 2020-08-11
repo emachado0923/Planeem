@@ -18,7 +18,7 @@ class CreateValoresCorporativosTable extends Migration
             $table->string('valores',100);
             $table->string('descripcion',1410);
             $table->unsignedBigInteger("id_Planeacion");
-            $table->foreign("id_Planeacion","fk_valores_corporativos")->references("id_Planeacion")->on("Planeacion")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_Planeacion","fk_valores_corporativos")->references("id_Planeacion")->on("Planeacion");
             $table->timestamps();
         });
     }

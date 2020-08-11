@@ -20,7 +20,7 @@
 	<div class="row">
 		<div class="col-md-6 conte1">
 			<div class="botonopo1" value="Fortalezas_ventana" data-toggle="modal" data-target="#Fortalezas">
-				<h3 style="text-align: center;"> 
+				<h3 style="text-align: center;">
 					<img src="img/icono1.png" style="width: 50px;">
 				</h3>
 				<div>
@@ -30,11 +30,11 @@
 		</div>
 		<div class="col-md-6 conte2">
 			<div class="botonopo1" value="Oportunidades_ventana" data-toggle="modal" data-target="#Oportunidades">
-				<h3 style="text-align: center;"> 
+				<h3 style="text-align: center;">
 					<img src="img/icono2.png" style="width: 50px;">
 				</h3>
 				<div>
-					<h2 style="color: black;text-align: center;font-size: 66px;position: absolute;left: 16%;top: 47%;">Oportunidades</h2>
+					<h2 style="color: black;text-align: center;font-size: 66px;position: absolute;left: 16%;top: 47%;">Oportunidades </h2>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 	<div class="row">
 		<div class="col-md-6 conte3">
 			<div class="botonopo" value="Debilidades_ventana" data-toggle="modal" data-target="#Debilidades">
-				<h3 style="text-align: center;"> 
+				<h3 style="text-align: center;">
 					<img src="img/icono3.png" style="width: 50px;">
 				</h3>
 				<div>
@@ -52,7 +52,7 @@
 		</div>
 		<div class="col-md-6 conte4">
 			<div class="botonopo" value="Amenazas_ventana" data-toggle="modal" data-target="#Amenazas">
-				<h3 style="text-align: center;"> 
+				<h3 style="text-align: center;">
 					<img src="img/icono4.png" style="width: 50px;">
 				</h3>
 				<div>
@@ -61,9 +61,9 @@
 			</div>
 		</div>
 
-		
-	
-	
+
+
+
 		<a onclick="btn12()" style="color:white;" name="nuevo" class="botonDofa btn btn-planeem waves-effect waves-light">Siguiente</a>
 	</div>
 </section>
@@ -74,7 +74,7 @@
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content" id="Fortalezasventana">
 			<div class="modal-header">
-			 <h3 style="color: black;margin-left: 40%;"> 
+			 <h3 style="color: black;margin-left: 40%;">
 			  <img src="img/icono1.png" style="width: 28px;margin-top: -14px;">Fortalezas<button><span class="icon-info" data-toggle="modal" data-target="#exampleModal1" style="font-size: 25px;margin-top: -8%;margin-right: 39%;"></span></button>
 			</h3>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;margin-left: 0% !important;">
@@ -86,18 +86,18 @@
 			@foreach ($fortaleza as $for)
 				<p>{{$for->nombre}}</p>
 				 @endforeach</p>
-			
+
 		  </div>
 		</div>
 	  </div>
 	  </div>
 	  </div>
-	  
+
 	  <div class="modal fade" id="Oportunidades" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content" id="Fortalezasventana">
 			<div class="modal-header">
-			 <h3 style="color: black;margin-left: 40%;"> 
+			 <h3 style="color: black;margin-left: 40%;">
 			  <img src="img/icono2.png" style="width: 28px;margin-top: -14px;">Oportunidades<button><span class="icon-info" data-toggle="modal" data-target="#exampleModal1" style="font-size: 25px;margin-top: -8%;margin-right: 34%;"></span></button>
 			</h3>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;margin-left: 0% !important;">
@@ -108,19 +108,19 @@
 		  <div class="scrollfortaleza2">
 				 @foreach ($oportunidad as $opo)
 				<p>{{$opo->nombre}}</p>
-				 @endforeach</p>.  
-			
+				 @endforeach</p>.
+
 		  </div>
 		</div>
 	  </div>
 	  </div>
 	  </div>
-	  
+
 	  <div class="modal fade" id="Debilidades" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content" id="Fortalezasventana">
 			<div class="modal-header">
-			 <h3 style="color: black;margin-left: 40%;"> 
+			 <h3 style="color: black;margin-left: 40%;">
 			  <img src="img/icono3.png" style="width: 28px;margin-top: -14px;">Debilidades<button><span class="icon-info" data-toggle="modal" data-target="#exampleModal1" style="font-size: 25px;margin-top: -8%;margin-right: 38%;"></span></button>
 			</h3>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;margin-left: 0% !important;">
@@ -137,12 +137,12 @@
 	  </div>
 	  </div>
 	  </div>
-	  
+
 	  <div class="modal fade" id="Amenazas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content" id="Fortalezasventana">
 			<div class="modal-header">
-			 <h3 style="color: black;margin-left: 40%;"> 
+			 <h3 style="color: black;margin-left: 40%;">
 			  <img src="img/icono4.png" style="width: 28px;margin-top: -14px;">Amenazas<button><span class="icon-info" data-toggle="modal" data-target="#exampleModal1" style="font-size: 25px;margin-top: -8%;margin-right: 39%;"></span></button>
 			</h3>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;margin-left: 0% !important;">
@@ -159,7 +159,7 @@
 	  </div>
 	  </div>
 	  </div>
-	  
+
 <span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -187,9 +187,9 @@
 							<li>4= Fortaleza mayor</li><br>
 						</ol>
 					</li><br>
-					
+
 					<b>
-						
+
 					</b>
 					<li>5. Se multiplica el peso de la segunda columna por cada una de las calificaciones de las organizaciones o empresas
 					competidoras, obteniéndose el peso ponderado correspondiente.</li><br>
@@ -204,8 +204,8 @@
 </section>
 <form method="POST" style="display:none" id="form" action="{{route('analisisDofa')}}" >
 	@csrf
-		<input type="text" id="id_planecion" name="id_planecion">	
-		<button  type="submit" id="btn12">		
+		<input type="text" id="id_planecion" name="id_planecion">
+		<button  type="submit" id="btn12">
 </form>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
@@ -236,7 +236,7 @@
 <script>
 	var id = localStorage.getItem('id')
 	$('#id_planecion').val(id);
-	
+
 
 	function btn12(){
 		document.getElementById('btn12').click();

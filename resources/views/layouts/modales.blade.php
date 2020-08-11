@@ -237,7 +237,7 @@
                 {{-- INPUT NOMBRES --}}
                 <div class="inner-addon left-addon">
                     <i class="glyphicon icon-address-book" style="color:black"></i>
-                    <input id="Nombres" type="text"
+                    <input   onkeypress="return soloLetras(event)" id="Nombres" type="text" 
                     class="form-control @error('nombres') is-invalid @enderror" name="nombres"
                     value="{{ old('nombres') }}" placeholder="Nombres*" required autocomplete="nombres*" >
 
@@ -251,7 +251,7 @@
                 {{-- INPUT APELLIDOS --}}
                 <div id="apellidonatural" class="inner-addon left-addon">
                     <i class="glyphicon icon-address-book" style="color:black"></i>
-                    <input id="apellidos" type="text"
+                    <input  onkeypress="return soloLetras(event)" id="apellidos" type="text"
                     class="form-control @error('apellidos') is-invalid @enderror"
                     name="apellidos" value="{{ old('apellidos') }}" placeholder="Apellidos*" required
                     autocomplete="apellidos" >
@@ -290,9 +290,9 @@
         <div class="inner-addon left-addon">
             <br>
             <i class="glyphicon icon-address-book" style="color:black;margin-top:0.6rem;"></i>
-            <input id="documento" type="number"
+            <input   onkeypress="return solonumeros(event)" id="documento" type="text"
             class="form-control @error('documento') is-invalid @enderror"
-            name="documento" value="{{ old('documento') }}" placeholder="Número documento*" required
+            name="documento" value="{{ old('documento') }}" placeholder="Número documento*" required 
             autocomplete="documento" style="margin-top:0.6rem;">
 
             @error('documento')
@@ -307,7 +307,7 @@
         {{-- INPUT USUARIO --}}
         <div class="inner-addon left-addon">
             <i class="glyphicon icon-user" style="color:black"></i>
-            <input id="username" type="text"
+            <input onkeypress="return alfaNumerico(event)" id="username" type="text"
             class="form-control @error('username') is-invalid @enderror"
             name="username" value="{{ old('username') }}" placeholder="Usuario*" required
             autocomplete="username">
@@ -321,7 +321,7 @@
         {{-- INPUT TELEFONO --}}
         <div class="inner-addon left-addon">
             <i class="glyphicon icon-phone" style="color:black"></i>
-            <input id="telefonos" type="number"
+            <input   onkeypress="return solonumeros(event)" id="telefonos" type="text"
             class="form-control @error('telefono') is-invalid @enderror"
             name="telefono" placeholder="Telefono" value="{{ old('telefono') }}"
             >
@@ -370,7 +370,7 @@
         <div class="inner-addon left-addon">
             <i class="glyphicon icon-lock" style="color:black"></i>
             <input id="password-confirm" type="password" class="form-control"
-            name="password_confirmation" placeholder="Contraseña*" required autocomplete="new-password">
+            name="password_confirmation" placeholder="Confirmar Contraseña*" required autocomplete="new-password">
         </div>
     </div>
     <br><br>
@@ -426,7 +426,7 @@
             {{-- INPUT RESPONSABLE --}}
             <div id="responsablej" class="inner-addon left-addon">
                 <i class="glyphicon icon-user-tie" style="color:black"></i>
-                <input id="responsable" type="text"
+                <input  onkeypress="return soloLetras(event)" id="responsable" type="text" 
                 class="form-control @error('responsable') is-invalid @enderror"
                 name="responsable" value="{{ old('responsable') }}" placeholder="Responsable*" required
                 autocomplete="responsable" >
@@ -441,7 +441,7 @@
             {{-- INPUT RAZONSOCIAL --}}
             <div id="razonsocialj" class="inner-addon left-addon">
                 <i class="glyphicon icon-users" style="color:black"></i>
-                <input id="razonSocial" type="text"
+                <input  onkeypress="return soloLetras(event)" id="razonSocial" type="text"
                 class="form-control @error('razonSocial') is-invalid @enderror"
                 name="razonSocial" value="{{ old('razonSocial') }}" required
                 autocomplete="razonSocial"  placeholder="Razón Social*">
@@ -459,7 +459,7 @@
             <div id="nitj" class="inner-addon left-addon" >
                 <br>
                 <i id="NITS" class="glyphicon icon-qrcode" style="color:black"></i>
-                <input id="NIT" type="number"
+                <input  onkeypress="return solonumeros(event)" id="NIT" type="text"
                 class="form-control @error('NIT') is-invalid @enderror" name="NIT"
                 value="{{ old('NIT') }}" placeholder="NIT*" required autocomplete="NIT">
                 @error('NIT')
@@ -506,8 +506,8 @@
     {{-- INPUT USUARIO --}}
     <div class="inner-addon left-addon">
         <i class="glyphicon icon-user" style="color:black"></i>
-        <input id="username" type="text"
-        class="form-control @error('username') is-invalid @enderror"
+        <input onkeypress="return alfaNumerico(event)" id="username" type="text"
+        class="form-control @error('username') is-invalid @enderror" 
         name="username" value="{{ old('username') }}" placeholder="Usuario*" required
         autocomplete="username">
 
@@ -520,8 +520,8 @@
     {{-- INPUT TELEFONO --}}
     <div class="inner-addon left-addon">
         <i class="glyphicon icon-phone" style="color:black"></i>
-        <input id="telefonos" type="number"
-        class="form-control @error('telefono') is-invalid @enderror"
+        <input onkeypress="return solonumeros(event)" id="telefonos" type="text"
+        class="form-control @error('telefono') is-invalid @enderror" 
         name="telefono" placeholder="Telefono" value="{{ old('telefono') }}"
         >
         @error('telefono')
@@ -569,7 +569,7 @@
     <div class="inner-addon left-addon">
         <i class="glyphicon icon-lock" style="color:black"></i>
         <input id="password-confirm" type="password" class="form-control"
-        name="password_confirmation" placeholder="Contraseña*" required autocomplete="new-password">
+        name="password_confirmation" placeholder="Confirmar Contraseña*" required autocomplete="new-password">
     </div>
 </div>
 <div class="form-check center">
@@ -627,6 +627,22 @@ Por favor seleccionar Términos y Condiciones
 </div>
 </div>
 @yield('contenido')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- SCRIPTS (LIBRERIAS O ENLACES JAVASCIPT) -->
@@ -764,46 +780,88 @@ $('#myModal').on('hide.bs.modal', function(){
     });
 });
 </script>
-{{-- <script type="text/javascript">
 
-    $(document).ready(function(){
-        $('#ejecuta').click(function(){
-            var pre = document.createElement('pre');
-//custom style.
-pre.style.maxHeight = "400px";
-pre.style.margin = "0";
-pre.style.padding = "24px";
-pre.style.whiteSpace = "pre-wrap";
-pre.style.textAlign = "justify";
-pre.appendChild(document.createTextNode($('#la').text()));
-//show as confirm
-alertify.confirm(pre, function(){
-    alertify.success('Aceptar');
-},function(){
-}).set({labels:{ok:'Aceptar'}, padding: false});
-});
-    })
+<script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
 </script>
-<script type="text/javascript">
 
-    $(document).ready(function(){
-        $('#ejecuta2').click(function(){
-            var pre = document.createElement('pre');
-//custom style.
-pre.style.maxHeight = "400px";
-pre.style.margin = "0";
-pre.style.padding = "24px";
-pre.style.whiteSpace = "pre-wrap";
-pre.style.textAlign = "justify";
-pre.appendChild(document.createTextNode($('#la').text()));
-//show as confirm
-alertify.confirm(pre, function(){
-    alertify.success('Aceptar');
-},function(){
-}).set({labels:{ok:'Aceptar'}, padding: false});
-});
-    })
-</script> --}}
+<script>
+        function alfaNumerico(e){
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz1234567890";
+            especiales = "8-37-39-46";
+
+            tecla_especial = false
+            for(var i in especiales){
+                if(key == especiales[i]){
+                    tecla_especial = true;
+                    break;
+                }
+            }
+
+            if(letras.indexOf(tecla)==-1 && !tecla_especial){
+                return false;
+            }
+        }
+</script>
+
+
+<script>
+      
+    function solonumeros(e){
+        key=e.keyCode || e.which;
+    
+        tecaldo = String.fromCharCode(key);
+    
+        numero="01234567890"
+    
+        especiales="8-37-38-46";
+    
+        teclado_especial=false;
+    
+    
+        for(var i in especiales){
+            if(key==especiales[i]){
+                teclado_especial=true;
+            }
+        }
+    
+        if(numero.indexOf(tecaldo)==-1 && !teclado_especial){
+            return false;
+        }
+    }
+        </script>
+        <script>
+                function comprobarClave(){
+                    passwords = document.prueba1.passwords.value
+                    password-confirm = document.prueba1.password-confirm.value
+
+                    if (passwords == password-confirm)
+                    alert("Las dos claves son iguales...\nRealizaríamos las acciones del caso positivo")
+                    else
+                    alert("Las dos claves son distintas...\nRealizaríamos las acciones del caso negativo")
+                }
+        </script>
+
+
 </body>
 
 </html>

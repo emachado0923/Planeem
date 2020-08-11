@@ -10,6 +10,7 @@ use App\Model\Proyectos;
 use App\Model\respuestaCapacidad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Model\tipo_Matriz_crecimiento;
 
 
 class CapacidadController extends Controller
@@ -79,58 +80,46 @@ class CapacidadController extends Controller
     {
 
         $plane = $request->get('idPlaneacion');
+        $preguntas =  $request->get('preguntas');
+        $Nombre_Capacidad = $request->get('Nombre_Capacidad');
+        $state = "";
 
-        //Contador de respuestas resueltas
-        $count = 0;
 
-        foreach ($request->get('preguntas') as $key => $value) {
+        foreach($preguntas as $preguntas){
 
+
+            if($request->get($preguntas) === null){
+
+                $message = array(
+                    'message' => 'Recuerda llenar todo el formulario',
+                    'alert-type' => 'error'
+                );
+    
+                return back()->with($message);
+
+            }
+
+        }
+
+        $preguntas =  $request->get('preguntas');
             
-        //Control Try-Catch para excepcionar (omitir) error de null y así continuar agregando.
-            try {
+        for ($i =0; $i < count($preguntas) ; $i++) {
+           
                 respuestaCapacidad::updateOrCreate(
                     [
-                        "idCapacidad" => $value,
-                        "idPlaneacion" => $plane
+                        "idPlaneacion" => $plane,
+                        "idCapacidad" => $preguntas[$i],
                     ],
-
                     [
                         "idPlaneacion" => $plane,
-                        "idCapacidad" => $value,
-                        "respuesta" => $request->get($value)
+                        "idCapacidad" => $preguntas[$i],
+                        "Nombre_Capacidad"=>$Nombre_Capacidad[$i],
+                        "respuesta" => $request->get($preguntas[$i])
                     ]
                 );
 
-                //En caso de recibir un valor diferente de nulo (Respuesta resuelta) sumamos 1 a la variable count 
-
-                if ($request->get($value) !== null) {
-                       $count++;
-                }
-
-            } catch (\Throwable $th) {   
-                
-            }
         }
 
-        //Fuera de foreach, evaluamos lo siguiente : 
-
-        /*En caso del contador de respuestas no ser igual al contador de preguntas de total
-          Recibimos el mensaje de error y retornamos nuevamente a la misma vista
-          sin embargo, las respuestas resueltas serán guardadas  */
-
-        if ($count !== count($request->get('preguntas'))) {
-
-            $message = array(
-                'message' => 'Recuerda llenar todo el formulario',
-                'alert-type' => 'error'
-            );
-
-            return back()->with($message);
-
-        /* Finalmente si todo está en orden (todas las respuestas han sido resueltas)
-           retornamos a la siguiente vista, junto a un bello mensaje de todo está bien.  */
-
-        }else if ($count === count($request->get('preguntas'))){
 
             $message = array(
                 'message' => 'Perfíl de capacidad interna guardada con Éxito',
@@ -139,12 +128,8 @@ class CapacidadController extends Controller
 
             return redirect('/perfilCompeInfo')->with($message);
 
-        }
-
-
-        /* Fin :) */
-
-    }
+}
+        
 
 
     /**

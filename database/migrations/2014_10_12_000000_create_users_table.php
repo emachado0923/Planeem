@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->boolean('confirmed')->default(0);
             $table->string('confirmation_code')->nullable(); 
             $table->string('selected_planne');
+            $table->string('tipo')->nullable();
             $table->rememberToken();
         });
     }

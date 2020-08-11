@@ -48,7 +48,7 @@
         <link href='{{asset('css/animations-ie-fix.css')}}' rel='stylesheet'>
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+	<script src="jquery.min.js"></script>
 </head>
 <body>
 

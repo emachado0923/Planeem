@@ -5,7 +5,7 @@
 	@section('f')
 	<a href="{{ route('home') }}" class="clos" aria-label="Close"><span class="icon-undo2"></span></a>
 	@endsection
-	@include('modal/modal')
+	
 	@yield('progres')
 	<div>
 		<div class="progress">
@@ -23,7 +23,8 @@
 		<div id="regiration_form">
 			<fieldset class="opciones">
 				<h3>Capacidad Directiva:</h3>
-				<p>Comprende el análisis de aquellas fortalezas o debilidades que se relacionan con
+				<p>
+					Comprende el análisis de aquellas fortalezas o debilidades que se relacionan con
 					los procesos administrativos de la empresa, es decir, las funciones de planeación,
 					organización, dirección, toma de decisiones, coordinación, comunicación y control.
 				</p>
@@ -33,12 +34,14 @@
 							<th class="thCampo" colspan="2" style="text-align: center;border:none;" rowspan="2" ></th>
 						</tr>
 						<tr>
+							
+							
 							<th style="border: none !important;"></th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat"><span class="icon-info "></span>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span>
 							</a> Debilidad</th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#exampleModal3" data-whatever="@fat"><span class="icon-info "></span>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span>
 							</a>Fortaleza</th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#exampleModal4" data-whatever="@fat"><span class="icon-info "></span>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span>
 							</a>No Aplica</th>
 						</tr>
 					</thead>
@@ -52,6 +55,8 @@
 							<td><h5 style="color: #238276; font-weight: bold;">Es una</h5></td>
 							<td   class="radio">		
 								<input type="hidden" name="preguntas[]" id="gender" value="{{ $direc->id}}">
+								<input type="hidden" name="Nombre_Capacidad[]" id="gender" value="{{ $direc->nombre}}">
+
 
 								<input type="radio" name="{{$direc->id}}" id="debilidad-{{$direc->id. "-" .auth()->user()->selected_planne}}" value="dAlta" >
 								<label for="debilidad-{{$direc->id. "-" .auth()->user()->selected_planne}}">A</label>
@@ -93,15 +98,18 @@
 							<th class="thCampo" colspan="2" style="text-align: center;border:none;" rowspan="2" ></th>
 						</tr>
 						<tr>
+							<!--examplemodal5->debilidad 6->fortaleza 7->noaplica-->
 							<th style="border: none !important;"></th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#exampleModal5" data-whatever="@fat"><span class="icon-info "></span>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span>
 							</a> Debilidad</th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#exampleModal6" data-whatever="@fat"><span class="icon-info "></span>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span>
 							</a>Fortaleza</th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#exampleModal7" data-whatever="@fat"><span class="icon-info "></span>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span>
 							</a>No Aplica</th>
 						</tr>
 					</thead>
+
+					<!--examplemodal5->debilidad 6->fortaleza 7->noaplica-->
 					<tbody>
 						@foreach ($competitiva as $compe)
 
@@ -110,6 +118,7 @@
 							<td><h5 style="color: #238276; font-weight: bold;">Es una</h5></td>
 							<td   class="radio">
 								<input type="hidden" name="preguntas[]"id="gender" value="{{ $compe->id }}">
+								<input type="hidden" name="Nombre_Capacidad[]" id="gender" value="{{ $compe->nombre}}">
 
 								<input type="radio" name="{{$compe->id}}" id="debilidad-{{$compe->id. "-" .auth()->user()->selected_planne}}" value="dAlta">
 								<label for="debilidad-{{$compe->id. "-" .auth()->user()->selected_planne}}">A</label>
@@ -150,10 +159,14 @@
 							<th class="thCampo" colspan="2" style="text-align: center;border:none;" rowspan="2" ></th>
 						</tr>
 						<tr>
+							
 							<th style="border: none !important;"></th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#exampleModal8" data-whatever="@fat"><span class="icon-info "></span></a> Debilidad</th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#exampleModal9" data-whatever="@fat"><span class="icon-info "></span></a>Fortaleza</th>
-							<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#exampleModal10" data-whatever="@fat"><span class="icon-info "></span></a>No Aplica</th>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span>
+							</a> Debilidad</th>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span>
+							</a>Fortaleza</th>
+							<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span>
+							</a>No Aplica</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -166,6 +179,8 @@
 								<td><h5 style="color: #238276; font-weight: bold;">Es una</h5></td>
 								<td   class="radio">
 									<input type="hidden"	id="gender" name="preguntas[]" value="{{ $fina->id }}">
+									<input type="hidden" name="Nombre_Capacidad[]" id="gender" value="{{ $fina->nombre}}">
+
 									<input type="radio" name="{{$fina->id}}" id="debilidad-{{$fina->id. "-" .auth()->user()->selected_planne}}" value="dAlta">
 									<label for="debilidad-{{$fina->id. "-" .auth()->user()->selected_planne}}">A</label>
 
@@ -196,7 +211,7 @@
 					<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
 					<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 				</fieldset>
-				
+
 				<fieldset class="opciones">
 					<h3>Capacidad Tecnológica:</h3>
 					<p>En este componente se incluyen todos los aspectos relacionados con el proceso de producción, infraestructura y los procesos en las empresas industriales y de servicio. Por tanto, involucra, entre otras: infraestructura tecnológica (hardware), exclusividad de los procesos de producción, normalización de los procesos, ubicación física, acceso a servicios públicos, facilidades físicas, intensidad en el uso de mano de obra, patentes, nivel tecnológico, flexibilidad en la producción, disponibilidad de software, procedimientos administrativos.</p>
@@ -207,20 +222,26 @@
 							</tr>
 							<tr>
 								<th style="border: none !important;"></th>
-								<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#exampleModal11" data-whatever="@fat" style="top: 10%;"><span class="icon-info "></span></a> Debilidad</th>
-								<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#exampleModal12" data-whatever="@fat" style="top: 10%;"><span class="icon-info "></span></a>Fortaleza</th>
-								<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#exampleModal13" data-whatever="@fat" style="top: 10%;"><span class="icon-info "></span></a>No Aplica</th>
+								<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span>
+								</a> Debilidad</th>
+								<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span>
+								</a>Fortaleza</th>
+								<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span>
+								</a>No Aplica</th>
 							</tr>
 						</thead>
 
-						<tbody>			
+						<tbody>
 
+						
 							@foreach ($tecnologica as $tec)	
 							<tr class="formulario">
 								<td colspan="2" data-column_name="nombre" data-id="{{$tec->id}}" data-name="{{$tec->nombre}}" id="tdFormulario" class="thCampo1" >{{$tec->nombre}}</td>
 								<td><h5 style="color: #238276; font-weight: bold;">Es una</h5></td>
 								<td   class="radio">
 									<input type="hidden"id="gender"  name="preguntas[]" value="{{ $tec->id }}">
+									<input type="hidden" name="Nombre_Capacidad[]" id="gender" value="{{ $tec->nombre}}">
+
 									<input type="radio" name="{{$tec->id}}" id="debilidad-{{$tec->id. "-" .auth()->user()->selected_planne}}" value="dAlta">
 									<label for="debilidad-{{$tec->id. "-" .auth()->user()->selected_planne}}">A</label>
 
@@ -249,7 +270,7 @@
 						</tbody>
 					</table>
 					<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
-					
+
 					<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 				</fieldset>
 				<fieldset class="opciones">
@@ -262,10 +283,12 @@
 							</tr>
 							<tr>
 								<th style="border: none !important;"></th>
-								<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#exampleModal14" data-whatever="@fat"><span class="icon-info "></span></a> Debilidad</th>
-								<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#exampleModal15" data-whatever="@fat"><span class="icon-info "></span></a>Fortaleza</th>
-								<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#exampleModal16" data-whatever="@fat"><span class="icon-info "></span></a>No Aplica</th>
-							</tr>
+								<th class="thCampo_modulo2" style="text-align: center;"><a class="button3"  data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span>
+								</a> Debilidad</th>
+								<th class="thCampo_modulo2" style="text-align: center;"><a class="button4"  data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span>
+								</a>Fortaleza</th>
+								<th class="thCampo_modulo2" style="text-align: center;"><a class="button5"  data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span>
+								</a>No Aplica</th>							</tr>
 						</thead>
 						<tbody>
 							<tr class="formulario">
@@ -276,6 +299,8 @@
 									<td><h5 style="color: #238276; font-weight: bold;">Es una</h5></td>
 									<td   class="radio">
 										<input type="hidden"id="gender" name="preguntas[]" value="{{ $huma->id }}">
+										<input type="hidden" name="Nombre_Capacidad[]" id="gender" value="{{ $huma->nombre}}">
+
 										<input type="radio" name="{{$huma->id}}" id="debilidad-{{$huma->id. "-" .auth()->user()->selected_planne}}" value="dAlta">
 										<label for="debilidad-{{$huma->id. "-" .auth()->user()->selected_planne}}">A</label>
 
@@ -308,22 +333,100 @@
 						<button type="submit" id="submitButton" class="Ahora3 btn btn btn-planeem wafes-effect waves-light btn-lg pull right">Guardar</button>
 					</fieldset>
 				</div>
-				<div class="infon">
+				<!-- Botonoes que no se van a utilizar jajajaja -->
+				{{-- <div class="infon">
 					<a  id="boton1" data-toggle="modal" data-target="#exampleModal21" class="button2_agregar1" ><span class="icon-folder-plus"><div id="hover_agregar1">
 						<h5>Agregar</h5></div></span></a>
 						<a  class="button2" data-toggle="modal" data-target="#exampleModal7" data-whatever="@mdo"><span class="icon-info "></span>
 						</a>
-					</div>
+					</div> --}}
 
 				</section>
 				<span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
 
 			</form>
+
+		<div class="modal fade" id="debilidad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content modal-modificado1">
+					<div class="modal-body">
+						<div id="cierre_caja7"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+							<p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >Debilidades:</p>
+							
+							<p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+								Son aquellos factores internos que generan una posición
+								desfavorable frente a la competencia, por ejemplo, recursos y habilidades
+								de las que carece o actividades que no se desarrollan de la mejor manera
+								en la organización.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="fortaleza" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content modal-modificado1">
+					<div class="modal-body">
+						<div id="cierre_caja6"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+							<p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >Fortaleza:</p>
+						
+							<p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+								Son las capacidades esenciales con las que cuenta la compañía,
+								que le permiten obtener una posición privilegiada frente a la
+								competencia, por ejemplo, recursos y habilidades que se poseen
+								o actividades que se desarrollan de forma adecuada.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="noaplica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content modal-modificado1">
+					<div class="modal-body">
+						<div id="cierra_caja5"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+							<p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >No Aplica:</p>
+							
+							<p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+								Es este ítem es para indicar que no es ni una debilidad ni
+								fortaleza o simplemente un factor no se relaciona con las
+								actividades que realiza la empresa.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
+						<span class="icon-cancel-circle" style="color:#FC7323; font-size: 25px; cursor: pointer; margin-top: 4px;
+						margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
+		
+					</div>
+					<div class="modal-body">
+						<p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >Desarrollo de la Matriz de Capacidad Interna:</p>
+						<p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+						Para realizar la Matriz de Capacidad Interna es fundamental realizar los siguientes pasos:<br>
+							
+						<br>1) se identifica si los factores mencionados representan para su empresa una debilidad o fortaleza
+						<br>2) Después se debe asignar una calificación a cada factor considerando su importancia 
+						de la siguiente manera: A (si es alto), M (si es medio), B (si es bajo). En caso de no aplicar se puede marcar la opción N/A 
+
+						<br><br>¡Empecemos!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		</section>
 		@yield('script')
 		@endsection
 		@push('script')
-		
+
 		<script>
 			$(document).ready(function(){
 				var planeacion = localStorage.getItem('id');
@@ -357,8 +460,10 @@
 			})
 		</script>
 
+@jquery
+@toastr_js
+@toastr_render
 
-		
 		<script>
 
 			$( document ).ready(function() {
@@ -401,7 +506,7 @@
 
 
 		</script>}
-		
-	
+
+
 @endpush
 

@@ -14,209 +14,342 @@ class analisisTableSeeder extends Seeder
     {
         //Politico
         analisis::create([
-            'nombre'=>'Las normativas comerciales y Aranceles',
+            'nombre'=>'Las modificaciones de los tratados comerciales (TTIP…)',
             'idTipo'=> 1
 
         ]);
         analisis::create([
-            'nombre'=>'Los socios comerciales favorecidos',
+            'nombre'=>'La norma técnica obligatoria.',
             'idTipo'=> 1
 
         ]);
         analisis::create([
-            'nombre'=>'La inestabilidad política',
+            'nombre'=>'El cambio de partidos políticos en los gobiernos y sus ideas sobre la sociedad y la empresa.',
             'idTipo'=> 1
 
         ]);
         analisis::create([
-            'nombre'=>'La legislación actual en el mercado local',
+            'nombre'=>'La política de impuesto tributario.',
             'idTipo'=> 1
 
         ]);
         analisis::create([
-            'nombre'=>'El periodo gubernamenal y cambios',
+            'nombre'=>'Las diferentes políticas de los gobiernos mundiales, continentales, nacionales, locales.',
             'idTipo'=> 1
 
         ]);
+        analisis::create([
+            'nombre'=>'La legislación laboral.',
+            'idTipo'=> 1
+
+        ]);
+        analisis::create([
+            'nombre'=>'La política fiscal de los diferentes países.',
+            'idTipo'=> 1
+
+        ]);
+        analisis::create([
+            'nombre'=>'La legislación actual en el mercado local.',
+            'idTipo'=> 1
+
+        ]);
+        analisis::create([
+            'nombre'=>'Las subvenciones del gobierno.',
+            'idTipo'=> 1
+
+        ]);
+        analisis::create([
+            'nombre'=>'El período gubernamental.',
+            'idTipo'=> 1
+
+        ]);
+
+
 
 
         //Social
 
         analisis::create([
-            'nombre'=>'La demografía',
+            'nombre'=>'El nivel de educación.',
             'idTipo'=> 2
 
         ]);
         analisis::create([
-            'nombre'=>'La cultura (roles de género, etc.)',
+            'nombre'=>'El cambio en la moda.',
             'idTipo'=> 2
 
         ]);
         analisis::create([
-            'nombre'=>'La publicidad y relaciones públicas',
+            'nombre'=>'La tasa de crecimiento de la población.',
             'idTipo'=> 2
 
         ]);
         analisis::create([
-            'nombre'=>'Los patrones de compra del consumidor',
+            'nombre'=>'El estilo de vida.',
             'idTipo'=> 2
 
         ]);
         analisis::create([
-            'nombre'=>'La moda y modelos a seguir',
+            'nombre'=>'El comportamiento de compra del consumidor.',
             'idTipo'=> 2
 
         ]);
         analisis::create([
-            'nombre'=>'Los factores étnicos y religiosos',
+            'nombre'=>'El cambio geográfico de la población (migraciones).',
             'idTipo'=> 2
 
         ]);
+        analisis::create([
+            'nombre'=>'La estructura de edades cambiantes de la población (babyboomer, generación x, z, millenials).',
+            'idTipo'=> 2
+
+        ]);
+        analisis::create([
+            'nombre'=>'El crecimiento de la diversidad (racial, discapacidad, opción sexual, tendencias).',
+            'idTipo'=> 2
+
+        ]);
+        analisis::create([
+            'nombre'=>'La estructura familiar (solteros. Sin hijos).',
+            'idTipo'=> 2
+
+        ]);
+        analisis::create([
+            'nombre'=>'El cambio en el nivel de ingresos.',
+            'idTipo'=> 2
+
+        ]);
+
+
+
+
 
         //Legal
 
         analisis::create([
-            'nombre'=>'Las normativas de precio',
+            'nombre'=>'Los decretos temporales que afectan a la empresa.',
             'idTipo'=> 3
 
         ]);
         analisis::create([
-            'nombre'=>'Los Impuestos',
+            'nombre'=>'El código de protección y defensa de los consumidores',
             'idTipo'=> 3
 
         ]);
         analisis::create([
-            'nombre'=>'Los requerimientos de etiquetado de productos',
+            'nombre'=>'El cambio en la legislación del sector.',
             'idTipo'=> 3
 
         ]);
         analisis::create([
-            'nombre'=>'La legislación salarial: Salario mínimo y horas extras',
+            'nombre'=>'Las licencias.',
             'idTipo'=> 3
 
         ]);
         analisis::create([
-            'nombre'=>'La normativa de seguridad industrial',
+            'nombre'=>'Las leyes sobre el empleo.',
             'idTipo'=> 3
 
         ]);
+        analisis::create([
+            'nombre'=>'El derecho de propiedad intelectual.',
+            'idTipo'=> 3
+
+        ]);
+        analisis::create([
+            'nombre'=>'Las leyes de salud y seguridad laboral.',
+            'idTipo'=> 3
+
+        ]);
+        analisis::create([
+            'nombre'=>'Los sectores protegidos o regulados.',
+            'idTipo'=> 3
+
+        ]);
+        analisis::create([
+            'nombre'=>'Las certificaciones y acreditaciones necesarias para ejercer.',
+            'idTipo'=> 3
+
+        ]);
+        analisis::create([
+            'nombre'=>'La privacidad de los usuarios cookies, GDPR.',
+            'idTipo'=> 3
+
+        ]);
+
+
+
+
+
 
         //Económico
 
         analisis::create([
-            'nombre'=>'El nivel de capacitación de la fuerza laboral',
+            'nombre'=>'La distribución de la renta.',
+            'idTipo'=> 4
+
+        ]);
+
+        analisis::create([
+            'nombre'=>'La política económica del gobierno.',
             'idTipo'=> 4
 
         ]);
         analisis::create([
-            'nombre'=>'El costo de la mano de obra',
+            'nombre'=>'La inflación.',
+            'idTipo'=> 4
+
+        ]);
+
+        analisis::create([
+            'nombre'=>'La tasa de empleo.',
             'idTipo'=> 4
 
         ]);
         analisis::create([
-            'nombre'=>'La situación económica local',
+            'nombre'=>'La situación económica local.',
             'idTipo'=> 4
 
         ]);
         analisis::create([
-            'nombre'=>'El PIB y su evolución',
+            'nombre'=>'El crecimiento / decrecimiento del PIB (Producto interno bruto).',
             'idTipo'=> 4
 
         ]);
         analisis::create([
-            'nombre'=>'Los motivadores de los clientes/usuarios',
+            'nombre'=>'La devaluación y reevaluación de la moneda.',
+            'idTipo'=> 4
+
+        ]);
+
+        analisis::create([
+            'nombre'=>'La tasa de interés de los créditos. ',
             'idTipo'=> 4
 
         ]);
         analisis::create([
-            'nombre'=>'El nivel de desempleo (normalmente a menor empleohay menos renta disponible)',
+            'nombre'=>'El cambio en el escenario de importaciones.',
             'idTipo'=> 4
 
         ]);
+        analisis::create([
+            'nombre'=>'El ciclo económico.',
+            'idTipo'=> 4
+
+        ]);
+
+
+
+
 
         //Ambiental
 
        analisis::create([
-            'nombre'=>'Los residuos tóxicos producidos',
+            'nombre'=>'El control ambiental.',
             'idTipo'=> 5
 
-        ]); 
-        
+        ]);
+
         analisis::create([
-            'nombre'=>'Los residuos líquidos liberados',
+            'nombre'=>'La deforestación. ',
             'idTipo'=> 5
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'El consumo de energía',
+            'nombre'=>'La reforma agraria.',
             'idTipo'=> 5
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'El nivel de reciclad',
+            'nombre'=>'El cambio climático.',
             'idTipo'=> 5
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'El consumo de agua potable',
+            'nombre'=>'La calidad del Aire.',
             'idTipo'=> 5
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'El impacto ambiental total',
+            'nombre'=>'La normatividad en certificaciones ambientales.',
             'idTipo'=> 5
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'La contaminación ambiental por electro-smog',
+            'nombre'=>'El aumento de la contaminación.',
             'idTipo'=> 5
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'Las Emisiones de Gases de Efecto Invernadero',
+            'nombre'=>'La normatividad de protección medioambiental.',
             'idTipo'=> 5
 
-        ]); 
+        ]);
+        analisis::create([
+            'nombre'=>'La concienciación social ecológica.',
+            'idTipo'=> 5
+
+        ]);
+        analisis::create([
+            'nombre'=>'La escasez de materias primas.',
+            'idTipo'=> 5
+
+        ]);
 
         //Tecnológico
 
         analisis::create([
-            'nombre'=>'La madurez de la tecnología',
+            'nombre'=>'La normatividad y/o legislación tecnológica.',
             'idTipo'=> 6
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'La velocidad de transferencia de los desarrollos de investigación ',
+            'nombre'=>'La oferta de la tecnología, licenciamiento, patentes.',
             'idTipo'=> 6
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'El desarrollo tecnológico de los competidores',
+            'nombre'=>'Las nuevas formas de comunicación.',
             'idTipo'=> 6
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'La tecnologías/soluciones sustitutas',
+            'nombre'=>'Las nuevas fuentes energéticas.',
             'idTipo'=> 6
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'La capacidad y madurez de la manufactura',
+            'nombre'=>'La velocidad en investigación y desarrollo tecnológico. ',
             'idTipo'=> 6
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'El desarrollo tecnológico reciente',
+            'nombre'=>'Nueva maquinaria o dispositivos tecnológicos.',
             'idTipo'=> 6
 
-        ]); 
+        ]);
         analisis::create([
-            'nombre'=>'El acceso a la tecnología, licenciamiento, patentes',
+            'nombre'=>'Incentivos por uso de tecnologías.',
             'idTipo'=> 6
 
-        ]); 
+        ]);
+        analisis::create([
+            'nombre'=>'La tasa de transferencia Tecnológica.',
+            'idTipo'=> 6
 
-   
+        ]);
+        analisis::create([
+            'nombre'=>'Las Tecnologías emergentes (Realidad aumentada, virtual e impresión 3d).',
+            'idTipo'=> 6
+
+        ]);
+        analisis::create([
+            'nombre'=>'La OIT (internet de las cosas).',
+            'idTipo'=> 6
+
+        ]);
+
+
 
 
 

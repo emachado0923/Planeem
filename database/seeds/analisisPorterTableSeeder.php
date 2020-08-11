@@ -12,299 +12,297 @@ class analisisPorterTableSeeder extends Seeder
      */
     public function run()
     {
+        //Poder de negociación de los proveedores
         analisisPorter::create([
-            'nombre'=>'Número de suministradores importantes',
+            'nombre'=>'El grado de concentración en la industria.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Disponibilidad de sustitutos para los productos de los suministradores',
+            'nombre'=>'El grado de diferenciación de los productos o servicios.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Diferencia o costes de cambio de los productos de los suministradores',
+            'nombre'=>'El costo de cambio de proveedor.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Amenaza de integración adelante del suministrador',
+            'nombre'=>'La integración vertical hacia delante o hacia atrás.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Amenaza de integración hacia atrás en el sector',
+            'nombre'=>'La cantidad de proveedores.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Contribución del suministrador a la calidad de los productos del sector',
+            'nombre'=>'La disponibilidad de proveedores sustitutos.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Contribución del suministrador a los costes totales del sector',
+            'nombre'=>'El grado de confianza.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Importancia del sector para el grupo de suministradores',
+            'nombre'=>'El nivel de importancia del insumo en los procesos.',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Calidad del producto',
+            'nombre'=>'El tiempo de entrega. ',
             'idTipo'=> 1
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Relación',
+            'nombre'=>'La ubicación del proveedor.',
             'idTipo'=> 1
         ]);
 
-        analisisPorter::create([
-            'nombre'=>'Grado de confianza',
-            'idTipo'=> 1
-        ]);
 
+
+
+
+        //Poder de negociación de los clientes
         analisisPorter::create([
-            'nombre'=>'Número de compradores importantes sobre el total',
+            'nombre'=>'El número de compradores.',
             'idTipo'=> 2
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Disponibilidad de sustitutos',
-            'idTipo'=> 2
-        ]);
-
-
-        analisisPorter::create([
-            'nombre'=>'Costes de cambio para el comprador',
-            'idTipo'=> 2
-        ]);
-
-
-
-        analisisPorter::create([
-            'nombre'=>'Posibilidad de integración hacia atrás del comprador',
+            'nombre'=>'La disponibilidad de sustitutos.',
             'idTipo'=> 2
         ]);
 
 
         analisisPorter::create([
-            'nombre'=>'Posibilidad de integración hacia adelante en el sector',
+            'nombre'=>'Los costes de cambio para el comprador.',
+            'idTipo'=> 2
+        ]);
+
+
+
+        analisisPorter::create([
+            'nombre'=>'La contribución del sector a la calidad del producto.',
             'idTipo'=> 2
         ]);
 
 
         analisisPorter::create([
-            'nombre'=>'Contribución del sector a la calidad del producto',
+            'nombre'=>'La contribución del sector a los costes del comprador.',
+            'idTipo'=> 2
+        ]);
+
+
+        analisisPorter::create([
+            'nombre'=>'El grado de dependencia de los canales de distribución.',
             'idTipo'=> 2
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Implicación con el producto',
+            'nombre'=>'El volumen del comprador.',
             'idTipo'=> 2
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Rentabilidad del comprador',
+            'nombre'=>'La integración hacia atrás.',
             'idTipo'=> 2
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Poder de negociación',
+            'nombre'=>'La ventaja diferencial (Exclusividad del producto).',
+            'idTipo'=> 2
+        ]);
+        analisisPorter::create([
+            'nombre'=>'La disponibilidad de información para el comprador. ',
             'idTipo'=> 2
         ]);
 
+
+
+
+        //Productos Sustitutos
         analisisPorter::create([
-            'nombre'=>'Disponibilidad de sustitutos próximamente',
+            'nombre'=>'El costo de cambio para el usuario.',
             'idTipo'=> 3
         ]);
 
-        
+
         analisisPorter::create([
-            'nombre'=>'Costes de cambio para el usuario',
+            'nombre'=>'La rentabilidad del producto del sustituto.',
             'idTipo'=> 3
         ]);
 
-        
+
         analisisPorter::create([
-            'nombre'=>'Rentabilidad y agresividad del producto del sustituto',
+            'nombre'=>'El posicionamiento del producto sustituto en el mercado.',
             'idTipo'=> 3
         ]);
 
-        
+
         analisisPorter::create([
-            'nombre'=>'Ratio precio/valor del sustituto en el sector',
+            'nombre'=>'El precio del sustituto en el sector.',
             'idTipo'=> 3
         ]);
 
-        
+
         analisisPorter::create([
-            'nombre'=>'Contraste relación valor-precio',
+            'nombre'=>'El contraste relación valor-precio.',
             'idTipo'=> 3
         ]);
 
-        
         analisisPorter::create([
-            'nombre'=>'Agresividad del marketing del producto',
+            'nombre'=>'La agresividad de marketing del producto sustituto.',
+            'idTipo'=> 3
+        ]);
+        analisisPorter::create([
+            'nombre'=>'La calidad de los productos sustitutos. ',
+            'idTipo'=> 3
+        ]);
+        analisisPorter::create([
+            'nombre'=>'La facilidad de acceso a los productos sustitutos. ',
+            'idTipo'=> 3
+        ]);
+        analisisPorter::create([
+            'nombre'=>'La oferta de los productos sustitutos. ',
+            'idTipo'=> 3
+        ]);
+        analisisPorter::create([
+            'nombre'=>'El volumen de producción de productos sustitutos. ',
             'idTipo'=> 3
         ]);
 
-        
+
+
+
+        //Amenazas de Entrada de Nuevos Competidores
         analisisPorter::create([
-            'nombre'=>'Número de competidores Número de competidores Número de competidor',
-            'idTipo'=> 4
-        ]);
-
-        
-        analisisPorter::create([
-            'nombre'=>'Diferenciación de producto',
-            'idTipo'=> 4
-        ]);
-
-        analisisPorter::create([
-            'nombre'=>'Acceso canal de distribución',
-            'idTipo'=> 4
-        ]);
-        
-
-        
-        analisisPorter::create([
-            'nombre'=>'Necesidades de capital',
-            'idTipo'=> 4
-        ]);
-
-
-        
-        analisisPorter::create([
-            'nombre'=>'Acceso a nueva tecnología',
-            'idTipo'=> 4
-        ]);
-
-
-        
-        analisisPorter::create([
-            'nombre'=>'Protección gubernamental/regulación de la industria',
-            'idTipo'=> 4
-        ]);
-
-        analisisPorter::create([
-            'nombre'=>'Efecto de la experiencia (y el aprendizaje)',
-            'idTipo'=> 4
-        ]);
-
-        analisisPorter::create([
-            'nombre'=>'Costes de cambio de cliente',
-            'idTipo'=> 4
-        ]);
-
-        analisisPorter::create([
-            'nombre'=>'Especialización de activos',
+            'nombre'=>'El nivel de crecimiento del mercado.',
             'idTipo'=> 4
         ]);
 
 
         analisisPorter::create([
-            'nombre'=>'Coste de salida',
+            'nombre'=>'La economía de escala.',
             'idTipo'=> 4
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Interrelación con otras unidades de negocio',
+            'nombre'=>'La diferenciación de producto.',
+            'idTipo'=> 4
+        ]);
+
+
+
+        analisisPorter::create([
+            'nombre'=>'La fidelización de clientes.',
+            'idTipo'=> 4
+        ]);
+
+
+
+        analisisPorter::create([
+            'nombre'=>'El acceso a materias primas.',
+            'idTipo'=> 4
+        ]);
+
+
+
+        analisisPorter::create([
+            'nombre'=>'La protección gubernamental/regulación de la industria.',
+            'idTipo'=> 4
+        ]);
+
+        analisisPorter::create([
+            'nombre'=>'El efecto de la experiencia (y el aprendizaje). La curva de aprendizaje.',
+            'idTipo'=> 4
+        ]);
+
+        analisisPorter::create([
+            'nombre'=>'El costo de cambio de cliente.',
+            'idTipo'=> 4
+        ]);
+
+        analisisPorter::create([
+            'nombre'=>'Las barreras emocionales.',
             'idTipo'=> 4
         ]);
 
 
         analisisPorter::create([
-            'nombre'=>'Barreras emocionales',
+            'nombre'=>'La capacidad de endeudamiento.',
             'idTipo'=> 4
         ]);
 
 
-        analisisPorter::create([
-            'nombre'=>'Restricciones de gobierno',
-            'idTipo'=> 4
-        ]);
 
+
+
+
+        //Rivalidad entre competidores
         analisisPorter::create([
-            'nombre'=>'Número de competidores Número de competidores Número de competidor',
+            'nombre'=>'El número de competidores.',
             'idTipo'=> 5
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Crecimiento del sector',
+            'nombre'=>'El crecimiento del sector/industria.',
             'idTipo'=> 5
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Crecimiento de la industria',
+            'nombre'=>'La velocidad del crecimiento del sector.',
             'idTipo'=> 5
         ]);
 
-        
+
         analisisPorter::create([
-            'nombre'=>'Tipo de producto',
+            'nombre'=>'El tipo de producto.',
             'idTipo'=> 5
         ]);
 
-        
+
         analisisPorter::create([
-            'nombre'=>'Variedad de competidores',
+            'nombre'=>'La variedad de competidores.',
             'idTipo'=> 5
         ]);
 
-        
+
         analisisPorter::create([
-            'nombre'=>'Costes fijos o de almacenaje',
+            'nombre'=>'La manera de incrementar capacidad instalada.',
             'idTipo'=> 5
         ]);
 
-        
-        analisisPorter::create([
-            'nombre'=>'Posiciones estratégicas del sector',
-            'idTipo'=> 5
-        ]);
 
         analisisPorter::create([
-            'nombre'=>'Manera de incrementar capacidad',
+            'nombre'=>'La guerra de precios.',
             'idTipo'=> 5
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Guerra de precios',
+            'nombre'=>'El costo fijo.',
             'idTipo'=> 5
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Número de competidores',
+            'nombre'=>'El costo de cambio.',
             'idTipo'=> 5
         ]);
 
         analisisPorter::create([
-            'nombre'=>'Crecimiento del sector',
-            'idTipo'=> 5
-        ]);
-
-        analisisPorter::create([
-            'nombre'=>'Variedad de competidores',
-            'idTipo'=> 5
-        ]);
-
-        analisisPorter::create([
-            'nombre'=>'Costes fijos o de almacenaje',
-            'idTipo'=> 5
-        ]);
-
-        analisisPorter::create([
-            'nombre'=>'Posiciones estratégicas del sector',
+            'nombre'=>'La participación en el mercado o industria.',
             'idTipo'=> 5
         ]);
 
 
 
-        
+
+
+
 
 
 

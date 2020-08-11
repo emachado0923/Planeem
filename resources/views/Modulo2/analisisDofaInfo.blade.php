@@ -58,12 +58,12 @@
 			</div>
 		</div>
 	</div>
-	
-  <form method="POST" style="display:none" id="form" action="{{route('analisisDOFA')}}" >
+
+  <form method="POST" style="display:none" id="form" action="{{route('analisisEFI')}}" >
 	@csrf
-		<input type="text" id="id_planecion" name="id_planecion">	
-		<button  type="submit" id="btn12">		
-</form>
+		<input type="text" id="id_planecion" name="id_planecion">
+      <button  type="submit" id="btn12"></button>
+  </form>
 
 
 </section>
@@ -95,9 +95,8 @@
  })
 </script>
 <script>
-	var id = localStorage.getItem('id')
+	let id = localStorage.getItem('id')
 	$('#id_planecion').val(id);
-	
 
 	function btn12(){
 		document.getElementById('btn12').click();

@@ -20,7 +20,7 @@ class CreatePersonaNaturalTable extends Migration
             $table->string("nombres");
             $table->string("apellidos");
             $table->unsignedBigInteger("id_usuario");
-            $table->foreign("id_usuario","fk_personaNatural_usuario")->references("id")->on("users")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_usuario","fk_personaNatural_usuario")->references("id")->on("users");
         });
     }
 

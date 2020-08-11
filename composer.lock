@@ -588,6 +588,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -634,6 +635,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -3582,16 +3584,16 @@
         },
         {
             "name": "yoeunes/toastr",
-            "version": "v1.2.2",
+            "version": "v1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yoeunes/toastr.git",
-                "reference": "1f16c1dd1f1d44234f1442cdd3d8f7f6bb1ed641"
+                "reference": "1a2d58aaa6add715f16ad76112f3a2b32bd89d92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yoeunes/toastr/zipball/1f16c1dd1f1d44234f1442cdd3d8f7f6bb1ed641",
-                "reference": "1f16c1dd1f1d44234f1442cdd3d8f7f6bb1ed641",
+                "url": "https://api.github.com/repos/yoeunes/toastr/zipball/1a2d58aaa6add715f16ad76112f3a2b32bd89d92",
+                "reference": "1a2d58aaa6add715f16ad76112f3a2b32bd89d92",
                 "shasum": ""
             },
             "require": {
@@ -3653,7 +3655,7 @@
                 "toastr js",
                 "yoeunes"
             ],
-            "time": "2020-03-06T08:43:34+00:00"
+            "time": "2020-03-13T07:27:21+00:00"
         },
         {
             "name": "zendframework/zend-escaper",

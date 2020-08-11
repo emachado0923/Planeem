@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
+class ComposerStaticInitd078b739c5f1307aa65aed0c675b7533
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -471,18 +471,27 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CorporativosController' => __DIR__ . '/../..' . '/app/Http/Controllers/CorporativosController.php',
         'App\\Http\\Controllers\\CplaneacionController' => __DIR__ . '/../..' . '/app/Http/Controllers/CplaneacionController.php',
+        'App\\Http\\Controllers\\Desarrollo_ProductoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Desarrollo_ProductoController.php',
         'App\\Http\\Controllers\\DofaController' => __DIR__ . '/../..' . '/app/Http/Controllers/DofaController.php',
+        'App\\Http\\Controllers\\EstrategiasDiagnosticoController' => __DIR__ . '/../..' . '/app/Http/Controllers/EstrategiasDiagnosticoController.php',
         'App\\Http\\Controllers\\Evaluacion_FactoresController' => __DIR__ . '/../..' . '/app/Http/Controllers/Evaluacion_FactoresController.php',
         'App\\Http\\Controllers\\FactorExternoAController' => __DIR__ . '/../..' . '/app/Http/Controllers/FactorExternoAController.php',
         'App\\Http\\Controllers\\FactorInternoController' => __DIR__ . '/../..' . '/app/Http/Controllers/FactorInternoController.php',
         'App\\Http\\Controllers\\FactorInternoDController' => __DIR__ . '/../..' . '/app/Http/Controllers/factorInternoDController.php',
         'App\\Http\\Controllers\\FormulacionController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormulacionController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\IndicadoresDeObjetivosController' => __DIR__ . '/../..' . '/app/Http/Controllers/indicadoresDeObjetivosController.php',
+        'App\\Http\\Controllers\\MatrizController' => __DIR__ . '/../..' . '/app/Http/Controllers/MatrizController.php',
+        'App\\Http\\Controllers\\MisEstrategiasController' => __DIR__ . '/../..' . '/app/Http/Controllers/MisEstrategiasController.php',
         'App\\Http\\Controllers\\Modulo3Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Modulo3Controller.php',
         'App\\Http\\Controllers\\PenetracionMercadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/PenetracionMercadoController.php',
         'App\\Http\\Controllers\\PerfilCompeController' => __DIR__ . '/../..' . '/app/Http/Controllers/PerfilCompeController.php',
         'App\\Http\\Controllers\\PerfilCompeEmpresaController' => __DIR__ . '/../..' . '/app/Http/Controllers/PerfilCompeEmpresaController.php',
+        'App\\Http\\Controllers\\ResumenObjetivosController' => __DIR__ . '/../..' . '/app/Http/Controllers/ResumenObjetivosController.php',
         'App\\Http\\Controllers\\WordTestController' => __DIR__ . '/../..' . '/app/Http/Controllers/WordTestController.php',
+        'App\\Http\\Controllers\\estrategiasController' => __DIR__ . '/../..' . '/app/Http/Controllers/estrategiasController.php',
+        'App\\Http\\Controllers\\estrategias_matrizController' => __DIR__ . '/../..' . '/app/Http/Controllers/estrategias_matrizController.php',
+        'App\\Http\\Controllers\\estrategias_ofensivasController' => __DIR__ . '/../..' . '/app/Http/Controllers/estrategias_ofensivasController.php',
         'App\\Http\\Controllers\\graficaControler' => __DIR__ . '/../..' . '/app/Http/Controllers/graficaControler.php',
         'App\\Http\\Controllers\\inicioController' => __DIR__ . '/../..' . '/app/Http/Controllers/inicioController.php',
         'App\\Http\\Controllers\\loguinController' => __DIR__ . '/../..' . '/app/Http/Controllers/loguinController.php',
@@ -500,13 +509,16 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Model\\Corporativos' => __DIR__ . '/../..' . '/app/Model/Corporativos.php',
+        'App\\Model\\Desarrollo_Producto' => __DIR__ . '/../..' . '/app/Model/Desarrollo_Producto.php',
+        'App\\Model\\EstrategiasDofa' => __DIR__ . '/../..' . '/app/Model/EstrategiasDofa.php',
+        'App\\Model\\Estrategias_Ofensivas' => __DIR__ . '/../..' . '/app/Model/Estrategias_Ofensivas.php',
         'App\\Model\\Evaluacion_Factores' => __DIR__ . '/../..' . '/app/Model/Evaluacion_Factores.php',
-        'App\\Model\\FactorExternoA' => __DIR__ . '/../..' . '/app/Model/FactorExternoA.php',
         'App\\Model\\FactorExternoO' => __DIR__ . '/../..' . '/app/Model/FactorExternoO.php',
+        'App\\Model\\Matriz_crecimiento' => __DIR__ . '/../..' . '/app/Model/Matriz_crecimiento.php',
         'App\\Model\\PenetracionMercado' => __DIR__ . '/../..' . '/app/Model/PenetracionMercado.php',
         'App\\Model\\Penetracion_tipo' => __DIR__ . '/../..' . '/app/Model/Penetracion_tipo.php',
         'App\\Model\\Proyectos' => __DIR__ . '/../..' . '/app/Model/Proyectos.php',
-        'App\\Model\\TipoFactor' => __DIR__ . '/../..' . '/app/Model/TipoFactor.php',
+        'App\\Model\\ResumenObjetivos' => __DIR__ . '/../..' . '/app/Model/ResumenObjetivos.php',
         'App\\Model\\TipoPreguntaansorft' => __DIR__ . '/../..' . '/app/Model/TipoPreguntaansorft.php',
         'App\\Model\\Tipoansorf' => __DIR__ . '/../..' . '/app/Model/Tipoansorf.php',
         'App\\Model\\User' => __DIR__ . '/../..' . '/app/Model/User.php',
@@ -516,21 +528,23 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'App\\Model\\ansorft' => __DIR__ . '/../..' . '/app/Model/ansorft.php',
         'App\\Model\\cacapacidadtecnologica' => __DIR__ . '/../..' . '/app/Model/cacapacidadtecnologica.php',
         'App\\Model\\capacidad' => __DIR__ . '/../..' . '/app/Model/capacidad.php',
-        'App\\Model\\competenciaDeEmpresa' => __DIR__ . '/../..' . '/app/Model/competenciaDeEmpresa.php',
-        'App\\Model\\empresaCompe' => __DIR__ . '/../..' . '/app/Model/empresaCompe.php',
         'App\\Model\\estrategia' => __DIR__ . '/../..' . '/app/Model/estrategia.php',
         'App\\Model\\estrategias' => __DIR__ . '/../..' . '/app/Model/estrategias.php',
+        'App\\Model\\estrategiasDiagnostico' => __DIR__ . '/../..' . '/app/Model/estrategiasDiagnostico.php',
+        'App\\Model\\estrategiasDiagnosticoSeed' => __DIR__ . '/../..' . '/app/Model/estrategiasDiagnosticoSeed.php',
         'App\\Model\\estrategias_ansorft' => __DIR__ . '/../..' . '/app/Model/estrategias_ansorft.php',
+        'App\\Model\\estrategias_matriz' => __DIR__ . '/../..' . '/app/Model/estrategias_matriz.php',
+        'App\\Model\\estrategiass' => __DIR__ . '/../..' . '/app/Model/estrategiass.php',
         'App\\Model\\factorInterno' => __DIR__ . '/../..' . '/app/Model/factorInterno.php',
         'App\\Model\\factorclave' => __DIR__ . '/../..' . '/app/Model/factorclave.php',
         'App\\Model\\formulacionestrategias' => __DIR__ . '/../..' . '/app/Model/formulacionestrategias.php',
+        'App\\Model\\misEstrategias' => __DIR__ . '/../..' . '/app/Model/misEstrategias.php',
         'App\\Model\\penetracion_mercadoanf' => __DIR__ . '/../..' . '/app/Model/penetracion_mercadoanf.php',
         'App\\Model\\pensamiento_pensamiento' => __DIR__ . '/../..' . '/app/Model/pensamiento_pensamiento.php',
         'App\\Model\\perfilCompe' => __DIR__ . '/../..' . '/app/Model/perfilCompe.php',
         'App\\Model\\perfilCompeEmpresa' => __DIR__ . '/../..' . '/app/Model/perfilCompeEmpresa.php',
         'App\\Model\\personaJuridica' => __DIR__ . '/../..' . '/app/Model/personaJuridica.php',
         'App\\Model\\personaNatural' => __DIR__ . '/../..' . '/app/Model/personaNatural.php',
-        'App\\Model\\resMiPlane' => __DIR__ . '/../..' . '/app/Model/resMiPlane.php',
         'App\\Model\\respues_Penetracion' => __DIR__ . '/../..' . '/app/Model/respues_Penetracion.php',
         'App\\Model\\respuestaAnalisis' => __DIR__ . '/../..' . '/app/Model/respuestaAnalisis.php',
         'App\\Model\\respuestaAnalisisPorter' => __DIR__ . '/../..' . '/app/Model/respuestaAnalisisPorter.php',
@@ -543,16 +557,19 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'App\\Model\\tipoAnalisisPorter' => __DIR__ . '/../..' . '/app/Model/tipoAnalisisPorter.php',
         'App\\Model\\tipoCapacidad' => __DIR__ . '/../..' . '/app/Model/tipoCapacidad.php',
         'App\\Model\\tipo_Desarrollo_Producto' => __DIR__ . '/../..' . '/app/Model/tipo_Desarrollo_Producto.php',
+        'App\\Model\\tipo_Matriz_crecimiento' => __DIR__ . '/../..' . '/app/Model/tipo_Matriz_crecimiento.php',
         'App\\Model\\tipo_Penetracion' => __DIR__ . '/../..' . '/app/Model/tipo_Penetracion.php',
         'App\\Model\\tipo_mercado' => __DIR__ . '/../..' . '/app/Model/tipo_mercado.php',
         'App\\Model\\tipo_posicionamiente' => __DIR__ . '/../..' . '/app/Model/tipo_posicionamiente.php',
-        'App\\Notifications\\ResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/ResetPasswordNotification.php',
+        'App\\Notifications\\ResetPasswordNotification' => __DIR__ . '/../..' . '/app/Model/Notifications/ResetPasswordNotification.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Model/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Model/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Model/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\CustomValidationRulesProvider' => __DIR__ . '/../..' . '/app/Model/Providers/CustomValidationRulesProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Model/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Model/Providers/RouteServiceProvider.php',
+        'App\\create_estrategias_dofa_table' => __DIR__ . '/../..' . '/app/create_estrategias_dofa_table.php',
+        'App\\create_estrategias_matriz_table' => __DIR__ . '/../..' . '/app/create_estrategias_matriz_table.php',
         'Barryvdh\\DomPDF\\Facade' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/Facade.php',
         'Barryvdh\\DomPDF\\PDF' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/PDF.php',
         'Barryvdh\\DomPDF\\ServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/ServiceProvider.php',
@@ -631,7 +648,6 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
-        'Desarrollo_ProductoSeed' => __DIR__ . '/../..' . '/database/seeds/Desarrollo_ProductoSeed.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
@@ -4656,9 +4672,9 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'analisisTableSeeder' => __DIR__ . '/../..' . '/database/seeds/analisisTableSeeder.php',
         'capacidadTableSeeder' => __DIR__ . '/../..' . '/database/seeds/capacidadTableSeeder.php',
         'estrategiaSeeder' => __DIR__ . '/../..' . '/database/seeds/estrategiaSeeder.php',
+        'estrategiasDiagnosticoSeeder' => __DIR__ . '/../..' . '/database/seeds/estrategiasDiagnosticoSeeder.php',
         'estrategiasSeeder' => __DIR__ . '/../..' . '/database/seeds/estrategiasSeeder.php',
         'factoClaveTableSeeder' => __DIR__ . '/../..' . '/database/seeds/factoClaveTableSeeder.php',
-        'penetracion_mercadoanfSedeer' => __DIR__ . '/../..' . '/database/seeds/penetracion_mercadoanfSedeer.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
@@ -4735,6 +4751,7 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
         'tipoAnsorftTableSeeder' => __DIR__ . '/../..' . '/database/seeds/tipoAnsorftTableSeeder.php',
         'tipoCapacidadTableSeeder' => __DIR__ . '/../..' . '/database/seeds/tipoCapacidadTableSeeder.php',
         'tipoPreguntaAnsorftTableSeeder' => __DIR__ . '/../..' . '/database/seeds/tipoPreguntaAnsorftTableSeeder.php',
+        'tipo_Matrizseed' => __DIR__ . '/../..' . '/database/seeds/tipo_Matrizseed.php',
         'tipo_PenetracinSeeder' => __DIR__ . '/../..' . '/database/seeds/tipo_PenetracinSeeder.php',
         'tipo_PenetracionSeeder' => __DIR__ . '/../..' . '/database/seeds/tipo_PenetracionSeeder.php',
         'tipo_mercadoSeeder' => __DIR__ . '/../..' . '/database/seeds/tipo_mercadoSeeder.php',
@@ -4746,10 +4763,10 @@ class ComposerStaticInitac8c776d56b892f1a9739a16c149fcff
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitac8c776d56b892f1a9739a16c149fcff::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitac8c776d56b892f1a9739a16c149fcff::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitac8c776d56b892f1a9739a16c149fcff::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitac8c776d56b892f1a9739a16c149fcff::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd078b739c5f1307aa65aed0c675b7533::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd078b739c5f1307aa65aed0c675b7533::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd078b739c5f1307aa65aed0c675b7533::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitd078b739c5f1307aa65aed0c675b7533::$classMap;
 
         }, null, ClassLoader::class);
     }

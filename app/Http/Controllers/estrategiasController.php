@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\estrategiass;
+use App\Model\tipo_Matriz_crecimiento;
 
 class estrategiasController extends Controller
 
@@ -27,7 +28,9 @@ class estrategiasController extends Controller
      
     }
           
-    return view('Modulo2.analisisEFIgrafica');
+                
+
+        return view('Modulo2.analisisEFIgrafica');
 
     }
    

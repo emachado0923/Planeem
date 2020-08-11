@@ -28,6 +28,7 @@ for (let i = 0; i < datos.length; i++) {
 		Descripcion[i]= document.getElementById('Descripcion').value;
 		localStorage.setItem('Descripcion1',Descripcion[i]);
 
+		alert('agregado con exito')
 	}
 
 	if(datos[i]==2){
@@ -36,6 +37,8 @@ for (let i = 0; i < datos.length; i++) {
 
 		Descripcion[i]= document.getElementById('Descripcion').value;
 		localStorage.setItem('Descripcion2',Descripcion[i]);
+
+		alert('agregado con exito')
 	}
 
 	if(datos[i]==3){
@@ -44,6 +47,8 @@ for (let i = 0; i < datos.length; i++) {
 
 		Descripcion[i]= document.getElementById('Descripcion').value;
 		localStorage.setItem('Descripcion3',Descripcion[i]);
+
+		alert('agregado con exito')
 	}
 
 	if(datos[i] > 3){

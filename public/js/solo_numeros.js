@@ -3,7 +3,7 @@ function solonumeros(e){
 
     tecaldo = String.fromCharCode(key);
 
-    numero=".01234567890,"
+    numero="0123456789"
 
     especiales="8-37-38-46";
 

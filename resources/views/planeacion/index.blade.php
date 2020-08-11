@@ -147,7 +147,7 @@
 	</div>
 </div>
 <!-- Button trigger modal -->
-<span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor: pointer;"></span>
+<span class="icon-info" data-toggle="modal" data-target="#staticBackdrop" style="cursor: pointer;"></span>
 {{-- aca los gif --}}
 <section class="sectiongif">
 	<img src="{{asset('img/GIFS/GifCentro.gif')}}"    lt="planeacion 1" class="gif gifcentro ">
@@ -194,12 +194,24 @@
 		</form>
 	</div>
 
+
+
+	
+	<div id="form">
+		<form method="post"  role="from" action="{{route('vista1-1')}}" style="display: none;" >
+			@csrf
+			<input type="text" id="id_p" name="nombre_proyecto" value="{{$proyect['nombre_proyecto']}}"  >
+			<input type="text" id="id-project" name="id_Planeacion" value="{{$proyect['id_Planeacion']}}"  >
+			<button type="submit" id="udate2" ></button>
+		</form>
+	</div>
+
+
 	<div></div>
 
 
 
 	<div id="form">
-
 		<a href="{{ route('diagnosticoEstra') }} " id="capacidadInterna"  style="display: none;"   name="nuevo" class="Ahora btn btn-planeem waves-effect waves-light">Iniciar Ahora</a>
 	</div>
 
@@ -226,7 +238,7 @@
 </div>
 <img src="{{asset('img/GIFS/Gif4Numero.gif')}}" alt="planeacion 4" class="gif gif4 active">
 <div class="hovergif" id="afectado4">
-	<img src="{{asset('img/GIFS/Gif4.gif')}}" alt="planeacion 4" class="gif gif4 static">
+	<img src="{{asset('img/GIFS/Gif4.gif')}}" alt="planeacion 4" onclick="modulo4()" class="gif gif4 static">
 </div>
 </section>
 {{-- terminan los gif --}}
@@ -294,6 +306,20 @@
 
 	}
 </script>
+
+
+<script>
+	function modulo4(){
+		var nombre_proyecto = document.getElementById('id_p').value;
+		var id = document.getElementById('id-project').value;
+		localStorage.setItem('nombre_proyecto',nombre_proyecto)
+		localStorage.setItem('id',id)
+
+		document.getElementById("udate2").click();
+
+	}
+</script>
+
 
 
 <script>

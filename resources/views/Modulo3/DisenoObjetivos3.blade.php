@@ -17,23 +17,13 @@
 
 <div>
 	<div class="contentParrafo">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		{{-- <p>Aqui viene el parrafo del texto lol.</p> --}}
 	</div>
 
 	<div id="campo_texto"  class="campo_texto">
 		<h3 style="text-align: center;">Objetivos</h3>
 			<table>
-				{{-- @foreach ($formulacion as $formulacion)
-				<th>
-					<td>{{$formulacion->id_respustaverbos}}</td>
-					<td>{{$formulacion->Objetivos}}</td>
-				</th>	
-				@endforeach --}}
+			
 			</table>	
 	</div>
 	
@@ -115,17 +105,21 @@
 		<div class="modal-dialog modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;">PROPUESTA DE VALOR</h5>
+					<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
 					<span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
 					margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
 				</div>
 				<div class="modal-body">
-					<p>Son las expectativas que de forma unilateral el consumidor se forma en su mente, es lo que el cliente
-						imagina que obtendrá a la hora de adquirir determinado bien o servicio, en esto podemos influir, pero en
-						mayor parte son las experiencias personales del consumidor y las condiciones generales del mercado lo
-						que determinan sus expectativas personales a la hora de comprar
-						a través de ella determinarás lo que diferencia tu producto o servicio de la competencia, además que te
-					ayudará a encontrar la forma en que atenderás a tus clientes o segmento de mercado. (Saavedra, 2017)</p>
+					<p style="padding: 10px;line-height: 23px;margin-left: 10px;width: 100%;font-size: 12px;text-align: justify;">
+						A continuación, verá una explicación simple y unos ejemplos de cómo se estructuran los objetivos empresariales a través de la siguiente fórmula: Verbo en infinitivo + sustantivo + adjetivo. 
+						<br>Ejemplo<br>
+						Diversificar el modelo de negocio actual. (Objetivo Estratégico)
+						<br>Comercializar los productos de manera online. (Objetivo Táctico)
+						<br>Reducir los tiempos de respuesta al cliente.  (Objetivo Operacional)
+						<br>
+						En este espacio encontrará una lista desplegable de algunos verbos en infinitivo ya predeterminados, lo invitamos a seleccionar aquellos con los que usted desee trabajar y completar la construcción de sus objetivos según las indicaciones mencionadas anteriormente  (sustantivo + adjetivo). De esta manera quedarán listos sus objetivos empresariales.  
+						Información de objetivos para la lista desplegable
+					</p>
 				</div>
 			</div>
 		</div>
@@ -230,7 +224,6 @@ var contador =0 ;
 			  newtr = newtr + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
 
 			  newtr = newtr + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
-			  newtr = newtr + '<a id="boton2_eliminar2" onclick="EV('+contador1+');" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
 	
 			  newtr = newtr + '</div>';
 
@@ -292,7 +285,7 @@ var contador =0 ;
 			  html = html + '</div>';
 			  html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+contador1+'" >'
 			  html = html + '<input type="text" value ="'+nombre+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
-			  html = html + '<a id="boton2_eliminar2" onclick="EV('+contador1+');" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
+			  //html = html + '<a id="boton2_eliminar2" onclick="EV('+contador1+');" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
 	
 			 // html = html + '<span></span><div id="hover_eliminar"></div></a>';
 	
@@ -368,7 +361,7 @@ var contador =0 ;
 								html = html + '</div>';
 								html = html + '<input type="text" style="display:none" name="posiciones[]" value="'+i.posiciones+'" >';
 								html = html + '<input type="text" value ="'+i.Objetivos+'" name="Objetivos[]" class="form-control" id="inputObjetivo" maxlength="199" placeholder="Objetivo" aria-label="Objetivo" aria-describedby="basic-addon1">';
-								html = html + '<a id="boton2_eliminar2" onclick="EV('+i.posiciones+')" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
+								// html = html + '<a id="boton2_eliminar2" onclick="EV('+i.posiciones+')" class="boton2_eliminar2"><span class="icon-bin"></span><div id="hover_eliminar"><h5>Eliminar</h5></div></a>';
 								html = html + '</div>';
 									
 							    $('#campo_texto').append(html); //Pinta el contenido en el html
@@ -389,7 +382,7 @@ var contador =0 ;
 <script>
 
 	$(document).ready(function () {
-		$('.items3 li:nth-child(2)').addClass("acti3");
+		$('.items3 li:nth-child(1)').addClass("acti3");
 		$('.items3 li').click(function () {
 			$('.items3 li').removeClass("acti3");
 			$(this).addClass("acti3");

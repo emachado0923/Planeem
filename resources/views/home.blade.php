@@ -111,7 +111,7 @@
         <h4 class="inicia">Inicia tu planeación aquí</h4>
         <div class="slide-track">
             <a data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><span class="icon-plus "></span></a>
-        </nav>
+    </nav>
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-verdeoscuro p-4 bordered">
                 <br>
@@ -119,8 +119,8 @@
                 <section id="contenido" style="display: none;">
                     <form class="form-group" method="POST" action="{{route('proyecto')}}">
                         @csrf
-                        <label for="">Nombre de su planeacion</label>
-                        <input type="text" name="nombre_proyecto" id="nombre_proyecto" placeholder="Primera Planeacion Empresarial" maxlength="60" value="{{old('nombre_proyecto')}}" class="form-control @error('nombre_proyecto') is-invalid @enderror">
+                        <label for="">Nombre de su planeación</label>
+                        <input type="text" name="nombre_proyecto" id="nombre_proyecto" placeholder="Primera Planeación Empresarial" maxlength="60" value="{{old('nombre_proyecto')}}" class="form-control @error('nombre_proyecto') is-invalid @enderror">
                         @error('nombre_proyecto')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -200,8 +200,8 @@
                 <section id="contenido" style="display: none;">
                     <form class="form-group" method="POST" action="{{route('proyecto')}}">
                         @csrf
-                        <label for="">Nombre de su planeacion</label>
-                        <input type="text" name="nombre_proyecto" id = "nombre_proyecto"  placeholder="Primera Planeacion Empresarial" maxlength="60" value="{{old('nombre_proyecto')}}" class="form-control @error('nombre_proyecto') is-invalid @enderror">
+                        <label for="">Nombre de su planeación</label>
+                        <input type="text" name="nombre_proyecto" id = "nombre_proyecto"  placeholder="Primera Planeación Empresarial" maxlength="60" value="{{old('nombre_proyecto')}}" class="form-control @error('nombre_proyecto') is-invalid @enderror">
                         @error('nombre_proyecto')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -316,6 +316,9 @@
 </section>
 {{-- terminan los gif --}}
 
+@jquery
+@toastr_js
+@toastr_render
 
 <!-- Modal -->
 <div class="ajustar">
@@ -339,7 +342,7 @@
 </div>
 
 
-
+<script src="{{asset('js/solo_numeros.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <!--script para javascript para que carga el modal -->
 

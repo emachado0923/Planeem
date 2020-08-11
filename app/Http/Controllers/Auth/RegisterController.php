@@ -76,6 +76,16 @@ class RegisterController extends Controller
             ]);
         }
 
+        Mail::send('email.Contact',$request->all(), function($msj){
+            $msj->subject('Correo de contacto');
+            $msj->from('tdeasamblea@gmail.com');
+            $msj->to('tdeasamblea@gmail.com');
+        });
+        Session::flash('message','Mensaje enviado correctamente');
+
+
+          return Redirect::to('/contacto');
+
 
     }
 
@@ -120,7 +130,9 @@ class RegisterController extends Controller
 
                 $natural->save();
             }else {
+
                 DB::rollback();
+                  
 
             }
         });

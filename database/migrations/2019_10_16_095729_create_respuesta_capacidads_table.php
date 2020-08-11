@@ -17,8 +17,8 @@ class CreateRespuestaCapacidadsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('idPlaneacion');
             $table->foreign('idPlaneacion')->references('id_Planeacion')->on('Planeacion');
-            $table->unsignedBigInteger('idCapacidad');
-            $table->foreign('idCapacidad')->references('id')->on('capacidads');
+            $table->bigInteger('idCapacidad')->nullable();
+            $table->string('Nombre_Capacidad',1990)->nullable();
             $table->string('respuesta');
             $table->timestamps();
         });

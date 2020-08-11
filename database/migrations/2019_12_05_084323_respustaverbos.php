@@ -18,7 +18,7 @@ class Respustaverbos extends Migration
             $table->string('Objetivos');
             $table->unsignedBigInteger("id_Planeacion");
             $table->string('posiciones');
-            $table->foreign("id_Planeacion","fk_respustaverbos")->references("id_Planeacion")->on("Planeacion")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_Planeacion","fk_respustaverbos")->references("id_Planeacion")->on("Planeacion");
             $table->timestamps();
         });
     }

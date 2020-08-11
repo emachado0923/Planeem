@@ -14,7 +14,9 @@
 	}
 
 </style>
-
+@jquery
+@toastr_js
+@toastr_render
 
 <section class="container-fluid quienesSomos text-white" id="quienesSomos">
 	<div class="row">
@@ -226,11 +228,12 @@
 			<div class="card-body d-flex justify-content-center justify-content-md-end align-items-center">
 
 				<!-- Material form register -->
-				<form class="col-lg-5 col-sm-6">
+					<form method="POST" class="col-lg-5 col-sm-6"  id="form" action="{{route('pre')}}" >
 
 
-
+						@csrf
 					<h2 class="h1-responsive text text-center py-4">Contáctanos</h2>
+
 
 					<!-- Material input text -->
 					<div class="md-form">
@@ -304,7 +307,9 @@
 		</div>
 	</article>
 </section>
-
+@jquery
+@toastr_js
+@toastr_render
 <!-- ENLACES -->
 <footer class="container-fluid Enlaces d-flex flex-column align-items-center justify-items-around mt-5"
 id="enlaces">
@@ -416,5 +421,9 @@ id="enlaces">
 																			</div>
 																		</footer>
 
+																		@jquery
+																		@toastr_js
+																		@toastr_render
 
+																		<script src="{{asset('js/solo_numeros.js')}}"></script>
 																		@endsection

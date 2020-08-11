@@ -438,7 +438,9 @@
 </div>
 </section>
 @yield('script')
-
+@jquery
+@toastr_js
+@toastr_render
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <script>
@@ -489,6 +491,8 @@
             var Calificación = $("#material0"+index+" .valor_unitreq0").val();
       
             var tot = ($("#material0"+index+" .cantidad_req0").val()) * $("#material0"+index+" .valor_unitreq0").val();
+			tot = tot.toFixed(1);
+			
            $("#material0"+index+" .valor_totreq0").val(tot);
 
         }
@@ -511,6 +515,10 @@
             $(".material0 .valor_unitreq0").each(function () {
                 Calificación+=Number($(this).val());
             });
+
+			tot = tot.toFixed(1);
+			Relativo = Relativo.toFixed(1);
+			Calificación = Calificación.toFixed(1);
 
             $("#granTotal0").val(tot);
             $("#pesorpesoPonderado0").val(Relativo);
@@ -556,6 +564,8 @@
 				var Calificación = $("#material2"+index+" .valor_unitreq2").val();
 		  
 				var tot = ($("#material2"+index+" .cantidad_req2").val()) * $("#material2"+index+" .valor_unitreq2").val();
+				tot = tot.toFixed(1);
+
 			   $("#material2"+index+" .valor_totreq2").val(tot);
 	
 			}
@@ -578,7 +588,10 @@
 				$(".material2 .valor_unitreq2").each(function () {
 					Calificación+=Number($(this).val());
 				});
-	
+				tot = tot.toFixed(1);
+				Relativo = Relativo.toFixed(1);
+				Calificación = Calificación.toFixed(1);
+
 				$("#granTotal2").val(tot);
 				$("#pesorpesoPonderado2").val(Relativo);
 				$("#totalCalificación2").val(Calificación);
@@ -622,6 +635,8 @@
 			var Calificación = $("#material3"+index+" .valor_unitreq3").val();
 	  
 			var tot = ($("#material3"+index+" .cantidad_req3").val()) * $("#material3"+index+" .valor_unitreq3").val();
+			tot = tot.toFixed(1);
+
 		   $("#material3"+index+" .valor_totreq3").val(tot);
 
 		}
@@ -643,6 +658,10 @@
 			$(".material3 .valor_unitreq3").each(function () {
 				Calificación+=Number($(this).val());
 			});
+
+			tot = tot.toFixed(1);
+			Relativo = Relativo.toFixed(1);
+			Calificación = Calificación.toFixed(1);
 
 			$("#granTotal3").val(tot);
 			$("#pesorpesoPonderado3").val(Relativo);
@@ -688,6 +707,8 @@
 			var Calificación = $("#material4"+index+" .valor_unitreq4").val();
 	  
 			var tot = ($("#material4"+index+" .cantidad_req4 ").val()) * $("#material4"+index+" .valor_unitreq4").val();
+			tot = tot.toFixed(1 c);
+
 		   $("#material4"+index+" .valor_totreq4").val(tot);
 
 		   
@@ -712,6 +733,9 @@
 			$(".material4 .valor_unitreq4").each(function () {
 				Calificación+=Number($(this).val());
 			});
+			tot = tot.toFixed(1);
+			Relativo = Relativo.toFixed(1);
+			Calificación = Calificación.toFixed(1);
 
 			$("#granTotal4").val(tot);
 			$("#pesorpesoPonderado4").val(Relativo);
@@ -758,6 +782,8 @@
 			var Calificación = $("#material5"+index+" .valor_unitreq5").val();
 	  
 			var tot = ($("#material5"+index+" .cantidad_req5 ").val())/1 * $("#material5"+index+" .valor_unitreq5").val();
+			tot = tot.toFixed(2);
+
 		   $("#material5"+index+" .valor_totreq5").val(tot);
 
 		}
@@ -780,6 +806,9 @@
 			$(".material5 .valor_unitreq5").each(function () {
 				Calificación+=Number($(this).val());
 			});
+			tot = tot.toFixed(1);
+			Relativo = Relativo.toFixed(1);
+			Calificación = Calificación.toFixed(1);
 
 			$("#granTotal5").val(tot);
 			$("#pesorpesoPonderado5").val(Relativo);
@@ -827,6 +856,8 @@
 			var Calificación = $("#material7"+index+" .valor_unitreq7").val();
 	  
 			var tot = ($("#material7"+index+" .cantidad_req7 ").val())* $("#material7"+index+" .valor_unitreq7").val();
+			tot = tot.toFixed(2);
+
 		   $("#material7"+index+" .valor_totreq7").val(tot);
 
 		}
@@ -849,6 +880,10 @@
 			$(".material7 .valor_unitreq7").each(function () {
 				Calificación+=Number($(this).val());
 			});
+
+			tot = tot.toFixed(1);
+			Relativo = Relativo.toFixed(1);
+			Calificación = Calificación.toFixed(1);
 
 			$("#granTotal7").val(tot);
 			$("#pesorpesoPonderado7").val(Relativo);
@@ -900,6 +935,8 @@
 			var Calificación = $("#material6"+index+" .valor_unitreq6").val();
 	  
 			var tot = ($("#material6"+index+" .cantidad_req6 ").val()) * $("#material6"+index+" .valor_unitreq6").val();
+			tot = tot.toFixed(2);
+
 		   $("#material6"+index+" .valor_totreq6").val(tot);
 
 		}
@@ -923,6 +960,11 @@
 				Calificación+=Number($(this).val());
 			});
 
+
+			tot = tot.toFixed(1);
+			Relativo = Relativo.toFixed(1);
+			Calificación = Calificación.toFixed(1);
+			
 			$("#granTotal6").val(tot);
 			$("#pesorpesoPonderado6").val(Relativo);
 			$("#totalCalificación6").val(Calificación);
@@ -973,6 +1015,8 @@
 			var Calificación = $("#material7"+index+" .valor_unitreq7").val();
 	  
 			var tot = ($("#material7"+index+" .cantidad_req7 ").val()) * $("#material7"+index+" .valor_unitreq7").val();
+			tot = tot.toFixed(2);
+
 		   $("#material7"+index+" .valor_totreq7").val(tot);
 
 		}
@@ -995,6 +1039,11 @@
 			$(".material7 .valor_unitreq7").each(function () {
 				Calificación+=Number($(this).val());
 			});
+
+
+			tot = tot.toFixed(1);
+			Relativo = Relativo.toFixed(1);
+			Calificación = Calificación.toFixed(1);
 
 			$("#granTotal7").val(tot);
 			$("#pesorpesoPonderado7").val(Relativo);

@@ -11,14 +11,13 @@
 </header>
 
 	<div class="contenedor4">
-		<h1 style="text-align: center; font-weight: bold; padding: 12px;">ANÁLISIS PORTER</h1>
-		<p style="padding: 10px;line-height: 23px;margin-left: 194px;width: 70%;font-size: 18px;text-align: justify;">Es una herramienta fundamental a la hora de comprender la estructura competitiva de una industria.
-			Esta herramienta de análisis simple y eficaz permite identificar la competencia y entender en qué
-			medida esta es susceptible de reducir su capacidad de generar beneficio.<br><br>
-
-			El análisis examina 5 fuerzas el poder de negociación de los clientes, el poder de negociación de los
-			proveedores, la amenaza procedente de los productos sustitutos, la amenaza que representan los
-		productos entrantes y la rivalidad entre los competidores (intrasectorial).</p>
+		<h1 style="text-align: center; font-weight: bold; padding: 12px;">Análisis de las 5 Fuerzas de Porter </h1>
+		<p style="padding: 10px;line-height: 23px;margin-left: 194px;width: 70%;font-size: 18px;text-align: justify;">
+            En este modelo se establece un marco para analizar el nivel de competencia que tienen
+            las empresas dentro de una industria, para poder desarrollar una estrategia de negocio.
+            Este análisis deriva en la respectiva articulación de las 5 fuerzas que determinan la
+            intensidad de competencia y rivalidad en una industria, y, por lo tanto, en cuan atractiva
+            es esta industria en relación con oportunidades de inversión y rentabilidad.</p>
 	</div>
 
 	<a href="{{ route('analisisporter') }} " style="color:white;" name="nuevo" class="Ahora btn btn-planeem waves-effect waves-light">Iniciar Ahora</a>
@@ -34,32 +33,35 @@
 
 				</div>
 				<div class="modal-body">
-					<ol style="line-height: 17px; margin-top: 33px;">
-						<b style="color: black; font-weight: bold;">Procedimiento de calificación</b>
-						<br><br>
-						Estas cinco fuerzas delimitan precios, costos y requerimientos de inversión que constituyen a los
-						factores básicos que explican las expectativas de rentabilidad a largo plazo y, por lo tanto, el
-						atractivo del sector. Dado que el concepto de atractivo del sector (atractividad) está asociado a la
-						expectativa de rentabilidad a largo plazo, se utilizarán las siguientes denominaciones:<br>
-						<br><br>
-						(1) Alta (A), Cuando la atractividad sectorial y la expectativa de rentabilidad a largo plazo es muy
-						alta;<br><br>
+					<ol style="line-height: 17px; margin-top: 05px;">
+						<b style="color: black; font-weight: bold;">Desarrollo del Análisis de las 5 Fuerzas de Porter</b>
+						<br><p style="padding: 10px;line-height: 23px;margin-left:-10px;width: 100%;font-size: 18px;text-align: justify;">
+                <br>        A continuación, encontrará diferentes perspectivas relacionadas con cada una de las 5 fuerzas de la matriz:<br>
+						<br>
+                        1: Poder de negociación de los proveedores o vendedores.<br>
+                        2: Poder de negociación de los clientes o compradores.<br>
+                        3: Productos Sustitutos.<br>
+                        4: Amenazas de entrada de nuevos competidores.<br>
+                        5: Rivalidad entre competidores.<br>
 
-						(2) Media (M), Cuando la atractividad sectorial y la expectativa de rentabilidad a largo plazo es
-						normal
-						<br><br>
-						(3) Bajo (B): Cuando la atractividad del sector y la expectativa de rentabilidad a largo plazo es
-						baja.<br><br>
-
-						Conocer el impacto de cada atractividad es importante para el análisis por lo cual se usará la
-						misma nomenclatura de Alta (A), Media (M) y Bajo (B).
-					</ol>
+                        Lo invitamos a dar una calificación a cada uno de los factores para evaluar su nivel de
+                        competencia a través de los siguientes pasos:<br>
+                        1) Identifique si los factores mencionados representan para su empresa una oportunidad o amenaza.<br>
+                        2) Después se debe asignar una calificación a cada factor considerando su importancia.
+                        de la siguiente manera: A (si es alto), M (si es medio), B (si es bajo). En caso de no aplicar se puede marcar la opción N/A.<br><br>
+                        ¡Empecemos!
+</p>
+                    </ol>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 </section>
+
+@jquery
+@toastr_js
+@toastr_render
 @yield('script')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 

@@ -34,7 +34,7 @@ class CreatePersonaJuridicaTable extends Migration
                 'Comunicacion'
                 ]);
             $table->unsignedBigInteger("id_usuario");
-            $table->foreign("id_usuario","fk_personaJuridica_usuario")->references("id")->on("users")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_usuario","fk_personaJuridica_usuario")->references("id")->on("users");
         });
     }
 

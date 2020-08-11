@@ -10,7 +10,7 @@ class perfilCompeEmpresa extends Model
     protected $table = "perfil_compe_empresas";
 
     protected $fillable = [
-        'idFactorClave',
+        'id_perfil_compe',
         'idPlaneacion',
         'nombreEmpresa',
         'pesoRelativo',

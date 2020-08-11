@@ -29,7 +29,7 @@
     <!--[if lte IE 9]>
         <link href='{{asset('css/animations-ie-fix.css')}}' rel='stylesheet'>
     <![endif]-->
-
+    <script src="jquery.min.js"></script>
 </head>
 <body>
             <header>

@@ -16,17 +16,15 @@ class DatabaseSeeder extends Seeder
         $this->call(tipoCapacidadTableSeeder::class);
         $this->call(capacidadTableSeeder::class);
         $this->call(tipoAnalisisPorterTableSeeder::class);
-        $this->call(analisisPorterTableSeeder::class);
         $this->call(factoClaveTableSeeder::class);
         $this->call(tipoAnsorftTableSeeder::class);
-        $this->call(tipoPreguntaAnsorftTableSeeder::class);
         $this->call(estrategiaSeeder::class);
         $this->call(verbosTableSeeder::class);
         $this->call(estrategiasSeeder::class);
-        $this->call(tipo_mercadoSeeder  ::class);
-        $this->call(penetracion_mercadoanfSedeer::class);
         $this->call(tipo_PenetracinSeeder::class);
-        $this->call(tipo_PenetracionSeeder::class);
-        $this->call(Desarrollo_ProductoSeed::class);
+        $this->call(tipo_Matrizseed::class);
+        $this->call(tipoPreguntaAnsorftTableSeeder::class);
+        $this->call(analisisPorterTableSeeder::class);
+        $this->call(estrategiasDiagnosticoSeeder::class);
     }
 }

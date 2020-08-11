@@ -4,7 +4,7 @@
 <header>
 	<div class="contenedor4">
 		<h1 style="text-align: center; font-weight: bold; padding: 12px;">Análisis ANSOFF</h1>
-		<p style="padding: 10px;line-height: 23px;margin-left: 194px;width: 70%;font-size: 18px;text-align: justify;">
+		<p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
 			La Matriz Ansoff es una herramienta de toma de decisiones muy útil cuando se busca el
 			crecimiento empresarial, relaciona los productos con los mercados, clasificando al
 			binomio producto-mercado en base al criterio de novedad o actualidad. Como
@@ -31,11 +31,15 @@
 
 				</div>
 				<div class="modal-body">
+					<p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
 					Tanto en el eje X (EFE), como en el eje Y (EFI):<br>
 					<br>
 					Los valores de 1,0 a 1,99 representan una posición interna débil.<br>
 					Una puntuación de 2,0 a 2,99 se considera la media.<br>
 					Unos resultados entre de 3,0 a 4,0 representan una posición fuerte.
+					
+					</p>
 				</div>
 			</div>
 		</div>

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\ansorft;
-use App\Model\penetracion_mercadoanf;
-use App\Model\Penetracion_tipo;
-use App\Model\respuesta_penetracion;
+
+use App\Model\ansorft;//eliminar 
+use App\Model\penetracion_mercadoanf;//eliminar
+use App\Model\Penetracion_tipo;//eliminar 
+use App\Model\respuesta_penetracion;//eliminar 
+
 use DB;
 use Validator;
 class storageAnsController extends Controller
@@ -171,6 +173,8 @@ class storageAnsController extends Controller
         //penetracion_mercadoanf tabla
          $penetracion_mercadoanf =  penetracion_mercadoanf::all();
 
+         
+         toastr()->success('Datos registrados correctamente');
 
             return view('Modulo2.ansorftDiversificacion')->with(compact('penetracion_mercadoanf','planeacion','Penetracion_tipo','Adquisicion','Marca','cantidadMercado','Penetracion_tipo4','cantidadServicios','Penetracion_tipo6','Penetracion_tipo7'))
             ->with(compact('Mercado','Investigacion','Servicios','Distribuidores','Penetracion_tipo2','Penetracion_tipo3','cantidadAdquisicion','cantidadMarca','cantidadInvestigacion','Penetracion_tipo5','Proveedores','cantidadProveedores','Detallistas','DetallistasCanti'));

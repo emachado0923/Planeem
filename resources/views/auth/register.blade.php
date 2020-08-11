@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" name="f1">
                         @csrf
 
                         <div class="form-group row">
@@ -63,7 +63,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="comprobarClave()">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -74,4 +74,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    function comprobarClave(){
+    password = document.f1.password.value
+    password-confirm = document.f1.password-confirm.value
+
+    if (password == password-confirm)
+       alert("Las dos claves son iguales...\nRealizaríamos las acciones del caso positivo")
+    else
+       alert("Las dos claves son distintas...\nRealizaríamos las acciones del caso negativo")
+}
+
+</script>
 @endsection

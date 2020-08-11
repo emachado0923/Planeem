@@ -7,7 +7,7 @@
 	@section('f')
 	@endsection
 	@yield('progres')
-	@include('modal/modal')
+	
 	<div>
 		<div class="progress">
 			<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -24,13 +24,90 @@
 		
 		</div>
 	</form>
+	
+<div class="modal fade" id="r1" tabindex="-8" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-modificado1">
+            <div class="modal-body">
+                <div id="cierre_caja7"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+                    <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >El Peso Relativo:</p>
+                    <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+						Cada factor crítico de éxito debe tener un peso relativo que oscila entre 0,0
+                       (poca importancia) a 1.0 (alta importancia).
+                        El número indica la importancia que tiene el factor en la industria.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+                                            
+<div class="modal fade" id="r4" tabindex="-8" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-modificado1">
+            <div class="modal-body">
+                <div id="cierre_caja7"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+                    <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >Los Factores Claves:</p>
+                    <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+						son las áreas claves, que deben llevarse al nivel más alto posible
+                        de excelencia si la empresa quiere tener éxito en una industria
+                        en particular. Estos factores varían entre diferentes industrias
+                        o incluso entre diferentes grupos estratégicos e incluyen tanto
+                        factores internos como externos. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="r2" tabindex="-8" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-modificado1">
+            <div class="modal-body">
+                <div id="cierre_caja7"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+                    <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >Ponderación:</p>
+                    <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+						Asigne un peso entre 0.0 (no importante) hasta 1.0 (muy importante),
+                        el peso otorgado a cada factor expresa la importancia relativa del mismo,
+                        y el total de todos los pesos en su conjunto debe tener la suma de 1.0.  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="r3" tabindex="-8" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-modificado1">
+            <div class="modal-body">
+                <div id="cierre_caja7"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+                    <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >Calificación:</p>
+                    <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+						Asignar una calificación a cada variable, esta calificación es de 1 a 4. Siendo:<br>
+                        1: Debilidad Mayor.<br>
+                        2: Debilidad Menor<br>
+                        3: Fortaleza Menor.<br>
+                        4: Fortaleza Mayor.
+                       </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@jquery
+@toastr_js
+@toastr_render
 </section>
 <style type="text/css">
 	:-moz-placeholder { /* Firefox 18- */ color: red; } 
 	::-moz-placeholder { /* Firefox 19+ */ color: red; } 
 	:-ms-input-placeholder { color: red; }
 </style>
+
+@jquery
+@toastr_js
+@toastr_render
+
 @yield('script')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script>
@@ -70,10 +147,10 @@
 		tabla = tabla+'<table class="egt" id="tabla">';
 		tabla = tabla + ' <thead>';
 		tabla =  tabla +' <tr>';
-		tabla = tabla + ' <th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Factores Claves<span data-toggle="modal" data-target="#exampleModal4" class="icon-info" id="infoAnsorft3" style="right: 616px;top: 17%;"></span></th>';
-		tabla =  tabla +' <th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Ponderación<span data-toggle="modal" data-target="#exampleModal1" class="icon-info" id="infoAnsorft" style="top: 17%;right: 410px;"></span></th>';
-		tabla = tabla + '<th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Calificación<span data-toggle="modal" data-target="#exampleModal2" class="icon-info" id="infoAnsorft1" style="top: 17%;right: 208px;"></span></th>';
-		tabla =  tabla +' <th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Peso Ponderado<span data-toggle="modal" data-target="#exampleModal3" class="icon-info" id="infoAnsorft2" style="top: 17%;right: 11px;"></span></th>';
+		tabla = tabla + ' <th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Factores Claves<span data-toggle="modal" data-target="#r4" class="icon-info" id="infoAnsorft3" style="right: 616px;top: 17%;"></span></th>';
+		tabla =  tabla +' <th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Peso Relativo<span data-toggle="modal" data-target="#r1" class="icon-info" id="infoAnsorft" style="top: 17%;right: 410px;"></span></th>';
+		tabla = tabla + '<th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Calificación<span data-toggle="modal" data-target="#r3" class="icon-info" id="infoAnsorft1" style="top: 17%;right: 208px;"></span></th>';
+		tabla =  tabla +' <th style="text-align: center; background: #0AB5A0;border: none;color: white; border-radius: 10px;">Peso Ponderado<span data-toggle="modal" data-target="#r2" class="icon-info" id="infoAnsorft2" style="top: 17%;right: 11px;"></span></th>';
 		tabla =  tabla +' </tr>';
 		tabla = tabla + '</thead>';
 		tabla =  tabla +'<tbody>';
@@ -84,7 +161,7 @@
 		tabla = tabla + '<tr id = "material'+i+'{{$p->id}}" class = "tabla material'+i+'">';
 		tabla = tabla + ' <th style="border: grey 1px solid;width: 40%;border-radius: 10px;text-align: center;" data-column_name="idRespuestaCompe" data-id="{{$p->id}}" data-name="$p->nombre">{{$p->nombre}}</th>';
 		tabla =  tabla +' <input type="hidden" name="idFactorClave[]" value="{{$p->id}}">';
-		tabla = tabla + ' <td style="position: relative;border: grey 1px solid;width: 15%;margin-left: 75px;margin-top: 18px;border-radius: 10px;" class="tdclass"><input style="outline:none;text-align:center;" type="text" id="pesoPonderado"  name="pesoRelativo[]" required  class = "cantidad_req'+i+'" onkeyup="obtTotalMat'+i+'({{$p->id}})" onkeypress="return solonumeros(event)"></td></td>';
+		tabla = tabla + ' <td style="position: relative;border: grey 1px solid;width: 15%;margin-left: 75px;margin-top: 18px;border-radius: 10px;" class="tdclass"><input value="{{ $p->pesoRelativo  }}" style="outline:none;text-align:center;" type="text" id="pesoPonderado"  name="pesoRelativo[]" required  class = "cantidad_req'+i+'" onkeyup="obtTotalMat'+i+'({{$p->id}})" onkeypress="return solonumeros(event)"></td></td>';
 		tabla =  tabla +' <td style="position: relative;border: grey 1px solid;width: 15%;margin-left: 75px;margin-top: 18px;border-radius: 10px;" class="tdclass"><input style="outline:none;text-align:center;" type="text" id="pesoRelativo"  name="calificacion[]"  required class = "valor_unitreq'+i+'" onkeyup="obtTotalMat'+i+'({{$p->id}})" onkeypress="return solonumeros(event)">';
 		tabla = tabla + ' <td style="position: relative;border: grey 1px solid;width: 15%;margin-left: 75px;margin-top: 18px;border-radius: 10px;" class="tdclass1"><input  style="outline:none;text-align:center;" type="text" id="calificacion" name="pesoPonderado[]" required  class = "valor_totreq'+i+'" onchange="calcTotal'+i+'()" onkeypress="return solonumeros(event)">';
 		tabla =  tabla +' </tr>';
@@ -130,6 +207,8 @@
 						var Calificacion = $("#material0"+index+" .valor_unitreq0").val();
 				
 						var tot = ($("#material0"+index+" .cantidad_req0").val()) * $("#material0"+index+" .valor_unitreq0").val();
+						tot = tot.toFixed(1);
+
 					$("#material0"+index+" .valor_totreq0").val(tot);
 					}
 					calcTotal0();
@@ -148,6 +227,11 @@
             $(".material0 .valor_unitreq0").each(function () {
                 Calificacion0+=Number($(this).val());
             });
+
+			tot0 = tot0.toFixed(1);
+			Relativo0 = Relativo0.toFixed(1);
+			Calificacion0 = Calificacion0.toFixed(1);
+
 			$("#granTotal0").val(tot0);
             $("#pesorpesoPonderado0").val(Relativo0);
             $("#totalcalificacion0").val(Calificacion0);
@@ -198,10 +282,13 @@
 						var Calificacion1 = $("#material1"+index+" .valor_unitreq1").val();
 				
 						var tot1 = ($("#material1"+index+" .cantidad_req1").val()) * $("#material1"+index+" .valor_unitreq1").val();
+							tot1 = tot1.toFixed(1);
+
 						$("#material1"+index+" .valor_totreq1").val(tot1);
 					}
 					calcTotal1();
 				}
+
 		function calcTotal1() {
             var tot1 = 0;
             var Relativo1= 0;
@@ -215,12 +302,18 @@
             $(".material1 .valor_unitreq1").each(function () {
                 Calificacion1+=Number($(this).val());
             });
+
+			tot1 = tot1.toFixed(1);
+			Relativo1 = Relativo1.toFixed(1);
+			Calificacion1 = Calificacion1.toFixed(1);
+
             $("#granTotal1").val(tot1);
             $("#pesorpesoPonderado1").val(Relativo1);
             $("#totalcalificacion1").val(Calificacion1);
 			}
 
-			    
+
+
             if( $("#pesorpesoPonderado1").val() > 1){
                      toastr.error('Lo sentimos, el total Peso Relativo, no puede ser mayor a 1 o/e inferior a 0', '!Hola!')
 			}
@@ -259,6 +352,9 @@
 						var Relativo2 = $("#material2"+index+" .cantidad_req2").val();
 						var Calificacion2 = $("#material2"+index+" .valor_unitreq2").val();
 						var tot2 = ($("#material2"+index+" .cantidad_req2").val()) * $("#material2"+index+" .valor_unitreq2").val();
+
+						tot2 = tot2.toFixed(2);
+
 						$("#material2"+index+" .valor_totreq2").val(tot2);
 					}
 					calcTotal2();
@@ -276,6 +372,11 @@
             $(".material2 .valor_unitreq2").each(function () {
                 Calificacion2+=Number($(this).val());
             });
+
+			tot2 = tot2.toFixed(1);
+			Relativo2 = Relativo2.toFixed(1);
+			Calificacion2 = Calificacion2.toFixed(1);
+
             $("#granTotal2").val(tot2);
             $("#pesorpesoPonderado2").val(Relativo2);
             $("#totalcalificacion2").val(Calificacion2);
@@ -324,6 +425,8 @@
 						var Calificacion3 = $("#material3"+index+" .valor_unitreq3").val();
 				
 						var tot3 = ($("#material3"+index+" .cantidad_req3").val()) * $("#material3"+index+" .valor_unitreq3").val();
+						tot3 = tot3.toFixed(2);
+
 					$("#material3"+index+" .valor_totreq3").val(tot3);
 					}
 					calcTotal3();
@@ -341,6 +444,11 @@
             $(".material3 .valor_unitreq3").each(function () {
                 Calificacion3+=Number($(this).val());
             });
+
+			tot3= tot3.toFixed(1);
+			Relativo3 = Relativo3.toFixed(1);
+			Calificacion3 = Calificacion3.toFixed(1);
+
             $("#granTotal3").val(tot3);
             $("#pesorpesoPonderado3").val(Relativo3);
 			$("#totalcalificacion3").val(Calificacion3);
@@ -387,6 +495,8 @@
 						var Calificacion4 = $("#material4"+index+" .valor_unitreq4").val();
 				
 						var tot4 = ($("#material4"+index+" .cantidad_req4").val())* $("#material4"+index+" .valor_unitreq4").val();
+						tot4 = tot4.toFixed(2);
+
 					$("#material4"+index+" .valor_totreq4").val(tot4);
 					}
 					calcTotal4();
@@ -404,6 +514,11 @@
             $(".material4 .valor_unitreq4").each(function () {
                 Calificacion4+=Number($(this).val());
             });
+
+			tot4 = tot4.toFixed(1);
+			Relativo4 = Relativo4.toFixed(1);
+			Calificacion4 = Calificacion4.toFixed(1);
+
             $("#granTotal4").val(tot4);
             $("#pesorpesoPonderado4").val(Relativo4);
             $("#totalcalificacion4").val(Calificacion4);
@@ -470,7 +585,11 @@
 
 
 <script>
+function guardarempresas() {
+	// toastr.error('Todos los campos son obligatorios ')
 
+	
+}
 
 
 // function guardarempresas(){

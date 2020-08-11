@@ -21,11 +21,16 @@ class PerfilCompeEmpresaController extends Controller
     public function index(Request $request)
     {
         $cantidad = $request->input('cantidad');
+
         $idPlaneacion = $request->input('id_planecion');
         $factorClave=factorclave::all();
         $perfilCompe=perfilCompe::all();
+
+
         $perfilCompeEmpresa= perfilCompeEmpresa::select('*')
         ->where('idPlaneacion',$idPlaneacion)->get();
+
+
         $planeacion=Proyectos::all();
         
   
@@ -66,39 +71,145 @@ class PerfilCompeEmpresaController extends Controller
         $calificacion = $request->get('calificacion');
         $peso = $request->get('pesoPonderado');
         $cantidad = $request->get('cantidad');
-
-        foreach ($nombre as $nombre) {
-
-            for ($i = 0; $i < count($factorClave); $i++) {
-               
-                perfilCompeEmpresa::updateorCreate(
-                    [
-                        'idFactorClave' => $factorClave[$i],
-                        'idPlaneacion' => $planeacion,
-                        'nombreEmpresa' => $nombre,
-                    ],
-                    [
-                        'idFactorClave' => $factorClave[$i],
-                        'idPlaneacion' => $planeacion,
-                        'nombreEmpresa' => $nombre,
-                        'pesoRelativo' => $pesoRelativo[$i],
-                        'calificacion' => $calificacion[$i],
-                        'pesoPonderado' => $peso[$i],
-                        'cantidad'=>$cantidad
-                    ]
-                );
-            }
-        }
+        $tolpeso = 0;
+        $tolcalificacion = 0;
 
 
-          
-        $message = array(
-            'message' => 'Empresas Guardadas con Éxito',
-            'alert-type' => 'success'
-        );
+
+            foreach ($nombre as $nombre) {
+
+                if($nombre === null){
+
+                    toastr()->error('lo sentimos, todos los datos son obligatorios, por favor llena todos los campos', 'Erro!');
+    
+    
+                    $perfilCompe=perfilCompe::all();
+
+
+                    $factorClave= perfilCompe::select('perfil_compe.*','factorclaves.nombre')
+                    ->join('factorclaves', 'perfil_compe.idFactorClave', '=', 'factorclaves.id')
+                    ->where('perfil_compe.idPlaneacion',$planeacion)
+                    ->where('perfil_compe.pesoRelativo','<>',0)
+                    ->where('perfil_compe.calificacion','<>',0)
+                    ->where('perfil_compe.pesoPonderado','<>',0)
+                    ->get();
+
+
+
+                    
+                    // return Response()->jason();
+                    return view('Modulo2.perfilCompe')->with('cantidad',$cantidad)->with('planeacion',$planeacion)->with('factorClave',$factorClave)->with('perfilCompe',$perfilCompe)->with($message);;
+
+
+
+
+                }else{
+
+
+                    for ($i = 0; $i < count($factorClave); $i++) {
+
+
+                        if($pesoRelativo[$i] == null || $calificacion[$i] == null ||  $peso[$i] == null  ){
+            
+                
+    
+                            toastr()->error('lo sentimos, todos los datos son obligatorios, por favor llena todos los campos', 'Erro!');
+    
+    
+                            $perfilCompe=perfilCompe::all();
+    
+    
+                            $factorClave= perfilCompe::select('perfil_compe.*','factorclaves.nombre')
+                            ->join('factorclaves', 'perfil_compe.idFactorClave', '=', 'factorclaves.id')
+                            ->where('perfil_compe.idPlaneacion',$planeacion)
+                            ->where('perfil_compe.pesoRelativo','<>',0)
+                            ->where('perfil_compe.calificacion','<>',0)
+                            ->where('perfil_compe.pesoPonderado','<>',0)
+                            ->get();
+    
+    
+    
+                            
+                            // return Response()->jason();
+                            return view('Modulo2.perfilCompe')->with('cantidad',$cantidad)->with('planeacion',$planeacion)->with('factorClave',$factorClave)->with('perfilCompe',$perfilCompe)->with($message);;
+    
+      
+            
+                        }else{
+                            $tolpeso  += $pesoRelativo[$i];
+                            $tolcalificacion +=$calificacion[$i];
+                        }if($tolpeso > 1 ){
+            
+                      
+    
+                            toastr()->error('El pesos relativo no pude ser superior a 1 y  calificación de pude ser superior a 4', 'Erro!');
+    
+    
+                              // $factorClave=factorclave::all();
+                            $perfilCompe=perfilCompe::all();
+    
+    
+                            $factorClave= perfilCompe::select('perfil_compe.*','factorclaves.nombre')
+                            ->join('factorclaves', 'perfil_compe.idFactorClave', '=', 'factorclaves.id')
+                            ->where('perfil_compe.idPlaneacion',$planeacion)
+                            ->where('perfil_compe.pesoRelativo','<>',0)
+                            ->where('perfil_compe.calificacion','<>',0)
+                            ->where('perfil_compe.pesoPonderado','<>',0)
+                            ->get();
+    
+    
+    
+                            
+                            // return Response()->jason();
+                            return view('Modulo2.perfilCompe')->with('cantidad',$cantidad)->with('planeacion',$planeacion)->with('factorClave',$factorClave)->with('perfilCompe',$perfilCompe);
+    
+                    
+            // return Response()->jason();
+    
+    
+                          
+    
+                           
+            
+                        }else{
+                                perfilCompeEmpresa::updateorCreate(
+                                    [
+                                        
+                                        'idPlaneacion' => $planeacion,
+                                        'nombreEmpresa' => $nombre,
+                                    ],
+                                    [
+                                        'id_perfil_compe' => $factorClave[$i],
+                                        'idPlaneacion' => $planeacion,
+                                        'nombreEmpresa' => $nombre,
+                                        'pesoRelativo' => $pesoRelativo[$i],
+                                        'calificacion' => $calificacion[$i],
+                                        'pesoPonderado' => $peso[$i],
+                                        'cantidad'=>$cantidad
+                                    ]
+                                );
+                            
+                        }
+                
+                    }
+                    
+                }
+
+
+                
         
 
-        return view('Modulo2.factoresInternosI')->with($message)->with('planeacion',$planeacion);
+
+
+      
+                
+
+                 toastr()->success('Datos registrados correctamente');
+
+        
+                return view('Modulo2.factoresInternosI')->with('planeacion',$planeacion);
+            }
+         
     }
     /**
      * Display the specified resource.
@@ -112,43 +223,15 @@ class PerfilCompeEmpresaController extends Controller
             ->where('idPlaneacion',$id)
             ->get();
 
-
-    
-
            return response()->json($perfilCompeEmpresa);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\perfilCompeEmpresa  $perfilCompeEmpresa
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(perfilCompeEmpresa $perfilCompeEmpresa)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\perfilCompeEmpresa  $perfilCompeEmpresa
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, perfilCompeEmpresa $perfilCompeEmpresa)
-    {
-        //
-    }
+    public function getCantidad ($id){
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Model\perfilCompeEmpresa  $perfilCompeEmpresa
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(perfilCompeEmpresa $perfilCompeEmpresa)
-    {
-        //
+        $perfilCompeEmpresa= perfilCompeEmpresa::select('cantidad')
+        ->where('idPlaneacion',$id)->first();
+
+        return response()->json($perfilCompeEmpresa);
     }
 }

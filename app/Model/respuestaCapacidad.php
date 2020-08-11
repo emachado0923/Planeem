@@ -11,7 +11,8 @@ class respuestaCapacidad extends Model
          
         'idCapacidad',
         'idPlaneacion',
-        'respuesta'
+        'respuesta',
+        'Nombre_Capacidad',
     
     ];
     public function capacidad(){

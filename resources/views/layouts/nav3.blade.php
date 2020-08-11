@@ -18,8 +18,10 @@
 	<title>{{ config('app.name', 'Laravel') }}</title>
 
 	<!-- Scripts -->
+	<link rel="stylesheet" href="{{asset('css/toastr/toastr.min.css')}}">
+	<script src="{{asset('js/toastr/toastr.min.js')}}"></script>
 	<script src="{{ asset('js/app.js') }}" defer></script>
-
+	
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -32,6 +34,9 @@
 	<!--bootstrap css-->
 	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}"> --}}
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
 	<!--custom css-->
 	<link rel="stylesheet" href="{{asset('css/estilos.css')}}">
 	<link rel="stylesheet" href="{{asset('css/estilos/estilos.css')}}">
@@ -48,8 +53,11 @@
         <link href='{{asset('css/animations-ie-fix.css')}}' rel='stylesheet'>
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 </head>
+@jquery
+@toastr_js
+@toastr_render
 <body>
 	<div id="page-loader"><span class="preloader-interior"></span></div>
 	<div id="app">
@@ -114,11 +122,16 @@
 		<a onclick="index()" class="clos" aria-label="Close"><span class="icon-undo2"></span></a>		<br>
 		<h4 class="pensamiento">Diseño y formulación de estrategias</h4>
 		<ul class="items3">
-			<li ><a   href="{{ route('Propuesta/paso1') }}" ><h6 style="line-height: 25px; font-size: 17px;">Diseño de objetivos</h6><span class="rounded-circle3">01</span></a></li>
+			{{-- <li ><a   href="{{ route('Propuesta/paso1') }}" ><h6 style="line-height: 25px; font-size: 17px;">Diseño de objetivos</h6><span class="rounded-circle3">01</span></a></li>
 
 			<li ><a href="{{ route('Mision/paso1') }}"  id="linkid"><h6 style="line-height: 25px; font-size: 17px;">Formulación de estrategias</h6><span class="rounded-circle3">02</span></a></li>
 
-			<li ><a href="{{ route('Vision/paso1') }}"  id="linkid3"><h6 style="line-height: 25px; font-size: 17px;">Resultados de estrategias</h6><span class="rounded-circle3">03</span></a></li>
+			<li ><a href="{{ route('Vision/paso1') }}"  id="linkid3"><h6 style="line-height: 25px; font-size: 17px;">Resultados de estrategias</h6><span class="rounded-circle3">03</span></a></li> --}}
+
+			<li ><a><h6 style="line-height: 25px; font-size: 17px;">Diseño de Objetivos</h6><span class="rounded-circle3">01</span></a></li>
+			<li ><a id="linkid"><h6 style="line-height: 25px; font-size: 17px;">Formulación de Estrategias</h6><span class="rounded-circle3">02</span></a></li>
+			<li ><a id="linkid3"><h6 style="line-height: 25px; font-size: 17px;">Acciones Estratégicas</h6><span class="rounded-circle3">03</span></a></li>
+			<li ><a id="linkid3"><h6 style="line-height: 25px; font-size: 17px;">Resultado de Objetivos</h6><span class="rounded-circle3">04</span></a></li>
 		</ul>
 		<a data-toggle="modal" data-target="#exampleModal" href="#" id="boton2" value="Exportar" onclick="Mostra_Oculta()" class="exportar btn btn-planeem waves-effect waves-light">Exportar</a>
 
@@ -231,6 +244,11 @@
 					<div>
 						<div class="barrita13"></div>
 						<input class="barritache13" type="checkbox" style="cursor: pointer;">
+					</div>
+					<!-- Esta fue la que agrege 30 julio-->
+					<div>
+						<div class="barrita14"></div>
+						<input class="barritache14" type="checkbox" style="cursor: pointer;">
 					</div>
 					<div class="modulo4">
 						<h2>Módulo 4</h2>
@@ -346,6 +364,12 @@
 						<div class="barrita13"></div>
 						<input class="barritache13" type="checkbox" style="cursor: pointer;">
 					</div>
+					<!-- Esta fue la que agrege 30 julio-->
+					<div>
+						<div class="barrita14"></div>
+						<input class="barritache14" type="checkbox" style="cursor: pointer;">
+					</div>
+
 					<div class="modulo4">
 						<h2>Módulo 4</h2>
 					</div>
@@ -418,12 +442,13 @@
 			document.getElementById('btn').click()
 		}
 
-	</script>
+</script>
 <script>
 	$(window).load(function(){
 		$('#page-loader').fadeOut(10);
 	});
 </script>
+
 <script>
 	$(document).ready(function(){
 		var current = 1,current_step,next_step,steps;

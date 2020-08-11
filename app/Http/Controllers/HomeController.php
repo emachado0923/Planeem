@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Input;
 use App\Model\Proyectos;
 use DB;
 use Auth;
+use App\Model\tipo_Matriz_crecimiento;
+use App\Model\User;
 class HomeController extends Controller
 {
     /**
@@ -32,8 +34,17 @@ class HomeController extends Controller
     {
         $proyecto = Proyectos::all();
         $carbon= Carbon::now();
+       /* return view('home',compact('carbon','proyecto'));*/
+        /*return view('home',compact('carbon','proyecto'));*/
         return view('home',compact('carbon','proyecto'));
         // dd($proyecto->all());
+    }
+
+    public function administrador(){
+        $Proyectos = Proyectos::all();
+
+        return view('administrador',compact('carbon','proyecto'));
+
     }
 
     protected function validator(array $data)
@@ -59,10 +70,11 @@ class HomeController extends Controller
         $proyecto->save();
         $proyectos = Proyectos::all();
         $proyect = $proyectos->last();
-    
-    
+
+
         // DB::table('capacidadinterna')->insert(['id_Planeacion' => $proyecto->id_Planeacion]);
 
+        toastr()->success('Datos registrados correctamente');
 
         return view('planeacion.index',compact('proyect'));
         // Sirve para retornar en la vista como consola lo que se esta enviando al controlador
@@ -71,7 +83,7 @@ class HomeController extends Controller
     }
 
     public function show($id)
-    {       
+    {
          $estado = Proyectos::all();
         $proyect = Proyectos::find($id);
         $user = auth()->user();
@@ -83,7 +95,7 @@ class HomeController extends Controller
 
 
     public function delecte($id){
-        
+
         $affected = DB::table('planeacion')
               ->where('id_Planeacion', $id)
               ->update(['estado' => '1']);
@@ -92,18 +104,18 @@ class HomeController extends Controller
               return redirect()->route('home');
     }
 
-    
+
     public function papelera (){
 
          $planecion=Proyectos::all();
          return view('papelera')->with('planecion',$planecion);
-         
+
     }
 
 
 
    public function Restaurar ($id){
- 
+
     $plnecion=Proyectos::all();
 
 
@@ -115,7 +127,7 @@ class HomeController extends Controller
 
     return redirect()->route('home');
 
-    
+
   }
 
 }

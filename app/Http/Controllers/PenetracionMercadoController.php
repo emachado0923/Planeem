@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Model\PenetracionMercado;
-use App\Model\respuestaAnalisis;
+use App\Model\PenetracionMercado; //eliminar 
+use App\Model\respuestaAnalisis; //eliminar
 use DB;
+
+
 class PenetracionMercadoController extends Controller
 {
 
@@ -26,6 +28,13 @@ class PenetracionMercadoController extends Controller
         // dd($id_Planeacion,$id_tipo_Penetración,$idTipo,$pesoRelativo,$Calificación,$pesoPonderado);
 
             for ($a=0; $a < count($id_tipo_Penetración) ; $a++) { 
+
+
+
+
+
+
+                
                 for ($i = 0; $i < count($idTipo); $i++) {
                     
                     PenetracionMercado::updateorCreate(
@@ -74,6 +83,7 @@ class PenetracionMercadoController extends Controller
         ->get();
 
 
+        toastr()->success('Datos registrados correctamente');
 
         return view('Modulo2.factoresExternos')->with(compact('id_Planeacion','Oportunidades','Amenazas'))->with($message);
     }

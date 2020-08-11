@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Model\Desarrollo_Producto;
-use App\Model\analisisPorter;
-use App\Model\respuestaAnalisisPorter;
+
 use App\Model\ansorft;
-use App\Model\TipoPreguntaansorft;
+use App\Model\TipoPreguntaansorft;//duda
 use App\Model\tipo_mercado;
 use App\Model\tipo_Desarrollo_Producto;
+use App\Model\tipo_Matriz_crecimiento;
 
 class Desarrollo_ProductoController extends Controller
 {
@@ -138,6 +136,7 @@ class Desarrollo_ProductoController extends Controller
         
 
 
+        toastr()->success('Datos registrados correctamente');
         return view('Modulo2.ansorftDesarrolloMerca')->with(compact('ansorft','datos','DesaMerca','id_planeacion','tipo_mercado','Sustitutos','Producto','Productotitutos','Tecnología','Geográficamente','Segmentación','Convenios','Promoción','cantidadMercado'));
 
     }

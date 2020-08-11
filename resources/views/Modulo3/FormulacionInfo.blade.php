@@ -4,17 +4,13 @@
 <header>
 	@yield('js')
 
-
 	<div style=" text-align: center;">
-		<h2 class="parrafoII" style="position: absolute; left: 41%; top: 35%;">Formulación de estrategias</h2>
+		<h2 class="parrafoII" style="position: absolute; left: 41%; top: 35%;">Formulación de Estrategias</h2>
 	</div>
 	<div>
-		<p class="parrafito">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p class="parrafito">	Una estrategia se compone de una serie de acciones planificadas que ayudan a tomar decisiones y alcanzar los mejores resultados posibles. Las estrategias definen como se van a obtener los objetivos empresariales de una organización siguiendo una ruta de actuación. Por ello se les conoce como el puente que hay entre los objetivos y las tácticas para llegar a la meta. 
+			Recuerda: El Objetivo: Es el Qué. + La Estrategia: A través de qué.
+			</p>
 	</div>
 
 
@@ -37,35 +33,56 @@
 				</div>
 				<div class="modal-body">
 					<ol style="line-height: 17px; margin-top: 33px;">
-						<b style="color: black; font-weight: bold;">Procedimiento de calificación</b>
+					
 						<br><br>
-						Estas cinco fuerzas delimitan precios, costos y requerimientos de inversión que constituyen a los
-						factores básicos que explican las expectativas de rentabilidad a largo plazo y, por lo tanto, el
-						atractivo del sector. Dado que el concepto de atractivo del sector (atractividad) está asociado a la
-						expectativa de rentabilidad a largo plazo, se utilizarán las siguientes denominaciones:<br>
+						A continuación, se presentan dos recuadros. El primero con los objetivos construidos en el paso anterior, y el segundo, con las estrategias resultantes en el  proceso del diagnóstico realizado en el módulo 2. Usted debe seleccionar por objetivo aquellas estrategias que considere necesarias para alcanzar el mismo. No existe límite en la selección de las estrategias, pueden ser tantas como usted considere pertinentes.  
 						<br><br>
-						(1) Alta (A), Cuando la atractividad sectorial y la expectativa de rentabilidad a largo plazo es muy
-						alta;<br><br>
-
-						(2) Media (M), Cuando la atractividad sectorial y la expectativa de rentabilidad a largo plazo es
-						normal
-						<br><br>
-						(3) Bajo (B): Cuando la atractividad del sector y la expectativa de rentabilidad a largo plazo es
-						baja.<br><br>
-
-						Conocer el impacto de cada atractividad es importante para el análisis por lo cual se usará la
-						misma nomenclatura de Alta (A), Media (M) y Bajo (B).
+						<b style="color: black; font-weight: bold;">Nota:</b> Para realizar la selección, simplemente debe colocar el número del objetivo en las estrategias, de esta manera el sistema lo tomará.</b>	
 					</ol>
 				</div>
 			</div>
 		</div>
 	</div>
 	
+	
 </section>
+	@jquery
+	@toastr_js
+	@toastr_render
+
+@yield('script')
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+
+	
+
+<script>
+	$(document).ready(function () {
+		$('.items3 li:nth-child(2)').addClass("acti3");
+		$('.items3 li').click(function () {
+			$('.items3 li').removeClass("acti3");
+			$(this).addClass("acti3");
+			
+			
+		})
+		
+		$('.valores').mouseenter(function(){
+			let mensaje = $(this).attr('mensaje');
+	
+			$('.hover').html(`<p>${mensaje}</p>`)
+			$('.hover').show()
+			
+		})
+		$('.valores').mouseleave(function(){
+			
+			$('.hover').hide()
+		})
+	})
+</script>
+
 @endsection
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 @push('script')
+
 <script>
 	var id = localStorage.getItem('id');
 	$('id_planecion').val(id);
@@ -75,6 +92,7 @@
 		document.getElementById("btn1").click();
 	}
 </script>
+
 
 @endpush
 

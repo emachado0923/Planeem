@@ -9,7 +9,8 @@ use App\Model\respuestaAnalisis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-
+use App\Model\tipo_Matriz_crecimiento;
+use DB;
 class FactorInternoController extends Controller
 {
     /**
@@ -25,19 +26,24 @@ class FactorInternoController extends Controller
         $id = $request->input('id_Planecion');
         $type = ['fAlta', 'fMedia', 'fBaja'];
 
-        $fortaleza = respuestaCapacidad::select('capacidads.nombre', 'capacidads.id as idCapacidad')
-            ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+
+
+
+        $fortaleza = DB::table('respuesta_capacidad')->select('Nombre_Capacidad', 'id as idCapacidad')
             ->whereIn('respuesta', $type)
             ->where('idPlaneacion', $id)
             ->get();
 
         $type2 = ['dAlta', 'dMedia', 'dBaja'];
 
-        $debilidad = respuestaCapacidad::select('capacidads.nombre', 'capacidads.id as idCapacidad')
-            ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
+        $debilidad = DB::table('respuesta_capacidad')->select('Nombre_Capacidad', 'id as idCapacidad')
             ->whereIn('respuesta', $type2)
             ->where('idPlaneacion', $id)
             ->get();
+
+
+
+
 
         return view('Modulo2.factoresInternos')->with(compact('fortaleza', 'debilidad', 'id', 'id_planeacion'));
     }
@@ -73,6 +79,16 @@ class FactorInternoController extends Controller
         $totalCalificacion = $request->input('totalCalificacion');
         $totalPuntuacion = $request->input('totalPuntuacion');
         $puntuacionPonderada = $request->input('puntuacionPonderad1');
+        $tolpeso = 0;
+        $tolcalificacion = 0;
+
+
+
+
+
+
+
+
 
             // dd($totalCalificacion,$totalPuntuacion,$puntuacionPonderada);
         for ($i = 0; $i < count($request->get('preguntas')); $i++) {
@@ -109,13 +125,12 @@ class FactorInternoController extends Controller
 
         $id_planeacion = Proyectos::all();
 
-
+    
         // dd($id);
 
         $type = ['fAlta','fMedia','fBaja'];
-
-        $fortaleza=respuestaCapacidad::select('capacidads.nombre' , 'capacidads.id as idCapacidad')
-        ->join('capacidads','capacidads.id','respuesta_capacidad.idCapacidad')
+ 
+        $fortaleza=DB::table('respuesta_capacidad')->select('Nombre_Capacidad as nombre', 'id as idCapacidad')
         ->whereIn('respuesta',$type)
         ->where('idPlaneacion',$plane)
         ->get();
@@ -126,16 +141,18 @@ class FactorInternoController extends Controller
 
         $type2 = ['dAlta','dMedia','dBaja'];
 
-        $debilidad=respuestaCapacidad::select('capacidads.nombre' , 'capacidads.id as idCapacidad')
-        ->join('capacidads','capacidads.id','respuesta_capacidad.idCapacidad')
+        $debilidad=DB::table('respuesta_capacidad')->select('Nombre_Capacidad as nombre', 'id as idCapacidad')
         ->whereIn('respuesta',$type2)
         ->where('idPlaneacion',$plane)
         ->get();
 
+        
+        toastr()->success('Datos registrados correctamente');
+
 
         return view('Modulo2.factoresInternosDebi')->with(compact('fortaleza','debilidad','id_planeacion','plane'))->with($message);
 
-
+    
     }
 
 
@@ -193,6 +210,17 @@ class FactorInternoController extends Controller
             ->join('planeacion', 'planeacion.id_Planeacion', 'factor_internos.idPlaneacion')
             ->where('factor_internos.idPlaneacion', $id)
             ->get();
+
+
+        // $res = respuestaAnalisis::select('respuesta as idRespuesta', 'idanalisis as analisis', 'idPlaneacion as planeacion')
+        // ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+        // ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+        // ->where('idPlaneacion', $id)
+        // ->get();
+
+
+
+        //    dd($res);
 
         return response()->json($res);
     }

@@ -8,21 +8,18 @@
 	@yield('progres')
 </header>
 <section class="contenedorAsociar">
-	<h1 style="text-align: center;">Objetivos con estrategias seleccionadas</h1>
+	<h1 style="text-align: center;">Objetivos con Estrategias Seleccionadas</h1>
 	<div class="objetivos_conten1">
 
-
-		@foreach ($formulacion as $formulacion)
+		
+		@foreach ($formulacionFinal as $formulacion)
 					<div class="resumenObjetivos">
-
-						<input type="text" class="objetivoTexto" name="" 
 						
-						value="{{$formulacion->Objetivos}}"  
-						
-						parrafo="{{$formulacion->id_estrategia}}">
+		<input type="text" class="objetivoTexto" value="{{$formulacion[0]->Objetivos}}" parrafo="{{json_encode($formulacion) }}">
 						
 					</div>
 		@endforeach
+
 		{{-- <div class="resumenObjetivos">
 			<input type="text" class="objetivoTexto" name="" parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo">
 		</div>
@@ -32,36 +29,22 @@
 	</div>
 </div>
 <div class="hover2">
-	<h2 style="text-align: center; margin-top: 30%; ">Tus estrategias</h2>
+	<h2 style="text-align: center; margin-top: 30%; ">Tus Estrategias</h2>
 	
 </div>
 
 </section>
-<form>
-	<input type="text" 																																																																																																																																																																																																																																																																																																																																								>
-	<a  href="{{ route('modulo2-4') }}"  onclick="guardar()"   style="color:white;"   class="siguiente btn btn-planeem waves-effect waves-light">Siguiente</a>
+<form action="{{ route('resumenDos') }}" method="POST">
+	@csrf
+	 <input type="text" name="id_planecion" id="id_planecion" hidden> 								
+																																																																																																																																																																																																																																																																																																																																>
+	<button type="submit" style="color:white;" class="siguiente btn btn-planeem waves-effect waves-light">Siguiente</button>
 
 </form>
-<span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-scrollable" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;">PROPUESTA DE VALOR</h5>
-				<span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
-				margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
-			</div>
-			<div class="modal-body">
-				<p>Son las expectativas que de forma unilateral el consumidor se forma en su mente, es lo que el cliente
-					imagina que obtendrá a la hora de adquirir determinado bien o servicio, en esto podemos influir, pero en
-					mayor parte son las experiencias personales del consumidor y las condiciones generales del mercado lo
-					que determinan sus expectativas personales a la hora de comprar
-					a través de ella determinarás lo que diferencia tu producto o servicio de la competencia, además que te
-				ayudará a encontrar la forma en que atenderás a tus clientes o segmento de mercado. (Saavedra, 2017)</p>
-			</div>
-		</div>
-	</div>
-</div>
+
+@jquery
+@toastr_js
+@toastr_render
 
 <label type="text" id="nombre"></label><br>                          
 <!-- Modal -->
@@ -135,4 +118,14 @@
 	})
 </script>
 
+
+<script>
+    var id = localStorage.getItem('id')
+    $('#id_planecion').val(id);
+    // console.log(id);
+
+    id_planecion = localStorage.getItem('id')
+    $('#id_Planeacion').val(id_planecion);
+    // console.log(id_planecion);
+</script>
 @endsection

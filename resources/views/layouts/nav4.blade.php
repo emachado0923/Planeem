@@ -48,8 +48,11 @@
         <link href='{{asset('css/animations-ie-fix.css')}}' rel='stylesheet'>
     <![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 </head>
+@jquery
+@toastr_js
+@toastr_render
 <body>
 	<div id="page-loader"><span class="preloader-interior"></span></div>
 	<div id="app">

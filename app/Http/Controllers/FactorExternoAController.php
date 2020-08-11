@@ -6,6 +6,8 @@ use App\Model\FactorExternoA;
 use App\Model\Proyectos;
 use App\Model\respuestaAnalisis;
 use Illuminate\Http\Request;
+use DB;
+use App\Model\tipo_Matriz_crecimiento;
 
 class FactorExternoAController extends Controller
 {
@@ -14,36 +16,33 @@ class FactorExternoAController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+
+        $id = $request->get('planeacion');
         
-        $id_planeacion = Proyectos::all();
+        $typeA = ['aAlta', 'aMedia', 'aBaja'];
+        $typeO = ['oAlta', 'oMedia', 'oBaja'];
 
-        $id = auth()->user()->selected_planne;
+        $Amenazas= DB::table('respuesta_analisis')
+        ->select('analisis.nombre','respuesta_analisis.id')
+        ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+        ->whereIn('respuesta', $typeA)
+        ->where('idPlaneacion', $id)
+        ->get();
+       /* dd($idPlanecion);*/
+        $Oportunidades=DB::table('respuesta_analisis')
+        ->select('analisis.nombre','respuesta_analisis.id')
+        ->join('analisis', 'analisis.id', 'respuesta_analisis.idanalisis')
+        ->join('planeacion', 'planeacion.id_Planeacion', 'respuesta_analisis.idPlaneacion')
+        ->whereIn('respuesta', $typeO)
+        ->where('idPlaneacion', $id)
+        ->get();
 
-        $type = ['fAlta', 'fMedia', 'fBaja'];
-
-        $Oportunidad = respuestaAnalisis::select('analisis.nombre', 'analisis.id as idAnalisis')
-            ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-            ->whereIn('respuesta', $type)
-            ->where('idPlaneacion', $id)
-            ->get();
-
-        dd($Oportunidad);
-
-        $type2 = ['dAlta', 'dMedia', 'dBaja'];
-
-        $Amenaza = respuestaAnalisis::select('capacidads.nombre', 'capacidads.id as idAnalisis')
-            ->join('capacidads', 'capacidads.id', 'respuesta_capacidad.idCapacidad')
-            ->whereIn('respuesta', $type2)
-            ->where('idPlaneacion', $id)
-            ->get();
-
-        // dd($debilidad);
-
-
-
-        return view('Modulo2.factoresExternoA')->with(compact('fortaleza', 'debilidad', 'id', 'id_planeacion'));
+      
+        return view('Modulo2.factoresExternos')->with(compact('Oportunidades', 'Amenazas', 'id'));
 
     }
 

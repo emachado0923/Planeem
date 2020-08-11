@@ -6,7 +6,7 @@
 	@section('f')
 	<a href="{{ route('home') }}" class="clos" aria-label="Close"><span class="icon-undo2"></span></a>
 	@endsection
-	@include('modal/modal')
+	
 	<div class="progress">
 		<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 	</div>
@@ -14,21 +14,21 @@
 <section class="contenedorper3">
 	<form id="form" action="{{ route('guardaAna'),auth()->user()->selected_planne }}" method="POST" role="form">
 		<input type="hidden" name="idPlaneacion" id="" class="idPlaneacion">
-		@csrf			
+		@csrf
 		<div id="regiration_form">
 			<fieldset class="opciones3">
 				<table class="egt" id="tabla">
 					<thead>
 						<tr>
 
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal1"><span class="icon-info "></span></a>Análisis Político</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#politico"><span class="icon-info "></span></a>Análisis Político</th>
 
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal2"><span class="icon-info "></span></a>Amenaza</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal3"><span class="icon-info "></span></a>Oportunidad</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal4"><span class="icon-info "></span></a>No aplica</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#oportunidad1"><span class="icon-info "></span></a>Amenaza</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#amenaza1"><span class="icon-info "></span></a>Oportunidad</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica1"><span class="icon-info "></span></a>No aplica</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -68,7 +68,7 @@
 							<input type="hidden" name="respuesta[]" value="{{$poli->id}}">
 						</tr>
 						@endforeach
-					</tbody> 			
+					</tbody>
 				</table>
 				<button type="button" class="next btn Ahora4 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 			</fieldset>
@@ -77,14 +77,14 @@
 					<thead>
 						<tr>
 
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal55"><span class="icon-info "></span></a>Análisis Económico </th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#economico"><span class="icon-info "></span></a>Análisis Económico </th>
 
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal6"><span class="icon-info "></span></a>Amenaza</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal7"><span class="icon-info "></span></a>Oportunidad</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal8"><span class="icon-info "></span></a>No aplica</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#oportunidad1"><span class="icon-info "></span></a>Amenaza</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#amenaza1"><span class="icon-info "></span></a>Oportunidad</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica1"><span class="icon-info "></span></a>No aplica</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -123,7 +123,7 @@
 							<input type="hidden" name="respuesta[]" value="{{$econo->id}}">
 						</tr>
 						@endforeach
-					</tbody> 			
+					</tbody>
 				</table>
 				<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
 				<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
@@ -133,14 +133,14 @@
 					<thead>
 						<tr>
 
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal99"><span class="icon-info "></span></a>Análisis Social</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#social"><span class="icon-info "></span></a>Análisis Social</th>
 
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal10"><span class="icon-info "></span></a>Amenaza</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal11"><span class="icon-info "></span></a>Oportunidad</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal12"><span class="icon-info "></span></a>No aplica</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#oportunidad1"><span class="icon-info "></span></a>Amenaza</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#amenaza1"><span class="icon-info "></span></a>Oportunidad</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica1"><span class="icon-info "></span></a>No aplica</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -179,7 +179,7 @@
 							<input type="hidden" name="respuesta[]" value="{{$soc->id}}">
 						</tr>
 						@endforeach
-					</tbody> 			
+					</tbody>
 				</table>
 				<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
 				<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
@@ -189,14 +189,14 @@
 					<thead>
 						<tr>
 
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal131"><span class="icon-info "></span></a>Análisis Tecnológico</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#tecnologico"><span class="icon-info "></span></a>Análisis Tecnológico</th>
 
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal14"><span class="icon-info "></span></a>Amenaza</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal15"><span class="icon-info "></span></a>Oportunidad</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal16"><span class="icon-info "></span></a>No aplica</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#oportunidad1"><span class="icon-info "></span></a>Amenaza</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#amenaza1"><span class="icon-info "></span></a>Oportunidad</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica1"><span class="icon-info "></span></a>No aplica</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -234,7 +234,7 @@
 							<input type="hidden" name="respuesta[]" value="{{$tec->id}}">
 						</tr>
 						@endforeach
-					</tbody> 			
+					</tbody>
 				</table>
 				<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
 				<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
@@ -244,14 +244,14 @@
 					<thead>
 						<tr>
 
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal17"><span class="icon-info "></span></a>Análisis Ambiental</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#ambiental"><span class="icon-info "></span></a>Análisis Ambiental</th>
 
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal18"><span class="icon-info "></span></a>Amenaza</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal19"><span class="icon-info "></span></a>Oportunidad</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal20"><span class="icon-info "></span></a>No aplica</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#oportunidad1"><span class="icon-info "></span></a>Amenaza</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#amenaza1"><span class="icon-info "></span></a>Oportunidad</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica1"><span class="icon-info "></span></a>No aplica</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -290,21 +290,21 @@
 						</tr>
 						@endforeach
 					</tbody>
-				</table>	
+				</table>
 				<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
-				<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>		
+				<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 			</fieldset>
 			<fieldset class="opciones3">
 				<table class="egt" id="tabla">
 					<thead>
 						<tr>
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal177"><span class="icon-info "></span></a>Análisis Legal</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#legal"><span class="icon-info "></span></a>Análisis Legal</th>
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal18"><span class="icon-info "></span></a>Amenaza</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal19"><span class="icon-info "></span></a>Oportunidad</th>
-							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal20"><span class="icon-info "></span></a>No aplica</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#oportunidad1"><span class="icon-info "></span></a>Amenaza</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#amenaza1"><span class="icon-info "></span></a>Oportunidad</th>
+							<th class="thCampo" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica1"><span class="icon-info "></span></a>No aplica</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -346,45 +346,219 @@
 					</tbody>
 				</table>
 				<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
-				<button type="submit" id="submitButton" class="Ahora3 btn btn btn-planeem wafes-effect waves-light btn-lg pull right">Guardar</button>			
+				<button type="submit" id="submitButton" class="Ahora3 btn btn btn-planeem wafes-effect waves-light btn-lg pull right">Guardar</button>
 			</fieldset>
-			<div class="infon">
+			{{--<div class="infon">
 				<a  id="boton1" data-toggle="modal" data-target="#exampleModal0" class="button2_agregar1" ><span class="icon-folder-plus"><div id="hover_agregar1">
-					<h5>Agregar</h5></div></span>
+					<h5>Agregar2</h5></div></span>
 				</a>
 				<a id="boton2" class="button2" data-toggle="modal" data-target="#exampleModal001"><span class="icon-info "></span>
 				</a>
-			</div>
+			</div>--}}
 		</div>
 	</form>
-</section>
-<span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-scrollable" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
-				<span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
-				margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
 
-			</div>
+	<!-------------Amenazas, oportinodades y no aplica----->
+
+	<div class="modal fade" id="amenaza1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content modal-modificado1">
 			<div class="modal-body">
-				<p>
-					Como realizar la calificación de la Matriz PCI (Perfil de Capacidad interna)
+			  <div id="cierre_caja4"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+									  <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px" >Amenazas:</p>
+									  <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;"> 
+									  Son aquellas situaciones provenientes del entorno
+										  que pueden afectar la actuación de la compañía de
+										  alguna manera.</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	<div class="modal fade" id="noaplica1" tabindex="-8" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content modal-modificado1">
+			<div class="modal-body">
+			  <div id="cierre_caja7"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+									  <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px" >No Aplica:</p>
+									  <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+										   Este ítem es para indicar que no es ni una amenaza ni una
+										  oportunidad o simplemente un factor no se relaciona con las
+										  actividades que realiza la empresa.</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="modal fade" id="oportunidad1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content modal-modificado1">
+			<div class="modal-body">
+			  <div id="cierre_caja4"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+									  <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px">Oportunidades:</p>
+									  <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">Son aquellos factores que resultan positivos o
+											  favorables del entorno en el que interactúa la
+											  empresa y que permiten obtener ventajas competitivas.</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
 
-					Para realizar la calificación de la matriz se debe seleccionar la capacidad, identificar si
-					es una fortaleza o debilidad para la empresa, luego si:
-					<br><br>
-					1. Es una fortaleza se debe calificar D si es débil (débil), M si es (media) y A si es (alta)
-					<br>
-					2. Es debilidad debo calificar si es D si es débil (débil), M si es (media) y A si es (alta)
-					Luego, se califica que impacto tiene esa debilidad o fortaleza para la empresa: D(débil),
-					M (media), A(alta)
-				</p>
+	<div class="modal fade" id="politico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content modal-modificado4">
+				<div class="modal-body">
+					<div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+						<p style="line-height: 17px; margin-top: 2px;">
+							<b style="color: black; font-weight: bold; text-align: center;">Análisis Político</b>
+							<br><br>
+							<p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">Son aquellos factores asociados a la clase política que puedan determinar
+							e influir en la actividad de la empresa en el futuro, las diferentes políticas
+							de los gobiernos locales, nacionales, continentales e incluso mundiales.
+							Es importante entender la globalidad de lo que ocurre y sus relaciones,
+							las normativas comerciales y aranceles.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+	<div class="modal fade" id="tecnologico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content modal-modificado4">
+			<div class="modal-body">
+			  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+				<p style="line-height: 17px; margin-top: 2px;">
+				  <b style="color: black; font-weight: bold; text-align: center;">Análisis Tecnológico</b>
+				  <br><br>
+				  <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;"> Son factores que permiten analizar como las tecnologías
+										  pueden impactar de manera positiva o negativa en su empresa
+										  como lo es la sistematización de los procesos, la implementación
+										  de nuevas maquinarias y equipos tecnológicos, entre otras.
+				</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <div class="modal fade" id="social" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content modal-modificado4">
+			<div class="modal-body">
+			  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+				<p style="line-height: 17px; margin-top: 2px;">
+				  <b style="color: black; font-weight: bold; text-align: center;">Análisis Social</b>
+				  <br><br>
+				  <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">  Los factores sociales se enfocan en las fuerzas que actúan dentro
+										  de la sociedad y que afectan las actitudes, intereses y opiniones
+										  de las personas e influyen en sus decisiones de compra. Los factores
+										  sociales varían de un país a otro e incluyen aspectos tan diversos
+										  tales como, las religiones dominantes, las actitudes hacia los productos
+										  y servicios extranjeros, el impacto del idioma en la difusión de los
+										  productos en los mercados, el tiempo que la población dedica a la recreación
+										  y los papeles que los hombres y las mujeres tienen en la sociedad.
+				</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="modal fade" id="ambiental" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content modal-modificado4">
+				<div class="modal-body">
+					<div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+						<p style="line-height: 17px; margin-top: 2px;">
+							<b style="color: black; font-weight: bold; text-align: center;">Analisis Ambiental </b>
+							<br><br>
+							<p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">Son los factores que incluyen aspectos ecológicos y del medio ambiente que condicionan
+							la dinámica de los procesos en las empresas como el cambio climático, las variaciones
+							de las temperaturas y la conciencia ambiental.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	  <div class="modal fade" id="legal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content modal-modificado4">
+			<div class="modal-body">
+			  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+				<p style="line-height: 17px; margin-top: 2px;">
+				  <b style="color: black; font-weight: bold; text-align: center;">Análisis Legal</b>
+				  <br><br>
+				  <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">	  Estos factores se refieren a todos aquellos cambios en la normativa legal
+										  relacionada con la empresa, que le puede afectar de forma positiva o negativa
+										  como las leyes relativas al tema de su empresa y su aplicación.
+									  </p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+	  <div class="modal fade" id="economico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content modal-modificado4">
+			<div class="modal-body">
+			  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+				<p style="line-height: 17px; margin-top: 2px;">
+				  <b style="color: black; font-weight: bold; text-align: center;">Análisis Económico</b>
+				  <br><br>
+				  <p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;"> Consiste en analizar, pensar y estudiar sobre las cuestiones
+										  económicas actuales y futuras que pueden afectar la ejecución
+										  de las estrategias, determina la capacidad de compra de los consumidores,
+										  e influye en la frecuencia de compra.
+				</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <div class="modal fade" id="durodemataruno" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
+					<span class="icon-cancel-circle" style="color:#FC7323; font-size: 30px; cursor: pointer; margin-bottom: 1px;
+					margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
+	
+				</div>
+				<div class="modal-body">
+					
+					<p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px" >Desarrollo del Análisis Pestal:</p>
+					
+					<p style="padding: 10px; 100px;width: 100%;font-size: 18px;text-align: justify;">
+						
+					<br>	A continuación, se habilitará una lista de factores en los cuales encontrará aspectos Políticos, Económicos, Sociales, Tecnológicos, Ambientales y Legales. 
+
+						Lo invitamos a seguir los siguientes pasos:<br>
+
+						&nbsp;<br>1) Identifique si los factores mencionados representan para su empresa una oportunidad o amenaza
+						&nbsp;<br>2) Después debe asignar una calificación a cada factor considerando su importancia.
+						de la siguiente manera: A (si es alto), M (si es medio), B (si es bajo). En caso de no aplicar se puede marcar la opción N/A 
+
+
+<br>¡Empecemos!
+
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	
+</section>
+<span class="icon-info" data-toggle="modal" data-target="#durodemataruno" style="cursor:pointer;"></span>
+
 </form>
 </section>
 @yield('script')
@@ -395,19 +569,19 @@
      $('.items li').click(function () {
       $('.items li').removeClass("acti");
       $(this).addClass("acti");
-  
-  
+
+
     })
-  
+
      $('.valores').mouseenter(function(){
       let mensaje = $(this).attr('mensaje');
-  
+
       $('.hover').html(`<p>${mensaje}</p>`)
       $('.hover').show()
-  
+
     })
      $('.valores').mouseleave(function(){
-  
+
       $('.hover').hide()
     })
    })

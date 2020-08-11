@@ -7,7 +7,7 @@
 
 
   <div class="contenedor3">
-    <textarea maxlength="1205"  id="Mega" class="campo" name="Objetivo" required></textarea>
+    <textarea maxlength="1000"  id="Mega" class="campo" name="Objetivo" required></textarea>
     <br>
 </div>
 

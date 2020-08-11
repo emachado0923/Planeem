@@ -20,7 +20,7 @@ class CreatePlaneacionUsuario extends Migration
             $table->string('Mega_Empresarial',1000)->nullable();
             $table->string('Propuesta_valor',1000)->nullable();   
             $table->unsignedBigInteger("id_Planeacion");
-            $table->foreign("id_Planeacion","fk_Planeacion_Pensamiento")->references("id_Planeacion")->on("Planeacion")->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign("id_Planeacion","fk_Planeacion_Pensamiento")->references("id_Planeacion")->on("Planeacion");
      
         });
     }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Corporativos;
 use MessageFormatter;
 use Validator, DB, Hash, Mail,Auth;
+use App\Model\tipo_Matriz_crecimiento;
 
 class CorporativosController extends Controller
 {

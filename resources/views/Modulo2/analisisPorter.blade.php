@@ -21,13 +21,13 @@
 				<table class="egt" id="tabla">
 					<thead>
 						<tr>
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal1"><span class="icon-info "></span></a>Poder de Negociación de los Proveedores</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#podernegociacion"><span class="icon-info "></span></a>Poder de Negociación de los Proveedores</th>
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat"><span class="icon-info "></span></a>Debilidad</th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal3" data-whatever="@fat"><span class="icon-info "></span></a>Fortaleza</th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal4" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span></a>Amenazas</th>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span></a>Oportunidades</th>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
 						</tr>
 					</thead>
 					<tbody >
@@ -74,14 +74,14 @@
 				<table  class="egt" id="tabla">
 					<thead>
 						<tr>
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal511"><span class="icon-info "></span></a>Poder de Negociación de los Clientes</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#poderclientes"><span class="icon-info "></span></a>Poder de Negociación de los Clientes</th>
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat"><span class="icon-info "></span></a>Debilidad</th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal3" data-whatever="@fat"><span class="icon-info "></span></a>Fortaleza</th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal4" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
-						</tr>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span></a>Amenazas</th>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span></a>Oportunidades</th>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
+					</tr>
 					</thead>
 					<tbody>
 						@foreach ($poderCliente as $cliente)
@@ -126,14 +126,14 @@
 				<table  class="egt" id="tabla">
 					<thead>
 						<tr>
-							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal999"><span class="icon-info "></span></a>Productos Sustitutos</th>
+							<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#productossustitutos"><span class="icon-info "></span></a>Productos Sustitutos</th>
 						</tr>
 						<tr>
 							<th style="border: none !important;"></th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat"><span class="icon-info "></span></a>Debilidad</th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal3" data-whatever="@fat"><span class="icon-info "></span></a>Fortaleza</th>
-							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal4" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
-						</tr>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span></a>Amenazas</th>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span></a>Oportunidades</th>
+							<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
+				</tr>
 					</thead>
 					<tbody>
 						<tr class="formulario">
@@ -180,13 +180,13 @@
 					<table  class="egt" id="tabla">
 						<thead>
 							<tr>
-								<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal134"><span class="icon-info "></span></a>Amenazas de Entrada de Nuevos Competidores</th>
+								<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#amenazacompetidores"><span class="icon-info "></span></a>Amenazas de Entrada de Nuevos Competidores</th>
 							</tr>
 							<tr>
 								<th style="border: none !important;"></th>
-								<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat"><span class="icon-info "></span></a>Debilidad</th>
-								<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal3" data-whatever="@fat"><span class="icon-info "></span></a>Fortaleza</th>
-								<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal4" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
+								<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span></a>Amenazas</th>
+								<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span></a>Oportunidades</th>
+								<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -229,23 +229,24 @@
 						<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
 						<button type="button" class="next btn Ahora3 btn btn-planeem wafes-effect waves-light btn-lg pull right">Continuar</button>
 					</fieldset>
+					
 					<fieldset class="opciones6">
 						<table  class="egt" id="tabla">
 							<thead>
 								<tr>
-									<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#exampleModal135"><span class="icon-info "></span></a>Rivalidad Entre Competidores</th>
+									<th class="thCampo" colspan="2" style="text-align: center; background: #0AB5A0;border: none;color: white;" rowspan="2"><a id="boton10-11" class="button10-11" data-toggle="modal" data-target="#rivalidadcompetidores"><span class="icon-info "></span></a>Rivalidad Entre Competidores</th>
 								</tr>
 								<tr>
 									<th style="border: none !important;"></th>
-									<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#exampleModal2" data-whatever="@fat"><span class="icon-info "></span></a>Debilidad</th>
-									<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#exampleModal3" data-whatever="@fat"><span class="icon-info "></span></a>Fortaleza</th>
-									<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#exampleModal4" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
+									<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton3-1" class="button3-4" data-toggle="modal" data-target="#fortaleza" data-whatever="@fat"><span class="icon-info "></span></a>Amenazas</th>
+									<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton4-1" class="button4-4" data-toggle="modal" data-target="#debilidad" data-whatever="@fat"><span class="icon-info "></span></a>Oportunidades</th>
+									<th class="thCampo_modulo2" style="text-align: center;background: #0AB5A0;border: none;color: white;"><a id="boton5-1" class="button5-4" data-toggle="modal" data-target="#noaplica" data-whatever="@fat"><span class="icon-info "></span></a>No aplica</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr class="formulario">
 									@foreach ($rivaCompe as $riva)
-									
+
 									<tr class="formulario">
 										<td colspan="2" data-column_name="nombre" data-id="{{$riva->id}}" data-name="{{$riva->nombre}}"style="text-align: center;width: 50%;" class="thCampo1" id="tdFormulario">{{$riva->nombre}}</td>
 										<td><h5 style="color: #238276; font-weight: bold;">Es una</h5></td>
@@ -282,45 +283,214 @@
 							<button type="button" class="Ahora2 previous btn btn-default">Anterior</button>
 							<button type="submit" class="Ahora3 btn btn btn-planeem wafes-effect waves-light btn-lg pull right" id="submitButton" >Guardar</button>
 						</fieldset>
-						<div class="infon">
+						{{--<div class="infon">
 							<a  id="boton1" data-toggle="modal" data-target="#exampleModal0" class="button2_agregar1" ><span class="icon-folder-plus"><div id="hover_agregar1">
 								<h5>Agregar</h5></div></span>
 							</a>
 							<a id="boton2" class="button2" data-toggle="modal" data-target="#exampleModal001"><span class="icon-info "></span>
 							</a>
-						</div>
+						</div>--}}
 					</div>
 				</form>
-			</section>
-
-			<span class="icon-info" data-toggle="modal" data-target="#exampleModalScrollable" style="cursor:pointer;"></span>
-			<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-scrollable" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-left: 252px; font-weight: bold;"></h5>
-							<span class="icon-cancel-circle" style="color:#FC7323; font-size: 32px; cursor: pointer; margin-top: 4px;
-							margin-left: 10%;" data-dismiss="modal" aria-label="Close"></span>
-
-						</div>
+				<!---------------------------------------------->
+				<div class="modal fade" id="podernegociacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content modal-modificado4">
 						<div class="modal-body">
-							<p>
-								Como realizar la calificación de la Matriz PCI (Perfil de Capacidad interna)
-
-								Para realizar la calificación de la matriz se debe seleccionar la capacidad, identificar si
-								es una fortaleza o debilidad para la empresa, luego si:
-								<br><br>
-								1. Es una fortaleza se debe calificar D si es débil (débil), M si es (media) y A si es (alta)
-								<br>
-
-								2. Es debilidad debo calificar si es D si es débil (débil), M si es (media) y A si es (alta)
-								Luego, se califica que impacto tiene esa debilidad o fortaleza para la empresa: D(débil),
-								M (media), A(alta)
+						  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+							<p style="line-height: 17px; margin-top: 2px;">
+							  <b style="color: black; font-weight: bold; text-align: center;">Poder de negociación de los proveedores</b>
+							  <br><br>
+							  <p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+													  Esta fuerza pretende determinar el nivel de poder de negociación
+													  del proveedor en el sector estratégico. Para el empresario se convierta
+													  en una ayuda, ya que le permite identificar el tipo de relación de negocios
+													  que puede llegar a tener con el proveedor.
 							</p>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+
+				  <div class="modal fade" id="poderclientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content modal-modificado4">
+							<div class="modal-body">
+								<div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+									<p style="line-height: 17px; margin-top: 2px;">
+										<b style="color: black; font-weight: bold; text-align: center;">Poder de negociación de los clientes</b>
+										<br><br>
+										<p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
+										Se refiere a la presión que pueden ejercer los consumidores sobre
+										las empresas para conseguir que se ofrezcan productos de mayor calidad,
+										mejor servicio al cliente, y precios más bajos a la hora de comprar insumos,
+										materias primas, bienes o servicios. 
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+
+				<div class="modal fade" id="productossustitutos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content modal-modificado4">
+						<div class="modal-body">
+						  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+							<p style="line-height: 17px; margin-top: 2px;">
+							  <b style="color: black; font-weight: bold; text-align: center;">Productos Sustitutos</b>
+							  <br><br>
+							  <p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
+													  Esta fuerza permite determinar el grado de amenaza u oportunidad de los
+													  productos sustitutos para el sector estratégico. Se parte de la situación
+													  de que un mercado o segmento no es atractivo si existen productos sustitutos reales o potenciales.
+							</p>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="modal fade" id="amenazacompetidores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content modal-modificado4">
+						<div class="modal-body">
+						  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+							<p style="line-height: 17px; margin-top: 2px;">
+							  <b style="color: black; font-weight: bold; text-align: center;">Amenazas de Entrada de Nuevos Competidores</b>
+							  <br><br>
+							  <p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
+													  Es cualquier mecanismo por el cual la rentabilidad esperada
+													  de un nuevo competidor entrante en el sector es inferior a
+													  la que están obteniendo los competidores ya presentes en él.
+							</p>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="modal fade" id="rivalidadcompetidores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content modal-modificado4">
+						<div class="modal-body">
+						  <div id="cierre_proveedores"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 97%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+							<p style="line-height: 17px; margin-top: 2px;">
+							  <b style="color: black; font-weight: bold; text-align: center;">Rivalidad Entre Competidores</b>
+							  <br><br>
+							  <p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
+													  La rivalidad entre competidores está en el centro de las fuerzas
+													  y es el elemento más determinante del modelo de Porter. Es la fuerza
+													  con que las empresas emprenden acciones para fortalecer su posicionamiento
+													  en el mercado y proteger así su posición competitiva.<br><br>
+													  La rivalidad entre los competidores define la rentabilidad de un sector:
+													  cuanto menos competido se encuentre un sector, normalmente será más rentable
+													  y viceversa.
+	  
+												  </p>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+	  
+
+
+
+
+				<div class="modal fade" id="debilidad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9000;">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content modal-modificado1">
+						<div class="modal-body">
+						  <div id="cierre_caja7"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+												  <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px"; >Amenazas:</p>
+																		  <p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
+													Son aquellas situaciones provenientes del entorno que pueden afectar la actuación de la compañía de alguna manera.
+												  </p>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+	  
+				  <div class="modal fade" id="fortaleza" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content modal-modificado1">
+						<div class="modal-body">
+						  <div id="cierre_caja6"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+												  <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px" >Oportunidades:</p>
+												  <p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
+													Son aquellos factores que resultan positivos o favorables del entorno en el que interactúa la empresa y que permiten obtener ventajas competitivas.
+													<br>Alta
+													<br>Media 
+													<br>Baja
+													<br>No aplica
+												  </p>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  
+				  <div class="modal fade" id="noaplica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content modal-modificado1">
+						<div class="modal-body">
+						  <div id="cierra_caja5"><a data-dismiss="modal" aria-label="Close" style="background: white; outline: none !important; margin-left: 93%"><i class="icon-cancel-circle" style="color: #FC7323; font-size: 21px;margin-top: 2%; cursor: pointer;"></i></a>
+												  <p class="Nota" style="margin-left: 0.5px; font-weight: bold; font-size: 15px" >No Aplica:</p>
+												  <p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+													Este ítem es para indicar que no es ni una debilidad ni
+													  fortaleza o simplemente un factor no se relaciona con las
+													  actividades que realiza la empresa.</p>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+
+				  <div class="modal fade" id="rr" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-scrollable" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<b style="color: black; font-weight: bold;">Desarrollo del Análisis de las 5 Fuerzas de Porter</b>
+							</div>
+							
+							<div class="modal-body">
+								<ol style="line-height: 17px; margin-bottom: 05px;">
+									<p style="padding: 10px;line-height: 23px;margin-left: -10px;width: 100%;font-size: 18px;text-align: justify;">
+
+									 A continuación, encontrará diferentes perspectivas relacionadas con cada una de las 5 fuerzas de la matriz:<br>
+									<br>
+									1: Poder de negociación de los proveedores o vendedores.<br>
+									2: Poder de negociación de los clientes o compradores.<br>
+									3: Productos Sustitutos.<br>
+									4: Amenazas de entrada de nuevos competidores.<br>
+									5: Rivalidad entre competidores.<br>
+			
+									Lo invitamos a dar una calificación a cada uno de los factores para evaluar su nivel de
+									competencia a través de los siguientes pasos:<br>
+									1) Identifique si los factores mencionados representan para su empresa una oportunidad o amenaza.<br>
+									2) Después se debe asignar una calificación a cada factor considerando su importancia.
+									de la siguiente manera: A (si es alto), M (si es medio), B (si es bajo). En caso de no aplicar se puede marcar la opción N/A.<br><br>
+									¡Empecemos!
+			
+								</ol>
+							</div>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</section>
+
+			<span class="icon-info" data-toggle="modal" data-target="#rr" style="cursor:pointer;"></span>
+
+			
 		</form>
 
 
